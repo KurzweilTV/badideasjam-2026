@@ -12,7 +12,7 @@ TBD
 [Theme Reavel Video](https://www.youtube.com/watch?v=ZVy6LNBmlok)  
 
 ## Assets Used
-TBD
 
-[!IMPORTANT]
+---
+
 **No AI Used in this Project**
