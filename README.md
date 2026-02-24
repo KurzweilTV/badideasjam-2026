@@ -8,11 +8,11 @@ TBD
 TBD
 
 ## Links
-[Jam Page](https://itch.io/jam/bad-ideas-game-jam-2026)
-
-[Theme Reavel Video](https://www.youtube.com/watch?v=ZVy6LNBmlok)
+[Jam Page](https://itch.io/jam/bad-ideas-game-jam-2026)  
+[Theme Reavel Video](https://www.youtube.com/watch?v=ZVy6LNBmlok)  
 
 ## Assets Used
 TBD
 
+[!IMPORTANT]
 **No AI Used in this Project**
