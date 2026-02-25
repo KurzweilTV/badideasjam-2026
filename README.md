@@ -8,11 +8,9 @@
 
 _Hi, I'm a placeholder until the theme is released._  
 
-## 🎥 Short Gameplay Video
+## 🎥 Shorts
 
-TBD  
-
-YouTubeLink Goes here
+[Short #1](https://www.youtube.com/shorts/7vxqWwQW2ps)
 
 
 ## 🕹️ Play the Game
