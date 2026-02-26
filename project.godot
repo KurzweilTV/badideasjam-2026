@@ -16,7 +16,18 @@ config/icon="res://art/icon.svg"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/script-ide/plugin.cfg")
+enabled=PackedStringArray("res://addons/jamcountdown/plugin.cfg", "res://addons/script-ide/plugin.cfg")
+
+[jam_countdown]
+
+jam_title="BadIdeasJam"
+year=2026
+month=4
+day=1
+hour=5
+minute=59
+has_custom_data=true
+link_to_jam_page="https://itch.io/jam/bad-ideas-game-jam-2026"
 
 [physics]
 

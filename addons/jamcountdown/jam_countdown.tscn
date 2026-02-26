@@ -1,0 +1,214 @@
+[gd_scene format=3 uid="uid://dsf3w561yokdc"]
+
+[ext_resource type="FontFile" uid="uid://ck2tdglnsj604" path="res://addons/jamcountdown/fonts/AtkinsonHyperlegibleNext-Regular.ttf" id="1_5fue1"]
+[ext_resource type="Script" uid="uid://c7kkv074krtrw" path="res://addons/jamcountdown/countdown.gd" id="1_n7ugf"]
+[ext_resource type="FontFile" uid="uid://d3g8pb4owhwoa" path="res://addons/jamcountdown/fonts/AtkinsonHyperlegibleMono-Regular.ttf" id="3_5fue1"]
+[ext_resource type="Texture2D" uid="uid://bh410yicf6sp4" path="res://addons/jamcountdown/icons/follow_link.svg" id="3_ws1c5"]
+[ext_resource type="Script" uid="uid://bby5n4budogex" path="res://addons/jamcountdown/countdown_editor.gd" id="4_5fue1"]
+
+[sub_resource type="Theme" id="Theme_ws1c5"]
+default_font = ExtResource("1_5fue1")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gf2j7"]
+
+[node name="JamCountdown" type="MarginContainer" unique_id=491264684]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -272.0
+offset_bottom = 28.0
+grow_horizontal = 0
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme = SubResource("Theme_ws1c5")
+script = ExtResource("1_n7ugf")
+jam_title = "BadIdeasJam"
+jam_page_url = "https://itch.io/jam/bad-ideas-game-jam-2026"
+year = 2026
+month = 4
+day = 1
+hour = 5
+minute = 59
+
+[node name="Panel" type="Panel" parent="." unique_id=1267320162]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Countdown" type="HBoxContainer" parent="." unique_id=212547736]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="LinkBox" type="HBoxContainer" parent="Countdown" unique_id=725775582]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="LinkButton" type="Button" parent="Countdown/LinkBox" unique_id=578432340]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+tooltip_text = "Go to the game jam page"
+mouse_default_cursor_shape = 2
+theme_type_variation = &"FlatButton"
+icon = ExtResource("3_ws1c5")
+
+[node name="VSeparator" type="VSeparator" parent="Countdown/LinkBox" unique_id=1503016305]
+visible = false
+layout_mode = 2
+
+[node name="TitleLabel" type="Button" parent="Countdown" unique_id=879149488]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+tooltip_text = "Configure the game jam countdown"
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.337, 0.62, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gf2j7")
+text = "BadIdeasJam"
+
+[node name="VSeparator" type="VSeparator" parent="Countdown" unique_id=34668804]
+visible = false
+layout_mode = 2
+
+[node name="CountdownLabel" type="Label" parent="Countdown" unique_id=1680579974]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "01/04/26 05:59"
+mouse_filter = 0
+mouse_default_cursor_shape = 16
+theme_override_fonts/font = ExtResource("3_5fue1")
+theme_override_font_sizes/font_size = 16
+text = "33d 07h 53m 01s"
+
+[node name="EditPanel" type="ConfirmationDialog" parent="." unique_id=1098885138]
+oversampling_override = 1.0
+title = "Configure the game jam countdown"
+initial_position = 4
+size = Vector2i(304, 226)
+script = ExtResource("4_5fue1")
+
+[node name="VBox" type="VBoxContainer" parent="EditPanel" unique_id=1309995016]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 296.0
+offset_bottom = 178.0
+theme_override_constants/separation = 8
+
+[node name="TitleBox" type="HBoxContainer" parent="EditPanel/VBox" unique_id=1840664589]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="EditPanel/VBox/TitleBox" unique_id=902538332]
+layout_mode = 2
+text = "Title :"
+
+[node name="GamejamTitle" type="LineEdit" parent="EditPanel/VBox/TitleBox" unique_id=7714886]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "BadIdeasJam"
+placeholder_text = "Game jam title"
+
+[node name="LinkBox" type="HBoxContainer" parent="EditPanel/VBox" unique_id=48125222]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="EditPanel/VBox/LinkBox" unique_id=91474651]
+layout_mode = 2
+text = "Page link :"
+
+[node name="JamLink" type="LineEdit" parent="EditPanel/VBox/LinkBox" unique_id=2098086754]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "https://itch.io/jam/bad-ideas-game-jam-2026"
+placeholder_text = "Link to the game jam page"
+
+[node name="Separator" type="HBoxContainer" parent="EditPanel/VBox" unique_id=122281391]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="LeftSeparator" type="HSeparator" parent="EditPanel/VBox/Separator" unique_id=1613580281]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="EditPanel/VBox/Separator" unique_id=1416821652]
+layout_mode = 2
+text = "End date :"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HumanDate" type="Label" parent="EditPanel/VBox/Separator" unique_id=272544628]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.337, 0.62, 1, 1)
+theme_override_fonts/font = ExtResource("3_5fue1")
+text = "01/04/26 05:59"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RightSeparator" type="HSeparator" parent="EditPanel/VBox/Separator" unique_id=1122874688]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="EndDate" type="VBoxContainer" parent="EditPanel/VBox" unique_id=1164489728]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Date" type="HBoxContainer" parent="EditPanel/VBox/EndDate" unique_id=465888152]
+layout_mode = 2
+alignment = 1
+
+[node name="Day" type="SpinBox" parent="EditPanel/VBox/EndDate/Date" unique_id=1469061625]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 1.0
+max_value = 31.0
+value = 1.0
+update_on_text_changed = true
+prefix = "D:"
+
+[node name="Month" type="SpinBox" parent="EditPanel/VBox/EndDate/Date" unique_id=2076785218]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 2.0
+max_value = 12.0
+value = 4.0
+update_on_text_changed = true
+prefix = "M:"
+
+[node name="Year" type="SpinBox" parent="EditPanel/VBox/EndDate/Date" unique_id=1634909748]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(88, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 2026.0
+max_value = 9999.0
+value = 2026.0
+update_on_text_changed = true
+prefix = "Y:"
+
+[node name="Time" type="HBoxContainer" parent="EditPanel/VBox/EndDate" unique_id=1441359165]
+layout_mode = 2
+
+[node name="Hour" type="SpinBox" parent="EditPanel/VBox/EndDate/Time" unique_id=341962965]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 23.0
+value = 5.0
+update_on_text_changed = true
+prefix = "Hour:"
+
+[node name="Minute" type="SpinBox" parent="EditPanel/VBox/EndDate/Time" unique_id=1469256073]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 59.0
+value = 59.0
+update_on_text_changed = true
+prefix = "Minute:"
