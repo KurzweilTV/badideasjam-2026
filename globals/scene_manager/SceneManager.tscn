@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://sbwbrn86ufro"]
 
 [ext_resource type="Script" uid="uid://tny8rwho6hp" path="res://globals/scene_manager/scene_manager.gd" id="1_ebei8"]
+[ext_resource type="FontFile" uid="uid://jojpfgda2e6k" path="res://addons/fonts/Strogo.ttf" id="2_71hmd"]
 
 [sub_resource type="Animation" id="Animation_ep1pc"]
 length = 0.001
@@ -38,6 +39,14 @@ _data = {
 &"dissolve": SubResource("Animation_ebei8")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_o6jkk"]
+font = ExtResource("2_71hmd")
+font_size = 57
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 8
+shadow_color = Color(0.47007585, 0.47007585, 0.47007585, 0.21176471)
+
 [node name="SceneManager" type="CanvasLayer" unique_id=95624940]
 script = ExtResource("1_ebei8")
 
@@ -53,3 +62,21 @@ color = Color(0.14117648, 0.14117648, 0.14117648, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2138798943]
 libraries/ = SubResource("AnimationLibrary_71hmd")
+
+[node name="LoadingLabel" type="Label" parent="." unique_id=970073305]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -151.5
+offset_top = -92.0
+offset_right = 151.5
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Loading..."
+label_settings = SubResource("LabelSettings_o6jkk")
+horizontal_alignment = 1
