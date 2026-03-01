@@ -1,6 +1,9 @@
 
 # 🎮 Bad Ideas Jam 2026 – Project Title
 
+## 🎭 Theme
+
+"Outside the Box"
 
 ## 🧠 The Pitch
 
