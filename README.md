@@ -4,9 +4,8 @@
 
 ## 🧠 The Pitch
 
-**TBD**
-
-_Hi, I'm a placeholder until the theme is released._  
+A slow moving, existential horror about being trapped and not knowing where you are. The player will need to
+survive long enough to discover the story. The player will need to overcome some puzzles to unlock progress.
 
 ## 🎥 Shorts
 
