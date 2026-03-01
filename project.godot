@@ -85,6 +85,11 @@ minute=59
 has_custom_data=true
 link_to_jam_page="https://itch.io/jam/bad-ideas-game-jam-2026"
 
+[layer_names]
+
+3d_physics/layer_1="Player"
+3d_physics/layer_2="Interaction"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

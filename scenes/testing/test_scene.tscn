@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://characters/player/character.tscn" id="1_bmh7g"]
 [ext_resource type="PackedScene" uid="uid://crevapxi2epdy" path="res://props/interactable/oxygen_machine/OxygenMachine.tscn" id="2_rj4rt"]
+[ext_resource type="PackedScene" uid="uid://b0qyedg63defo" path="res://props/interactable/station_door/StationDoor.tscn" id="3_si0cu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g7g4h"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -61,3 +62,6 @@ light_energy = 2.673
 light_bake_mode = 1
 shadow_enabled = true
 omni_attenuation = 2.0
+
+[node name="StationDoor" parent="." unique_id=865721917 instance=ExtResource("3_si0cu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9137619, 0.0028338432, 3.968008)

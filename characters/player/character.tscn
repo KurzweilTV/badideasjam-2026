@@ -455,6 +455,7 @@ speed_scale = 4.0
 [node name="RayCast3D" type="RayCast3D" parent="Head" unique_id=441467721]
 unique_name_in_owner = true
 target_position = Vector3(0, 0, -2)
+collision_mask = 2
 
 [node name="UserInterface" type="Control" parent="." unique_id=683028152]
 layout_mode = 3
