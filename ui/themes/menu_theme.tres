@@ -1,0 +1,65 @@
+[gd_resource type="Theme" format=3 uid="uid://b11dr1iiq0j81"]
+
+[ext_resource type="FontFile" uid="uid://cyq6ofxu3mgii" path="res://addons/fonts/CascadiaCode.ttf" id="1_3ymh7"]
+[ext_resource type="StyleBox" uid="uid://bdxvjq4wr4cou" path="res://ui/themes/normal_button.tres" id="1_ena0y"]
+[ext_resource type="StyleBox" uid="uid://d16h3h1o5rt2x" path="res://ui/themes/hovered_button.tres" id="1_sojpq"]
+[ext_resource type="StyleBox" uid="uid://c7hf50hj6bob4" path="res://ui/themes/disabled_button.tres" id="1_w5svx"]
+[ext_resource type="StyleBox" uid="uid://cliixly3q7u3v" path="res://ui/themes/pressed_button.tres" id="4_fvhrp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sojpq"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_e7cto"]
+color = Color(0.43529412, 0.61960787, 0.83137256, 1)
+grow_begin = -20.0
+grow_end = -20.0
+thickness = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e7cto"]
+draw_center = false
+border_width_top = 5
+border_width_bottom = 5
+border_color = Color(0.4333788, 0.7385096, 1.0775439, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j3e0d"]
+draw_center = false
+border_width_top = 5
+border_width_bottom = 5
+border_color = Color(0, 0.29164895, 0.54215556, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uidju"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+bg_color = Color(0.05709075, 0.12712313, 0.20493695, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.4369044, 0.6198806, 0.8294125, 1)
+shadow_color = Color(0, 0, 0, 0.24313726)
+shadow_size = 7
+
+[resource]
+default_font = ExtResource("1_3ymh7")
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("1_3ymh7")
+Button/styles/disabled = ExtResource("1_w5svx")
+Button/styles/focus = SubResource("StyleBoxEmpty_sojpq")
+Button/styles/hover = ExtResource("1_sojpq")
+Button/styles/normal = ExtResource("1_ena0y")
+Button/styles/pressed = ExtResource("4_fvhrp")
+HSeparator/styles/separator = SubResource("StyleBoxLine_e7cto")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_e7cto")
+HSlider/styles/slider = SubResource("StyleBoxFlat_j3e0d")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_uidju")

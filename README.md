@@ -15,6 +15,9 @@ _Hi, I'm a placeholder until the theme is released._
 
 ## 🕹️ Play the Game
 
+🔗 **Itch.io Page**
+https://kurzweil.itch.io
+
 🔗 **Jam Page:**  
 https://itch.io/jam/bad-ideas-game-jam-2026  
 
@@ -23,7 +26,7 @@ https://www.youtube.com/watch?v=ZVy6LNBmlok
 
 ## 🛠️ Development Details
 
-**Engine:** Godot 4.6.1
+**Engine:** Godot 4.6.1  
 **Duration:** 30 days  
 **Team Size:** 1  
 **Tools Used:** TBD
@@ -41,7 +44,7 @@ https://www.youtube.com/watch?v=ZVy6LNBmlok
 
 ## 📦 Assets Used
 
-- TBD  
+- [UI Sounds](https://www.kenney.nl/assets/ui-audio)  
 - TBD  
 - TBD  
 

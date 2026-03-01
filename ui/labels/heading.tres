@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://c6gd5kgbjds6j"]
+
+[ext_resource type="FontFile" uid="uid://jojpfgda2e6k" path="res://addons/fonts/Strogo.ttf" id="1_31k84"]
+
+[resource]
+font = ExtResource("1_31k84")
+font_size = 32
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 2

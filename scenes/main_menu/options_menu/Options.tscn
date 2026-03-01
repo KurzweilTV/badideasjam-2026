@@ -1,0 +1,245 @@
+[gd_scene format=4 uid="uid://dlv5mg4wdfaeo"]
+
+[ext_resource type="Theme" uid="uid://b11dr1iiq0j81" path="res://ui/themes/menu_theme.tres" id="1_beskx"]
+[ext_resource type="LabelSettings" uid="uid://c6gd5kgbjds6j" path="res://ui/labels/heading.tres" id="2_ckk2h"]
+[ext_resource type="Script" uid="uid://dufhrjqp7ng14" path="res://scenes/main_menu/options_menu/options.gd" id="2_xyvf4"]
+[ext_resource type="Texture2D" uid="uid://b5kf3g4uikvka" path="res://ui/icons/video.png" id="4_befm5"]
+[ext_resource type="AudioStream" uid="uid://cji82wy8pws7c" path="res://ui/sounds/switch11.ogg" id="4_xyvf4"]
+[ext_resource type="Texture2D" uid="uid://xtbkadxedfao" path="res://ui/icons/speaker.png" id="5_r0po8"]
+[ext_resource type="Texture2D" uid="uid://ctcha1uvwu113" path="res://ui/icons/accessibility.png" id="6_f1mve"]
+[ext_resource type="FontFile" uid="uid://jojpfgda2e6k" path="res://addons/fonts/Strogo.ttf" id="7_f1mve"]
+[ext_resource type="LabelSettings" uid="uid://chg1id0jihetb" path="res://ui/labels/sub_heading.tres" id="7_r0po8"]
+[ext_resource type="Script" uid="uid://campms7tybmk3" path="res://scenes/main_menu/options_menu/audio_options.gd" id="8_5hrqm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5hrqm"]
+bg_color = Color(0.038379498, 0.0932113, 0.15770629, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_befm5"]
+content_margin_left = 10.0
+content_margin_top = 4.0
+content_margin_right = 10.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+border_width_left = 1
+border_width_right = 1
+border_color = Color(0.175, 0.175, 0.175, 1)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r0po8"]
+content_margin_left = 50.0
+content_margin_top = 5.0
+content_margin_right = 50.0
+content_margin_bottom = 5.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+border_width_top = 4
+border_color = Color(1.0407953, 0.5943312, 9.1387847e-07, 1)
+corner_detail = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_5hrqm"]
+font = ExtResource("7_f1mve")
+font_size = 32
+font_color = Color(0.51718444, 0.5171845, 0.51718444, 1)
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 2
+
+[sub_resource type="OggPacketSequence" id="OggPacketSequence_1hiq6"]
+packet_data = Array[Array]([[PackedByteArray("AXZvcmJpcwAAAAACRKwAAAAAAAAA7gIAAAAAALgB")], [PackedByteArray("A3ZvcmJpczQAAABBTzsgYW9UdVYgWzIwMTEwNDI0XSAoYmFzZWQgb24gWGlwaC5PcmcncyBsaWJWb3JiaXMpAgAAAA0AAABBUlRJU1Q9S2VubmV5FQAAAENPTU1FTlQ9d3d3Lmtlbm5leS5ubAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="), PackedByteArray("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")], [PackedByteArray("5PQKMqjoL4Rtj690Ad1wvfivOu73GtkE0gc2igvb/xcPty3F1S6pi0sx8bbeust78vr5xf8fipil37qHmf3f+73zdGzu3+6ZZ8/29vZ9s7450xZfJjAL"), PackedByteArray("HPHowMhBUMeBn9QrnoB0WOAdx+q9MEvi2EsDqiV+N41N8ldcI1dE6Zq1rmYky6vny+U31641P2ffdZmwPPoz8dFLvMcT9eo3dAbsAoLFjyUA"), PackedByteArray("ZPGoSu2EWMFws3q+EzjbO9yp/OgQg+SJTUhg15mIeXkdpoxRcv18HTH5rwt2x4P9ifvtzL8eur4WUuPuhRbNB7IzD+01M3+BS1r5ZhI="), PackedByteArray("JPF8CajqBwI2aVdUAaCDW/7n7ZA9Nxn1xhQ7PuLwfFgUbcJ2e6mjRfsS5WPnf7LzXbVP9G+XnPYnHziF0v3hw5OmgU39Y1v5lPdabgY="), PackedByteArray("TPU8C6hUg1xnbOoVz6ypQGH+ca8ncEMsWVB0+uAvRXAXaOYU9V8qYrYwCrvH52yqHedw6Mur60LZ/zOa+jGHXqx7GD77ZW+LM82aPSenwb5c"), PackedByteArray("LPH0CQAq+E27ogYQVPCOb6ueGVsIJgRF7+B5mtQExvcTE24edUzRvJspr898y5j35/7E6bgRpEv7emg6DZLlJeuq6jZ/frqrVj0A"), PackedByteArray("PPF0hiyBmFgCvmhXkpUSmE6qTsd7uk8yk94LpYjVNmOx29YuzgtFzPXP07j+KMvN+of7g/M6szj2LITttpAf+pil6jW2x12rtw6naj036c+upwM="), PackedByteArray("LPn0ValB+skBRSYNGkW/km5HNeU9Rj1KE8f7rszLeAwPm/nBRwfLvVfx0Bjj588oepNe9aT0tAv6Vmt7a8Zq9BX3Fg8Urmh0sbn4zyCfGGMzox/CYhCrwE+E5fU9diSef12zbuIjr66Ea+W4P/neXS59NzfnZvz/89RzMXF50SYPnmZn6y+/fpXwpmvc/6+/vyuxS1/K61EC"), PackedByteArray("5A09s4FDyShbie7dUXT25hDyBho0m83bVNTeeaiKsqytPf1Lonb+JRP2OFZDvZTV5cSTRzkvCuUJ2S4nsiaOzWEek5GyjCKztrcfsfPrQ3p7q9Z9fMXRw03bec09q6F8wIGKT1M7qx0YZRQDkEzv0EkUBDHycvEkRUWcl/1FQ4pES0R3LrVr3L39HV0q4rNtottPs0qJ33fXDj9IdNSCt+hgcLGFK/xgRDjXdc1/+1Ecx39Ou3QTgtdwXPKolKsc+bus2wA="), PackedByteArray("vOUKs7TrGMDUVa7lSruhBVEsIlRGVq3tvVuZRT2zUy8eMSEEb9T++9SWOBM0q709F4jufafG7VLrHJyfcfbmN5/wzeMN74vrr+HVg8+Kk/jY/sKE3ZeLb47f2pWG5Td+W2W84p5Z/13cXbC/bf/VmZiCz7YDLA=="), PackedByteArray("uheEY3/MIt3OJqG2IL49IeknFvEzg0HYlsT/GrmIzEJOlKReHjh4IJUV2tTLvsr9QMcx9VTtqrnKQmeZJI7YAAAwaw7bzs5RI4i0eZx0H8EpbdJlEO3O2a71h3SVD1OUoNNhRtfei3pInME2pLfUqU+mN2IcNsv5dtXLnRNT/Pt1bmtO6b+RPVlYXVNUsGLu+3O5uVwvGW31q7eLg0O9JJCpsZq2Tjf91P/dPyaNKRMrvYjpuc/9qed6yUiZ33VMUTquLOn1V3EVsU7FwmRk9HSsfPj0uEUpk1u/1IsGwOgXVy5UaWkDTnlJx+4vva9FRkJM9P6NJpEb+1jgK8LxpSa1O8pLWZTOUr/cTkcWZW2N1dZPT4DbDcGSvh+7XtXTYTIBk8A76NRdiq3+AciwwkT6y6LDO1zPWsvlr14SAABI8FIA2J3q9R3DXEWpPYYvfFe73FMvDUVCmONbdbc/JQBP6czO1S0DPQukbJ7LwP8BiSPN+luu9r2dc87WXPfpqed4Adja6hcutrb+W6Fzt7JX5znlz3GcrZ6Jubmh+hc4Lj9w67M8zorHojF+ty8+8Cwyay5vpZyddGxt9eeRDgDUclvO5WOBLJCFra2tLQA="), PackedByteArray("Phd022nXPeVz6Qi1sZnmhGY7buWOBUKXs7cedLnH8egFukvl3u/X6KNf3dTQh18DJtfVnSK6qJ2pJMUkAQDAcpQLRUSIpIQc4u/+P7ZGD4W8uOlEvKKrP3sng8vVasA6u53la3XG6/JPtlWSZQJn9LrOPhfqsMe0+MR+lFwaMlxn5Vi066/ULa5vOZjTR6G6pLO6h+vM1V9RlAVlYbm+tt+sMApX7VaXDutI5Dpm/oqiFOa4IkFgLPw/7uIOZal6ndz379++f3saUwb93C5q03nuM7Uho/Z6bJxy6pdWxeN2JPHl9U0x/+88qf/9j19FrJaBcWUX6k0WvThex/JSijJKovUtB4lefU8nXG/N9NDTMFqqixS3hs/h0CtorH65fdAirKZHLLzT/OZFxw4/OFOHC0/VerDl99MTBmhSRiTtVlfClFNbA2G48fCcxI2Lrv5SQFvk9ABIelTn8dzbM7zN7d1KnWM/dD791T1h5a3AlMhoE+asVs+qHp2obs/mMoDlbe09z+Bp69nc3q3UzX3OFm/Bf7P1UgZ2AfBcVmyJMr/y45w2V3Fa3XzobZu2nq26VfJ5mZ+Tlg+eAAk4ZLDmHAA=")]])
+granule_positions = PackedInt64Array(0, 0, 2528)
+sampling_rate = 44100.0
+
+[sub_resource type="AudioStreamOggVorbis" id="AudioStreamOggVorbis_ettqk"]
+packet_sequence = SubResource("OggPacketSequence_1hiq6")
+tags = {
+"artist": "Kenney",
+"comment": "www.kenney.nl"
+}
+
+[node name="Options" type="Control" unique_id=1749887434]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_beskx")
+script = ExtResource("2_xyvf4")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1493539139]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 75
+theme_override_constants/margin_bottom = 50
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=1326111309]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer" unique_id=1404712941]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=1381527064]
+layout_mode = 2
+text = "Options"
+label_settings = ExtResource("2_ckk2h")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=63169051]
+visible = false
+layout_mode = 2
+
+[node name="TabContainer" type="TabContainer" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=529248141]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_selected_color = Color(1.0776821, 1.0776821, 1.0776821, 1)
+theme_override_colors/font_unselected_color = Color(0.4390491, 0.43904912, 0.43904912, 1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_5hrqm")
+theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_befm5")
+theme_override_styles/tab_selected = SubResource("StyleBoxFlat_r0po8")
+tab_alignment = 1
+current_tab = 1
+tab_0/icon = ExtResource("4_befm5")
+tab_1/icon = ExtResource("5_r0po8")
+tab_2/title = "Accessibility"
+tab_2/icon = ExtResource("6_f1mve")
+tab_2/disabled = true
+
+[node name="Graphics" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer" unique_id=151514350]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Graphics" unique_id=574438702]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Graphics/VBoxContainer" unique_id=913839382]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Graphics/VBoxContainer" unique_id=314724014]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.32172796, 0.32172796, 0.32172796, 1)
+text = "Graphics Tab Disabled in Web Build"
+label_settings = SubResource("LabelSettings_5hrqm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control2" type="Control" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Graphics/VBoxContainer" unique_id=712757149]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Audio" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer" unique_id=1716982738]
+layout_mode = 2
+script = ExtResource("8_5hrqm")
+metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio" unique_id=566201296]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio/MarginContainer" unique_id=990178670]
+layout_mode = 2
+
+[node name="Main" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer" unique_id=984333339]
+custom_minimum_size = Vector2(0, 50.38)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/Main" unique_id=474790706]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Main Volume"
+label_settings = ExtResource("7_r0po8")
+horizontal_alignment = 1
+
+[node name="MainSlider" type="HSlider" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/Main" unique_id=1776425070]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.05
+value = 0.7
+tick_count = 6
+
+[node name="Sounds" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer" unique_id=791456541]
+custom_minimum_size = Vector2(0, 50.38)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/Sounds" unique_id=70657545]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Sound Effects Volume"
+label_settings = ExtResource("7_r0po8")
+horizontal_alignment = 1
+
+[node name="SoundSlider" type="HSlider" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/Sounds" unique_id=1695307863]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.05
+value = 0.7
+tick_count = 6
+
+[node name="Music" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer" unique_id=67298266]
+custom_minimum_size = Vector2(0, 50.38)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/Music" unique_id=1092886216]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Music Volume"
+label_settings = ExtResource("7_r0po8")
+horizontal_alignment = 1
+
+[node name="MusicSlider" type="HSlider" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/Music" unique_id=1708534294]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.05
+value = 0.7
+tick_count = 6
+
+[node name="Accessability" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer" unique_id=1447047176]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+metadata/_tab_name = "Accessibility"
+
+[node name="SaveClose" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=1438455664]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Save and Close"
+
+[node name="Sounds" type="Node" parent="." unique_id=564242605]
+
+[node name="Hover" type="AudioStreamPlayer" parent="Sounds" unique_id=229030385]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamOggVorbis_ettqk")
+max_polyphony = 4
+bus = &"Sounds"
+
+[node name="Click" type="AudioStreamPlayer" parent="Sounds" unique_id=1401326293]
+unique_name_in_owner = true
+stream = ExtResource("4_xyvf4")
+bus = &"Sounds"
+
+[connection signal="tab_selected" from="MarginContainer/PanelContainer/VBoxContainer/TabContainer" to="." method="_on_tab_container_tab_selected"]
+[connection signal="value_changed" from="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/Main/MainSlider" to="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio" method="_on_main_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/Sounds/SoundSlider" to="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio" method="_on_sound_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/Music/MusicSlider" to="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio" method="_on_music_slider_value_changed"]
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/VBoxContainer/SaveClose" to="." method="_on_save_close_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/SaveClose" to="." method="_on_save_close_pressed"]

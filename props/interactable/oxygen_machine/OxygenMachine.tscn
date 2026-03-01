@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://crevapxi2epdy"]
+
+[ext_resource type="Script" uid="uid://07j7ay4877h5" path="res://props/interactable/oxygen_machine/oxygen_machine.gd" id="1_bjxm1"]
+[ext_resource type="PackedScene" uid="uid://bfh2ungn3hjun" path="res://props/interactable/oxygen_machine/oxygen_machine.glb" id="2_bjxm1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bjxm1"]
+size = Vector3(0.7578125, 1.1279297, 0.30444336)
+
+[node name="OxygenMachine" type="StaticBody3D" unique_id=1501453602]
+script = ExtResource("1_bjxm1")
+metadata/_custom_type_script = "uid://bl7efj28lf80j"
+
+[node name="blockbench_export" parent="." unique_id=1135836838 instance=ExtResource("2_bjxm1")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1246990453]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.56261194, 0.03161621)
+shape = SubResource("BoxShape3D_bjxm1")
