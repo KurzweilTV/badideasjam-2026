@@ -36,6 +36,7 @@ material = SubResource("StandardMaterial3D_g7g4h")
 
 [node name="Character" parent="." unique_id=286193571 instance=ExtResource("1_bmh7g")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.3370229, -0.048713923, 0.40063608)
+base_oxygen_loss_rate = 1.5
 base_speed = 2.0
 sprint_speed = 3.0
 
