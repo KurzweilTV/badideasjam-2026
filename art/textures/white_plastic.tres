@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bwxyawivitn7s"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tq2h6"]
+width = 256
+height = 256
+seamless = true
+
+[resource]
+albedo_color = Color(0.91616625, 0.94451416, 1, 1)
+roughness = 0.2
+roughness_texture = SubResource("NoiseTexture2D_tq2h6")
+clearcoat_enabled = true
+clearcoat = 0.6
+clearcoat_roughness = 0.05

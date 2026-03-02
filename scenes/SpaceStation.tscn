@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://b7twqfsdm4t1a"]
+
+[ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://characters/player/character.tscn" id="1_tq2h6"]
+[ext_resource type="Material" uid="uid://bwxyawivitn7s" path="res://art/textures/white_plastic.tres" id="2_qisfu"]
+[ext_resource type="PackedScene" uid="uid://b0qyedg63defo" path="res://props/interactable/station_door/StationDoor.tscn" id="3_wvlmu"]
+[ext_resource type="PackedScene" uid="uid://crevapxi2epdy" path="res://props/interactable/oxygen_machine/OxygenMachine.tscn" id="4_26drn"]
+
+[sub_resource type="Environment" id="Environment_tq2h6"]
+background_mode = 1
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="SpaceStation" type="Node3D" unique_id=805722603]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1876966248]
+environment = SubResource("Environment_tq2h6")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1430286072]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_color = Color(0, 0, 0, 1)
+shadow_enabled = true
+
+[node name="Character" parent="." unique_id=1159670658 instance=ExtResource("1_tq2h6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.24745475, 0, 0.8445796)
+
+[node name="Greybox" type="CSGCombiner3D" parent="." unique_id=92833717]
+calculate_tangents = false
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Greybox" unique_id=33064857]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.954033, -0.4909668, 0)
+size = Vector3(67.908066, 0.2, 61.319336)
+material = ExtResource("2_qisfu")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Greybox" unique_id=1594238183]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.4090333, -6.5)
+size = Vector3(14, 4, 1)
+material = ExtResource("2_qisfu")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Greybox" unique_id=1720942170]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.4090333, 7.5)
+size = Vector3(14, 4, 1)
+material = ExtResource("2_qisfu")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Greybox" unique_id=995812739]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3, 1.4090333, 0.5)
+size = Vector3(14, 4, 1)
+material = ExtResource("2_qisfu")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Greybox" unique_id=1110360975]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11, 1.4090333, -4.883301)
+size = Vector3(3.2333984, 4, 1)
+material = ExtResource("2_qisfu")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Greybox" unique_id=1043739884]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11, 1.4090333, 5.467346)
+size = Vector3(4.0653076, 4, 1)
+material = ExtResource("2_qisfu")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Greybox" unique_id=1439417055]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11, 3.009192, -0.017765522)
+size = Vector3(6.951828, 0.7996826, 1)
+material = ExtResource("2_qisfu")
+
+[node name="Doors" type="Node3D" parent="." unique_id=454200293]
+
+[node name="StationDoor" parent="Doors" unique_id=865721917 instance=ExtResource("3_wvlmu")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 11, -0.43314874, 0)
+door_locked = true
+
+[node name="Lights" type="Node3D" parent="." unique_id=846340871]
+
+[node name="TestLight" type="OmniLight3D" parent="Lights" unique_id=360341179]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25000003, 2.580957e-08, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301263, 4.000001, 3, 0)
+light_energy = 3.0
+light_bake_mode = 1
+omni_range = 14.0
+omni_attenuation = 2.0
+
+[node name="TestLight2" type="OmniLight3D" parent="Lights" unique_id=278097279]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25000003, 2.580957e-08, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301263, 18.390373, 3, 0)
+light_energy = 3.0
+light_bake_mode = 1
+omni_range = 14.0
+omni_attenuation = 2.0
+
+[node name="TestLight3" type="OmniLight3D" parent="Lights" unique_id=518468625]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25000003, 2.580957e-08, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301263, 30.596676, 3, 0)
+light_energy = 3.0
+light_bake_mode = 1
+omni_range = 14.0
+omni_attenuation = 2.0
+
+[node name="TestLight4" type="OmniLight3D" parent="Lights" unique_id=351681446]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25000003, 2.580957e-08, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301263, 43.56087, 3, 0)
+light_energy = 3.0
+light_bake_mode = 1
+omni_range = 14.0
+omni_attenuation = 2.0
+
+[node name="Props" type="Node3D" parent="." unique_id=539097266]
+
+[node name="OxygenMachine" parent="Props" unique_id=1501453602 instance=ExtResource("4_26drn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.834785, 0.96442723, -5.9215584)
