@@ -177,6 +177,7 @@ func _ready():
 	initialize_animations()
 	check_controls()
 	enter_normal_state()
+	_update_oxygen_ui()
 	
 	if OS.get_name() == "Web":
 		Input.set_use_accumulated_input(false)
@@ -187,7 +188,6 @@ func _process(delta):
 		handle_pausing()
 
 	update_debug_menu_per_frame()
-
 	use_oxygen(delta)
 
 	var hit := ray_cast_3d.get_collider() as Interactable
@@ -195,8 +195,14 @@ func _process(delta):
 
 	%InteractCursor.visible = can_show
 
-	if can_show and Input.is_action_just_pressed("interact"):
-		hit.interact(self)
+	if can_show:
+		if hit is StationDoor and hit.door_locked: # let the player know the door is locked
+			%InteractCursor.modulate = Color(0.55, 0.0, 0.0, 1.0)
+		else:
+			%InteractCursor.modulate = Color(1, 1, 1)
+
+		if Input.is_action_just_pressed("interact"):
+			hit.interact(self)
 
 
 func _physics_process(delta): # Most things happen here.
@@ -528,11 +534,14 @@ func handle_pausing():
 
 func use_oxygen(delta) -> void:
 	oxygen_level -= oxygen_loss_rate * delta
+	if oxygen_level <= 20.0:
+		oxygen_bar.modulate = Color.RED
+	else: oxygen_bar.modulate = Color.WHITE
 
 func refill_oxygen() -> void:
 	oxygen_level = max_oxygen_level
 
 func _update_oxygen_ui() -> void:
-	oxygen_bar.value = oxygen_level
+	create_tween().tween_property(oxygen_bar, "value", oxygen_level, 0.2)
 
 #endregion

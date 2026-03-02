@@ -17,3 +17,11 @@ metadata/_custom_type_script = "uid://bl7efj28lf80j"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1246990453]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.56261194, 0.03161621)
 shape = SubResource("BoxShape3D_bjxm1")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=408636090]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2913862, 0.060290694)
+light_color = Color(0, 1, 0.46666667, 1)
+light_energy = 0.2
+light_indirect_energy = 0.2
+omni_range = 3.0
+omni_attenuation = 2.0

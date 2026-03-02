@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://g57eb3gtci1d" path="res://art/cursors/hand_open.png" id="4_oetk0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kp17n"]
-albedo_color = Color(0.909804, 0.596078, 0, 1)
+albedo_color = Color(1, 0.5176471, 1, 1)
 clearcoat_enabled = true
 clearcoat_roughness = 0.2
 
