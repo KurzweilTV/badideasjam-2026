@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://m37nk17pyn12"
-path="res://.godot/imported/texture.png-a7642c8fdfa171b316ac90357da53b0a.ctex"
+uid="uid://b6prt4cr782vq"
+path="res://.godot/imported/texture_e.png-2ed1ebb1aad94d2a633371426aa9d065.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://props/interactable/oxygen_machine/texture.png"
-dest_files=["res://.godot/imported/texture.png-a7642c8fdfa171b316ac90357da53b0a.ctex"]
+source_file="res://props/interactable/oxygen_machine/texture_e.png"
+dest_files=["res://.godot/imported/texture_e.png-2ed1ebb1aad94d2a633371426aa9d065.ctex"]
 
 [params]
 
@@ -23,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -37,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
