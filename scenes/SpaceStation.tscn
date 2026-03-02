@@ -1,12 +1,18 @@
 [gd_scene format=3 uid="uid://b7twqfsdm4t1a"]
 
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://characters/player/character.tscn" id="1_tq2h6"]
-[ext_resource type="Material" uid="uid://bwxyawivitn7s" path="res://art/textures/white_plastic.tres" id="2_qisfu"]
+[ext_resource type="PackedScene" uid="uid://b5rbdqpotg6em" path="res://props/buildings/floor/FloorTile.tscn" id="2_qisfu"]
 [ext_resource type="PackedScene" uid="uid://b0qyedg63defo" path="res://props/interactable/station_door/StationDoor.tscn" id="3_wvlmu"]
 [ext_resource type="PackedScene" uid="uid://crevapxi2epdy" path="res://props/interactable/oxygen_machine/OxygenMachine.tscn" id="4_26drn"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tq2h6"]
+
+[sub_resource type="Sky" id="Sky_qisfu"]
+sky_material = SubResource("ProceduralSkyMaterial_tq2h6")
+
 [sub_resource type="Environment" id="Environment_tq2h6"]
-background_mode = 1
+background_mode = 2
+sky = SubResource("Sky_qisfu")
 tonemap_mode = 2
 glow_enabled = true
 
@@ -24,81 +30,77 @@ shadow_enabled = true
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.24745475, 0, 0.8445796)
 base_oxygen_loss_rate = 0.5
 
-[node name="Greybox" type="CSGCombiner3D" parent="." unique_id=92833717]
-calculate_tangents = false
-use_collision = true
+[node name="Map" type="Node3D" parent="." unique_id=697862072]
 
-[node name="Floor" type="CSGBox3D" parent="Greybox" unique_id=33064857]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.517426, -0.48199797, 7.8838377)
-size = Vector3(67.908066, 0.2, 61.319336)
-material = ExtResource("2_qisfu")
+[node name="Floor" type="Node3D" parent="Map" unique_id=1957712289]
 
-[node name="Cieling" type="CSGBox3D" parent="Greybox" unique_id=904608272]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.517426, 2.6494455, 7.8838377)
-size = Vector3(67.908066, 0.2, 61.319336)
-material = ExtResource("2_qisfu")
+[node name="FloorTile" parent="Map/Floor" unique_id=1724183227 instance=ExtResource("2_qisfu")]
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Greybox" unique_id=1594238183]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.0911012, -6.5)
-size = Vector3(14, 3.3641357, 1)
-material = ExtResource("2_qisfu")
+[node name="FloorTile2" parent="Map/Floor" unique_id=1453186157 instance=ExtResource("2_qisfu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Greybox" unique_id=1720942170]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5130751, 7.5)
-size = Vector3(14, 4.2332764, 1)
-material = ExtResource("2_qisfu")
+[node name="FloorTile3" parent="Map/Floor" unique_id=1863700308 instance=ExtResource("2_qisfu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="Greybox" unique_id=995812739]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3, 1.0979371, 0.5)
-size = Vector3(14, 3.3778076, 1)
-material = ExtResource("2_qisfu")
+[node name="FloorTile4" parent="Map/Floor" unique_id=1450002369 instance=ExtResource("2_qisfu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="Greybox" unique_id=1110360975]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11, 1.0608277, -4.883301)
-size = Vector3(3.233, 3.3, 1)
-material = ExtResource("2_qisfu")
+[node name="FloorTile5" parent="Map/Floor" unique_id=1596925740 instance=ExtResource("2_qisfu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -3)
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="Greybox" unique_id=1043739884]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11, 1.0232301, 5.467346)
-size = Vector3(4.0653076, 3.2283936, 1)
-material = ExtResource("2_qisfu")
+[node name="FloorTile6" parent="Map/Floor" unique_id=1782054132 instance=ExtResource("2_qisfu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -3)
 
-[node name="Doors" type="Node3D" parent="." unique_id=454200293]
+[node name="FloorTile7" parent="Map/Floor" unique_id=1510831649 instance=ExtResource("2_qisfu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
 
-[node name="StationDoor" parent="Doors" unique_id=865721917 instance=ExtResource("3_wvlmu")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 11, -0.43314874, 0)
+[node name="FloorTile8" parent="Map/Floor" unique_id=1657086885 instance=ExtResource("2_qisfu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -6)
 
-[node name="Lights" type="Node3D" parent="." unique_id=846340871]
+[node name="FloorTile9" parent="Map/Floor" unique_id=988380213 instance=ExtResource("2_qisfu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -6)
 
-[node name="TestLight" type="OmniLight3D" parent="Lights" unique_id=360341179]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25000003, 2.580957e-08, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301263, 4.000001, 1.6767988, 0)
-light_energy = 3.0
-light_bake_mode = 1
-omni_range = 14.0
-omni_attenuation = 2.0
+[node name="FloorTile10" parent="Map/Floor" unique_id=282723197 instance=ExtResource("2_qisfu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
 
-[node name="TestLight2" type="OmniLight3D" parent="Lights" unique_id=278097279]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25000003, 2.580957e-08, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301263, 18.390373, 1.6767988, 0)
-light_energy = 3.0
-light_bake_mode = 1
-omni_range = 14.0
-omni_attenuation = 2.0
+[node name="FloorTile17" parent="Map/Floor" unique_id=1476050692 instance=ExtResource("2_qisfu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 
-[node name="TestLight3" type="OmniLight3D" parent="Lights" unique_id=518468625]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25000003, 2.580957e-08, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301263, 30.596676, 1.6767988, 0)
-light_energy = 3.0
-light_bake_mode = 1
-omni_range = 14.0
-omni_attenuation = 2.0
+[node name="FloorTile18" parent="Map/Floor" unique_id=1300037197 instance=ExtResource("2_qisfu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 3)
 
-[node name="TestLight4" type="OmniLight3D" parent="Lights" unique_id=351681446]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25000003, 2.580957e-08, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301263, 43.56087, 1.6767988, 0)
-light_energy = 3.0
-light_bake_mode = 1
-omni_range = 14.0
-omni_attenuation = 2.0
+[node name="FloorTile19" parent="Map/Floor" unique_id=500784870 instance=ExtResource("2_qisfu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 3)
 
-[node name="Props" type="Node3D" parent="." unique_id=539097266]
+[node name="FloorTile20" parent="Map/Floor" unique_id=978098760 instance=ExtResource("2_qisfu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 3)
 
-[node name="OxygenMachine" parent="Props" unique_id=1501453602 instance=ExtResource("4_26drn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.834785, 0.59439754, -5.9215584)
+[node name="FloorTile21" parent="Map/Floor" unique_id=542707 instance=ExtResource("2_qisfu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="FloorTile22" parent="Map/Floor" unique_id=1956378619 instance=ExtResource("2_qisfu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 6)
+
+[node name="FloorTile23" parent="Map/Floor" unique_id=1478796490 instance=ExtResource("2_qisfu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 6)
+
+[node name="FloorTile24" parent="Map/Floor" unique_id=1472485417 instance=ExtResource("2_qisfu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 6)
+
+[node name="FloorTile11" parent="Map/Floor" unique_id=1045067912 instance=ExtResource("2_qisfu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -3)
+
+[node name="FloorTile12" parent="Map/Floor" unique_id=4552024 instance=ExtResource("2_qisfu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -6)
+
+[node name="Props" type="Node3D" parent="Map" unique_id=539097266]
+
+[node name="Lights" type="Node3D" parent="Map" unique_id=846340871]
+
+[node name="Doors" type="Node3D" parent="Map" unique_id=454200293]
+
+[node name="StationDoor" parent="." unique_id=511145225 instance=ExtResource("3_wvlmu")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10.7645645, 0.113165975, 0)
+
+[node name="OxygenMachine" parent="." unique_id=1501453602 instance=ExtResource("4_26drn")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10.406525, 1.2074115, 2.7564833)

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b5rbdqpotg6em"]
+
+[ext_resource type="PackedScene" uid="uid://babhrpuisb7mv" path="res://props/buildings/floor/map_floortile.glb" id="1_jmyo7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jmyo7"]
+size = Vector3(2.9997559, 0.12365723, 3.0019531)
+
+[node name="FloorTile" type="StaticBody3D" unique_id=1724183227]
+
+[node name="blockbench_export" parent="." unique_id=1258704577 instance=ExtResource("1_jmyo7")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2015574609]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0694204, 0)
+shape = SubResource("BoxShape3D_jmyo7")

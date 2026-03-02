@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://criho73rgsfve"
-path="res://.godot/imported/station_door.glb-e0e25a661978ec4ceb3532c8ad003161.scn"
+uid="uid://babhrpuisb7mv"
+path="res://.godot/imported/map_floortile.glb-6e3a7d17e52014b2fdaa48bae178f8f2.scn"
 
 [deps]
 
-source_file="res://props/interactable/station_door/station_door.glb"
-dest_files=["res://.godot/imported/station_door.glb-e0e25a661978ec4ceb3532c8ad003161.scn"]
+source_file="res://props/buildings/floor/map_floortile.glb"
+dest_files=["res://.godot/imported/map_floortile.glb-6e3a7d17e52014b2fdaa48bae178f8f2.scn"]
 
 [params]
 

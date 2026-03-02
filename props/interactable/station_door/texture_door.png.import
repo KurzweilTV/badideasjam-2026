@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8a2kyf5abjo8"
-path.s3tc="res://.godot/imported/texture.png-f79a328eb01fc87119eacc8f54810cb0.s3tc.ctex"
+uid="uid://cuxfgkqnno2cm"
+path.s3tc="res://.godot/imported/texture_door.png-c4ee2a6a287dd30ef95313f4d55fabd1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://props/interactable/station_door/texture.png"
-dest_files=["res://.godot/imported/texture.png-f79a328eb01fc87119eacc8f54810cb0.s3tc.ctex"]
+source_file="res://props/interactable/station_door/texture_door.png"
+dest_files=["res://.godot/imported/texture_door.png-c4ee2a6a287dd30ef95313f4d55fabd1.s3tc.ctex"]
 
 [params]
 
