@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://criho73rgsfve"
-path="res://.godot/imported/station_door.glb-e0e25a661978ec4ceb3532c8ad003161.scn"
+uid="uid://bplojigj340v8"
+path="res://.godot/imported/oxygenbottle.glb-3c34a49af7e2cb62fe5ecd33df68fa97.scn"
 
 [deps]
 
-source_file="res://props/interactable/station_door/station_door.glb"
-dest_files=["res://.godot/imported/station_door.glb-e0e25a661978ec4ceb3532c8ad003161.scn"]
+source_file="res://props/interactable/oxygen_bottle/oxygenbottle.glb"
+dest_files=["res://.godot/imported/oxygenbottle.glb-3c34a49af7e2cb62fe5ecd33df68fa97.scn"]
 
 [params]
 
@@ -37,15 +37,6 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={
-"nodes": {
-"PATH:door_gap_bot": {
-"import/skip_import": true
-},
-"PATH:door_gap_top": {
-"import/skip_import": true
-}
-}
-}
+_subresources={}
 gltf/naming_version=2
 gltf/embedded_image_handling=1

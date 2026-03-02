@@ -13,6 +13,8 @@ extends CharacterBody3D
 
 ## Player gameplay variables
 @export_category("Gameplay")
+# The players hands
+@export var inventory: Inventory
 ## The main game resource - kill player at 0.0
 @export var oxygen_level: float = 50.0:
 	set(value):
@@ -174,6 +176,7 @@ func _ready():
 	if default_reticle:
 		change_reticle(default_reticle)
 
+	initialize_inventory()
 	initialize_animations()
 	check_controls()
 	enter_normal_state()
@@ -538,10 +541,13 @@ func use_oxygen(delta) -> void:
 		oxygen_bar.modulate = Color.RED
 	else: oxygen_bar.modulate = Color.WHITE
 
-func refill_oxygen() -> void:
-	oxygen_level = max_oxygen_level
+func give_oxygen(amount: float) -> void:
+	oxygen_level += amount
 
 func _update_oxygen_ui() -> void:
 	create_tween().tween_property(oxygen_bar, "value", oxygen_level, 0.2)
 
 #endregion
+
+func initialize_inventory() -> void:
+	inventory = Inventory.new()

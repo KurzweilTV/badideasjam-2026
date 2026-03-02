@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://doy1ps6nya7no"]
+
+[ext_resource type="PackedScene" uid="uid://bplojigj340v8" path="res://props/interactable/oxygen_bottle/oxygenbottle.glb" id="1_11fe0"]
+[ext_resource type="Script" uid="uid://c51uweqxu77qe" path="res://props/interactable/oxygen_bottle/oxygen_bottle.gd" id="1_iv5fw"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_iv5fw"]
+points = PackedVector3Array(-0.13100131, -3.059022e-05, -0.02310516, -2.5629997e-05, -0.03125, -2.0563602e-05, -0.11520319, -3.059022e-05, 0.06650554, -0.13100131, 0.62493575, -0.02310516, -0.085530415, -3.059022e-05, -0.101905994, -2.5629997e-05, -3.059022e-05, -0.13302222, 0.08547914, -3.059022e-05, -0.101905994, 0.13097568, -3.059022e-05, -0.02310516, 0.11517757, -3.059022e-05, 0.06650554, 0.04547091, -3.059022e-05, 0.125, -0.045522176, -3.059022e-05, 0.125, -0.11520319, 0.62493575, 0.06650554, -0.06852691, 0.8125, -0.013861217, -0.085530415, 0.62493575, -0.101905994, -2.5629997e-05, 0.62493575, -0.13302222, 0.08547914, 0.62493575, -0.101905994, 0.13097568, 0.62493575, -0.02310516, 0.11517757, 0.62493575, 0.06650554, 0.04547091, 0.62493575, 0.125, -0.045522176, 0.62493575, 0.125, -0.060243152, 0.8125, 0.03233324, -0.04472714, 0.8125, -0.05449921, -2.5629997e-05, 0.8125, -0.070537195, 0.044701517, 0.8125, -0.05449921, 0.06847565, 0.8125, -0.013861217, 0.060217544, 0.8125, 0.03233324, 0.023774132, 0.8125, 0.06248972, -0.023799755, 0.8125, 0.06248972)
+
+[node name="OxygenBottle" type="RigidBody3D" unique_id=385678588]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_iv5fw")
+
+[node name="blockbench_export" parent="." unique_id=1586085588 instance=ExtResource("1_11fe0")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=581771899]
+shape = SubResource("ConvexPolygonShape3D_iv5fw")

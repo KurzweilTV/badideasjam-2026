@@ -1,5 +1,5 @@
 class_name Interactable
-extends StaticBody3D
+extends PhysicsBody3D
 
 @export var enabled: bool = true
 @export var cooldown_time: float = 2.0
