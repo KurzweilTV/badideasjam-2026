@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6prt4cr782vq"
-path="res://.godot/imported/texture_e.png-2ed1ebb1aad94d2a633371426aa9d065.ctex"
+uid="uid://dw0tafbret1du"
+path="res://.godot/imported/HDR_blue_local_star.jpg-da4dc21271a24e2526baff630176aed9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://props/interactable/oxygen_machine/texture_e.png"
-dest_files=["res://.godot/imported/texture_e.png-2ed1ebb1aad94d2a633371426aa9d065.ctex"]
+source_file="res://art/textures/HDR_blue_local_star.jpg"
+dest_files=["res://.godot/imported/HDR_blue_local_star.jpg-da4dc21271a24e2526baff630176aed9.ctex"]
 
 [params]
 
@@ -25,7 +25,7 @@ compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false
 mipmaps/limit=-1
-roughness/mode=0
+roughness/mode=1
 roughness/src_normal=""
 process/channel_remap/red=0
 process/channel_remap/green=1

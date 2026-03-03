@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dn3iiea7wuxik"]
+
+[ext_resource type="Texture2D" uid="uid://m37nk17pyn12" path="res://props/interactable/oxygen_machine/texture.png" id="1_3h3fg"]
+[ext_resource type="Texture2D" uid="uid://b6prt4cr782vq" path="res://props/interactable/oxygen_machine/texture_e.png" id="2_mcmxs"]
+
+[resource]
+resource_name = "material_0"
+transparency = 2
+alpha_scissor_threshold = 0.05
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_3h3fg")
+emission_enabled = true
+emission = Color(0.032295637, 0.56754786, 0, 1)
+emission_operator = 1
+emission_texture = ExtResource("2_mcmxs")
+texture_filter = 0
+texture_repeat = false

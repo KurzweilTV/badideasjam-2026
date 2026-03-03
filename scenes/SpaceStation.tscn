@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://b7twqfsdm4t1a"]
 
+[ext_resource type="Texture2D" uid="uid://dw0tafbret1du" path="res://art/textures/HDR_blue_local_star.jpg" id="1_go4jk"]
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://characters/player/character.tscn" id="1_tq2h6"]
 [ext_resource type="Script" uid="uid://n20htiehduqb" path="res://inventory.gd" id="2_ena27"]
 [ext_resource type="PackedScene" uid="uid://b5rbdqpotg6em" path="res://props/buildings/floor/FloorTile.tscn" id="2_qisfu"]
@@ -8,18 +9,21 @@
 [ext_resource type="PackedScene" uid="uid://crevapxi2epdy" path="res://props/interactable/oxygen_machine/OxygenMachine.tscn" id="4_26drn"]
 [ext_resource type="PackedScene" uid="uid://doy1ps6nya7no" path="res://props/interactable/oxygen_bottle/OxygenBottle.tscn" id="7_7iggb"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_880v8"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_2crfw"]
+panorama = ExtResource("1_go4jk")
 
 [sub_resource type="Sky" id="Sky_ena27"]
-sky_material = SubResource("ProceduralSkyMaterial_880v8")
+sky_material = SubResource("PanoramaSkyMaterial_2crfw")
 
 [sub_resource type="Environment" id="Environment_7iggb"]
 background_mode = 2
 sky = SubResource("Sky_ena27")
 tonemap_mode = 2
+ssao_enabled = true
 glow_enabled = true
+fog_light_energy = 0.05
+volumetric_fog_density = 0.0106
+volumetric_fog_albedo = Color(0, 1, 1, 1)
 
 [sub_resource type="Resource" id="Resource_7iggb"]
 script = ExtResource("2_ena27")
@@ -31,13 +35,17 @@ metadata/_custom_type_script = "uid://n20htiehduqb"
 environment = SubResource("Environment_7iggb")
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=1950703982]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+transform = Transform3D(-0.36985964, -0.32042527, 0.8720846, 0.75238734, 0.44739473, 0.48347855, -0.5450847, 0.83496463, 0.075610615, 0, 0, 0)
+light_color = Color(0.5882353, 0.6901961, 0.8666667, 1)
 shadow_enabled = true
+sky_mode = 1
 
 [node name="Character" parent="." unique_id=1159670658 instance=ExtResource("1_tq2h6")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.24745475, 0, 0.8445796)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.3474545, 0, 0.8445796)
 inventory = SubResource("Resource_7iggb")
 base_oxygen_loss_rate = 0.5
+base_speed = 2.0
+sprint_speed = 4.0
 
 [node name="Map" type="Node3D" parent="." unique_id=697862072]
 
@@ -329,9 +337,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -6)
 [node name="Props" type="Node3D" parent="Map" unique_id=539097266]
 
 [node name="OxygenMachine" parent="Map/Props" unique_id=1501453602 instance=ExtResource("4_26drn")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10.406525, 1.2074115, 2.7564833)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10.396524, 1.4074116, 2.7564833)
 
 [node name="Lights" type="Node3D" parent="Map" unique_id=846340871]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Map/Lights" unique_id=1895594644]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.06, 2.6499999, 0)
+light_color = Color(0, 1, 1, 1)
+light_energy = 0.845
+omni_range = 3.0
+omni_attenuation = 2.0
 
 [node name="Doors" type="Node3D" parent="Map" unique_id=454200293]
 
@@ -348,4 +363,4 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 24.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.001566, 0.113165975, -4.7443476)
 
 [node name="OxygenBottle" parent="." unique_id=385678588 instance=ExtResource("7_7iggb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1, 1.7, -0.1)
+transform = Transform3D(1, 0, 0, 0, 0.9659258, -0.25881904, 0, 0.25881904, 0.9659258, 6.1, 1.7, -0.1)
