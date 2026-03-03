@@ -1,6 +1,9 @@
 class_name StationDoor
 extends Interactable
 
+enum KEYS {None, Green, Blue, Orange}
+
+@export var required_access: KEYS = KEYS.None
 @export var door_locked: bool = false
 @export var auto_close_time: float = 4.0
 var door_open: bool = false
@@ -12,7 +15,7 @@ func _on_interact(_interactor: Player) -> bool:
 	if door_open:
 		close_door()
 	else:
-		open_door()
+		open_door(_interactor)
 		_start_auto_close_timer()
 	return true
 
@@ -26,9 +29,11 @@ func auto_close() -> void:
 	if door_open:
 		close_door()
 	
-func open_door() -> void:
-	anim.play("door_open")
-	door_open = true
+func open_door(player: Player) -> void:
+	if player.access_level >= required_access:
+		anim.play("door_open")
+		door_open = true
+	else: print("Needs %s Key" % required_access)
 		
 func close_door() -> void:
 	anim.play("door_close")

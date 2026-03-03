@@ -2,12 +2,24 @@ extends SpotLight3D
 
 @onready var click: AudioStreamPlayer3D = $AudioStreamPlayer3D
 
+var is_on: bool = false
+
+func _ready() -> void:
+	light_energy = 0.0
+
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("flashlight"):
-		self.visible = !self.visible
-		if visible:
+		is_on = !is_on
+		if is_on:
 			click.pitch_scale = 2.0
-			click.play()
-		else: 
+		else:
 			click.pitch_scale = 1.5
-			click.play()
+		click.play()
+		_ramp_energy(is_on)
+
+func _ramp_energy(turn_on: bool) -> void:
+	var target: float = 1.5 if turn_on else 0.0
+	var tween: Tween = create_tween()
+	tween.set_trans(Tween.TRANS_QUAD)
+	tween.set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "light_energy", target, 0.12)

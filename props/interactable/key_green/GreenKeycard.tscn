@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b4jvh0gxuoce7"]
+
+[ext_resource type="PackedScene" uid="uid://depuwdm0ckah8" path="res://props/interactable/key_green/green_keycard.glb" id="1_3r03n"]
+[ext_resource type="Script" uid="uid://bfv0kqjpyqnxo" path="res://props/interactable/keycard.gd" id="1_oxyp5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oxyp5"]
+size = Vector3(0.3, 0.03, 0.14999999)
+
+[node name="GreenKeycard" type="RigidBody3D" unique_id=198432991]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_oxyp5")
+
+[node name="blockbench_export" parent="." unique_id=1333006626 instance=ExtResource("1_3r03n")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=51952011]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.065000005, 0.005000001)
+shape = SubResource("BoxShape3D_oxyp5")

@@ -5,6 +5,8 @@
 class_name Player
 extends CharacterBody3D
 
+enum KEYS {None, Green, Blue, Orange}
+
 @onready var ray_cast_3d: RayCast3D = %RayCast3D
 @onready var oxygen_bar: ProgressBar = %OxygenBar
 @onready var interact_cursor: TextureRect = %InteractCursor
@@ -13,8 +15,7 @@ extends CharacterBody3D
 
 ## Player gameplay variables
 @export_category("Gameplay")
-# The players hands
-@export var inventory: Inventory
+@export var access_level: KEYS = KEYS.None
 ## The main game resource - kill player at 0.0
 @export var oxygen_level: float = 50.0:
 	set(value):
@@ -176,7 +177,6 @@ func _ready():
 	if default_reticle:
 		change_reticle(default_reticle)
 
-	initialize_inventory()
 	initialize_animations()
 	check_controls()
 	enter_normal_state()
@@ -549,5 +549,6 @@ func _update_oxygen_ui() -> void:
 
 #endregion
 
-func initialize_inventory() -> void:
-	inventory = Inventory.new()
+func set_access(access) -> void:
+	access_level = access
+	print("Access Level set to level: %s" % access)

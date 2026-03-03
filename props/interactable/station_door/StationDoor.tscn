@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b0qyedg63defo"]
 
-[ext_resource type="Script" path="res://props/interactable/station_door/station_door.gd" id="1_a282m"]
+[ext_resource type="Script" uid="uid://5h6dq6hdy372" path="res://props/interactable/station_door/station_door.gd" id="1_a282m"]
 [ext_resource type="PackedScene" uid="uid://criho73rgsfve" path="res://props/interactable/station_door/station_door.glb" id="2_a282m"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a282m"]
