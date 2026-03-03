@@ -18,6 +18,7 @@ sky_material = SubResource("PanoramaSkyMaterial_2crfw")
 [sub_resource type="Environment" id="Environment_7iggb"]
 background_mode = 2
 sky = SubResource("Sky_ena27")
+sky_rotation = Vector3(0, 0.10471976, 0.61784655)
 tonemap_mode = 2
 ssao_enabled = true
 glow_enabled = true
@@ -35,7 +36,7 @@ metadata/_custom_type_script = "uid://n20htiehduqb"
 environment = SubResource("Environment_7iggb")
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=1950703982]
-transform = Transform3D(-0.36985964, -0.32042527, 0.8720846, 0.75238734, 0.44739473, 0.48347855, -0.5450847, 0.83496463, 0.075610615, 0, 0, 0)
+transform = Transform3D(-0.3698596, -0.32042524, 0.8720846, 0.7523872, 0.44739464, 0.48347855, -0.54508466, 0.8349645, 0.075610675, -0.4, 0, 0)
 light_color = Color(0.5882353, 0.6901961, 0.8666667, 1)
 shadow_enabled = true
 sky_mode = 1
@@ -339,10 +340,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -6)
 [node name="OxygenMachine" parent="Map/Props" unique_id=1501453602 instance=ExtResource("4_26drn")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10.396524, 1.4074116, 2.7564833)
 
+[node name="OxygenBottle" parent="Map/Props" unique_id=385678588 instance=ExtResource("7_7iggb")]
+transform = Transform3D(1, 0, 0, 0, 0.9659258, -0.25881904, 0, 0.25881904, 0.9659258, 6.1, 1.7, -0.1)
+
 [node name="Lights" type="Node3D" parent="Map" unique_id=846340871]
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Map/Lights" unique_id=1895594644]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.06, 2.6499999, 0)
+light_color = Color(0, 1, 1, 1)
+light_energy = 0.845
+omni_range = 3.0
+omni_attenuation = 2.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Map/Lights" unique_id=24314942]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.960001, 2.75, -6.2000003)
 light_color = Color(0, 1, 1, 1)
 light_energy = 0.845
 omni_range = 3.0
@@ -361,6 +372,3 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 24.0
 
 [node name="StationDoor4" parent="Map/Doors" unique_id=114871861 instance=ExtResource("3_wvlmu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.001566, 0.113165975, -4.7443476)
-
-[node name="OxygenBottle" parent="." unique_id=385678588 instance=ExtResource("7_7iggb")]
-transform = Transform3D(1, 0, 0, 0, 0.9659258, -0.25881904, 0, 0.25881904, 0.9659258, 6.1, 1.7, -0.1)
