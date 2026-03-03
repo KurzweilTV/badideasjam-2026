@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cc1m2a1obsyn4"]
 
 [ext_resource type="Script" uid="uid://hutuis63hgev" path="res://characters/player/character.gd" id="1_0t4e8"]
+[ext_resource type="Shader" uid="uid://dtdq85mbpv26v" path="res://shaders/pixel_camera.gdshader" id="2_bgcnw"]
 [ext_resource type="Script" uid="uid://cw2dxwfisutph" path="res://characters/player/flashlight.gd" id="2_k5tm5"]
 [ext_resource type="FontFile" uid="uid://cyq6ofxu3mgii" path="res://addons/fonts/CascadiaCode.ttf" id="3_hxnlu"]
 [ext_resource type="Script" uid="uid://dgfl3skp075ft" path="res://characters/player/EditorModule.gd" id="3_v3ckk"]
@@ -151,6 +152,12 @@ _data = {
 &"RESET": SubResource("Animation_j8cx7"),
 &"crouch": SubResource("Animation_5ec5e")
 }
+
+[sub_resource type="QuadMesh" id="QuadMesh_5ir01"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d6s3g"]
+render_priority = 0
+shader = ExtResource("2_bgcnw")
 
 [sub_resource type="Animation" id="Animation_gh776"]
 resource_name = "RESET"
@@ -446,6 +453,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="Camera" type="Camera3D" parent="Head" unique_id=775360523]
 
+[node name="PixelShader" type="MeshInstance3D" parent="Head/Camera" unique_id=1987337913]
+transform = Transform3D(2.2502186, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -3.412823e-08, 0, -0.78076273)
+mesh = SubResource("QuadMesh_5ir01")
+surface_material_override/0 = SubResource("ShaderMaterial_d6s3g")
+
 [node name="HeadbobAnimation" type="AnimationPlayer" parent="Head" unique_id=544939816]
 libraries/ = SubResource("AnimationLibrary_o0unb")
 blend_times = [&"RESET", &"RESET", 0.5, &"RESET", &"walk", 0.5, &"walk", &"RESET", 0.5]
@@ -485,6 +497,7 @@ grow_vertical = 2
 mouse_filter = 1
 
 [node name="DebugPanel" type="PanelContainer" parent="UserInterface" unique_id=716811236]
+visible = false
 layout_mode = 0
 offset_left = 10.0
 offset_top = 10.0
