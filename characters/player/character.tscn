@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://u5u7xxlvmcxx" path="res://characters/player/debug.gd" id="3_x1wcc"]
 [ext_resource type="AudioStream" uid="uid://cji82wy8pws7c" path="res://ui/sounds/switch11.ogg" id="3_ydn43"]
 [ext_resource type="Texture2D" uid="uid://g57eb3gtci1d" path="res://art/cursors/hand_open.png" id="4_oetk0"]
+[ext_resource type="Script" uid="uid://cmqt0rtxnw6cy" path="res://characters/player/footstep_manager.gd" id="5_5ir01"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kp17n"]
 albedo_color = Color(1, 0.5176471, 1, 1)
@@ -159,6 +160,16 @@ _data = {
 render_priority = 0
 shader = ExtResource("2_bgcnw")
 
+[sub_resource type="Gradient" id="Gradient_bgcnw"]
+offsets = PackedFloat32Array(0, 0.72159094, 0.8380682, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1, 0.19434938, 0.19434923, 0.19434929, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5ir01"]
+gradient = SubResource("Gradient_bgcnw")
+fill = 1
+fill_from = Vector2(0.50427353, 0.491453)
+fill_to = Vector2(0.525641, 0)
+
 [sub_resource type="Animation" id="Animation_gh776"]
 resource_name = "RESET"
 length = 0.001
@@ -238,6 +249,23 @@ tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
 "points": PackedFloat32Array(-0.05, -0.25, 0, 0.2, 0.005, 0, -0.2, 0.000186046, 0.2, 0.000186046, -0.05, -0.2, 0.005, 0.2, 0.005, 0, -0.2, 0, 0.2, 0, -0.05, -0.2, 0.005, 0.25, 0),
 "times": PackedFloat32Array(0, 0.5, 1, 1.5, 2)
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FootstepManager")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.43333334, 1.4333333),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"play_footstep"
+}, {
+"args": [],
+"method": &"play_footstep"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o0unb"]
@@ -383,16 +411,6 @@ _data = {
 &"land_right": SubResource("Animation_vsknp")
 }
 
-[sub_resource type="Gradient" id="Gradient_bgcnw"]
-offsets = PackedFloat32Array(0, 0.72159094, 0.8380682, 1)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1, 0.19434938, 0.19434923, 0.19434929, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_5ir01"]
-gradient = SubResource("Gradient_bgcnw")
-fill = 1
-fill_from = Vector2(0.50427353, 0.491453)
-fill_to = Vector2(0.525641, 0)
-
 [sub_resource type="Theme" id="Theme_wdf0f"]
 MarginContainer/constants/margin_bottom = 10
 MarginContainer/constants/margin_left = 10
@@ -469,14 +487,6 @@ visible = false
 mesh = SubResource("QuadMesh_5ir01")
 surface_material_override/0 = SubResource("ShaderMaterial_d6s3g")
 
-[node name="HeadbobAnimation" type="AnimationPlayer" parent="Head" unique_id=544939816]
-libraries/ = SubResource("AnimationLibrary_o0unb")
-blend_times = [&"RESET", &"RESET", 0.5, &"RESET", &"walk", 0.5, &"walk", &"RESET", 0.5]
-
-[node name="JumpAnimation" type="AnimationPlayer" parent="Head" unique_id=1392279506]
-libraries/ = SubResource("AnimationLibrary_qeg5r")
-speed_scale = 4.0
-
 [node name="RayCast3D" type="RayCast3D" parent="Head" unique_id=441467721]
 unique_name_in_owner = true
 target_position = Vector3(0, 0, -2)
@@ -496,6 +506,21 @@ script = ExtResource("2_k5tm5")
 stream = ExtResource("3_ydn43")
 pitch_scale = 2.0
 bus = &"Sounds"
+
+[node name="FootstepManager" type="Node3D" parent="Head" unique_id=2119996460]
+script = ExtResource("5_5ir01")
+
+[node name="FootstepPlayer" type="AudioStreamPlayer3D" parent="Head/FootstepManager" unique_id=1134813710]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3000001, 0)
+bus = &"Sounds"
+
+[node name="HeadbobAnimation" type="AnimationPlayer" parent="Head" unique_id=544939816]
+libraries/ = SubResource("AnimationLibrary_o0unb")
+blend_times = [&"RESET", &"RESET", 0.5, &"RESET", &"walk", 0.5, &"walk", &"RESET", 0.5]
+
+[node name="JumpAnimation" type="AnimationPlayer" parent="Head" unique_id=1392279506]
+libraries/ = SubResource("AnimationLibrary_qeg5r")
+speed_scale = 4.0
 
 [node name="UserInterface" type="Control" parent="." unique_id=683028152]
 layout_mode = 3
