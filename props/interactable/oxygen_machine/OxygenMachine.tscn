@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://07j7ay4877h5" path="res://props/interactable/oxygen_machine/oxygen_machine.gd" id="1_bjxm1"]
 [ext_resource type="Material" uid="uid://dn3iiea7wuxik" path="res://props/interactable/oxygen_machine/material_0.tres" id="2_4epnb"]
 [ext_resource type="Texture2D" uid="uid://m37nk17pyn12" path="res://props/interactable/oxygen_machine/texture.png" id="2_bjxm1"]
+[ext_resource type="AudioStream" uid="uid://bmuoyhb0j621g" path="res://props/interactable/general_sounds/AirBurst.mp3" id="4_f45nd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_obor2"]
 resource_name = "material_0"
@@ -218,3 +219,10 @@ light_energy = 0.2
 light_indirect_energy = 0.2
 omni_range = 0.568504
 omni_attenuation = 2.0
+
+[node name="UseSound" type="AudioStreamPlayer3D" parent="." unique_id=166208540]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6446395, 0)
+stream = ExtResource("4_f45nd")
+volume_db = -10.0
+pitch_scale = 0.88
+bus = &"Sounds"

@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://crevapxi2epdy" path="res://props/interactable/oxygen_machine/OxygenMachine.tscn" id="4_26drn"]
 [ext_resource type="PackedScene" uid="uid://doy1ps6nya7no" path="res://props/interactable/oxygen_bottle/OxygenBottle.tscn" id="7_7iggb"]
 [ext_resource type="PackedScene" uid="uid://b4jvh0gxuoce7" path="res://props/interactable/key_green/GreenKeycard.tscn" id="8_go4jk"]
+[ext_resource type="AudioStream" uid="uid://dluievmkdn6u4" path="res://audio/ambiance/StationAmbiance.mp3" id="10_xn4at"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_2crfw"]
 panorama = ExtResource("1_go4jk")
@@ -382,3 +383,14 @@ required_access = 1
 [node name="StationDoor4" parent="Map/Doors" unique_id=114871861 instance=ExtResource("3_wvlmu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.002, 0, -4.744)
 required_access = 1
+
+[node name="Sounds" type="Node3D" parent="Map" unique_id=1360256042]
+
+[node name="Airvent" type="AudioStreamPlayer3D" parent="Map/Sounds" unique_id=1806883172]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9, 8.3, -2.1000001)
+stream = ExtResource("10_xn4at")
+volume_db = -30.0
+max_db = -5.0
+autoplay = true
+max_polyphony = 2
+bus = &"Sounds"
