@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://djo853ql5y00s"]
+
+[ext_resource type="PackedScene" uid="uid://b4x8qw6yaut8l" path="res://props/decorations/bed/station_bed.glb" id="1_nfgbn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nfgbn"]
+size = Vector3(1.3000001, 0.6, 4.1)
+
+[node name="StationBed" type="StaticBody3D" unique_id=1169516970]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+
+[node name="blockbench_export" parent="." unique_id=906400198 instance=ExtResource("1_nfgbn")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=607446899]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0, -2.4835263e-08, -0.55000013)
+shape = SubResource("BoxShape3D_nfgbn")

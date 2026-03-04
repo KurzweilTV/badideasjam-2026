@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://crevapxi2epdy" path="res://props/interactable/oxygen_machine/OxygenMachine.tscn" id="4_26drn"]
 [ext_resource type="PackedScene" uid="uid://doy1ps6nya7no" path="res://props/interactable/oxygen_bottle/OxygenBottle.tscn" id="7_7iggb"]
 [ext_resource type="PackedScene" uid="uid://b4jvh0gxuoce7" path="res://props/interactable/key_green/GreenKeycard.tscn" id="8_go4jk"]
+[ext_resource type="PackedScene" uid="uid://djo853ql5y00s" path="res://props/decorations/bed/StationBed.tscn" id="10_vn57o"]
 [ext_resource type="AudioStream" uid="uid://dluievmkdn6u4" path="res://audio/ambiance/StationAmbiance.mp3" id="10_xn4at"]
 [ext_resource type="PackedScene" uid="uid://cgh556a8k241h" path="res://props/interactable/cabinet/Cabinet.tscn" id="11_4vndw"]
 
@@ -45,7 +46,7 @@ shadow_enabled = true
 sky_mode = 1
 
 [node name="Character" parent="." unique_id=1159670658 instance=ExtResource("1_tq2h6")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.44745445, 0, 0.8445796)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.44745445, 0, 3.1445794)
 base_oxygen_loss_rate = 0.5
 base_speed = 2.0
 sprint_speed = 4.0
@@ -363,7 +364,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -6)
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10.396524, 1.4074116, 2.7564833)
 
 [node name="OxygenBottle" parent="Map/Props" unique_id=1240880077 instance=ExtResource("7_7iggb")]
-transform = Transform3D(-0.18301277, 0.5062361, -0.8427522, 0.18301274, 0.8597894, 0.4767268, 0.96592575, -0.06698729, -0.24999996, 1.5999997, 2.2, -0.1)
+transform = Transform3D(-0.18301277, 0.5062361, -0.8427522, 0.18301274, 0.8597894, 0.4767268, 0.96592575, -0.06698729, -0.24999996, 4.3999996, 2.2, -3.3999999)
 mass = 15.0
 physics_material_override = SubResource("PhysicsMaterial_2crfw")
 
@@ -384,6 +385,19 @@ interact_hint = "Storage Cabinet"
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 19.1, 0.14, -3.8999999)
 cooldown_time = 1.0
 interact_hint = "Storage Cabinet"
+
+[node name="Cabinet4" parent="Map/Props" unique_id=1750221990 instance=ExtResource("11_4vndw")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.1999996, 0.14, -3.8999999)
+cooldown_time = 1.0
+interact_hint = "Storage Cabinet"
+
+[node name="Cabinet5" parent="Map/Props" unique_id=145733309 instance=ExtResource("11_4vndw")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 3.8999996, 0.14, -3.8999999)
+cooldown_time = 1.0
+interact_hint = "Storage Cabinet"
+
+[node name="StationBed" parent="Map/Props" unique_id=1169516970 instance=ExtResource("10_vn57o")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.39999992, 0.3, -0.1)
 
 [node name="Lights" type="Node3D" parent="Map" unique_id=846340871]
 
@@ -415,7 +429,7 @@ required_access = 1
 [node name="Airvent" type="AudioStreamPlayer3D" parent="Map/Sounds" unique_id=1806883172]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9, 8.3, -2.1000001)
 stream = ExtResource("10_xn4at")
-volume_db = -30.0
+volume_db = -20.0
 max_db = -5.0
 autoplay = true
 max_polyphony = 2

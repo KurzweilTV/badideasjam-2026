@@ -24,14 +24,16 @@ shape = SubResource("BoxShape3D_a282m")
 [node name="DoorOpen" type="AudioStreamPlayer3D" parent="." unique_id=1004456138]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.757312, 0)
 stream = ExtResource("3_2r0iy")
-volume_db = -25.0
+volume_db = -30.0
+max_polyphony = 4
 bus = &"Sounds"
 
 [node name="DoorClose" type="AudioStreamPlayer3D" parent="." unique_id=503916994]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.757312, 0)
 stream = ExtResource("4_fwoyv")
-volume_db = -25.0
+volume_db = -30.0
 pitch_scale = 1.1
+max_polyphony = 4
 bus = &"Sounds"
 
 [editable path="blockbench_export"]
