@@ -10,6 +10,7 @@ size = Vector3(2.9941406, 3.1689453, 0.32592773)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_a282m")
+interact_hint = "Door"
 metadata/_custom_type_script = "uid://bl7efj28lf80j"
 
 [node name="blockbench_export" parent="." unique_id=1245780297 instance=ExtResource("2_a282m")]

@@ -9,7 +9,9 @@ points = PackedVector3Array(-0.13100131, -3.059022e-05, -0.02310516, -2.5629997e
 [node name="OxygenBottle" type="RigidBody3D" unique_id=385678588]
 collision_layer = 3
 collision_mask = 3
+mass = 20.0
 script = ExtResource("1_iv5fw")
+interact_hint = "Oxygen Bottle"
 
 [node name="blockbench_export" parent="." unique_id=1586085588 instance=ExtResource("1_11fe0")]
 

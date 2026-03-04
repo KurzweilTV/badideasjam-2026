@@ -181,6 +181,7 @@ size = Vector3(0.7578125, 1.1279297, 0.30444336)
 collision_layer = 3
 collision_mask = 0
 script = ExtResource("1_bjxm1")
+interact_hint = "Oxygen Machine"
 metadata/_custom_type_script = "uid://bl7efj28lf80j"
 
 [node name="blockbench_export" type="Node3D" parent="." unique_id=1003011386]

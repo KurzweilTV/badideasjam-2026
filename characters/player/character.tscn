@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://cji82wy8pws7c" path="res://ui/sounds/switch11.ogg" id="3_ydn43"]
 [ext_resource type="Texture2D" uid="uid://g57eb3gtci1d" path="res://art/cursors/hand_open.png" id="4_oetk0"]
 [ext_resource type="Script" uid="uid://cmqt0rtxnw6cy" path="res://characters/player/footstep_manager.gd" id="5_5ir01"]
+[ext_resource type="LabelSettings" uid="uid://chg1id0jihetb" path="res://ui/labels/sub_heading.tres" id="9_d6s3g"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kp17n"]
 albedo_color = Color(1, 0.5176471, 1, 1)
@@ -599,6 +600,24 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 2
 texture = ExtResource("4_oetk0")
+
+[node name="InteractLabel" type="Label" parent="UserInterface" unique_id=1742606593]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -114.0
+offset_top = -49.0
+offset_right = 114.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+label_settings = ExtResource("9_d6s3g")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CrouchCeilingDetection" type="ShapeCast3D" parent="." unique_id=494539563]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

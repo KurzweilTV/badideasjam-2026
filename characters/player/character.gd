@@ -10,6 +10,7 @@ enum KEYS {None, Green, Blue, Orange}
 @onready var ray_cast_3d: RayCast3D = %RayCast3D
 @onready var oxygen_bar: ProgressBar = %OxygenBar
 @onready var interact_cursor: TextureRect = %InteractCursor
+@onready var interact_label: Label = %InteractLabel
 
 #region Gameplay Export Group
 
@@ -195,12 +196,17 @@ func _process(delta):
 
 	var hit := ray_cast_3d.get_collider() as Interactable
 	var can_show: bool = hit != null and hit.can_interact_with()
+	if hit:
+		%InteractLabel.text = hit.interact_hint
+	
 
 	%InteractCursor.visible = can_show
+	%InteractLabel.visible = can_show
+	
 
 	if can_show:
-		if hit is StationDoor and hit.door_locked: # let the player know the door is locked
-			%InteractCursor.modulate = Color(0.55, 0.0, 0.0, 1.0)
+		if hit is StationDoor and hit.required_access > access_level: # let the player know the door is locked
+			%InteractCursor.modulate = Color(0.365, 0.0, 0.0, 1.0)
 		else:
 			%InteractCursor.modulate = Color(1, 1, 1)
 

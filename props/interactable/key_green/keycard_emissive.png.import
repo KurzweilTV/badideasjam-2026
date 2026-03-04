@@ -2,20 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxqc1twcprrqc"
-path="res://.godot/imported/green_texture.png-5be8583b7bbd1467ff7621faa6c7f018.ctex"
+uid="uid://d4bv3jlumijiu"
+path.s3tc="res://.godot/imported/keycard_emissive.png-0800829189f29a031d67fa2760c88abd.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://props/interactable/key_green/green_texture.png"
-dest_files=["res://.godot/imported/green_texture.png-5be8583b7bbd1467ff7621faa6c7f018.ctex"]
+source_file="res://props/interactable/key_green/keycard_emissive.png"
+dest_files=["res://.godot/imported/keycard_emissive.png-0800829189f29a031d67fa2760c88abd.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
