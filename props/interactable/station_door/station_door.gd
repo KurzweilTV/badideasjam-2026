@@ -17,6 +17,7 @@ func _on_interact(_interactor: Player) -> bool:
 	else:
 		open_door(_interactor)
 		_start_auto_close_timer()
+
 	return true
 
 
@@ -32,9 +33,11 @@ func auto_close() -> void:
 func open_door(player: Player) -> void:
 	if player.access_level >= required_access:
 		anim.play("door_open")
+		$DoorOpen.play()
 		door_open = true
 	else: print("Needs %s Key" % required_access)
 		
 func close_door() -> void:
 	anim.play("door_close")
+	$DoorClose.play()
 	door_open = false
