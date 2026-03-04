@@ -39,7 +39,7 @@ https://www.youtube.com/watch?v=ZVy6LNBmlok
 | Role | Name |
 |------|------|
 | Programming | [KurzweilTV](https://github.com/KurzweilTV/) |
-| Art | [KurzweilTV](https://github.com/KurzweilTV/ |
+| Art | [KurzweilTV](https://github.com/KurzweilTV/) |
 | Audio |  [KurzweilTV](https://github.com/KurzweilTV/) |
 | Design |  [KurzweilTV](https://github.com/KurzweilTV/) |
 
