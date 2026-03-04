@@ -31,7 +31,7 @@ https://www.youtube.com/watch?v=ZVy6LNBmlok
 **Engine:** Godot 4.6.1  
 **Duration:** 30 days  
 **Team Size:** 1  
-**Tools Used:** TBD
+**Tools Used:** [Blockbench](https://www.blockbench.net), [Aseprite](https://www.aseprite.org), [Logic Pro](https://www.apple.com/logic-pro/)
 
 
 ## 👥 Credits
@@ -39,7 +39,7 @@ https://www.youtube.com/watch?v=ZVy6LNBmlok
 | Role | Name |
 |------|------|
 | Programming | [KurzweilTV](https://github.com/KurzweilTV/) |
-| Art | TBD |
+| Art | [KurzweilTV](https://github.com/KurzweilTV/ |
 | Audio |  [KurzweilTV](https://github.com/KurzweilTV/) |
 | Design |  [KurzweilTV](https://github.com/KurzweilTV/) |
 
