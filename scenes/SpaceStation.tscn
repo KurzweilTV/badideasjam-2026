@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cgh556a8k241h" path="res://props/interactable/cabinet/Cabinet.tscn" id="11_4vndw"]
 [ext_resource type="PackedScene" uid="uid://wyt3otchy5nb" path="res://effects/damage_particles.tscn" id="11_54jyg"]
 [ext_resource type="AudioStream" uid="uid://bfd0tpyxdf8fy" path="res://audio/ambiance/ambiance-reaper.mp3" id="12_vn57o"]
+[ext_resource type="PackedScene" uid="uid://n1421bub7u63" path="res://props/decorations/strip_lamp/StripLamp.tscn" id="14_6b3do"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_2crfw"]
 panorama = ExtResource("1_go4jk")
@@ -440,3 +441,9 @@ stream = ExtResource("12_vn57o")
 autoplay = true
 max_polyphony = 2
 bus = &"Sounds"
+
+[node name="StripLamp" parent="." unique_id=198990327 instance=ExtResource("14_6b3do")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10.53, 1.2, -1.8000002)
+
+[node name="StripLamp2" parent="." unique_id=1262011246 instance=ExtResource("14_6b3do")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10.53, 1.2, 1.8)
