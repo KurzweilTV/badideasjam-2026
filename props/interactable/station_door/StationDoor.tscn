@@ -12,10 +12,23 @@ size = Vector3(2.9941406, 3.1689453, 0.32592773)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_a282m")
+auto_close_time = 3.0
 interact_hint = "Door"
 metadata/_custom_type_script = "uid://bl7efj28lf80j"
 
 [node name="blockbench_export" parent="." unique_id=1245780297 instance=ExtResource("2_a282m")]
+
+[node name="CollisionShape3D" parent="blockbench_export/wall_left/StaticBody3D" parent_id_path=PackedInt32Array(1245780297, 1698203380) index="0" unique_id=1542372381]
+visible = false
+
+[node name="CollisionShape3D" parent="blockbench_export/wall_right/StaticBody3D" parent_id_path=PackedInt32Array(1245780297, 1356058078) index="0" unique_id=1525077253]
+visible = false
+
+[node name="CollisionShape3D" parent="blockbench_export/door/right/door_right/StaticBody3D" parent_id_path=PackedInt32Array(1245780297, 325323707) index="0" unique_id=401582169]
+visible = false
+
+[node name="CollisionShape3D" parent="blockbench_export/door/left/door_left/StaticBody3D" parent_id_path=PackedInt32Array(1245780297, 1715093851) index="0" unique_id=1615227673]
+visible = false
 
 [node name="DoorInteract" type="CollisionShape3D" parent="." unique_id=1103378253]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5661483, 0)

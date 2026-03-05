@@ -2,16 +2,15 @@
 
 [sub_resource type="AudioEffectReverb" id="AudioEffectReverb_qq1ct"]
 resource_name = "Reverb"
-room_size = 0.05
-wet = 0.16
+room_size = 0.2
 
 [resource]
-bus/0/volume_db = -1.9147635
+bus/0/volume_db = -2.7102394
 bus/1/name = &"Sounds"
 bus/1/solo = false
 bus/1/mute = false
 bus/1/bypass_fx = false
-bus/1/volume_db = -1.9147635
+bus/1/volume_db = -8.009033
 bus/1/send = &"Master"
 bus/1/effect/0/effect = SubResource("AudioEffectReverb_qq1ct")
 bus/1/effect/0/enabled = true
@@ -19,5 +18,5 @@ bus/2/name = &"Music"
 bus/2/solo = false
 bus/2/mute = false
 bus/2/bypass_fx = false
-bus/2/volume_db = -4.7681155
+bus/2/volume_db = -8.009033
 bus/2/send = &"Master"

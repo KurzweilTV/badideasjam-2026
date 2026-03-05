@@ -364,12 +364,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -6)
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10.396524, 1.4074116, 2.7564833)
 
 [node name="OxygenBottle" parent="Map/Props" unique_id=1240880077 instance=ExtResource("7_7iggb")]
-transform = Transform3D(-0.18301277, 0.5062361, -0.8427522, 0.18301274, 0.8597894, 0.4767268, 0.96592575, -0.06698729, -0.24999996, 4.3999996, 2.2, -3.3999999)
+transform = Transform3D(-0.18301277, 0.5062361, -0.8427522, 0.18301274, 0.8597894, 0.4767268, 0.96592575, -0.06698729, -0.24999996, 4.94615, 0.44249678, -4.055561)
 mass = 15.0
 physics_material_override = SubResource("PhysicsMaterial_2crfw")
 
 [node name="GreenKeycard" parent="Map/Props" unique_id=198432991 instance=ExtResource("8_go4jk")]
-transform = Transform3D(-2.1855692e-08, 3.7855173e-08, 1, 0.86602545, 0.49999997, 0, -0.49999997, 0.86602545, -4.371139e-08, 17.84, 0.41, -3.86)
+transform = Transform3D(-2.1855692e-08, 3.7855173e-08, 1, 0.86602545, 0.49999997, 0, -0.49999997, 0.86602545, -4.371139e-08, 17.94, 0.41, -3.86)
 
 [node name="Cabinet" parent="Map/Props" unique_id=2120964287 instance=ExtResource("11_4vndw")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 17.900002, 0.14, -3.8999999)
@@ -397,7 +397,7 @@ cooldown_time = 1.0
 interact_hint = "Storage Cabinet"
 
 [node name="StationBed" parent="Map/Props" unique_id=1169516970 instance=ExtResource("10_vn57o")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.39999992, 0.3, -0.1)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.19999991, 0.45000005, -0.010000002)
 
 [node name="Lights" type="Node3D" parent="Map" unique_id=846340871]
 
@@ -412,9 +412,11 @@ spot_angle = 36.70034
 
 [node name="StationDoor" parent="Map/Doors" unique_id=511145225 instance=ExtResource("3_wvlmu")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10.7471695, 0, 0)
+required_access = 1
 
 [node name="StationDoor2" parent="Map/Doors" unique_id=1598614055 instance=ExtResource("3_wvlmu")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.253918, 0, 0)
+required_access = 1
 
 [node name="StationDoor3" parent="Map/Doors" unique_id=1705591433 instance=ExtResource("3_wvlmu")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 24.002, 0, -7.251)

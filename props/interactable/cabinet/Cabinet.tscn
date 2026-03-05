@@ -44,4 +44,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0.05000007)
 shape = SubResource("BoxShape3D_nxks4")
 disabled = true
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=952100253]
+volume_db = -20.0
+bus = &"Sounds"
+
 [editable path="blockbench_export"]
