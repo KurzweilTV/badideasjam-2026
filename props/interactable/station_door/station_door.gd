@@ -4,12 +4,17 @@ extends Interactable
 enum KEYS {None, Green, Blue, Orange}
 
 @export var required_access: KEYS = KEYS.None
+@export var start_open: bool = false
 @export var door_locked: bool = false
 @export var auto_close_time: float = 4.0
 var door_open: bool = false
 @onready var anim: AnimationPlayer = $blockbench_export/AnimationPlayer
 
-
+func _ready() -> void:
+	if start_open == true:
+		%DoorInteract.disabled = true
+	else: close_door()
+		
 func _on_interact(_interactor: Player) -> bool:
 	if door_locked: return false
 	if door_open:

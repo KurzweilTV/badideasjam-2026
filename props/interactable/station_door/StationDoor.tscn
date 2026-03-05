@@ -24,13 +24,20 @@ visible = false
 [node name="CollisionShape3D" parent="blockbench_export/wall_right/StaticBody3D" parent_id_path=PackedInt32Array(1245780297, 1356058078) index="0" unique_id=1525077253]
 visible = false
 
+[node name="right" parent="blockbench_export/door" parent_id_path=PackedInt32Array(1245780297, 901755462) index="0" unique_id=818813429]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0)
+
 [node name="CollisionShape3D" parent="blockbench_export/door/right/door_right/StaticBody3D" parent_id_path=PackedInt32Array(1245780297, 325323707) index="0" unique_id=401582169]
 visible = false
+
+[node name="left" parent="blockbench_export/door" parent_id_path=PackedInt32Array(1245780297, 901755462) index="1" unique_id=1862146474]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5625, 0, 0)
 
 [node name="CollisionShape3D" parent="blockbench_export/door/left/door_left/StaticBody3D" parent_id_path=PackedInt32Array(1245780297, 1715093851) index="0" unique_id=1615227673]
 visible = false
 
 [node name="DoorInteract" type="CollisionShape3D" parent="." unique_id=1103378253]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5661483, 0)
 shape = SubResource("BoxShape3D_a282m")
 

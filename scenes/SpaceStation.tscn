@@ -10,8 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://doy1ps6nya7no" path="res://props/interactable/oxygen_bottle/OxygenBottle.tscn" id="7_7iggb"]
 [ext_resource type="PackedScene" uid="uid://b4jvh0gxuoce7" path="res://props/interactable/key_green/GreenKeycard.tscn" id="8_go4jk"]
 [ext_resource type="PackedScene" uid="uid://djo853ql5y00s" path="res://props/decorations/bed/StationBed.tscn" id="10_vn57o"]
-[ext_resource type="AudioStream" uid="uid://dluievmkdn6u4" path="res://audio/ambiance/StationAmbiance.mp3" id="10_xn4at"]
 [ext_resource type="PackedScene" uid="uid://cgh556a8k241h" path="res://props/interactable/cabinet/Cabinet.tscn" id="11_4vndw"]
+[ext_resource type="PackedScene" uid="uid://wyt3otchy5nb" path="res://effects/damage_particles.tscn" id="11_54jyg"]
+[ext_resource type="AudioStream" uid="uid://bfd0tpyxdf8fy" path="res://audio/ambiance/ambiance-reaper.mp3" id="12_vn57o"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_2crfw"]
 panorama = ExtResource("1_go4jk")
@@ -46,7 +47,7 @@ shadow_enabled = true
 sky_mode = 1
 
 [node name="Character" parent="." unique_id=1159670658 instance=ExtResource("1_tq2h6")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.44745445, 0, 3.1445794)
+transform = Transform3D(-1, 0, 8.742279e-08, 0, 1, 0, -8.742279e-08, 0, -1, 0.44745445, 0, -2.2554207)
 base_oxygen_loss_rate = 0.5
 base_speed = 2.0
 sprint_speed = 4.0
@@ -410,13 +411,18 @@ spot_angle = 36.70034
 
 [node name="Doors" type="Node3D" parent="Map" unique_id=454200293]
 
+[node name="DamageFX" parent="Map/Doors" unique_id=1672889911 instance=ExtResource("11_54jyg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2, 1.9, -1.2)
+
 [node name="StationDoor" parent="Map/Doors" unique_id=511145225 instance=ExtResource("3_wvlmu")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10.7471695, 0, 0)
 required_access = 1
+start_open = true
 
 [node name="StationDoor2" parent="Map/Doors" unique_id=1598614055 instance=ExtResource("3_wvlmu")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.253918, 0, 0)
 required_access = 1
+start_open = true
 
 [node name="StationDoor3" parent="Map/Doors" unique_id=1705591433 instance=ExtResource("3_wvlmu")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 24.002, 0, -7.251)
@@ -430,9 +436,7 @@ required_access = 1
 
 [node name="Airvent" type="AudioStreamPlayer3D" parent="Map/Sounds" unique_id=1806883172]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9, 8.3, -2.1000001)
-stream = ExtResource("10_xn4at")
-volume_db = -20.0
-max_db = -5.0
+stream = ExtResource("12_vn57o")
 autoplay = true
 max_polyphony = 2
 bus = &"Sounds"
