@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://criho73rgsfve" path="res://props/interactable/station_door/station_door.glb" id="2_a282m"]
 [ext_resource type="AudioStream" uid="uid://cg7dorfwkgpxw" path="res://props/interactable/station_door/sounds/DoorSlide.mp3" id="3_2r0iy"]
 [ext_resource type="AudioStream" uid="uid://hvde0qktlm8x" path="res://props/interactable/station_door/sounds/DoorSlideClose.mp3" id="4_fwoyv"]
+[ext_resource type="AudioStream" uid="uid://dkp0thl8xkh2x" path="res://props/interactable/station_door/sounds/LockedDoor.mp3" id="5_j3fuo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a282m"]
 size = Vector3(2.9941406, 3.1689453, 0.32592773)
@@ -53,6 +54,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.757312, 0)
 stream = ExtResource("4_fwoyv")
 volume_db = -30.0
 pitch_scale = 1.1
+max_polyphony = 4
+bus = &"Sounds"
+
+[node name="DoorLocked" type="AudioStreamPlayer3D" parent="." unique_id=1954124039]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.757312, 0)
+stream = ExtResource("5_j3fuo")
 max_polyphony = 4
 bus = &"Sounds"
 

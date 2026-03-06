@@ -16,6 +16,7 @@ func _on_interact(_interactor: Player) -> bool:
 	if not doors_open:
 		anim.play("open_doors")
 		sound.stream = CABINET_OPEN
+		sound.pitch_scale = randf_range(0.9, 1.1)
 		sound.play()
 		closed_1.disabled = true
 		open_1.disabled = false
@@ -24,6 +25,7 @@ func _on_interact(_interactor: Player) -> bool:
 	else: 
 		anim.play("close_doors")
 		sound.stream = CABINET_CLOSE
+		sound.pitch_scale = randf_range(0.9, 1.1)
 		sound.play()
 		closed_1.disabled = false
 		open_1.disabled = true

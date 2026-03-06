@@ -16,7 +16,9 @@ func _ready() -> void:
 	else: close_door()
 		
 func _on_interact(_interactor: Player) -> bool:
-	if door_locked: return false
+	if door_locked: 
+		$DoorLocked.play()
+		return false
 	if door_open:
 		close_door()
 	else:
@@ -40,7 +42,10 @@ func open_door(player: Player) -> void:
 		anim.play("door_open")
 		$DoorOpen.play()
 		door_open = true
-	else: print("Needs %s Key" % required_access)
+	else: 
+		$DoorLocked.pitch_scale = randf_range(0.9, 1.1)
+		$DoorLocked.play()
+		print("Needs %s Key" % required_access)
 		
 func close_door() -> void:
 	anim.play("door_close")

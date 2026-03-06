@@ -7,8 +7,8 @@ func _ready() -> void:
 
 func _flicker() -> void:
 	while true:
-		var wait_time := randf_range(0.0, 0.6)
-		var target_energy := randf_range(0.2, 1.5)
+		var wait_time := randf_range(0.0, 0.4)
+		var target_energy := randf_range(0.1, 1.2)
 
 		var tween := create_tween()
 		tween.set_trans(Tween.TRANS_SINE)

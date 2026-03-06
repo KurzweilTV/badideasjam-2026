@@ -6,7 +6,9 @@ extends Interactable
 func _on_interact(_interactor: Player) -> bool:
 	_interactor.give_oxygen(40)
 	self.hide()
+	sound.pitch_scale = randf_range(0.9, 1.1)
 	sound.play()
+	
 	delayed_cleanup()
 	return true
 

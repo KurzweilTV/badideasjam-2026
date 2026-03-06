@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://n1421bub7u63"]
 
+[ext_resource type="Script" uid="uid://4wfqfcwhkk7g" path="res://props/decorations/strip_lamp/strip_lamp.gd" id="1_jmlsg"]
 [ext_resource type="Material" uid="uid://b8f558m5icvyk" path="res://props/decorations/strip_lamp/material_0.tres" id="1_l3luv"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_rnpff"]
@@ -68,23 +69,22 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_207n0")
 
-[node name="StripLamp" type="StaticBody3D" unique_id=198990327]
+[node name="StripLamp" type="Node3D" unique_id=2052499222]
+script = ExtResource("1_jmlsg")
 
 [node name="blockbench_export" type="Node3D" parent="." unique_id=346112331]
 
-[node name="cube" type="MeshInstance3D" parent="blockbench_export" unique_id=536956288]
+[node name="bracket" type="MeshInstance3D" parent="blockbench_export" unique_id=536956288]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03125, 0, 0)
 material_override = ExtResource("1_l3luv")
 mesh = SubResource("ArrayMesh_wyjb8")
 
-[node name="cube2" type="MeshInstance3D" parent="blockbench_export" unique_id=68569307]
+[node name="light_tube" type="MeshInstance3D" parent="blockbench_export" unique_id=68569307]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03125, 0, 0.03125)
-material_override = ExtResource("1_l3luv")
 mesh = SubResource("ArrayMesh_cyi6y")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=445910238]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0.31)
-light_color = Color(0, 0.69803923, 1, 1)
-light_energy = 0.5
-omni_range = 4.893
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0.51)
+light_energy = 0.218
+omni_range = 10.0
 omni_attenuation = 2.0

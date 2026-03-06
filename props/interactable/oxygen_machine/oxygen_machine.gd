@@ -6,6 +6,7 @@ extends Interactable
 
 func _on_interact(_interactor: Player) -> bool:
 	print("Oxygen Refilled - Cooldown: (%s seconds)" % cooldown_time)
+	use_sound.pitch_scale = randf_range(0.9, 1.1)
 	use_sound.play()
 	_interactor.give_oxygen(100)
 	return true

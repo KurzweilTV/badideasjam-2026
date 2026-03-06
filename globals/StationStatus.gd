@@ -4,7 +4,7 @@ signal station_power_change(powered: bool)
 signal station_color_change(new_color: Color)
 
 var station_powered: bool = false
-var station_color: Color = Color.WHITE
+var station_color: Color = Color.RED
 
 func set_station_color(new_color: Color) -> void:
 	station_color = new_color
