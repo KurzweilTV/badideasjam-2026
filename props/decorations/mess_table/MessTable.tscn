@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c575vh7hkg7xh"]
+
+[ext_resource type="PackedScene" uid="uid://b8vqth56av8yn" path="res://props/decorations/mess_table/messTable.glb" id="1_w7pp2"]
+
+[node name="MessTable" type="StaticBody3D" unique_id=92245100]
+
+[node name="blockbench_export" parent="." unique_id=30533072 instance=ExtResource("1_w7pp2")]
