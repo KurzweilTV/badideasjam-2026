@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://coyu337jkc073"]
+
+[ext_resource type="AudioStream" uid="uid://bfd0tpyxdf8fy" path="res://audio/ambiance/ambiance-reaper.mp3" id="1_6kd1p"]
+[ext_resource type="Script" uid="uid://wggbuoggi5b6" path="res://props/decorations/airvent/airvent.gd" id="2_pjada"]
+
+[node name="Airvent" type="AudioStreamPlayer3D" unique_id=184204588]
+stream = ExtResource("1_6kd1p")
+volume_db = -10.0
+pitch_scale = 0.01
+max_polyphony = 2
+bus = &"Sounds"
+script = ExtResource("2_pjada")

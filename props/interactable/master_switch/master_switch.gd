@@ -14,4 +14,5 @@ func _on_interact(_interactor: Player) -> bool:
 func trigger_change() -> void:
 	await anim.animation_finished	
 	$ClickSound.play()
+	StationStatus.set_station_power(true)
 	StationStatus.set_station_color(Color.WHITE)
