@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://db8o17k5lxyl"]
+
+[ext_resource type="Texture2D" uid="uid://dvwge6oaol6u8" path="res://props/decorations/food_dispenser/texture.png" id="1_o2p3f"]
+
+[resource]
+resource_name = "material_0"
+transparency = 2
+alpha_scissor_threshold = 0.05
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_o2p3f")
+texture_filter = 0
+texture_repeat = false
