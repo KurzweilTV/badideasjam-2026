@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dkr5k33pei0e1"]
+
+[ext_resource type="PackedScene" uid="uid://bg0xs8ly1igvc" path="res://props/decorations/food_dispenser/food_machine.glb" id="1_3dtp2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3dtp2"]
+size = Vector3(1.3, 2.06, 0.47)
+
+[node name="FoodMachine" type="StaticBody3D" unique_id=348394576]
+
+[node name="blockbench_export" parent="." unique_id=1100361160 instance=ExtResource("1_3dtp2")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=5339616]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8626451e-08, 1.0100001, 0.08500002)
+shape = SubResource("BoxShape3D_3dtp2")

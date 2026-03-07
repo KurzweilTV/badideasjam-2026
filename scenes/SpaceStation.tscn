@@ -14,9 +14,12 @@
 [ext_resource type="PackedScene" uid="uid://cgh556a8k241h" path="res://props/interactable/cabinet/Cabinet.tscn" id="11_4vndw"]
 [ext_resource type="PackedScene" uid="uid://wyt3otchy5nb" path="res://effects/damage_particles.tscn" id="11_54jyg"]
 [ext_resource type="PackedScene" uid="uid://n1421bub7u63" path="res://props/decorations/strip_lamp/StripLamp.tscn" id="14_6b3do"]
+[ext_resource type="FontFile" uid="uid://c0wc7hvhv2qyq" path="res://addons/fonts/Kenney Blocks.ttf" id="14_vsm2l"]
 [ext_resource type="FontFile" uid="uid://ey0o034vu3l3" path="res://addons/fonts/MachineBT.ttf" id="15_6uwk2"]
 [ext_resource type="PackedScene" uid="uid://coyu337jkc073" path="res://props/decorations/airvent/airvent.tscn" id="15_qmkbd"]
+[ext_resource type="FontFile" uid="uid://sq1kya53m58g" path="res://addons/fonts/Kenney Rocket.ttf" id="15_x6cfo"]
 [ext_resource type="PackedScene" uid="uid://dey76bsvr8jgj" path="res://props/interactable/master_switch/MasterSwitch.tscn" id="16_5woyl"]
+[ext_resource type="PackedScene" uid="uid://dkr5k33pei0e1" path="res://props/decorations/food_dispenser/FoodMachine.tscn" id="17_ex14y"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_2crfw"]
 panorama = ExtResource("1_go4jk")
@@ -58,6 +61,7 @@ base_speed = 2.0
 [node name="Map" type="Node3D" parent="." unique_id=697862072]
 
 [node name="Roof" type="Node3D" parent="Map" unique_id=1974382157]
+visible = false
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Map/Roof" unique_id=1334190095]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.300005, 3.1000001, 5.9500036)
@@ -603,17 +607,20 @@ required_access = 1
 [node name="RoomLabels" type="Node3D" parent="Map" unique_id=1202456816]
 
 [node name="Engineering" type="Label3D" parent="Map/RoomLabels" unique_id=1524104590]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 22.5, 2.7, 5.4)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 22.5, 2.7, 6)
+modulate = Color(0, 0, 0, 1)
 text = "Engineering"
-font = ExtResource("15_6uwk2")
+font = ExtResource("14_vsm2l")
 font_size = 50
+outline_size = 0
 uppercase = true
 
 [node name="Recovery" type="Label3D" parent="Map/RoomLabels" unique_id=26445369]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 13.51, 2.7, 2.2)
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 13.51, 2.7, 2.6000001)
 text = "Recovery"
-font = ExtResource("15_6uwk2")
+font = ExtResource("15_x6cfo")
 font_size = 50
+outline_size = 11
 uppercase = true
 
 [node name="MessHall" type="Label3D" parent="Map/RoomLabels" unique_id=992610725]
@@ -634,6 +641,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9, 11.700001, 22.6)
 [node name="DamageFX" parent="Map/Sounds" unique_id=1672889911 instance=ExtResource("11_54jyg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2, 1.9, -1.2)
 initial_velocity_max = 0.3
+
+[node name="FoodMachine" parent="Map/Sounds" unique_id=348394576 instance=ExtResource("17_ex14y")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 30.9, 0.20000005, -14.8)
+
+[node name="FoodMachine2" parent="Map/Sounds" unique_id=1340424952 instance=ExtResource("17_ex14y")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 30.9, 0.20000005, -13.400001)
+
+[node name="FoodMachine3" parent="Map/Sounds" unique_id=621499043 instance=ExtResource("17_ex14y")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 30.9, 0.20000005, -16.2)
 
 [node name="MasterSwitch" parent="." unique_id=1211134874 instance=ExtResource("16_5woyl")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 19.93, 1.3000001, 21.4)
