@@ -54,14 +54,13 @@ shadow_enabled = true
 sky_mode = 1
 
 [node name="Character" parent="." unique_id=1159670658 instance=ExtResource("1_tq2h6")]
-transform = Transform3D(-1, 0, 8.742279e-08, 0, 1, 0, -8.742279e-08, 0, -1, 0.44745445, 0, -2.2554207)
+transform = Transform3D(-1, 0, 8.742279e-08, 0, 1, 0, -8.742279e-08, 0, -1, 0.84745264, 9.536743e-07, -2.455421)
 base_oxygen_loss_rate = 0.5
 base_speed = 2.0
 
 [node name="Map" type="Node3D" parent="." unique_id=697862072]
 
 [node name="Roof" type="Node3D" parent="Map" unique_id=1974382157]
-visible = false
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Map/Roof" unique_id=1334190095]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.300005, 3.1000001, 5.9500036)
@@ -582,6 +581,18 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 19, 
 [node name="StripLamp12" parent="Map/Lights" unique_id=1095897486 instance=ExtResource("14_6b3do")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 22.5, 1.1000001, 21.4)
 
+[node name="StripLamp13" parent="Map/Lights" unique_id=968200968 instance=ExtResource("14_6b3do")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 22.5, 1.1000001, 18)
+
+[node name="StripLamp14" parent="Map/Lights" unique_id=748229642 instance=ExtResource("14_6b3do")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 22.5, 1.1000001, 14.7)
+
+[node name="StripLamp15" parent="Map/Lights" unique_id=284515571 instance=ExtResource("14_6b3do")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 22.5, 1.1000001, 12)
+
+[node name="StripLamp16" parent="Map/Lights" unique_id=367844726 instance=ExtResource("14_6b3do")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 22.5, 1.1000001, 9.1)
+
 [node name="Doors" type="Node3D" parent="Map" unique_id=454200293]
 
 [node name="StationDoor" parent="Map/Doors" unique_id=511145225 instance=ExtResource("3_wvlmu")]
@@ -633,10 +644,12 @@ uppercase = true
 [node name="Sounds" type="Node3D" parent="Map" unique_id=1360256042]
 
 [node name="Airvent" parent="Map/Sounds" unique_id=184204588 instance=ExtResource("15_qmkbd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9, 11.700001, -2.1000001)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9, 8.000001, -2.1000001)
+volume_db = 0.0
 
 [node name="Airvent2" parent="Map/Sounds" unique_id=861618651 instance=ExtResource("15_qmkbd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9, 11.700001, 22.6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9, 8.000001, 22.6)
+volume_db = 0.0
 
 [node name="DamageFX" parent="Map/Sounds" unique_id=1672889911 instance=ExtResource("11_54jyg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2, 1.9, -1.2)

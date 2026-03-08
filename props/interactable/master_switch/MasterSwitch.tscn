@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://dey76bsvr8jgj"]
 
 [ext_resource type="Script" uid="uid://dsi4ll6jjoj1y" path="res://props/interactable/master_switch/master_switch.gd" id="1_qgoth"]
-[ext_resource type="AudioStream" uid="uid://wob4cgfxhqjk" path="res://props/interactable/master_switch/BigSwitch.mp3" id="2_7d0yv"]
+[ext_resource type="AudioStream" uid="uid://dkp0thl8xkh2x" path="res://props/interactable/station_door/sounds/LockedDoor.mp3" id="2_7d0yv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6w312"]
 resource_name = "material_0"
@@ -182,5 +182,5 @@ shape = SubResource("BoxShape3D_yyfqf")
 
 [node name="ClickSound" type="AudioStreamPlayer3D" parent="." unique_id=1190279734]
 stream = ExtResource("2_7d0yv")
-pitch_scale = 0.6
+pitch_scale = 0.2
 bus = &"Sounds"

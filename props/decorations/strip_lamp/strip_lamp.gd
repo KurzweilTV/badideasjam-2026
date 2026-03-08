@@ -11,8 +11,11 @@ func _ready() -> void:
 	light_tube.set_surface_override_material(0, mat)
 
 	StationStatus.station_color_change.connect(_set_light_color)
-	_set_light_color(StationStatus.station_color)
+	#_set_light_color(StationStatus.station_color)
 
 func _set_light_color(new_color: Color) -> void:
+	await get_tree().create_timer(randf_range(1.0, 6.0)).timeout
+	$PowerUpSound.play()
+	omni_light_3d.light_energy = 0.30
 	mat.emission = new_color
 	omni_light_3d.light_color = new_color

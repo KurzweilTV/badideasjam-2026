@@ -13,4 +13,4 @@ func _on_powerup(_powered: bool) -> void:
 	play()
 
 	tween = create_tween()
-	tween.tween_property(self, "pitch_scale", 1.0, 6.0)
+	tween.tween_property(self, "pitch_scale", 1.0, 10.0)
