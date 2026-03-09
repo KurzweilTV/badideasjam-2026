@@ -2,11 +2,60 @@
 
 [ext_resource type="AudioStream" uid="uid://bfd0tpyxdf8fy" path="res://audio/ambiance/ambiance-reaper.mp3" id="1_6kd1p"]
 [ext_resource type="Script" uid="uid://wggbuoggi5b6" path="res://props/decorations/airvent/airvent.gd" id="2_pjada"]
+[ext_resource type="PackedScene" uid="uid://cux3q7jj8e4oc" path="res://props/decorations/airvent/airvent.glb" id="3_3pav4"]
 
-[node name="Airvent" type="AudioStreamPlayer3D" unique_id=184204588]
+[sub_resource type="BoxShape3D" id="BoxShape3D_3pav4"]
+size = Vector3(0.8, 0.2, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wtwq8"]
+vertex_color_use_as_albedo = true
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_3pav4"]
+material = SubResource("StandardMaterial3D_wtwq8")
+size = Vector2(0.25, 0.25)
+
+[sub_resource type="Curve" id="Curve_55dh5"]
+_data = [Vector2(0, 0.022818804), 0.0, 0.0, 0, 0, Vector2(0.046357617, 1), 0.0, 0.0, 0, 0, Vector2(0.5860927, 0.97382545), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[node name="Airvent" type="StaticBody3D" unique_id=43525332]
+script = ExtResource("2_pjada")
+
+[node name="Sound" type="AudioStreamPlayer3D" parent="." unique_id=184204588]
 stream = ExtResource("1_6kd1p")
 volume_db = -10.0
 pitch_scale = 0.01
 max_polyphony = 2
 bus = &"Sounds"
-script = ExtResource("2_pjada")
+
+[node name="blockbench_export" parent="." unique_id=879991387 instance=ExtResource("3_3pav4")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1072634095]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.099999994, 0)
+shape = SubResource("BoxShape3D_3pav4")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="." unique_id=335786778]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.06)
+cast_shadow = 0
+emitting = false
+amount = 25
+lifetime = 2.0
+randomness = 1.0
+lifetime_randomness = 1.0
+mesh = SubResource("QuadMesh_3pav4")
+emission_shape = 3
+emission_box_extents = Vector3(0.35, -0.01, 0.17)
+direction = Vector3(0, -1, 0)
+spread = 10.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 0.2
+initial_velocity_max = 0.5
+scale_amount_min = 0.05
+scale_amount_max = 0.1
+scale_amount_curve = SubResource("Curve_55dh5")
+color = Color(0, 1, 1, 1)

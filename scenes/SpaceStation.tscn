@@ -14,8 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://cgh556a8k241h" path="res://props/interactable/cabinet/Cabinet.tscn" id="11_4vndw"]
 [ext_resource type="PackedScene" uid="uid://wyt3otchy5nb" path="res://effects/damage_particles.tscn" id="11_54jyg"]
 [ext_resource type="PackedScene" uid="uid://n1421bub7u63" path="res://props/decorations/strip_lamp/StripLamp.tscn" id="14_6b3do"]
-[ext_resource type="FontFile" uid="uid://c0wc7hvhv2qyq" path="res://addons/fonts/Kenney Blocks.ttf" id="14_vsm2l"]
-[ext_resource type="FontFile" uid="uid://ey0o034vu3l3" path="res://addons/fonts/MachineBT.ttf" id="15_6uwk2"]
 [ext_resource type="PackedScene" uid="uid://coyu337jkc073" path="res://props/decorations/airvent/airvent.tscn" id="15_qmkbd"]
 [ext_resource type="FontFile" uid="uid://sq1kya53m58g" path="res://addons/fonts/Kenney Rocket.ttf" id="15_x6cfo"]
 [ext_resource type="PackedScene" uid="uid://dey76bsvr8jgj" path="res://props/interactable/master_switch/MasterSwitch.tscn" id="16_5woyl"]
@@ -619,37 +617,41 @@ required_access = 1
 
 [node name="Engineering" type="Label3D" parent="Map/RoomLabels" unique_id=1524104590]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 22.5, 2.7, 6)
-modulate = Color(0, 0, 0, 1)
+pixel_size = 0.002
 text = "Engineering"
-font = ExtResource("14_vsm2l")
-font_size = 50
-outline_size = 0
+font = ExtResource("15_x6cfo")
+font_size = 128
+outline_size = 28
 uppercase = true
 
-[node name="Recovery" type="Label3D" parent="Map/RoomLabels" unique_id=26445369]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 13.51, 2.7, 2.6000001)
+[node name="Engineering2" type="Label3D" parent="Map/RoomLabels" unique_id=1709196238]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 13.51, 2.7700002, 2.6)
+pixel_size = 0.002
 text = "Recovery"
 font = ExtResource("15_x6cfo")
-font_size = 50
-outline_size = 11
+font_size = 128
+outline_size = 28
 uppercase = true
 
-[node name="MessHall" type="Label3D" parent="Map/RoomLabels" unique_id=992610725]
-transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 21.910002, 2.7, -4.4700003)
+[node name="Engineering3" type="Label3D" parent="Map/RoomLabels" unique_id=980595142]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 21.3, 2.66, -4.4)
+pixel_size = 0.002
 text = "Mess Hall"
-font = ExtResource("15_6uwk2")
-font_size = 50
+font = ExtResource("15_x6cfo")
+font_size = 128
+outline_size = 28
 uppercase = true
 
 [node name="Sounds" type="Node3D" parent="Map" unique_id=1360256042]
 
 [node name="Airvent" parent="Map/Sounds" unique_id=184204588 instance=ExtResource("15_qmkbd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9, 8.000001, -2.1000001)
-volume_db = 0.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.599998, 2.900001, -0.2800002)
+
+[node name="Airvent3" parent="Map/Sounds" unique_id=43525332 instance=ExtResource("15_qmkbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9999976, 2.900001, -0.2800002)
 
 [node name="Airvent2" parent="Map/Sounds" unique_id=861618651 instance=ExtResource("15_qmkbd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9, 8.000001, 22.6)
-volume_db = 0.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.9, 2.900001, 16.5)
 
 [node name="DamageFX" parent="Map/Sounds" unique_id=1672889911 instance=ExtResource("11_54jyg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2, 1.9, -1.2)

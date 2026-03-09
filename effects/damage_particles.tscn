@@ -1,19 +1,8 @@
 [gd_scene format=3 uid="uid://wyt3otchy5nb"]
 
+[ext_resource type="QuadMesh" uid="uid://1itu6cresn5y" path="res://effects/standard_particle.tres" id="1_bpdf4"]
 [ext_resource type="Script" uid="uid://o283vjelhyfv" path="res://effects/flicker.gd" id="1_wx7yl"]
 [ext_resource type="AudioStream" uid="uid://dw82uc688ce0e" path="res://effects/sizzle.mp3" id="2_5i3jp"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wtwq8"]
-shading_mode = 0
-vertex_color_use_as_albedo = true
-billboard_mode = 3
-billboard_keep_scale = true
-particles_anim_h_frames = 1
-particles_anim_v_frames = 1
-particles_anim_loop = false
-
-[sub_resource type="QuadMesh" id="QuadMesh_wx7yl"]
-material = SubResource("StandardMaterial3D_wtwq8")
 
 [sub_resource type="Curve" id="Curve_5i3jp"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.050000004, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -25,13 +14,14 @@ colors = PackedColorArray(1, 1, 1, 1, 12.108991, 10.491642, 0, 1, 0.029506557, 0
 
 [node name="CPUParticles3D" type="CPUParticles3D" unique_id=1672889911]
 cast_shadow = 0
+emitting = false
 amount = 80
 lifetime = 3.0
 explosiveness = 0.21
 randomness = 1.0
 fixed_fps = 60
 draw_order = 2
-mesh = SubResource("QuadMesh_wx7yl")
+mesh = ExtResource("1_bpdf4")
 emission_shape = 1
 emission_sphere_radius = 0.2
 spread = 180.0
@@ -46,13 +36,13 @@ script = ExtResource("1_wx7yl")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=112068265]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.03, 0)
+visible = false
 light_color = Color(1, 1, 0, 1)
 light_energy = 0.59
 omni_range = 2.5
 omni_attenuation = 5.0
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1090224957]
+[node name="StaticSound" type="AudioStreamPlayer3D" parent="." unique_id=1090224957]
 stream = ExtResource("2_5i3jp")
-autoplay = true
 max_distance = 10.0
 bus = &"Sounds"
