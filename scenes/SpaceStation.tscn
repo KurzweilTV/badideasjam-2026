@@ -553,6 +553,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.3, 0.2, -3.8999999)
 [node name="OxygenBottle4" parent="Map/Props" unique_id=1386969389 instance=ExtResource("7_7iggb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.099998, 0.2, -3.7)
 
+[node name="MasterSwitch" parent="Map/Props" unique_id=1211134874 instance=ExtResource("16_5woyl")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 19.93, 1.3000001, 21.4)
+
 [node name="Lights" type="Node3D" parent="Map" unique_id=846340871]
 
 [node name="StripLamp3" parent="Map/Lights" unique_id=934085172 instance=ExtResource("14_6b3do")]
@@ -647,7 +650,13 @@ uppercase = true
 [node name="Airvent" parent="Map/Sounds" unique_id=184204588 instance=ExtResource("15_qmkbd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.599998, 2.900001, -0.2800002)
 
-[node name="Airvent3" parent="Map/Sounds" unique_id=43525332 instance=ExtResource("15_qmkbd")]
+[node name="Airvent4" parent="Map/Sounds" unique_id=43525332 instance=ExtResource("15_qmkbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.399998, 2.900001, -12.68)
+
+[node name="Airvent5" parent="Map/Sounds" unique_id=146928067 instance=ExtResource("15_qmkbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.399998, 2.900001, -19.68)
+
+[node name="Airvent3" parent="Map/Sounds" unique_id=146698176 instance=ExtResource("15_qmkbd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9999976, 2.900001, -0.2800002)
 
 [node name="Airvent2" parent="Map/Sounds" unique_id=861618651 instance=ExtResource("15_qmkbd")]
@@ -663,8 +672,29 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 30.9
 [node name="FoodMachine2" parent="Map/Sounds" unique_id=1340424952 instance=ExtResource("17_ex14y")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 30.9, 0.20000005, -13.400001)
 
+[node name="FoodMachine4" parent="Map/Sounds" unique_id=1733870094 instance=ExtResource("17_ex14y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.699999, 0.20000005, -7.9000006)
+
+[node name="FoodMachine5" parent="Map/Sounds" unique_id=2076271603 instance=ExtResource("17_ex14y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.199999, 0.20000005, -7.9000006)
+
 [node name="FoodMachine3" parent="Map/Sounds" unique_id=621499043 instance=ExtResource("17_ex14y")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 30.9, 0.20000005, -16.2)
 
-[node name="MasterSwitch" parent="." unique_id=1211134874 instance=ExtResource("16_5woyl")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 19.93, 1.3000001, 21.4)
+[node name="FoodMachine6" parent="Map/Sounds" unique_id=790073634 instance=ExtResource("17_ex14y")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 30.9, 0.20000005, -19)
+
+[node name="FoodMachine7" parent="Map/Sounds" unique_id=2053601536 instance=ExtResource("17_ex14y")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 30.9, 0.20000005, -17.6)
+
+[node name="FoodMachine8" parent="Map/Sounds" unique_id=2054296822 instance=ExtResource("17_ex14y")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 30.9, 0.20000005, -20.400002)
+
+[node name="FoodMachine9" parent="Map/Sounds" unique_id=192294076 instance=ExtResource("17_ex14y")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 30.9, 0.20000005, -23.2)
+
+[node name="FoodMachine10" parent="Map/Sounds" unique_id=1185931710 instance=ExtResource("17_ex14y")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 30.9, 0.20000005, -21.800001)
+
+[node name="FoodMachine11" parent="Map/Sounds" unique_id=432533498 instance=ExtResource("17_ex14y")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 30.9, 0.20000005, -24.600002)
