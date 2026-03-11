@@ -169,7 +169,7 @@ colors = PackedColorArray(0.91616625, 0.94451416, 1, 1, 0, 0, 0, 1, 0.19434938, 
 gradient = SubResource("Gradient_bgcnw")
 fill = 1
 fill_from = Vector2(0.50427353, 0.491453)
-fill_to = Vector2(0.525641, 0)
+fill_to = Vector2(0.491453, 0)
 
 [sub_resource type="Animation" id="Animation_gh776"]
 resource_name = "RESET"

@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://wyt3otchy5nb" path="res://effects/damage_particles.tscn" id="11_54jyg"]
 [ext_resource type="PackedScene" uid="uid://n1421bub7u63" path="res://props/decorations/strip_lamp/StripLamp.tscn" id="14_6b3do"]
 [ext_resource type="PackedScene" uid="uid://coyu337jkc073" path="res://props/decorations/airvent/airvent.tscn" id="15_qmkbd"]
+[ext_resource type="PackedScene" uid="uid://0s1gkuu8iuhj" path="res://props/interactable/crowbar/Crowbar.tscn" id="15_vsm2l"]
 [ext_resource type="FontFile" uid="uid://sq1kya53m58g" path="res://addons/fonts/Kenney Rocket.ttf" id="15_x6cfo"]
 [ext_resource type="PackedScene" uid="uid://dey76bsvr8jgj" path="res://props/interactable/master_switch/MasterSwitch.tscn" id="16_5woyl"]
 [ext_resource type="PackedScene" uid="uid://dkr5k33pei0e1" path="res://props/decorations/food_dispenser/FoodMachine.tscn" id="17_ex14y"]
@@ -46,7 +47,7 @@ bounce = 0.05
 environment = SubResource("Environment_7iggb")
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=1950703982]
-transform = Transform3D(-0.3698596, -0.32042524, 0.8720846, 0.7523872, 0.44739464, 0.48347855, -0.54508466, 0.8349645, 0.075610675, -0.4, 0, 0)
+transform = Transform3D(-0.66144246, -0.7090981, -0.24428223, -0.20567395, -0.1417263, 0.9683037, -0.72124344, 0.69071966, -0.052099183, -0.4, -1.3000001, 0.90000004)
 light_color = Color(0.5882353, 0.6901961, 0.8666667, 1)
 shadow_enabled = true
 sky_mode = 1
@@ -561,7 +562,19 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 19.9
 [node name="StripLamp3" parent="Map/Lights" unique_id=934085172 instance=ExtResource("14_6b3do")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.4700003, 0.8, 1.8)
 
-[node name="StripLamp7" parent="Map/Lights" unique_id=2052499222 instance=ExtResource("14_6b3do")]
+[node name="StripLamp10" parent="Map/Lights" unique_id=2052499222 instance=ExtResource("14_6b3do")]
+transform = Transform3D(1.9106855e-15, 1, -4.371139e-08, 4.371139e-08, -4.371139e-08, -1, -1, 0, -4.371139e-08, 23.830002, 3.03, -14.9)
+
+[node name="StripLamp17" parent="Map/Lights" unique_id=1201594330 instance=ExtResource("14_6b3do")]
+transform = Transform3D(1.9106855e-15, 1, -4.371139e-08, 4.371139e-08, -4.371139e-08, -1, -1, 0, -4.371139e-08, 23.830002, 3.03, -17.8)
+
+[node name="StripLamp18" parent="Map/Lights" unique_id=561807707 instance=ExtResource("14_6b3do")]
+transform = Transform3D(1.9106855e-15, 1, -4.371139e-08, 4.371139e-08, -4.371139e-08, -1, -1, 0, -4.371139e-08, 23.830002, 3.03, -21.9)
+
+[node name="StripLamp11" parent="Map/Lights" unique_id=997551380 instance=ExtResource("14_6b3do")]
+transform = Transform3D(1.9106855e-15, 1, -4.371139e-08, 4.371139e-08, -4.371139e-08, -1, -1, 0, -4.371139e-08, 23.830002, 3.03, -11)
+
+[node name="StripLamp7" parent="Map/Lights" unique_id=572164824 instance=ExtResource("14_6b3do")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.4700003, 0.8, 1.8)
 
 [node name="StripLamp4" parent="Map/Lights" unique_id=2026468677 instance=ExtResource("14_6b3do")]
@@ -614,7 +627,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.002, 0, -4.744)
 
 [node name="StationDoor5" parent="Map/Doors" unique_id=659486270 instance=ExtResource("3_wvlmu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.2, 0.099999905, 7.7000003)
-required_access = 1
+needs_crowbar = true
+
+[node name="Crowbar" parent="Map/Doors" unique_id=1447367375 instance=ExtResource("15_vsm2l")]
+transform = Transform3D(0.9659258, -0.25881904, 0, 0.25881904, 0.9659258, 0, 0, 0, 1, 22.400002, 1.4100001, 4.1)
 
 [node name="RoomLabels" type="Node3D" parent="Map" unique_id=1202456816]
 
@@ -667,34 +683,34 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2, 1.9, -1.2)
 initial_velocity_max = 0.3
 
 [node name="FoodMachine" parent="Map/Sounds" unique_id=348394576 instance=ExtResource("17_ex14y")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 30.9, 0.20000005, -14.8)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 31.199999, 0.20000005, -14.8)
 
 [node name="FoodMachine2" parent="Map/Sounds" unique_id=1340424952 instance=ExtResource("17_ex14y")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 30.9, 0.20000005, -13.400001)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 31.199999, 0.20000005, -13.400001)
 
 [node name="FoodMachine4" parent="Map/Sounds" unique_id=1733870094 instance=ExtResource("17_ex14y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.699999, 0.20000005, -7.9000006)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.699999, 0.20000005, -7.7500005)
 
 [node name="FoodMachine5" parent="Map/Sounds" unique_id=2076271603 instance=ExtResource("17_ex14y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.199999, 0.20000005, -7.9000006)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.199999, 0.20000005, -7.7500005)
 
 [node name="FoodMachine3" parent="Map/Sounds" unique_id=621499043 instance=ExtResource("17_ex14y")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 30.9, 0.20000005, -16.2)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 31.199999, 0.20000005, -16.2)
 
 [node name="FoodMachine6" parent="Map/Sounds" unique_id=790073634 instance=ExtResource("17_ex14y")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 30.9, 0.20000005, -19)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 31.199999, 0.20000005, -19)
 
 [node name="FoodMachine7" parent="Map/Sounds" unique_id=2053601536 instance=ExtResource("17_ex14y")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 30.9, 0.20000005, -17.6)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 31.199999, 0.20000005, -17.6)
 
 [node name="FoodMachine8" parent="Map/Sounds" unique_id=2054296822 instance=ExtResource("17_ex14y")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 30.9, 0.20000005, -20.400002)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 31.199999, 0.20000005, -20.400002)
 
 [node name="FoodMachine9" parent="Map/Sounds" unique_id=192294076 instance=ExtResource("17_ex14y")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 30.9, 0.20000005, -23.2)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 31.199999, 0.20000005, -23.2)
 
 [node name="FoodMachine10" parent="Map/Sounds" unique_id=1185931710 instance=ExtResource("17_ex14y")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 30.9, 0.20000005, -21.800001)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 31.199999, 0.20000005, -21.800001)
 
 [node name="FoodMachine11" parent="Map/Sounds" unique_id=432533498 instance=ExtResource("17_ex14y")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 30.9, 0.20000005, -24.600002)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 31.199999, 0.20000005, -24.600002)

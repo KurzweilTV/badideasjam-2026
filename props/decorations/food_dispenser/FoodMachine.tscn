@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://dkr5k33pei0e1"]
 
 [ext_resource type="Material" uid="uid://db8o17k5lxyl" path="res://props/decorations/food_dispenser/material_0.tres" id="1_3dtp2"]
+[ext_resource type="Script" uid="uid://2rqegy65bce3" path="res://props/decorations/food_dispenser/food_machine.gd" id="1_5l0hm"]
 [ext_resource type="Material" uid="uid://cau10gr2pgxfy" path="res://props/decorations/food_dispenser/material_1.tres" id="2_mwqxh"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_n6eyo"]
@@ -1479,6 +1480,7 @@ shadow_mesh = SubResource("ArrayMesh_sumvt")
 size = Vector3(1.3, 2.06, 0.47)
 
 [node name="FoodMachine" type="StaticBody3D" unique_id=348394576]
+script = ExtResource("1_5l0hm")
 
 [node name="blockbench_export" type="Node3D" parent="." unique_id=1386491351]
 
@@ -1718,3 +1720,8 @@ mesh = SubResource("ArrayMesh_nh0nl")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=5339616]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8626451e-08, 1.0100001, 0.08500002)
 shape = SubResource("BoxShape3D_3dtp2")
+
+[node name="Light1" type="OmniLight3D" parent="." unique_id=1007381799]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 1.0900002, -0.15000007)
+visible = false
+omni_range = 2.0

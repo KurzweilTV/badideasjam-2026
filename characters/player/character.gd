@@ -16,7 +16,10 @@ enum KEYS {None, Green, Blue, Orange}
 
 ## Player gameplay variables
 @export_category("Gameplay")
+## Which access level the player has
 @export var access_level: KEYS = KEYS.None
+## Does the player have a crowbar?
+@export var has_crowbar: bool = false
 ## The main game resource - kill player at 0.0
 @export var oxygen_level: float = 50.0:
 	set(value):
@@ -28,6 +31,8 @@ enum KEYS {None, Green, Blue, Orange}
 @export var base_oxygen_loss_rate: float = 2.0
 ## Sprinting Oxygen Use Multiplier
 @export var sprint_oxygen_multiplier: float = 3.0
+## Player Needs Oxygen or Not (For after powerup)
+@export var oxygen_system_enabled: bool = true
 
 var oxygen_loss_rate: float = base_oxygen_loss_rate
 #endregion
@@ -168,6 +173,8 @@ var mouseInput : Vector2 = Vector2(0,0)
 #region Main Control Flow
 
 func _ready():
+	StationStatus.station_power_change.connect(_disable_oxygen)
+	
 	#It is safe to comment this line if your game doesn't start with the mouse captured
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
@@ -542,6 +549,7 @@ func handle_pausing():
 #region Oxygen Handling
 
 func use_oxygen(delta) -> void:
+	if not oxygen_system_enabled: return
 	oxygen_level -= oxygen_loss_rate * delta
 	if oxygen_level <= 20.0:
 		oxygen_bar.modulate = Color.RED
@@ -551,10 +559,18 @@ func give_oxygen(amount: float) -> void:
 	oxygen_level += amount
 
 func _update_oxygen_ui() -> void:
-	create_tween().tween_property(oxygen_bar, "value", oxygen_level, 0.2)
+	create_tween().tween_property(oxygen_bar, "value", oxygen_level, 1.0)
 
+
+func _disable_oxygen(status: bool) -> void:
+	oxygen_system_enabled = !status #turn off oxygen as station is turned on
+	give_oxygen(100) 
+	
 #endregion
 
 func set_access(access) -> void:
 	access_level = access
 	print("Access Level set to level: %s" % access)
+	
+func set_crowbar() -> void:
+	has_crowbar = true

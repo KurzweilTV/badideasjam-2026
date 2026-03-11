@@ -6,6 +6,7 @@ enum KEYS {None, Green, Blue, Orange}
 @export var required_access: KEYS = KEYS.None
 @export var start_open: bool = false
 @export var door_locked: bool = false
+@export var needs_crowbar: bool = false
 @export var auto_close_time: float = 4.0
 var door_open: bool = false
 @onready var anim: AnimationPlayer = $blockbench_export/AnimationPlayer
@@ -16,6 +17,9 @@ func _ready() -> void:
 	else: close_door()
 		
 func _on_interact(_interactor: Player) -> bool:
+	if needs_crowbar and not _interactor.has_crowbar:
+		$DoorLocked.play()
+		return false
 	if door_locked: 
 		$DoorLocked.play()
 		return false
@@ -23,8 +27,9 @@ func _on_interact(_interactor: Player) -> bool:
 		close_door()
 	else:
 		open_door(_interactor)
-		_start_auto_close_timer()
-
+		if needs_crowbar: %DoorInteract.disabled = true # no need to close a door that we pryed open
+		if not needs_crowbar:
+			_start_auto_close_timer()
 	return true
 
 
