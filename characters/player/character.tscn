@@ -500,6 +500,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 
 script = ExtResource("1_0t4e8")
 base_speed = 2.5
 sprint_speed = 4.0
+mouse_sensitivity = 0.05
 default_reticle = "uid://coqpusufa8a6k"
 HEAD = NodePath("Head")
 CAMERA = NodePath("Head/Camera")
@@ -579,7 +580,6 @@ grow_vertical = 2
 mouse_filter = 1
 
 [node name="DebugPanel" type="PanelContainer" parent="UserInterface" unique_id=716811236]
-visible = false
 layout_mode = 0
 offset_left = 10.0
 offset_top = 10.0

@@ -120,6 +120,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.642498, 0, 5.9936733)
 [node name="Wall46" parent="Map/Wall" unique_id=464160534 instance=ExtResource("3_880v8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.642498, 0, 20.993673)
 
+[node name="Wall61" parent="Map/Wall" unique_id=221578584 instance=ExtResource("3_880v8")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 21.042498, 0, 22.593674)
+
 [node name="Wall47" parent="Map/Wall" unique_id=426480890 instance=ExtResource("3_880v8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.682499, 0, 17.993673)
 
