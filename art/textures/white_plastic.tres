@@ -1,14 +1,30 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://bwxyawivitn7s"]
 
+[ext_resource type="Texture2D" uid="uid://32higfamqnxo" path="res://art/textures/obluenoise256.png" id="1_bumbh"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_83a6b"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bumbh"]
+width = 128
+height = 128
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_83a6b")
+seamless = true
+as_normal_map = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7c2vu"]
+
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tq2h6"]
-width = 256
-height = 256
+width = 128
+height = 128
+noise = SubResource("FastNoiseLite_7c2vu")
 seamless = true
 
 [resource]
-albedo_color = Color(0.91616625, 0.94451416, 1, 1)
-roughness = 0.2
+albedo_texture = ExtResource("1_bumbh")
 roughness_texture = SubResource("NoiseTexture2D_tq2h6")
-clearcoat_enabled = true
-clearcoat = 0.6
-clearcoat_roughness = 0.05
+roughness_texture_channel = 3
+normal_texture = SubResource("NoiseTexture2D_bumbh")
+clearcoat_roughness = 1.0
+uv1_scale = Vector3(-0.3, -0.3, -0.3)
+uv1_triplanar = true

@@ -10,6 +10,7 @@ enum KEYS {None, Green, Blue, Orange}
 @export var needs_crowbar: bool = false
 @export var auto_close_time: float = 4.0
 var door_open: bool = false
+var first_interaction: bool = true
 @onready var anim: AnimationPlayer = $blockbench_export/AnimationPlayer
 @onready var strip_lamp: Node3D = $StripLamp
 @onready var strip_lamp_2: Node3D = $StripLamp2
@@ -25,7 +26,9 @@ func _ready() -> void:
 func _on_interact(_interactor: Player) -> bool:
 	if needs_crowbar and not _interactor.has_crowbar:
 		$DoorLocked.play()
-		StationStatus.dialog.emit("I bet I could open this with a [color=pale_violet_red]crowbar[/color].", 0.5, StationStatus.player_color, false, "dialog_05.mp3")
+		if first_interaction:
+			StationStatus.dialog.emit("I bet I could open this with a [color=pale_violet_red]crowbar[/color].", 0.5, StationStatus.player_color, false, "dialog_05.mp3")
+			first_interaction = false
 		return false
 	if door_locked: 
 		$DoorLocked.play()

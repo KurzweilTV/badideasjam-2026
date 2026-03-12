@@ -544,7 +544,8 @@ light_energy = 2.037
 light_projector = SubResource("GradientTexture2D_5ir01")
 shadow_enabled = true
 spot_range = 8.0
-spot_angle = 43.33
+spot_angle = 60.0
+spot_angle_attenuation = 0.25881636
 script = ExtResource("2_k5tm5")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Head/Flashlight" unique_id=1084560728]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://coyu337jkc073"]
 
-[ext_resource type="AudioStream" uid="uid://bfd0tpyxdf8fy" path="res://audio/ambiance/ambiance-reaper.mp3" id="1_6kd1p"]
+[ext_resource type="AudioStream" uid="uid://c6ae8lrmqe1qo" path="res://audio/ambiance/bedroom_fan.mp3" id="2_3pav4"]
 [ext_resource type="Script" uid="uid://wggbuoggi5b6" path="res://props/decorations/airvent/airvent.gd" id="2_pjada"]
 [ext_resource type="PackedScene" uid="uid://cux3q7jj8e4oc" path="res://props/decorations/airvent/airvent.glb" id="3_3pav4"]
 
@@ -27,10 +27,10 @@ point_count = 4
 script = ExtResource("2_pjada")
 
 [node name="Sound" type="AudioStreamPlayer3D" parent="." unique_id=184204588]
-stream = ExtResource("1_6kd1p")
-volume_db = -10.0
+stream = ExtResource("2_3pav4")
+volume_db = -30.0
 pitch_scale = 0.01
-max_polyphony = 2
+max_distance = 20.0
 bus = &"Sounds"
 
 [node name="blockbench_export" parent="." unique_id=879991387 instance=ExtResource("3_3pav4")]

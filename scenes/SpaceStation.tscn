@@ -32,14 +32,25 @@ background_mode = 2
 sky = SubResource("Sky_ena27")
 sky_rotation = Vector3(0, 0.10471976, 0.61784655)
 tonemap_mode = 4
+ssao_enabled = true
 ssao_radius = 2.0
 ssao_detail = 1.0
-ssil_radius = 1.55
 sdfgi_use_occlusion = true
-fog_mode = 1
-fog_light_energy = 0.05
-fog_density = 1.0
+glow_enabled = true
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 0.1
+fog_sky_affect = 0.0
+volumetric_fog_density = 0.2
 volumetric_fog_albedo = Color(0.41421467, 0.40931264, 0.4219467, 1)
+volumetric_fog_detail_spread = 6.0
+
+[sub_resource type="GDScript" id="GDScript_x6cfo"]
+resource_name = "RoofUnhider"
+script/source = "extends CSGBox3D
+
+func _ready() -> void:
+	self.show()
+"
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2crfw"]
 friction = 0.9
@@ -70,11 +81,13 @@ base_speed = 2.0
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Map/Roof" unique_id=1334190095]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.300005, 3.1000001, 5.9500036)
+visible = false
 use_collision = true
 collision_layer = 3
 collision_mask = 3
 size = Vector3(36, 0.2, 60)
 material = ExtResource("3_2crfw")
+script = SubResource("GDScript_x6cfo")
 
 [node name="Wall" type="Node3D" parent="Map" unique_id=904513086]
 
@@ -662,7 +675,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.399998, 2.900001, -19.68)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9999976, 2.900001, -0.2800002)
 
 [node name="Airvent2" parent="Map/Sounds" unique_id=861618651 instance=ExtResource("15_qmkbd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.9, 2.900001, 16.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.9, 2.900001, 19.396149)
 
 [node name="DamageFX" parent="Map/Sounds" unique_id=1672889911 instance=ExtResource("11_54jyg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2, 1.9, -1.2)
@@ -715,9 +728,33 @@ message = "A mess hall.. completely abandoned"
 delay = 0.0
 voice_over_file = "dialog_06.mp3"
 
+[node name="Dialog5" parent="Map/DialogNodes" unique_id=435373609 instance=ExtResource("20_x6cfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.518286, 0.51678145, -15.975689)
+message = "Where is everyone?"
+delay = 0.0
+voice_over_file = "alone_1.mp3"
+
+[node name="Dialog4" parent="Map/DialogNodes" unique_id=99669006 instance=ExtResource("20_x6cfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.33472, 0.51678145, -3.0301962)
+message = "Maintenence.. this could be a good place to find a crowbar"
+delay = 0.0
+voice_over_file = "crowbar_2.mp3"
+
+[node name="Dialog6" parent="Map/DialogNodes" unique_id=1111864886 instance=ExtResource("20_x6cfo")]
+transform = Transform3D(-0.57493365, 0.81820005, 0, -0.81820005, -0.57493365, 0, 0, 0, 1, 21.352226, 0.51678145, 8.582265)
+message = "Yes! That did it!"
+delay = 0.0
+voice_over_file = "success_1.mp3"
+
+[node name="Dialog7" parent="Map/DialogNodes" unique_id=251148845 instance=ExtResource("20_x6cfo")]
+transform = Transform3D(-0.57493365, 0.81820005, 0, -0.81820005, -0.57493365, 0, 0, 0, 1, 21.352226, 0.51678145, 15.396125)
+message = "Mining equipment... I wonder how far underground we are?"
+delay = 0.0
+voice_over_file = "underground_1.mp3"
+
 [node name="Dialog3" parent="Map/DialogNodes" unique_id=939960145 instance=ExtResource("20_x6cfo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.40246, 1.0571746, -16.595705)
-message = "Oops... all apples. Good thing I'm not hungry"
+message = "Oops... all apples. Good thing I'm not hungry... I hate Apples"
 delay = 0.0
 trigger_area = SubResource("BoxShape3D_x6cfo")
 voice_over_file = "dialog_07.mp3"
