@@ -5,7 +5,7 @@ extends Interactable
 @onready var body: MeshInstance3D = $blockbench_export/body
 
 func _on_interact(_interactor: Player) -> bool:
-	StationStatus.dialog.emit("Great... The emergency [color=green]oxygen[/color] still works", 1, StationStatus.player_color)
+	StationStatus.dialog.emit("Good... The emergency [color=green]oxygen[/color] still works", 1, StationStatus.player_color)
 	print("Oxygen Refilled - Cooldown: (%s seconds)" % cooldown_time)
 	use_sound.pitch_scale = randf_range(0.9, 1.1)
 	use_sound.play()

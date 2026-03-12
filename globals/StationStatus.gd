@@ -4,7 +4,7 @@ extends Node
 signal station_power_change(powered: bool)
 signal station_color_change(new_color: Color)
 @warning_ignore("unused_signal")
-signal dialog(message: String, delay: float)
+signal dialog(message: String, delay: float, border_color: Color)
 @warning_ignore("unused_signal")
 signal dialog_complete
 

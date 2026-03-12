@@ -25,6 +25,7 @@ func _ready() -> void:
 func _on_interact(_interactor: Player) -> bool:
 	if needs_crowbar and not _interactor.has_crowbar:
 		$DoorLocked.play()
+		StationStatus.dialog.emit("I bet I could open this with a [color=pale_violet_red]crowbar[/color].", 0.5, StationStatus.player_color)
 		return false
 	if door_locked: 
 		$DoorLocked.play()

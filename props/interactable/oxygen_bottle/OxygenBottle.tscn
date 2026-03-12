@@ -12,6 +12,8 @@ collision_layer = 3
 collision_mask = 3
 mass = 20.0
 script = ExtResource("1_amqef")
+cooldown_time = 0.0
+interact_hint = "Oxygen Bottle"
 
 [node name="blockbench_export" parent="." unique_id=1586085588 instance=ExtResource("1_11fe0")]
 

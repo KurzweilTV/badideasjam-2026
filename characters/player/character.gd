@@ -15,6 +15,8 @@ enum KEYS {None, Green, Blue, Orange}
 
 #region Gameplay Export Group
 
+@export_category("Debug")
+@export var skip_tutorial: bool = false
 ## Player gameplay variables
 @export_category("Gameplay")
 ## Which access level the player has
@@ -194,7 +196,8 @@ func _ready():
 	if OS.get_name() == "Web":
 		Input.set_use_accumulated_input(false)
 
-	dialog_system._opening_dialog()
+	if not skip_tutorial:
+		dialog_system._opening_dialog()
 func _process(delta):
 	if pausing_enabled:
 		handle_pausing()

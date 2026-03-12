@@ -2,6 +2,7 @@ class_name Dialog
 extends PanelContainer
 
 @onready var dialog_box: RichTextLabel = $DialogBox
+@onready var typing_click: AudioStreamPlayer = $TypingClick
 
 var typing_speed: float = 15.0 
 var char_progress: float = 0.0
@@ -16,6 +17,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if typing and dialog_box.visible_characters < dialog_box.text.length():
 		char_progress += typing_speed * delta
+		#typing_click.pitch_scale = randf_range(0.6, 0.8)
+		#typing_click.play()
 		dialog_box.visible_characters = int(char_progress)
 	elif typing:
 		typing = false

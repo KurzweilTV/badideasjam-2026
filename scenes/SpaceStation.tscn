@@ -19,6 +19,7 @@
 [ext_resource type="FontFile" uid="uid://sq1kya53m58g" path="res://addons/fonts/Kenney Rocket.ttf" id="15_x6cfo"]
 [ext_resource type="PackedScene" uid="uid://dey76bsvr8jgj" path="res://props/interactable/master_switch/MasterSwitch.tscn" id="16_5woyl"]
 [ext_resource type="PackedScene" uid="uid://dkr5k33pei0e1" path="res://props/decorations/food_dispenser/FoodMachine.tscn" id="17_ex14y"]
+[ext_resource type="PackedScene" uid="uid://bexobtvi7plny" path="res://scenes/systems/dialog_trigger.tscn" id="20_x6cfo"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_2crfw"]
 panorama = ExtResource("1_go4jk")
@@ -32,10 +33,18 @@ sky = SubResource("Sky_ena27")
 sky_rotation = Vector3(0, 0.10471976, 0.61784655)
 tonemap_mode = 2
 ssao_enabled = true
+ssao_radius = 2.0
+ssao_detail = 1.0
+ssil_radius = 1.55
+sdfgi_use_occlusion = true
 glow_enabled = true
+fog_mode = 1
 fog_light_energy = 0.05
-volumetric_fog_density = 0.0106
-volumetric_fog_albedo = Color(0, 1, 1, 1)
+fog_density = 1.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.03
+volumetric_fog_albedo = Color(0.41421467, 0.40931264, 0.4219467, 1)
+volumetric_fog_emission_energy = 0.0
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2crfw"]
 friction = 0.9
@@ -474,7 +483,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5, 0.19999981, -20.5)
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 28.296526, 1.4074116, 2.7564833)
 
 [node name="OxygenBottle" parent="Map/Props" unique_id=1240880077 instance=ExtResource("7_7iggb")]
-transform = Transform3D(-0.18301277, 0.5062361, -0.8427522, 0.18301274, 0.8597894, 0.4767268, 0.96592575, -0.06698729, -0.24999996, 4.94615, 0.44249678, -4.055561)
+transform = Transform3D(-0.18301277, 0.5062361, -0.8427522, 0.18301274, 0.8597894, 0.4767268, 0.96592575, -0.06698729, -0.24999996, 8.54615, 0.44249678, -0.35556102)
 mass = 15.0
 physics_material_override = SubResource("PhysicsMaterial_2crfw")
 
@@ -690,3 +699,10 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 31.1
 
 [node name="FoodMachine11" parent="Map/Sounds" unique_id=432533498 instance=ExtResource("17_ex14y")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 31.199999, 0.20000005, -24.600002)
+
+[node name="DialogNodes" type="Node3D" parent="Map" unique_id=1544233562]
+
+[node name="Dialog1" parent="Map/DialogNodes" unique_id=1157176842 instance=ExtResource("20_x6cfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.677408, 1.2, 0.1)
+message = "It looks like the [color=yellow]power[/color] is out."
+delay = 0.0
