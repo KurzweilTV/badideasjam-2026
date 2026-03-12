@@ -1,7 +1,17 @@
 # Global.gd (autoload)
 extends Node
+
 signal station_power_change(powered: bool)
 signal station_color_change(new_color: Color)
+@warning_ignore("unused_signal")
+signal dialog(message: String, delay: float)
+@warning_ignore("unused_signal")
+signal dialog_complete
+
+@export_category("Dialog Box Colors")
+@export var player_color: Color = Color.PALE_GREEN
+@export var system_color: Color = Color.PINK
+
 
 var station_powered: bool = false
 var station_color: Color = Color.RED

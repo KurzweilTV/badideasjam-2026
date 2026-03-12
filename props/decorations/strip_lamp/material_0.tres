@@ -1,7 +1,7 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://b8f558m5icvyk"]
 
 [ext_resource type="Texture2D" uid="uid://2oy8aubktcwq" path="res://props/decorations/strip_lamp/texture.png" id="1_wkckt"]
-[ext_resource type="Texture2D" uid="uid://cakjmycwoxciu" path="res://props/decorations/food_dispenser/texture-emissive.png" id="2_7bmr0"]
+[ext_resource type="Texture2D" uid="uid://7n4alw1uoahd" path="res://props/decorations/strip_lamp/texture_emissive.png" id="2_7bmr0"]
 
 [resource]
 resource_name = "material_0"

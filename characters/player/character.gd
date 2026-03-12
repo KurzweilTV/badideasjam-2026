@@ -11,6 +11,7 @@ enum KEYS {None, Green, Blue, Orange}
 @onready var oxygen_bar: ProgressBar = %OxygenBar
 @onready var interact_cursor: TextureRect = %InteractCursor
 @onready var interact_label: Label = %InteractLabel
+@onready var dialog_system: Dialog = $UserInterface/DialogSystem
 
 #region Gameplay Export Group
 
@@ -193,7 +194,7 @@ func _ready():
 	if OS.get_name() == "Web":
 		Input.set_use_accumulated_input(false)
 
-
+	dialog_system._opening_dialog()
 func _process(delta):
 	if pausing_enabled:
 		handle_pausing()
@@ -567,6 +568,7 @@ func _disable_oxygen(status: bool) -> void:
 	give_oxygen(100) 
 	
 #endregion
+	
 
 func set_access(access) -> void:
 	access_level = access
