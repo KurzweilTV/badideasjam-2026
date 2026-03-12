@@ -31,7 +31,7 @@ sky_material = SubResource("PanoramaSkyMaterial_2crfw")
 background_mode = 2
 sky = SubResource("Sky_ena27")
 sky_rotation = Vector3(0, 0.10471976, 0.61784655)
-tonemap_mode = 2
+tonemap_mode = 4
 ssao_enabled = true
 ssao_radius = 2.0
 ssao_detail = 1.0
@@ -41,10 +41,7 @@ glow_enabled = true
 fog_mode = 1
 fog_light_energy = 0.05
 fog_density = 1.0
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.03
 volumetric_fog_albedo = Color(0.41421467, 0.40931264, 0.4219467, 1)
-volumetric_fog_emission_energy = 0.0
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2crfw"]
 friction = 0.9
