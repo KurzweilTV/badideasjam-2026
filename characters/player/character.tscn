@@ -13,6 +13,7 @@
 [ext_resource type="Theme" uid="uid://b11dr1iiq0j81" path="res://ui/themes/menu_theme.tres" id="10_x0k6q"]
 [ext_resource type="Script" uid="uid://b3vuaqyjc5mv6" path="res://characters/player/dialog_system.gd" id="11_plpq5"]
 [ext_resource type="FontFile" uid="uid://jojpfgda2e6k" path="res://addons/fonts/Strogo.ttf" id="12_ont2n"]
+[ext_resource type="AudioStream" uid="uid://dmv6ltstx5e7f" path="res://characters/player/voiceover/temporary/dialog_01.mp3" id="13_2rsth"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kp17n"]
 albedo_color = Color(1, 0.5176471, 1, 1)
@@ -695,6 +696,11 @@ vertical_alignment = 1
 
 [node name="TypingClick" type="AudioStreamPlayer" parent="UserInterface/DialogSystem" unique_id=973569186]
 volume_db = -6.0
+
+[node name="VoiceOver" type="AudioStreamPlayer3D" parent="UserInterface/DialogSystem" unique_id=271866070]
+stream = ExtResource("13_2rsth")
+panning_strength = 0.0
+bus = &"VoiceOver"
 
 [node name="CrouchCeilingDetection" type="ShapeCast3D" parent="." unique_id=494539563]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

@@ -3,6 +3,7 @@ extends PanelContainer
 
 @onready var dialog_box: RichTextLabel = $DialogBox
 @onready var typing_click: AudioStreamPlayer = $TypingClick
+@onready var voice_over: AudioStreamPlayer3D = $VoiceOver
 
 var base_typing_speed: float = 12.0
 var typing_speed: float = 15.0 
@@ -33,13 +34,16 @@ func _process(delta: float) -> void:
 			StationStatus.dialog_complete.emit()
 			hide()
 
-func _new_message(message: String, delay: float, border: Color, tutorial: bool = false) -> void:
+func _new_message(message: String, delay: float, border: Color, tutorial: bool = false, vo_file: String = "") -> void:
 	if tutorial: 
 		typing_speed = 500
 	else: 
 		typing_speed = base_typing_speed
 		
 	await get_tree().create_timer(delay).timeout
+	if vo_file != "": # plays VO file, if it exists
+		voice_over.stream = load("res://characters/player/voiceover/temporary/" + vo_file)
+		voice_over.play()
 	_set_border_color(border)
 	show()
 	dialog_box.text = message
@@ -54,11 +58,11 @@ func _set_border_color(new_color: Color) -> void:
 	add_theme_stylebox_override("panel", style)
 
 func _opening_dialog() -> void:
-	StationStatus.dialog.emit("What... Where am I?", 2, StationStatus.player_color)
+	StationStatus.dialog.emit("What... Where am I?", 2, StationStatus.player_color, false, "dialog_01.mp3")
 	await StationStatus.dialog_complete
-	StationStatus.dialog.emit("I'm in a pressure suit?!?", 1, StationStatus.player_color)
-	await StationStatus.dialog_complete
-	StationStatus.dialog.emit("The [color=green]oxygen[/color] reading is low...", 1, StationStatus.player_color)
+	#StationStatus.dialog.emit("I'm in some sort of... pressure suit?", 1, StationStatus.player_color, false, "dialog_02.mp3")
+	#await StationStatus.dialog_complete
+	StationStatus.dialog.emit("Looks like the [color=green]oxygen[/color] is low. I should find some air", 1, StationStatus.player_color, false, "dialog_03.mp3")
 	await StationStatus.dialog_complete
 	_opening_tutorial()
 

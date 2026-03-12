@@ -4,6 +4,31 @@
 resource_name = "Reverb"
 room_size = 0.2
 
+[sub_resource type="AudioEffectHighPassFilter" id="AudioEffectHighPassFilter_qq1ct"]
+resource_name = "HighPassFilter"
+cutoff_hz = 300.0
+
+[sub_resource type="AudioEffectBandPassFilter" id="AudioEffectBandPassFilter_qq1ct"]
+resource_name = "BandPassFilter"
+cutoff_hz = 3200.0
+resonance = 1.0
+
+[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_qq1ct"]
+resource_name = "Compressor"
+threshold = -18.0
+ratio = 6.0
+release_ms = 120.0
+
+[sub_resource type="AudioEffectDistortion" id="AudioEffectDistortion_qq1ct"]
+resource_name = "Distortion"
+drive = 0.1
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_cdixg"]
+resource_name = "Reverb"
+room_size = 0.15
+damping = 0.6
+wet = 0.08
+
 [resource]
 bus/0/volume_db = -2.7102394
 bus/1/name = &"Sounds"
@@ -20,3 +45,19 @@ bus/2/mute = false
 bus/2/bypass_fx = false
 bus/2/volume_db = -8.009033
 bus/2/send = &"Master"
+bus/3/name = &"VoiceOver"
+bus/3/solo = false
+bus/3/mute = false
+bus/3/bypass_fx = false
+bus/3/volume_db = -3.1173582
+bus/3/send = &"Master"
+bus/3/effect/0/effect = SubResource("AudioEffectHighPassFilter_qq1ct")
+bus/3/effect/0/enabled = true
+bus/3/effect/1/effect = SubResource("AudioEffectBandPassFilter_qq1ct")
+bus/3/effect/1/enabled = true
+bus/3/effect/2/effect = SubResource("AudioEffectCompressor_qq1ct")
+bus/3/effect/2/enabled = true
+bus/3/effect/3/effect = SubResource("AudioEffectDistortion_qq1ct")
+bus/3/effect/3/enabled = true
+bus/3/effect/4/effect = SubResource("AudioEffectReverb_cdixg")
+bus/3/effect/4/enabled = true

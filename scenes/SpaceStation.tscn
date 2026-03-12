@@ -32,12 +32,10 @@ background_mode = 2
 sky = SubResource("Sky_ena27")
 sky_rotation = Vector3(0, 0.10471976, 0.61784655)
 tonemap_mode = 4
-ssao_enabled = true
 ssao_radius = 2.0
 ssao_detail = 1.0
 ssil_radius = 1.55
 sdfgi_use_occlusion = true
-glow_enabled = true
 fog_mode = 1
 fog_light_energy = 0.05
 fog_density = 1.0
@@ -46,6 +44,9 @@ volumetric_fog_albedo = Color(0.41421467, 0.40931264, 0.4219467, 1)
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2crfw"]
 friction = 0.9
 bounce = 0.05
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x6cfo"]
+size = Vector3(2, 1, 10)
 
 [node name="SpaceStation" type="Node3D" unique_id=805722603]
 
@@ -701,5 +702,19 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 31.1
 
 [node name="Dialog1" parent="Map/DialogNodes" unique_id=1157176842 instance=ExtResource("20_x6cfo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.677408, 1.2, 0.1)
-message = "It looks like the [color=yellow]power[/color] is out."
+message = "Wherever I am.. it looks like the [color=yellow]power[/color] is out."
 delay = 0.0
+voice_over_file = "dialog_04.mp3"
+
+[node name="Dialog2" parent="Map/DialogNodes" unique_id=979156349 instance=ExtResource("20_x6cfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.02688, 0.51678145, -8.20429)
+message = "A mess hall.. completely abandoned"
+delay = 0.0
+voice_over_file = "dialog_06.mp3"
+
+[node name="Dialog3" parent="Map/DialogNodes" unique_id=939960145 instance=ExtResource("20_x6cfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.40246, 1.0571746, -16.595705)
+message = "Oops... all apples. Good thing I'm not hungry"
+delay = 0.0
+trigger_area = SubResource("BoxShape3D_x6cfo")
+voice_over_file = "dialog_07.mp3"

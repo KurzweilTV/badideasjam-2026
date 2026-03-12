@@ -16,4 +16,4 @@ func trigger_change() -> void:
 	$ClickSound.play()
 	StationStatus.set_station_power(true)
 	StationStatus.set_station_color(Color.WHITE)
-	StationStatus.dialog.emit("Yes! The [color=yellow]power[/color] and the [color=green]oxygen[/color] are coming online!", 2, StationStatus.player_color)
+	StationStatus.dialog.emit("Yes! The [color=yellow]power[/color] and the [color=green]oxygen[/color] are coming online!", 2, StationStatus.player_color, false, "dialog_09.mp3")
