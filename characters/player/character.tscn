@@ -540,11 +540,11 @@ collision_mask = 2
 
 [node name="Flashlight" type="SpotLight3D" parent="Head" unique_id=1838602365]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8323845e-08, 0, -0.6479739)
-light_energy = 2.037
+light_energy = 2.0
 light_projector = SubResource("GradientTexture2D_5ir01")
 shadow_enabled = true
-spot_range = 8.0
-spot_angle = 60.0
+spot_range = 8.242638
+spot_angle = 29.86353
 spot_angle_attenuation = 0.25881636
 script = ExtResource("2_k5tm5")
 
@@ -687,7 +687,7 @@ script = ExtResource("11_plpq5")
 [node name="DialogBox" type="RichTextLabel" parent="UserInterface/DialogSystem" unique_id=525112492]
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("12_ont2n")
-theme_override_font_sizes/normal_font_size = 28
+theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 text = "This is some [color=green]sample text[/color] to be used during development"
 fit_content = true

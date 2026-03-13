@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b4x8qw6yaut8l"
-path="res://.godot/imported/station_bed.glb-c108f4cdeeab738a89c8678daa36477c.scn"
+uid="uid://ddcuusbytjf8i"
+path="res://.godot/imported/bed.glb-4d8e00284d1d990fce72931d735eeef5.scn"
 
 [deps]
 
-source_file="res://props/decorations/bed/station_bed.glb"
-dest_files=["res://.godot/imported/station_bed.glb-c108f4cdeeab738a89c8678daa36477c.scn"]
+source_file="res://props/decorations/bed_crew/bed.glb"
+dest_files=["res://.godot/imported/bed.glb-4d8e00284d1d990fce72931d735eeef5.scn"]
 
 [params]
 
