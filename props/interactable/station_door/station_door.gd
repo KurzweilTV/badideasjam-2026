@@ -8,6 +8,7 @@ enum KEYS {None, Green, Blue, Orange}
 @export var start_open: bool = false
 @export var door_locked: bool = false
 @export var needs_crowbar: bool = false
+@export var needs_power: bool = true
 @export var auto_close_time: float = 4.0
 var door_open: bool = false
 var first_interaction: bool = true
@@ -24,6 +25,17 @@ func _ready() -> void:
 	else: close_door()
 		
 func _on_interact(_interactor: Player) -> bool:
+	if needs_power and not StationStatus.station_powered:
+		if first_interaction:
+			$DoorLocked.play()
+			print("Powerup the station first")
+			print("First time clicking door")
+			first_interaction = false
+			return false
+		else:
+			$DoorLocked.play()
+			print("Powerup the station first")
+			return false
 	if needs_crowbar and not _interactor.has_crowbar:
 		$DoorLocked.play()
 		if first_interaction:

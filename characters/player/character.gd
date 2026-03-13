@@ -555,15 +555,17 @@ func handle_pausing():
 func use_oxygen(delta) -> void:
 	if not oxygen_system_enabled: return
 	oxygen_level -= oxygen_loss_rate * delta
-	if oxygen_level <= 20.0:
-		oxygen_bar.modulate = Color.RED
-	else: oxygen_bar.modulate = Color.WHITE
+
 
 func give_oxygen(amount: float) -> void:
 	oxygen_level += amount
 
 func _update_oxygen_ui() -> void:
 	create_tween().tween_property(oxygen_bar, "value", oxygen_level, 1.0)
+	if oxygen_level <= 20.0:
+		oxygen_bar.modulate = Color.RED
+	else: 
+		oxygen_bar.modulate = Color.WHITE
 
 
 func _disable_oxygen(status: bool) -> void:
