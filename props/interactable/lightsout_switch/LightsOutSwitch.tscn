@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://d2v3svs2skfsr"]
 
 [ext_resource type="Script" uid="uid://c7dse0u3430ck" path="res://props/interactable/lightsout_switch/lights_out_switch.gd" id="1_3xofa"]
+[ext_resource type="AudioStream" uid="uid://wob4cgfxhqjk" path="res://props/interactable/master_switch/BigSwitch.mp3" id="2_tx6we"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v8he2"]
 resource_name = "material_0"
@@ -178,3 +179,10 @@ libraries/ = SubResource("AnimationLibrary_yllv7")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=853013621]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9802322e-08, 0.5, 0.35)
 shape = SubResource("BoxShape3D_tx6we")
+
+[node name="SwitchSound" type="AudioStreamPlayer3D" parent="." unique_id=810085106]
+unique_name_in_owner = true
+stream = ExtResource("2_tx6we")
+pitch_scale = 0.5
+max_distance = 20.0
+bus = &"Sounds"

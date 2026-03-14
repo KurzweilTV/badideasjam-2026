@@ -14,10 +14,7 @@ signal dialog_complete
 @export var system_color: Color = Color.PINK
 
 ## Powerup switch status
-var switch_a: bool
-var switch_b: bool
-var switch_c: bool
-var switch_d: bool
+var switches := [false, false, false, false]
 
 var station_powered: bool = false
 var station_color: Color = Color.RED
@@ -46,9 +43,17 @@ func handle_power_switches(index: int) -> void:
 			#toggle_switch(3)
 			toggle_switch(0)
 
-func toggle_switch(index) -> void:
-	print("Toggling: %s" % str(index))
+func toggle_switch(index: int) -> void:
+	switches[index] = !switches[index]
 	toggled_powerup_switch.emit(index)
+	check_switches_complete()
+
+func check_switches_complete() -> void:
+	if switches[0] and switches[1] and switches[2] and switches[3]:
+		set_station_power(true)
+		set_station_color(Color.WHITE)
+		station_power_change.emit(true)
+
 
 func set_station_color(new_color: Color) -> void:
 	station_color = new_color

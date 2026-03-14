@@ -530,7 +530,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 [node name="Camera" type="Camera3D" parent="Head" unique_id=775360523]
 
 [node name="PixelShader" type="MeshInstance3D" parent="Head/Camera" unique_id=1987337913]
-transform = Transform3D(2.2502186, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -3.412823e-08, 0, -0.78076273)
+transform = Transform3D(3.3603044, 0, 0, 0, 2.1076112, 0, -1.4210855e-14, 0, 0.99999994, -3.412823e-08, 0, -0.78076273)
 visible = false
 mesh = SubResource("QuadMesh_5ir01")
 surface_material_override/0 = SubResource("ShaderMaterial_d6s3g")
@@ -711,6 +711,7 @@ volume_db = -6.0
 
 [node name="VoiceOver" type="AudioStreamPlayer3D" parent="UserInterface/DialogSystem" unique_id=271866070]
 stream = ExtResource("13_2rsth")
+volume_db = 2.0
 panning_strength = 0.0
 bus = &"VoiceOver"
 
