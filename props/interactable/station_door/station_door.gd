@@ -49,7 +49,10 @@ func _on_interact(_interactor: Player) -> bool:
 		close_door()
 	else:
 		open_door(_interactor)
-		if needs_crowbar: %DoorInteract.disabled = true # no need to close a door that we pryed open
+		if needs_crowbar: 
+			_interactor.set_crowbar(false)
+			#TODO Player breaking sound for losing the crowbar
+			%DoorInteract.disabled = true # no need to close a door that we pryed open
 		if not needs_crowbar:
 			_start_auto_close_timer()
 	return true
@@ -71,7 +74,7 @@ func open_door(player: Player) -> void:
 		door_open = true
 	else: 
 		$DoorLocked.pitch_scale = randf_range(0.9, 1.1)
-		$DoorLocked.play()
+		$AccessError.play()
 		print("Needs %s Key" % required_access)
 		
 func close_door() -> void:

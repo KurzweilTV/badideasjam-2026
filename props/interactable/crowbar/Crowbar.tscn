@@ -8,7 +8,10 @@ size = Vector3(0.7, 0.02, 0.06)
 
 [node name="Crowbar" type="RigidBody3D" unique_id=1447367375]
 collision_layer = 3
+mass = 3.0
 script = ExtResource("1_ays30")
+cooldown_time = 1.0
+interact_hint = "Crowbar"
 
 [node name="blockbench_export" parent="." unique_id=228573298 instance=ExtResource("1_c1mbt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0, 0)

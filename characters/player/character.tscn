@@ -9,11 +9,13 @@
 [ext_resource type="AudioStream" uid="uid://cji82wy8pws7c" path="res://ui/sounds/switch11.ogg" id="3_ydn43"]
 [ext_resource type="Texture2D" uid="uid://g57eb3gtci1d" path="res://art/cursors/hand_open.png" id="4_oetk0"]
 [ext_resource type="Script" uid="uid://cmqt0rtxnw6cy" path="res://characters/player/footstep_manager.gd" id="5_5ir01"]
+[ext_resource type="Script" uid="uid://b02748c2b03tn" path="res://characters/player/hand.gd" id="6_ta105"]
 [ext_resource type="LabelSettings" uid="uid://chg1id0jihetb" path="res://ui/labels/sub_heading.tres" id="9_d6s3g"]
 [ext_resource type="Theme" uid="uid://b11dr1iiq0j81" path="res://ui/themes/menu_theme.tres" id="10_x0k6q"]
 [ext_resource type="Script" uid="uid://b3vuaqyjc5mv6" path="res://characters/player/dialog_system.gd" id="11_plpq5"]
 [ext_resource type="FontFile" uid="uid://jojpfgda2e6k" path="res://addons/fonts/Strogo.ttf" id="12_ont2n"]
 [ext_resource type="AudioStream" uid="uid://dmv6ltstx5e7f" path="res://characters/player/voiceover/temporary/dialog_01.mp3" id="13_2rsth"]
+[ext_resource type="PackedScene" uid="uid://cnrmcq1jjbyx1" path="res://props/interactable/crowbar/crowbar.glb" id="15_vyhkh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kp17n"]
 albedo_color = Color(1, 0.5176471, 1, 1)
@@ -543,8 +545,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8323845e-08, 0, -0.6479739
 light_energy = 2.0
 light_projector = SubResource("GradientTexture2D_5ir01")
 shadow_enabled = true
-spot_range = 8.242638
-spot_angle = 29.86353
+spot_range = 10.0
+spot_attenuation = 2.0
+spot_angle = 50.0
 spot_angle_attenuation = 0.25881636
 script = ExtResource("2_k5tm5")
 
@@ -570,6 +573,14 @@ blend_times = [&"RESET", &"RESET", 0.5, &"RESET", &"walk", 0.5, &"walk", &"RESET
 [node name="JumpAnimation" type="AnimationPlayer" parent="Head" unique_id=1392279506]
 libraries/ = SubResource("AnimationLibrary_qeg5r")
 speed_scale = 4.0
+
+[node name="Hand" type="Marker3D" parent="Head" unique_id=1494047287]
+transform = Transform3D(0.92213345, -0.12779665, 0.36515462, 1.4439326e-08, 0.9438644, 0.3303332, -0.3868719, -0.3046113, 0.87036896, 0.4386054, -0.20901036, -0.6873878)
+script = ExtResource("6_ta105")
+
+[node name="Crowbar" parent="Head/Hand" unique_id=697964984 instance=ExtResource("15_vyhkh")]
+transform = Transform3D(0.11157335, 2.0917375, 1.1311135e-07, -1.9968858, 0.1168731, 1.7881393e-07, -4.8770272e-09, -8.7707484e-08, 2.69, 0.2957307, 0.049383044, -0.5938231)
+visible = false
 
 [node name="UserInterface" type="Control" parent="." unique_id=683028152]
 layout_mode = 3

@@ -12,6 +12,7 @@ enum KEYS {None, Green, Blue, Orange}
 @onready var interact_cursor: TextureRect = %InteractCursor
 @onready var interact_label: Label = %InteractLabel
 @onready var dialog_system: Dialog = $UserInterface/DialogSystem
+@onready var hand: Marker3D = $Head/Hand
 
 #region Gameplay Export Group
 
@@ -579,5 +580,6 @@ func set_access(access) -> void:
 	access_level = access
 	print("Access Level set to level: %s" % access)
 	
-func set_crowbar() -> void:
-	has_crowbar = true
+func set_crowbar(held: bool) -> void:
+	has_crowbar = held
+	hand._set_crowbar(held)

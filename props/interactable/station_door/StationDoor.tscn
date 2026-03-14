@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://cg7dorfwkgpxw" path="res://props/interactable/station_door/sounds/DoorSlide.mp3" id="3_2r0iy"]
 [ext_resource type="AudioStream" uid="uid://hvde0qktlm8x" path="res://props/interactable/station_door/sounds/DoorSlideClose.mp3" id="4_fwoyv"]
 [ext_resource type="AudioStream" uid="uid://dkp0thl8xkh2x" path="res://props/interactable/station_door/sounds/LockedDoor.mp3" id="5_j3fuo"]
+[ext_resource type="AudioStream" uid="uid://d02q7soipxyd8" path="res://props/interactable/station_door/sounds/error_008.ogg" id="6_2hho2"]
 [ext_resource type="PackedScene" uid="uid://n1421bub7u63" path="res://props/decorations/strip_lamp/StripLamp.tscn" id="6_wn0f4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a282m"]
@@ -61,6 +62,12 @@ bus = &"Sounds"
 [node name="DoorLocked" type="AudioStreamPlayer3D" parent="." unique_id=1954124039]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.757312, 0)
 stream = ExtResource("5_j3fuo")
+max_polyphony = 4
+bus = &"Sounds"
+
+[node name="AccessError" type="AudioStreamPlayer3D" parent="." unique_id=1112788742]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.757312, 0)
+stream = ExtResource("6_2hho2")
 max_polyphony = 4
 bus = &"Sounds"
 
