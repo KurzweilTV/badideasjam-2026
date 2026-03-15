@@ -87,12 +87,11 @@ mesh = SubResource("ArrayMesh_cyi6y")
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=445910238]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0.51)
 light_energy = 0.0
-omni_range = 10.0
+omni_range = 15.0
 omni_attenuation = 2.0
 
 [node name="PowerUpSound" type="AudioStreamPlayer3D" parent="." unique_id=1621834001]
 stream = ExtResource("3_10bj1")
 volume_db = -10.0
-pitch_scale = 0.15
 max_polyphony = 5
 bus = &"Sounds"

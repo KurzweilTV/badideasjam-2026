@@ -21,7 +21,13 @@ metadata/_custom_type_script = "uid://bl7efj28lf80j"
 
 [node name="blockbench_export" parent="." unique_id=1245780297 instance=ExtResource("2_a282m")]
 
+[node name="wall_left" parent="blockbench_export" index="0" unique_id=1767511892]
+visible = false
+
 [node name="CollisionShape3D" parent="blockbench_export/wall_left/StaticBody3D" parent_id_path=PackedInt32Array(1245780297, 1698203380) index="0" unique_id=1542372381]
+visible = false
+
+[node name="wall_right" parent="blockbench_export" index="1" unique_id=2111803568]
 visible = false
 
 [node name="CollisionShape3D" parent="blockbench_export/wall_right/StaticBody3D" parent_id_path=PackedInt32Array(1245780297, 1356058078) index="0" unique_id=1525077253]
@@ -73,8 +79,10 @@ bus = &"Sounds"
 
 [node name="StripLamp" parent="." unique_id=2052499222 instance=ExtResource("6_wn0f4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.911536, 0.9043641, 0.20537782)
+visible = false
 
 [node name="StripLamp2" parent="." unique_id=451010356 instance=ExtResource("6_wn0f4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8955021, 0.9043641, 0.20537782)
+visible = false
 
 [editable path="blockbench_export"]

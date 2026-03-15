@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://bd07yr3x7io7y"]
 
-[ext_resource type="Texture2D" uid="uid://dvb213qkm7ywi" path="res://props/decorations/bed_crew/texture.png" id="1_37iix"]
+[ext_resource type="Texture2D" uid="uid://dfrp53pks2hmf" path="res://props/decorations/bed_crew/bed_G.png" id="1_u47o5"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eurem"]
-albedo_texture = ExtResource("1_37iix")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5uinc"]
+albedo_texture = ExtResource("1_u47o5")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jf8nr"]
 resource_name = "material_0"
@@ -46,8 +46,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_a3bxr")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mwfyk"]
-albedo_texture = ExtResource("1_37iix")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nbagq"]
+albedo_texture = ExtResource("1_u47o5")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_wln6k"]
 _surfaces = [{
@@ -81,8 +81,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_wln6k")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jvgre"]
-albedo_texture = ExtResource("1_37iix")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g331i"]
+albedo_texture = ExtResource("1_u47o5")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_45hnr"]
 _surfaces = [{
@@ -116,6 +116,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_45hnr")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mfojf"]
+albedo_texture = ExtResource("1_u47o5")
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_yqu38"]
 _surfaces = [{
 "aabb": AABB(-0.0625, -0.375, -0.0625, 0.125, 0.5, 0.125),
@@ -147,6 +150,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_yqu38")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vrxoa"]
+albedo_texture = ExtResource("1_u47o5")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_t4qjb"]
 _surfaces = [{
@@ -180,6 +186,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_t4qjb")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ulbp8"]
+albedo_texture = ExtResource("1_u47o5")
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_4qbd0"]
 _surfaces = [{
 "aabb": AABB(-0.0625, -0.375, -0.0625, 0.125, 0.5, 0.125),
@@ -211,6 +220,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_4qbd0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0iiog"]
+albedo_texture = ExtResource("1_u47o5")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_x7s7m"]
 _surfaces = [{
@@ -252,35 +264,39 @@ size = Vector3(2, 1, 3.5)
 [node name="blockbench_export" type="Node3D" parent="." unique_id=491562691]
 
 [node name="cube" type="MeshInstance3D" parent="blockbench_export" unique_id=1112057239]
-material_override = SubResource("StandardMaterial3D_eurem")
+material_override = SubResource("StandardMaterial3D_5uinc")
 mesh = SubResource("ArrayMesh_wc1dd")
 
 [node name="cube2" type="MeshInstance3D" parent="blockbench_export" unique_id=2023275378]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
-material_override = SubResource("StandardMaterial3D_mwfyk")
+material_override = SubResource("StandardMaterial3D_nbagq")
 mesh = SubResource("ArrayMesh_xrf0m")
 
 [node name="mesh" type="MeshInstance3D" parent="blockbench_export" unique_id=526214870]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1875, 1.1875)
-material_override = SubResource("StandardMaterial3D_jvgre")
+material_override = SubResource("StandardMaterial3D_g331i")
 mesh = SubResource("ArrayMesh_drjvi")
 
 [node name="feet" type="Node3D" parent="blockbench_export" unique_id=192662161]
 
 [node name="cube3" type="MeshInstance3D" parent="blockbench_export/feet" unique_id=1409873089]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.125, -1.875)
+material_override = SubResource("StandardMaterial3D_mfojf")
 mesh = SubResource("ArrayMesh_gbc0s")
 
 [node name="cube4" type="MeshInstance3D" parent="blockbench_export/feet" unique_id=1027134712]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, -0.125, -1.875)
+material_override = SubResource("StandardMaterial3D_vrxoa")
 mesh = SubResource("ArrayMesh_6qrht")
 
 [node name="cube5" type="MeshInstance3D" parent="blockbench_export/feet" unique_id=841262071]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.125, 1.3125)
+material_override = SubResource("StandardMaterial3D_ulbp8")
 mesh = SubResource("ArrayMesh_k1ghy")
 
 [node name="cube6" type="MeshInstance3D" parent="blockbench_export/feet" unique_id=625602402]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, -0.125, 1.3125)
+material_override = SubResource("StandardMaterial3D_0iiog")
 mesh = SubResource("ArrayMesh_xy0pw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1550126155]

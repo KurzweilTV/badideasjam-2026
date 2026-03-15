@@ -16,7 +16,7 @@ func _ready() -> void:
 func _set_light_color(new_color: Color) -> void:
 	await get_tree().create_timer(randf_range(1.0, 6.0)).timeout
 	$PowerUpSound.play()
-	omni_light_3d.light_energy = 0.30
+	omni_light_3d.light_energy = 0.70
 	mat.emission = new_color
 	mat.emission_enabled = true
 	omni_light_3d.light_color = new_color

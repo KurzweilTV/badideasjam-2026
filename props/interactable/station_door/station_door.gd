@@ -17,6 +17,7 @@ var first_interaction: bool = true
 @onready var strip_lamp_2: Node3D = $StripLamp2
 
 func _ready() -> void:
+	StationStatus.station_power_change.connect(_set_powerup_state)
 	if not door_lights:
 		for lamp: Node3D in [strip_lamp, strip_lamp_2]:
 			lamp.visible = false
@@ -81,3 +82,7 @@ func close_door() -> void:
 	anim.play("door_close")
 	$DoorClose.play()
 	door_open = false
+
+func _set_powerup_state(status) -> void:
+	needs_crowbar = !status
+	if door_open: close_door()

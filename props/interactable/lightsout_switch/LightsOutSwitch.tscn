@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://d2v3svs2skfsr"]
 
 [ext_resource type="Script" uid="uid://c7dse0u3430ck" path="res://props/interactable/lightsout_switch/lights_out_switch.gd" id="1_3xofa"]
-[ext_resource type="AudioStream" uid="uid://wob4cgfxhqjk" path="res://props/interactable/master_switch/BigSwitch.mp3" id="2_tx6we"]
+[ext_resource type="AudioStream" uid="uid://b3ndyasuauegu" path="res://props/interactable/lightsout_switch/PowerSwitch.mp3" id="2_tx6we"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v8he2"]
 resource_name = "material_0"
@@ -183,6 +183,12 @@ shape = SubResource("BoxShape3D_tx6we")
 [node name="SwitchSound" type="AudioStreamPlayer3D" parent="." unique_id=810085106]
 unique_name_in_owner = true
 stream = ExtResource("2_tx6we")
-pitch_scale = 0.5
-max_distance = 20.0
+volume_db = -5.0
+pitch_scale = 0.8
+max_distance = 15.0
 bus = &"Sounds"
+
+[node name="IndicatorLight" type="OmniLight3D" parent="." unique_id=842573002]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, -3.7252903e-09)
+shadow_enabled = true
+omni_range = 2.5

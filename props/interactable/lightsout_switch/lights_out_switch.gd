@@ -9,6 +9,7 @@ enum switch_positions {A, B, C, D}
 @onready var anim: AnimationPlayer = %AnimationPlayer
 @onready var collision: CollisionShape3D = $CollisionShape3D
 @onready var switch_sound: AudioStreamPlayer3D = %SwitchSound
+@onready var indicator_light: OmniLight3D = $IndicatorLight
 
 func _ready() -> void:
 	StationStatus.toggled_powerup_switch.connect(check_switch)
@@ -31,11 +32,16 @@ func apply_visual(status: bool) -> void:
 	if status:
 		anim.play("turn_on")
 		await anim.animation_finished
+		switch_sound.pitch_scale = 0.8
 		switch_sound.play()
+		indicator_light.light_color = Color.SPRING_GREEN
 	else:
 		anim.play("turn_off")
 		await anim.animation_finished
+		switch_sound.pitch_scale = 0.7
+	
 		switch_sound.play()
+		indicator_light.light_color = Color.DARK_ORANGE
 
 		
 func _on_station_powerup(_powered) -> void:

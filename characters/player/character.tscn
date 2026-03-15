@@ -545,9 +545,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8323845e-08, 0, -0.6479739
 light_energy = 2.0
 light_projector = SubResource("GradientTexture2D_5ir01")
 shadow_enabled = true
-spot_range = 10.0
+spot_range = 15.0
 spot_attenuation = 2.0
-spot_angle = 50.0
+spot_angle = 70.0
 spot_angle_attenuation = 0.25881636
 script = ExtResource("2_k5tm5")
 
