@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dst1ynlbt3at5" path="res://props/buildings/walls/Wall.tscn" id="3_880v8"]
 [ext_resource type="PackedScene" uid="uid://b0qyedg63defo" path="res://props/interactable/station_door/StationDoor.tscn" id="3_wvlmu"]
 [ext_resource type="PackedScene" uid="uid://bd07yr3x7io7y" path="res://props/decorations/bed_crew/CrewBed.tscn" id="5_ena27"]
+[ext_resource type="Texture2D" uid="uid://bsdh2o6ckvdk2" path="res://art/textures/simpleceiling.png" id="5_l8q6r"]
 [ext_resource type="PackedScene" uid="uid://c575vh7hkg7xh" path="res://props/decorations/mess_table/MessTable.tscn" id="6_qmkbd"]
 [ext_resource type="FontFile" uid="uid://sq1kya53m58g" path="res://addons/fonts/Kenney Rocket.ttf" id="10_ex14y"]
 [ext_resource type="PackedScene" uid="uid://8ymflc86kaqu" path="res://props/decorations/bed_medical/MedBed.tscn" id="10_vn57o"]
@@ -43,6 +44,10 @@ fog_sky_affect = 0.0
 volumetric_fog_density = 0.2
 volumetric_fog_albedo = Color(0.41421467, 0.40931264, 0.4219467, 1)
 volumetric_fog_detail_spread = 6.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_clfuy"]
+albedo_texture = ExtResource("5_l8q6r")
+uv1_scale = Vector3(74.355, 74.355, 74.355)
 
 [sub_resource type="GDScript" id="GDScript_5woyl"]
 resource_name = "AutoRoof"
@@ -1376,8 +1381,8 @@ metadata/_edit_lock_ = true
 
 [node name="RoofCSG" type="CSGBox3D" parent="Map/Roof" unique_id=444258683]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 3.05, -2)
-visible = false
 size = Vector3(150, 0.2, 150)
+material = SubResource("StandardMaterial3D_clfuy")
 script = SubResource("GDScript_5woyl")
 metadata/_edit_lock_ = true
 
