@@ -6,7 +6,6 @@
 [ext_resource type="AudioStream" uid="uid://hvde0qktlm8x" path="res://props/interactable/station_door/sounds/DoorSlideClose.mp3" id="4_fwoyv"]
 [ext_resource type="AudioStream" uid="uid://dkp0thl8xkh2x" path="res://props/interactable/station_door/sounds/LockedDoor.mp3" id="5_j3fuo"]
 [ext_resource type="AudioStream" uid="uid://d02q7soipxyd8" path="res://props/interactable/station_door/sounds/error_008.ogg" id="6_2hho2"]
-[ext_resource type="PackedScene" uid="uid://n1421bub7u63" path="res://props/decorations/strip_lamp/StripLamp.tscn" id="6_wn0f4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a282m"]
 size = Vector3(2.9941406, 3.1689453, 0.32592773)
@@ -15,7 +14,6 @@ size = Vector3(2.9941406, 3.1689453, 0.32592773)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_a282m")
-auto_close_time = 3.0
 interact_hint = "Door"
 metadata/_custom_type_script = "uid://bl7efj28lf80j"
 
@@ -76,13 +74,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.757312, 0)
 stream = ExtResource("6_2hho2")
 max_polyphony = 4
 bus = &"Sounds"
-
-[node name="StripLamp" parent="." unique_id=2052499222 instance=ExtResource("6_wn0f4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.911536, 0.9043641, 0.20537782)
-visible = false
-
-[node name="StripLamp2" parent="." unique_id=451010356 instance=ExtResource("6_wn0f4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8955021, 0.9043641, 0.20537782)
-visible = false
 
 [editable path="blockbench_export"]

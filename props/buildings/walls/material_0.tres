@@ -1,0 +1,20 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://xrlsw43k35k5"]
+
+[ext_resource type="Texture2D" uid="uid://hqetkxcxbpt" path="res://props/buildings/walls/texture.png" id="1_2rsv0"]
+[ext_resource type="Texture2D" uid="uid://cr58tt50umr6u" path="res://props/buildings/walls/texture_specular.png" id="2_l35ba"]
+[ext_resource type="Texture2D" uid="uid://ddfa2gpeiy518" path="res://props/buildings/walls/texture_specular-2.png" id="3_10rvt"]
+
+[resource]
+resource_name = "material_0"
+transparency = 2
+alpha_scissor_threshold = 0.05
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_2rsv0")
+metallic = 0.31
+normal_enabled = true
+normal_texture = ExtResource("3_10rvt")
+ao_enabled = true
+ao_texture = ExtResource("2_l35ba")
+texture_filter = 0
+texture_repeat = false

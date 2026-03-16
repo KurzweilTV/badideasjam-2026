@@ -113,47 +113,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -18)
 [node name="FloorTile34" parent="Map/Floors" unique_id=1979868723 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -18)
 
-[node name="FloorTile35" parent="Map/Floors" unique_id=1984390142 instance=ExtResource("2_qisfu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -18)
-
-[node name="FloorTile36" parent="Map/Floors" unique_id=796286723 instance=ExtResource("2_qisfu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -18)
-
-[node name="FloorTile37" parent="Map/Floors" unique_id=572970204 instance=ExtResource("2_qisfu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -18)
-
-[node name="FloorTile38" parent="Map/Floors" unique_id=1778958705 instance=ExtResource("2_qisfu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -18)
-
 [node name="FloorTile39" parent="Map/Floors" unique_id=315621649 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -15)
 
-[node name="FloorTile40" parent="Map/Floors" unique_id=1897006459 instance=ExtResource("2_qisfu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -15)
-
-[node name="FloorTile41" parent="Map/Floors" unique_id=445380243 instance=ExtResource("2_qisfu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -15)
-
-[node name="FloorTile42" parent="Map/Floors" unique_id=1397494603 instance=ExtResource("2_qisfu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -15)
-
-[node name="FloorTile43" parent="Map/Floors" unique_id=1739772377 instance=ExtResource("2_qisfu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -15)
-
 [node name="FloorTile44" parent="Map/Floors" unique_id=1010931237 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -21)
-
-[node name="FloorTile45" parent="Map/Floors" unique_id=1084087270 instance=ExtResource("2_qisfu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -21)
-
-[node name="FloorTile46" parent="Map/Floors" unique_id=503345309 instance=ExtResource("2_qisfu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -21)
-
-[node name="FloorTile47" parent="Map/Floors" unique_id=1654891174 instance=ExtResource("2_qisfu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -21)
-
-[node name="FloorTile48" parent="Map/Floors" unique_id=718326692 instance=ExtResource("2_qisfu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -21)
 
 [node name="FloorTile49" parent="Map/Floors" unique_id=1431370690 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -24)
@@ -751,6 +715,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 9)
 
 [node name="Walls" type="Node3D" parent="Map" unique_id=348094776]
 metadata/_edit_lock_ = true
+
+[node name="Wall209" parent="Map/Walls" unique_id=306660851 instance=ExtResource("3_880v8")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3, 0, -1.5)
+
+[node name="Wall210" parent="Map/Walls" unique_id=1764208825 instance=ExtResource("3_880v8")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3, 0, -1.5)
 
 [node name="Wall" parent="Map/Walls" unique_id=367557172 instance=ExtResource("3_880v8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -9)
@@ -1381,6 +1351,7 @@ metadata/_edit_lock_ = true
 
 [node name="RoofCSG" type="CSGBox3D" parent="Map/Roof" unique_id=444258683]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 3.05, -2)
+visible = false
 size = Vector3(150, 0.2, 150)
 material = SubResource("StandardMaterial3D_clfuy")
 script = SubResource("GDScript_5woyl")
@@ -1477,15 +1448,39 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5.95
 [node name="FoodMachine9" parent="Map/Decorations/Furniture" unique_id=954783395 instance=ExtResource("17_ex14y")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2.9499998, 0, -55.15)
 
+[node name="Cabinet" parent="Map/Decorations/Furniture" unique_id=2120964287 instance=ExtResource("20_clfuy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 9.65)
+
 [node name="Decals" type="Node3D" parent="Map/Decorations" unique_id=2088893780]
 
 [node name="PowerRoom" type="Label3D" parent="Map/Decorations/Decals" unique_id=1854325412]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.35, 2.65, -13.999999)
+transform = Transform3D(1.9106855e-15, 1, 4.371139e-08, 4.371139e-08, -4.371139e-08, 1, 1, 0, -4.371139e-08, 0.9, 0.20000005, -18.099998)
 pixel_size = 0.007
 shaded = true
 double_sided = false
 texture_filter = 0
 text = "Power Room"
+font = ExtResource("10_ex14y")
+font_size = 36
+
+[node name="CrewDorms" type="Label3D" parent="Map/Decorations/Decals" unique_id=1043291176]
+transform = Transform3D(1.9106855e-15, -1, -4.371139e-08, -4.371139e-08, -4.371139e-08, 1, -1, 0, -4.371139e-08, -0.95000005, 0.2500001, -18)
+pixel_size = 0.007
+shaded = true
+double_sided = false
+texture_filter = 0
+text = "Crew
+Dorms"
+font = ExtResource("10_ex14y")
+font_size = 36
+
+[node name="CrewDorms2" type="Label3D" parent="Map/Decorations/Decals" unique_id=1218657331]
+transform = Transform3D(1.9106855e-15, -1, -4.371139e-08, -4.371139e-08, -4.371139e-08, 1, -1, 0, -4.371139e-08, -21.95, 0.1500001, -17.95)
+pixel_size = 0.007
+shaded = true
+double_sided = false
+texture_filter = 0
+text = "Maintenance"
 font = ExtResource("10_ex14y")
 font_size = 36
 
@@ -1524,7 +1519,10 @@ staring_status = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2.85, -18)
 
 [node name="Airvent4" parent="Map/Decorations" unique_id=1401748571 instance=ExtResource("19_vsm2l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.85, -18)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.85, -8.3)
+
+[node name="Airvent12" parent="Map/Decorations" unique_id=254500554 instance=ExtResource("19_vsm2l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.85, -27.8)
 
 [node name="Airvent5" parent="Map/Decorations" unique_id=1287272802 instance=ExtResource("19_vsm2l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 2.85, -12)
@@ -1568,6 +1566,48 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 13.4
 [node name="StripLamp5" parent="Map/Decorations" unique_id=2016661396 instance=ExtResource("20_l8q6r")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 7.428154, 2.93366, -14.633352)
 
+[node name="StripLamp7" parent="Map/Decorations" unique_id=1187114034 instance=ExtResource("20_l8q6r")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.07184601, 2.93366, -18.633352)
+
+[node name="StripLamp19" parent="Map/Decorations" unique_id=311872490 instance=ExtResource("20_l8q6r")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -3.071846, 2.93366, 3.8666477)
+
+[node name="StripLamp20" parent="Map/Decorations" unique_id=1396956618 instance=ExtResource("20_l8q6r")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 3.928154, 2.93366, 3.8666477)
+
+[node name="StripLamp13" parent="Map/Decorations" unique_id=518239214 instance=ExtResource("20_l8q6r")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2.928154, 2.93366, -46.133354)
+
+[node name="StripLamp14" parent="Map/Decorations" unique_id=794084668 instance=ExtResource("20_l8q6r")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -3.071846, 2.93366, -46.133354)
+
+[node name="StripLamp15" parent="Map/Decorations" unique_id=1720170691 instance=ExtResource("20_l8q6r")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2.928154, 2.93366, -40.133354)
+
+[node name="StripLamp16" parent="Map/Decorations" unique_id=830666833 instance=ExtResource("20_l8q6r")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -3.071846, 2.93366, -40.133354)
+
+[node name="StripLamp17" parent="Map/Decorations" unique_id=1208354279 instance=ExtResource("20_l8q6r")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2.928154, 2.93366, -51.133354)
+
+[node name="StripLamp18" parent="Map/Decorations" unique_id=810809306 instance=ExtResource("20_l8q6r")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -3.071846, 2.93366, -51.133354)
+
+[node name="StripLamp8" parent="Map/Decorations" unique_id=1113956583 instance=ExtResource("20_l8q6r")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -9.071846, 2.93366, -12.133352)
+
+[node name="StripLamp9" parent="Map/Decorations" unique_id=1849348384 instance=ExtResource("20_l8q6r")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -18.071846, 2.93366, -12.133352)
+
+[node name="StripLamp10" parent="Map/Decorations" unique_id=388701281 instance=ExtResource("20_l8q6r")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -9.071846, 2.93366, -26.633352)
+
+[node name="StripLamp11" parent="Map/Decorations" unique_id=1257644710 instance=ExtResource("20_l8q6r")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -18.071846, 2.93366, -26.633352)
+
+[node name="StripLamp12" parent="Map/Decorations" unique_id=388433718 instance=ExtResource("20_l8q6r")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -21.071846, 2.93366, -18.633352)
+
 [node name="StripLamp6" parent="Map/Decorations" unique_id=788431563 instance=ExtResource("20_l8q6r")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 7.428154, 2.93366, -22.633352)
 
@@ -1575,8 +1615,8 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 7.42
 
 [node name="Recovery" parent="Map/Doors" unique_id=511145225 instance=ExtResource("3_wvlmu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5)
-door_lights = false
 start_open = true
+door_broken = true
 enabled = false
 
 [node name="MessHall" parent="Map/Doors" unique_id=1433796562 instance=ExtResource("3_wvlmu")]
@@ -1593,6 +1633,7 @@ start_open = true
 [node name="PowerControl" parent="Map/Doors" unique_id=1829783580 instance=ExtResource("3_wvlmu")]
 transform = Transform3D(-2.1855693e-07, 0, -1, 0, 1, 0, 1, 0, -2.1855693e-07, 1.45, 0, -18)
 needs_crowbar = true
+needs_power = false
 
 [node name="Engineering" parent="Map/Doors" unique_id=1163566922 instance=ExtResource("3_wvlmu")]
 transform = Transform3D(-4.371138e-08, 0, -1, 0, 1, 0, 1, 0, -4.371138e-08, 16.45, 0, -18)
@@ -1639,12 +1680,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
 message = "wherever I am... looks like the [color=yellow]power[/color] is out"
 delay = 0.0
 voice_over_file = "dialog_04.mp3"
-
-[node name="Wall2" parent="." unique_id=306660851 instance=ExtResource("3_880v8")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3, 0, -1.5)
-
-[node name="Wall3" parent="." unique_id=1764208825 instance=ExtResource("3_880v8")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3, 0, -1.5)
-
-[node name="Cabinet" parent="." unique_id=2120964287 instance=ExtResource("20_clfuy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 9.65)

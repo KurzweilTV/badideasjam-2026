@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dib4bre7senoq"
-path.s3tc="res://.godot/imported/texture4x.png-d354cf549601d38469faa9dbffde46d0.s3tc.ctex"
+uid="uid://cr58tt50umr6u"
+path="res://.godot/imported/texture_specular.png-2526df6f7cbae20ecb35be3e96be9c74.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://props/buildings/floor/texture4x.png"
-dest_files=["res://.godot/imported/texture4x.png-d354cf549601d38469faa9dbffde46d0.s3tc.ctex"]
+source_file="res://props/buildings/walls/texture_specular.png"
+dest_files=["res://.godot/imported/texture_specular.png-2526df6f7cbae20ecb35be3e96be9c74.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

@@ -4,64 +4,56 @@ extends Interactable
 enum KEYS {None, Green, Blue, Orange}
 
 @export var required_access: KEYS = KEYS.None
-@export var door_lights: bool = true
 @export var start_open: bool = false
-@export var door_locked: bool = false
+@export var door_broken: bool = false
 @export var needs_crowbar: bool = false
 @export var needs_power: bool = true
-@export var auto_close_time: float = 4.0
+
+var auto_close_time: float = 4.0
 var door_open: bool = false
 var first_interaction: bool = true
+
 @onready var anim: AnimationPlayer = $blockbench_export/AnimationPlayer
-@onready var strip_lamp: Node3D = $StripLamp
-@onready var strip_lamp_2: Node3D = $StripLamp2
 
 func _ready() -> void:
 	StationStatus.station_power_change.connect(_set_powerup_state)
-	if not door_lights:
-		for lamp: Node3D in [strip_lamp, strip_lamp_2]:
-			lamp.visible = false
-	if start_open == true:
+	if door_broken: %DoorInteract.disabled = true
+	if start_open:
 		%DoorInteract.disabled = true
-	else: close_door()
+	else:
+		close_door()
 		
-func _on_interact(_interactor: Player) -> bool:
+func _on_interact(interactor: Player) -> bool:
 	if needs_power and not StationStatus.station_powered:
+		$DoorLocked.play()
+		print("Powerup the station first")
 		if first_interaction:
-			$DoorLocked.play()
-			print("Powerup the station first")
 			print("First time clicking door")
 			first_interaction = false
-			return false
-		else:
-			$DoorLocked.play()
-			print("Powerup the station first")
-			return false
-	if needs_crowbar and not _interactor.has_crowbar:
+		return false
+
+	if needs_crowbar and not interactor.has_crowbar:
 		$DoorLocked.play()
 		if first_interaction:
-			StationStatus.dialog.emit("I bet I could open this with a [color=pale_violet_red]crowbar[/color].", 0.5, StationStatus.player_color, false, "dialog_05.mp3")
+			play_crowbar_dialog()
 			first_interaction = false
 		return false
-	if door_locked: 
-		$DoorLocked.play()
-		return false
+
 	if door_open:
 		close_door()
 	else:
-		open_door(_interactor)
-		if needs_crowbar: 
-			_interactor.set_crowbar(false)
-			#TODO Player breaking sound for losing the crowbar
-			%DoorInteract.disabled = true # no need to close a door that we pryed open
-		if not needs_crowbar:
-			_start_auto_close_timer()
-	return true
+		open_door(interactor)
 
+		if needs_crowbar:
+			interactor.set_crowbar(false) # This makes the crowbar consumable
+			#TODO Play breaking sound for losing the crowbar
+		else:
+			_start_auto_close_timer()
+
+	return true
 
 func _start_auto_close_timer() -> void:
 	auto_close()
-
 
 func auto_close() -> void:
 	await get_tree().create_timer(auto_close_time).timeout
@@ -74,7 +66,6 @@ func open_door(player: Player) -> void:
 		$DoorOpen.play()
 		door_open = true
 	else: 
-		$DoorLocked.pitch_scale = randf_range(0.9, 1.1)
 		$AccessError.play()
 		print("Needs %s Key" % required_access)
 		
@@ -83,6 +74,18 @@ func close_door() -> void:
 	$DoorClose.play()
 	door_open = false
 
+func play_crowbar_dialog() -> void:
+	StationStatus.dialog.emit(
+		"I bet I could open this with a [color=pale_violet_red]crowbar[/color].",
+		0.5,
+		StationStatus.player_color,
+		false,
+		"dialog_05.mp3"
+	)
+
 func _set_powerup_state(status) -> void:
+	if door_broken: return
 	needs_crowbar = !status
-	if door_open: close_door()
+	needs_power = status
+	%DoorInteract.disabled = false
+	close_door()

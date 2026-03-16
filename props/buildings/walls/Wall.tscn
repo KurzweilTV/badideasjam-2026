@@ -7,7 +7,7 @@ size = Vector3(0.13140869, 3.0128174, 3.008789)
 
 [node name="Wall" type="StaticBody3D" unique_id=367557172]
 
-[node name="blockbench_export" parent="." unique_id=328228628 instance=ExtResource("1_pqcb1")]
+[node name="blockbench_export" parent="." unique_id=1751883292 instance=ExtResource("1_pqcb1")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1769738504]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06417847, 1.5025024, 0)
