@@ -17,7 +17,9 @@ var first_interaction: bool = true
 
 func _ready() -> void:
 	StationStatus.station_power_change.connect(_set_powerup_state)
-	if door_broken: %DoorInteract.disabled = true
+	if door_broken: 
+		anim.play("broken")
+		%DoorInteract.disabled = true
 	if start_open:
 		%DoorInteract.disabled = true
 	else:

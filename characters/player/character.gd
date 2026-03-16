@@ -562,6 +562,7 @@ func give_oxygen(amount: float) -> void:
 	oxygen_level += amount
 
 func _update_oxygen_ui() -> void:
+	if not oxygen_bar: return
 	create_tween().tween_property(oxygen_bar, "value", oxygen_level, 1.0)
 	if oxygen_level <= 20.0:
 		oxygen_bar.modulate = Color.RED
@@ -569,9 +570,13 @@ func _update_oxygen_ui() -> void:
 		oxygen_bar.modulate = Color.WHITE
 
 
+func enable_oxygen() -> void:
+	%OxygenBar.show()
+
 func _disable_oxygen(status: bool) -> void:
 	oxygen_system_enabled = !status #turn off oxygen as station is turned on
 	give_oxygen(100) 
+	%OxygenBar.hide()
 	
 #endregion
 	
