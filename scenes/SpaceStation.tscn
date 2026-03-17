@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://n1421bub7u63" path="res://props/decorations/strip_lamp/StripLamp.tscn" id="20_l8q6r"]
 [ext_resource type="PackedScene" uid="uid://bexobtvi7plny" path="res://scenes/systems/dialog_trigger.tscn" id="20_x6cfo"]
 [ext_resource type="PackedScene" uid="uid://djhnfoywusi7s" path="res://props/interactable/oxygen_mask/OxygenMask.tscn" id="22_clfuy"]
+[ext_resource type="PackedScene" uid="uid://jts7y3j4dkmu" path="res://props/buildings/elevator/elevator.tscn" id="23_lhny8"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_2crfw"]
 panorama = ExtResource("1_go4jk")
@@ -54,8 +55,10 @@ uv1_scale = Vector3(74.355, 74.355, 74.355)
 resource_name = "AutoRoof"
 script/source = "extends CSGBox3D
 
+@export var show_roof: bool = true
+
 func _ready() -> void:
-	self.show()
+	self.visible = show_roof
 "
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5woyl"]
@@ -78,7 +81,8 @@ shadow_enabled = true
 sky_mode = 1
 
 [node name="Character" parent="." unique_id=1159670658 instance=ExtResource("1_tq2h6")]
-transform = Transform3D(8.940697e-08, 0, 1, 0, 1, 0, -1, 0, 8.940697e-08, 5.9974527, 0.50000095, 9.33182)
+transform = Transform3D(8.940697e-08, 0, 1, 0, 1, 0, -1, 0, 8.940697e-08, 61.49745, 0.50000095, -18.16818)
+skip_tutorial = true
 oxygen_level = 20.0
 base_oxygen_loss_rate = 0.5
 sprint_oxygen_multiplier = 2.0
@@ -471,9 +475,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63, 18, -24)
 
 [node name="FloorTile211" parent="Map/Floors" unique_id=341812295 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57, 18, -24)
-
-[node name="FloorTile182" parent="Map/Floors" unique_id=1439520313 instance=ExtResource("2_qisfu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57, 0, -18)
 
 [node name="FloorTile139" parent="Map/Floors" unique_id=413460802 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, -18)
@@ -1369,6 +1370,7 @@ visible = false
 size = Vector3(150, 0.2, 150)
 material = SubResource("StandardMaterial3D_clfuy")
 script = SubResource("GDScript_5woyl")
+show_roof = false
 metadata/_edit_lock_ = true
 
 [node name="Decorations" type="Node3D" parent="Map" unique_id=1962209629]
@@ -1700,3 +1702,6 @@ voice_over_file = "dialog_04.mp3"
 
 [node name="OxygenMask" parent="." unique_id=213202809 instance=ExtResource("22_clfuy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.85, 1.3480824, 4.35)
+
+[node name="Elevator" parent="." unique_id=1922165021 instance=ExtResource("23_lhny8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57, 0, -18)
