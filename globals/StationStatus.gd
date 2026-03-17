@@ -4,9 +4,8 @@ extends Node
 signal toggled_powerup_switch(index: int)
 signal station_power_change(powered: bool)
 signal station_color_change(new_color: Color)
-@warning_ignore("unused_signal")
+signal got_oxygen_mask
 signal dialog(message: String, delay: float, border_color: Color, tutorial: bool)
-@warning_ignore("unused_signal")
 signal dialog_complete
 
 @export_category("Dialog Box Colors")
@@ -61,4 +60,6 @@ func set_station_color(new_color: Color) -> void:
 
 func set_station_power(powered: bool) -> void:
 	station_powered = powered
+	set_station_color(Color.WHITE)
 	station_power_change.emit(powered)
+	

@@ -1,5 +1,7 @@
 extends SpotLight3D
 
+@export var target_energy = 3.0
+
 @onready var click: AudioStreamPlayer3D = $AudioStreamPlayer3D
 
 var is_on: bool = false
@@ -20,8 +22,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		_ramp_energy(is_on)
 
 func _ramp_energy(turn_on: bool) -> void:
-	var target: float = 1.5 if turn_on else 0.0
+	var target: float = target_energy if turn_on else 0.0
 	var tween: Tween = create_tween()
 	tween.set_trans(Tween.TRANS_QUAD)
 	tween.set_ease(Tween.EASE_OUT)
-	tween.tween_property(self, "light_energy", target, 0.12)
+	tween.tween_property(self, "light_energy", target, 0.10)

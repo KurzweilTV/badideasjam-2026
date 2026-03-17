@@ -38,6 +38,7 @@ enum KEYS {None, Green, Blue, Orange}
 ## Player Needs Oxygen or Not (For after powerup)
 @export var oxygen_system_enabled: bool = true
 
+var has_oxygen_mask: bool = false
 var oxygen_loss_rate: float = base_oxygen_loss_rate
 #endregion
 
@@ -572,6 +573,7 @@ func _update_oxygen_ui() -> void:
 
 func enable_oxygen() -> void:
 	%OxygenBar.show()
+	has_oxygen_mask = true
 
 func _disable_oxygen(status: bool) -> void:
 	oxygen_system_enabled = !status #turn off oxygen as station is turned on
@@ -579,7 +581,16 @@ func _disable_oxygen(status: bool) -> void:
 	%OxygenBar.hide()
 	
 #endregion
-	
+
+func look_at_node(target: Node3D, duration: float = 0.5) -> void:
+	if target == null:
+		return
+
+	var dir: Vector3 = (target.global_position - HEAD.global_position).normalized()
+	var target_yaw: float = atan2(-dir.x, -dir.z)
+
+	var tween := create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(HEAD, "rotation:y", target_yaw, duration)
 
 func set_access(access) -> void:
 	access_level = access

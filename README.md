@@ -47,8 +47,8 @@ https://www.youtube.com/watch?v=ZVy6LNBmlok
 
 ## 📦 Assets Used
 
-- [UI Sounds](https://www.kenney.nl/assets/ui-audio)  
-- TBD  
+- [Character Controller](https://git.colormatic.org/ColormaticStudios/quality-godot-first-person)
+- [UI Sounds](https://www.kenney.nl/assets/ui-audio)   
 - TBD  
 
 

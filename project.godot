@@ -28,6 +28,10 @@ buses/default_bus_layout="uid://ca88xurrlhyy5"
 SceneManager="*uid://sbwbrn86ufro"
 StationStatus="*uid://2w6mn0yocnjo"
 
+[debug]
+
+gdscript/warnings/unused_signal=0
+
 [display]
 
 window/vsync/vsync_mode=0

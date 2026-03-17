@@ -5,6 +5,7 @@ extends Interactable
 func _on_interact(interactor: Player) -> bool:
 	interactor.give_oxygen(40)
 	interactor.enable_oxygen()
+	StationStatus.got_oxygen_mask.emit()
 	hide()
 
 	if sound:

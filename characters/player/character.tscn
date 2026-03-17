@@ -168,14 +168,14 @@ render_priority = 0
 shader = ExtResource("2_bgcnw")
 
 [sub_resource type="Gradient" id="Gradient_bgcnw"]
-offsets = PackedFloat32Array(0, 0.72159094, 0.8380682, 1)
-colors = PackedColorArray(0.91616625, 0.94451416, 1, 1, 0, 0, 0, 1, 0.19434938, 0.19434923, 0.19434929, 1, 0, 0, 0, 1)
+offsets = PackedFloat32Array(0, 0.7131579, 0.7894737, 0.8842105)
+colors = PackedColorArray(0.91616625, 0.94451416, 1, 1, 0, 0, 0, 1, 0.32915866, 0.3291583, 0.3291584, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_5ir01"]
 gradient = SubResource("Gradient_bgcnw")
 fill = 1
 fill_from = Vector2(0.50427353, 0.491453)
-fill_to = Vector2(0.491453, 0)
+fill_to = Vector2(0.52136755, 0.08974359)
 
 [sub_resource type="Animation" id="Animation_gh776"]
 resource_name = "RESET"
@@ -544,12 +544,15 @@ collision_mask = 2
 [node name="Flashlight" type="SpotLight3D" parent="Head" unique_id=1838602365]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8323845e-08, 0, -0.6479739)
 light_color = Color(1, 0.84705883, 0.5529412, 1)
-light_energy = 5.0
+light_energy = 3.0
 light_projector = SubResource("GradientTexture2D_5ir01")
 shadow_enabled = true
-spot_range = 20.0
-spot_attenuation = 1.5
-spot_angle = 70.0
+shadow_normal_bias = 2.121
+shadow_opacity = 0.54
+shadow_blur = 1.047
+spot_range = 10.0
+spot_angle = 55.0
+spot_angle_attenuation = 0.43527558
 script = ExtResource("2_k5tm5")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Head/Flashlight" unique_id=1084560728]
