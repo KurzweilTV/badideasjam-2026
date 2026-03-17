@@ -5,6 +5,7 @@
 class_name Player
 extends CharacterBody3D
 
+const OPTIONS = preload("uid://dlv5mg4wdfaeo")
 enum KEYS {None, Green, Blue, Orange}
 
 @onready var ray_cast_3d: RayCast3D = %RayCast3D
@@ -540,15 +541,18 @@ func update_camera_fov():
 		CAMERA.fov = lerp(CAMERA.fov, 75.0, 0.3)
 
 func handle_pausing():
+	var options_scene = OPTIONS.instantiate()
 	if Input.is_action_just_pressed(controls.PAUSE):
 		# You may want another node to handle pausing, because this player may get paused too.
 		match Input.mouse_mode:
 			Input.MOUSE_MODE_CAPTURED:
 				Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+				add_child(options_scene)
 				#get_tree().paused = false
 			Input.MOUSE_MODE_VISIBLE:
+				
 				Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-				#get_tree().paused = false
+				#get_tree().paused = true
 
 #endregion
 

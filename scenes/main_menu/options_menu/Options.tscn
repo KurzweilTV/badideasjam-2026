@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://cji82wy8pws7c" path="res://ui/sounds/switch11.ogg" id="4_xyvf4"]
 [ext_resource type="Texture2D" uid="uid://xtbkadxedfao" path="res://ui/icons/speaker.png" id="5_r0po8"]
 [ext_resource type="Texture2D" uid="uid://ctcha1uvwu113" path="res://ui/icons/accessibility.png" id="6_f1mve"]
+[ext_resource type="Script" uid="uid://pwbl6y7jry87" path="res://scenes/main_menu/options_menu/graphics.gd" id="7_5hrqm"]
 [ext_resource type="LabelSettings" uid="uid://chg1id0jihetb" path="res://ui/labels/sub_heading.tres" id="7_r0po8"]
 [ext_resource type="Script" uid="uid://campms7tybmk3" path="res://scenes/main_menu/options_menu/audio_options.gd" id="8_5hrqm"]
 
@@ -76,6 +77,7 @@ tags = {
 }
 
 [node name="Options" type="Control" unique_id=1749887434]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -92,10 +94,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 75
-theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 75
-theme_override_constants/margin_bottom = 50
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_top = 200
+theme_override_constants/margin_right = 300
+theme_override_constants/margin_bottom = 200
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=1326111309]
 layout_mode = 2
@@ -133,6 +135,7 @@ tab_2/disabled = true
 
 [node name="Graphics" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer" unique_id=151514350]
 layout_mode = 2
+script = ExtResource("7_5hrqm")
 metadata/_tab_index = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Graphics" unique_id=574438702]
@@ -148,6 +151,25 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_f1mve")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_8ktvb")
 theme_override_styles/hover = SubResource("StyleBoxFlat_g6mpj")
 text = "Fullscreen Enabled"
+
+[node name="RenderScale" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Graphics/VBoxContainer" unique_id=1180269958]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Graphics/VBoxContainer/RenderScale" unique_id=1684498673]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Render Scale"
+label_settings = ExtResource("7_r0po8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RenderScaleSlider" type="HSlider" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Graphics/VBoxContainer/RenderScale" unique_id=82650915]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.05
+value = 1.0
 
 [node name="Audio" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer" unique_id=1716982738]
 visible = false
@@ -225,17 +247,48 @@ step = 0.05
 value = 0.7
 tick_count = 6
 
+[node name="Voice" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer" unique_id=756171962]
+custom_minimum_size = Vector2(0, 50.38)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/Voice" unique_id=1160288694]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Voice Volume"
+label_settings = ExtResource("7_r0po8")
+horizontal_alignment = 1
+
+[node name="VoiceSlider" type="HSlider" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/Voice" unique_id=1648851602]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.05
+value = 0.7
+tick_count = 6
+
 [node name="Accessability" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer" unique_id=1447047176]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 metadata/_tab_name = "Accessibility"
 
-[node name="SaveClose" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=1438455664]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=635833033]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 100
+
+[node name="SaveClose" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=1438455664]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Save and Close"
+
+[node name="QuitGame" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=617724503]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Quit Game"
 
 [node name="Sounds" type="Node" parent="." unique_id=564242605]
 
@@ -253,8 +306,12 @@ bus = &"Sounds"
 [connection signal="tab_selected" from="MarginContainer/PanelContainer/VBoxContainer/TabContainer" to="." method="_on_tab_container_tab_selected"]
 [connection signal="mouse_entered" from="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Graphics/VBoxContainer/Fullscreen" to="." method="_on_save_close_mouse_entered"]
 [connection signal="toggled" from="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Graphics/VBoxContainer/Fullscreen" to="." method="_on_fullscreen_toggled"]
+[connection signal="value_changed" from="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Graphics/VBoxContainer/RenderScale/RenderScaleSlider" to="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Graphics" method="_on_render_scale_slider_value_changed"]
 [connection signal="value_changed" from="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/Main/MainSlider" to="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio" method="_on_main_slider_value_changed"]
 [connection signal="value_changed" from="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/Sounds/SoundSlider" to="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio" method="_on_sound_slider_value_changed"]
 [connection signal="value_changed" from="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/Music/MusicSlider" to="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio" method="_on_music_slider_value_changed"]
-[connection signal="mouse_entered" from="MarginContainer/PanelContainer/VBoxContainer/SaveClose" to="." method="_on_save_close_mouse_entered"]
-[connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/SaveClose" to="." method="_on_save_close_pressed"]
+[connection signal="value_changed" from="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/Voice/VoiceSlider" to="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio" method="_on_voice_slider_value_changed"]
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/SaveClose" to="." method="_on_save_close_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/SaveClose" to="." method="_on_save_close_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/QuitGame" to="." method="_on_save_close_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/QuitGame" to="." method="_on_quit_game_pressed"]

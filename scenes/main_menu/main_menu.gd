@@ -12,6 +12,7 @@ func _on_button_mouse_entered() -> void: # for any button
 func _on_start_button_pressed() -> void:
 	print("Starting Game...")
 	SceneManager.change_scene("res://scenes/SpaceStation.tscn")
+	SceneManager.set_game_mode(true)
 	start_game.play()
 
 func _on_options_pressed() -> void:

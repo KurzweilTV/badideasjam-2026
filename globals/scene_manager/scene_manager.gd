@@ -3,6 +3,8 @@ extends CanvasLayer
 @onready var anim: AnimationPlayer = $AnimationPlayer
 @onready var loading_label: Label = %LoadingLabel
 
+var game_mode: bool = false
+
 func change_scene(scene: String) -> void:
 	anim.play("dissolve")
 	await anim.animation_finished
@@ -13,3 +15,7 @@ func change_scene(scene: String) -> void:
 	await get_tree().process_frame
 	loading_label.hide()
 	anim.play_backwards("dissolve")
+
+## Make the mouse capture while we're playing the game
+func set_game_mode(mode: bool) -> void:
+	game_mode = mode
