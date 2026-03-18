@@ -109,6 +109,7 @@ sky_mode = 1
 
 [node name="AmbientSound" type="AudioStreamPlayer" parent="." unique_id=1134652076]
 stream = ExtResource("4_oqbv7")
+volume_db = -5.0
 autoplay = true
 bus = &"Ambient"
 

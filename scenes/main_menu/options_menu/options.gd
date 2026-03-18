@@ -14,10 +14,10 @@ func _on_save_close_pressed() -> void:
 	options_saved.emit()
 	if SceneManager.game_mode:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	get_tree().paused = false
 	queue_free()
 
-func _on_tab_container_tab_selected(tab: int) -> void:
-	print("Tab Pressed: %s" % tab)
+func _on_tab_container_tab_selected(_tab: int) -> void:
 	if is_instance_valid(click):
 		click.play()
 
@@ -26,7 +26,6 @@ func _on_fullscreen_toggled(toggled_on: bool) -> void:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-
 
 func _on_quit_game_pressed() -> void:
 	get_tree().quit()

@@ -171,10 +171,7 @@ var gravity : float = ProjectSettings.get_setting("physics/3d/default_gravity") 
 
 # Stores mouse input for rotating the camera in the physics process
 var mouseInput : Vector2 = Vector2(0,0)
-
-#endregion
-
-
+#endregion	
 
 #region Main Control Flow
 
@@ -548,12 +545,9 @@ func handle_pausing():
 			Input.MOUSE_MODE_CAPTURED:
 				Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 				add_child(options_scene)
-				#get_tree().paused = false
+				get_tree().paused = true
 			Input.MOUSE_MODE_VISIBLE:
-				
 				Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-				#get_tree().paused = true
-
 #endregion
 
 #region Oxygen Handling
