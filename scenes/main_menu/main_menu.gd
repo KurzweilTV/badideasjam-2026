@@ -20,3 +20,6 @@ func _on_options_pressed() -> void:
 	add_child(menu)
 	menu.options_saved.connect(click.play)
 	click.play()
+
+func _on_quit_pressed() -> void:
+	get_tree().quit()

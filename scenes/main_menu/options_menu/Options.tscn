@@ -126,7 +126,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_5hrqm")
 theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_befm5")
 theme_override_styles/tab_selected = SubResource("StyleBoxFlat_r0po8")
 tab_alignment = 1
-current_tab = 1
+current_tab = 0
 tab_0/icon = ExtResource("4_befm5")
 tab_1/icon = ExtResource("5_r0po8")
 tab_2/title = "Accessibility"
@@ -134,7 +134,6 @@ tab_2/icon = ExtResource("6_f1mve")
 tab_2/disabled = true
 
 [node name="Graphics" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer" unique_id=151514350]
-visible = false
 layout_mode = 2
 script = ExtResource("7_5hrqm")
 metadata/_tab_index = 0
@@ -170,9 +169,10 @@ layout_mode = 2
 size_flags_horizontal = 3
 max_value = 1.0
 step = 0.05
-value = 1.0
+value = 0.5
 
 [node name="Audio" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer" unique_id=1716982738]
+visible = false
 layout_mode = 2
 script = ExtResource("8_5hrqm")
 metadata/_tab_index = 1
