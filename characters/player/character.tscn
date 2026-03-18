@@ -565,9 +565,8 @@ script = ExtResource("5_5ir01")
 
 [node name="FootstepPlayer" type="AudioStreamPlayer3D" parent="Head/FootstepManager" unique_id=1134813710]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3000001, 0)
-volume_db = -2.0
 max_polyphony = 4
-panning_strength = 0.7
+panning_strength = 0.0
 bus = &"Sounds"
 
 [node name="HeadbobAnimation" type="AnimationPlayer" parent="Head" unique_id=544939816]
@@ -716,7 +715,7 @@ volume_db = -6.0
 
 [node name="VoiceOver" type="AudioStreamPlayer3D" parent="UserInterface/DialogSystem" unique_id=271866070]
 stream = ExtResource("13_2rsth")
-volume_db = 2.0
+volume_db = 4.0
 panning_strength = 0.0
 bus = &"VoiceOver"
 

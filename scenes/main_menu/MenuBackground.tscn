@@ -639,6 +639,11 @@ scale_amount_max = 0.1
 scale_amount_curve = SubResource("Curve_55dh5")
 color = Color(0, 1, 1, 1)
 
+[node name="AmbientSpooky" type="AudioStreamPlayer" parent="Effects" unique_id=348282344]
+stream = ExtResource("8_5m8a4")
+autoplay = true
+bus = &"Ambient"
+
 [node name="Decoration" type="Node3D" parent="." unique_id=1276576773]
 
 [node name="StripLamp" type="Node3D" parent="Decoration" unique_id=2052499222]

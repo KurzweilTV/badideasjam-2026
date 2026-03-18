@@ -126,7 +126,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_5hrqm")
 theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_befm5")
 theme_override_styles/tab_selected = SubResource("StyleBoxFlat_r0po8")
 tab_alignment = 1
-current_tab = 0
+current_tab = 1
 tab_0/icon = ExtResource("4_befm5")
 tab_1/icon = ExtResource("5_r0po8")
 tab_2/title = "Accessibility"
@@ -134,6 +134,7 @@ tab_2/icon = ExtResource("6_f1mve")
 tab_2/disabled = true
 
 [node name="Graphics" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer" unique_id=151514350]
+visible = false
 layout_mode = 2
 script = ExtResource("7_5hrqm")
 metadata/_tab_index = 0
@@ -172,7 +173,6 @@ step = 0.05
 value = 1.0
 
 [node name="Audio" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer" unique_id=1716982738]
-visible = false
 layout_mode = 2
 script = ExtResource("8_5hrqm")
 metadata/_tab_index = 1
@@ -186,6 +186,8 @@ theme_override_constants/margin_bottom = 20
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio/MarginContainer" unique_id=990178670]
 layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 25
 
 [node name="Main" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer" unique_id=984333339]
 custom_minimum_size = Vector2(0, 50.38)
@@ -227,18 +229,18 @@ step = 0.05
 value = 0.7
 tick_count = 6
 
-[node name="Music" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer" unique_id=67298266]
+[node name="Ambient" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer" unique_id=67298266]
 custom_minimum_size = Vector2(0, 50.38)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/Music" unique_id=1092886216]
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/Ambient" unique_id=1092886216]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Music Volume"
+text = "Ambient Volume"
 label_settings = ExtResource("7_r0po8")
 horizontal_alignment = 1
 
-[node name="MusicSlider" type="HSlider" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/Music" unique_id=1708534294]
+[node name="MusicSlider" type="HSlider" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/Ambient" unique_id=1708534294]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -309,7 +311,7 @@ bus = &"Sounds"
 [connection signal="value_changed" from="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Graphics/VBoxContainer/RenderScale/RenderScaleSlider" to="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Graphics" method="_on_render_scale_slider_value_changed"]
 [connection signal="value_changed" from="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/Main/MainSlider" to="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio" method="_on_main_slider_value_changed"]
 [connection signal="value_changed" from="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/Sounds/SoundSlider" to="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio" method="_on_sound_slider_value_changed"]
-[connection signal="value_changed" from="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/Music/MusicSlider" to="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio" method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/Ambient/MusicSlider" to="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio" method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/Voice/VoiceSlider" to="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio" method="_on_voice_slider_value_changed"]
 [connection signal="mouse_entered" from="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/SaveClose" to="." method="_on_save_close_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/SaveClose" to="." method="_on_save_close_pressed"]
