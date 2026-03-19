@@ -13,7 +13,7 @@ signal dialog_complete
 @export var system_color: Color = Color.PINK
 
 ## Powerup switch status
-var switches := [false, false, false, false]
+var switches := [false, true, false, true]
 
 var station_powered: bool = false
 var station_color: Color = Color.RED
@@ -48,6 +48,7 @@ func toggle_switch(index: int) -> void:
 	check_switches_complete()
 
 func check_switches_complete() -> void:
+	await get_tree().create_timer(0.5).timeout
 	if switches[0] and switches[1] and switches[2] and switches[3]:
 		set_station_power(true)
 		set_station_color(Color.WHITE)
