@@ -64,6 +64,7 @@ func _on_pressurize_pressed() -> void:
 		print("Success")
 		complete = true
 		StationStatus.station_oxygen_on.emit()
+		StationStatus.set_station_oxygenated()
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		queue_free()
 	else:

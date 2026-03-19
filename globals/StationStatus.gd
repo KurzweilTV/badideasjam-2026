@@ -16,6 +16,7 @@ signal dialog_complete
 ## Powerup switch status
 var switches := [false, true, false, true]
 
+var station_oxygenated: bool = false
 var station_powered: bool = false
 var station_color: Color = Color.RED
 
@@ -55,6 +56,9 @@ func check_switches_complete() -> void:
 		set_station_color(Color.WHITE)
 		station_power_change.emit(true)
 
+
+func set_station_oxygenated() -> void:
+	station_oxygenated = true
 
 func set_station_color(new_color: Color) -> void:
 	station_color = new_color
