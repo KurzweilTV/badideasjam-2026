@@ -8,6 +8,7 @@ enum KEYS {None, Green, Blue, Orange}
 @export var door_broken: bool = false
 @export var needs_crowbar: bool = false
 @export var needs_power: bool = true
+@export var needs_pressureized: bool = false
 
 var auto_close_time: float = 4.0
 var door_open: bool = false
@@ -26,6 +27,9 @@ func _ready() -> void:
 		close_door()
 		
 func _on_interact(interactor: Player) -> bool:
+	if needs_pressureized and not StationStatus.station_oxygenated:
+		StationStatus.dialog.emit("Pressureize the Station First",0,StationStatus.system_color,true)
+		return false
 	if needs_power and not StationStatus.station_powered:
 		$DoorLocked.play()
 		print("Powerup the station first")

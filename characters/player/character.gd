@@ -176,7 +176,7 @@ var mouseInput : Vector2 = Vector2(0,0)
 #region Main Control Flow
 
 func _ready():
-	StationStatus.station_power_change.connect(_disable_oxygen)
+	StationStatus.station_oxygen_on.connect(_disable_oxygen)
 	
 	#It is safe to comment this line if your game doesn't start with the mouse captured
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -573,8 +573,9 @@ func enable_oxygen() -> void:
 	%OxygenBar.show()
 	has_oxygen_mask = true
 
-func _disable_oxygen(status: bool) -> void:
-	oxygen_system_enabled = !status #turn off oxygen as station is turned on
+func _disable_oxygen() -> void:
+	print("Disabling Oxygen")
+	oxygen_system_enabled = false #turn off oxygen as station is turned on
 	give_oxygen(100) 
 	%OxygenBar.hide()
 	

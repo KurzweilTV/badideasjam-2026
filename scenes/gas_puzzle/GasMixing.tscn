@@ -118,4 +118,4 @@ custom_minimum_size = Vector2(400, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_styles/normal = SubResource("StyleBoxFlat_251vw")
-text = "PRESSURIZE ROOM"
+text = "PRESSURIZE FACILITY"

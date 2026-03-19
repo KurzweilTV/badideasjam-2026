@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://bexobtvi7plny" path="res://scenes/systems/dialog_trigger.tscn" id="20_x6cfo"]
 [ext_resource type="PackedScene" uid="uid://djhnfoywusi7s" path="res://props/interactable/oxygen_mask/OxygenMask.tscn" id="22_clfuy"]
 [ext_resource type="PackedScene" uid="uid://jts7y3j4dkmu" path="res://props/buildings/elevator/elevator.tscn" id="23_lhny8"]
+[ext_resource type="PackedScene" uid="uid://dyhqsrg6n6fel" path="res://props/interactable/gas_mixing_station/GasMixingConsole.tscn" id="25_oqbv7"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_2crfw"]
 panorama = ExtResource("1_go4jk")
@@ -85,9 +86,11 @@ size = Vector3(1, 1, 15)
 
 [node name="SpaceStation" type="Node3D" unique_id=805722603]
 script = ExtResource("1_4ussd")
+station_starts_powered = true
 
 [node name="Character" parent="." unique_id=1159670658 instance=ExtResource("1_tq2h6")]
-transform = Transform3D(8.940697e-08, 0, 1, 0, 1, 0, -1, 0, 8.940697e-08, 7.897452, 0.50000095, -13.218182)
+transform = Transform3D(8.940697e-08, 0, 1, 0, 1, 0, -1, 0, 8.940697e-08, 21.93221, 0.50000095, -13.889879)
+skip_tutorial = true
 oxygen_level = 20.0
 base_oxygen_loss_rate = 0.75
 sprint_oxygen_multiplier = 2.0
@@ -1731,3 +1734,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 1, -18)
 
 [node name="GreenKeycard" parent="Map/Pickups" unique_id=198432991 instance=ExtResource("14_6uwk2")]
 transform = Transform3D(-1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 0, 0, 1, 2.5393486, 1.2922591, -50.75336)
+
+[node name="GasMixingConsole" parent="." unique_id=65025017 instance=ExtResource("25_oqbv7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.4, 0.6, -21.199999)
+
+[node name="OxygenMask" parent="." unique_id=1036681436 instance=ExtResource("22_clfuy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.4, 0.2, -13.8)

@@ -3,6 +3,7 @@ extends Node
 
 signal toggled_powerup_switch(index: int)
 signal station_power_change(powered: bool)
+signal station_oxygen_on
 signal station_color_change(new_color: Color)
 signal got_oxygen_mask
 signal dialog(message: String, delay: float, border_color: Color, tutorial: bool)

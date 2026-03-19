@@ -5,13 +5,13 @@ var tween: Tween
 @onready var particles: CPUParticles3D = $CPUParticles3D
 
 func _ready() -> void:
-	StationStatus.station_power_change.connect(_on_powerup)
+	StationStatus.station_oxygen_on.connect(_on_oxygenated)
 
-func _on_powerup(powered: bool) -> void:
+func _on_oxygenated() -> void:
 	if tween:
 		tween.kill()
 	
-	particles.emitting = powered
+	particles.emitting = true
 	sound.pitch_scale = 0.01
 	sound.play()
 

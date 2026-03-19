@@ -45,12 +45,13 @@ func _process(delta: float) -> void:
 	nitrogen_progress.value = clampf(nitrogen_progress.value, 0.0, 100.0)
 	oxygen_progress.value = clampf(oxygen_progress.value, 0.0, 100.0)
 	
-	if nitrogen_progress.value < 85 and nitrogen_progress.value > 75:
+	if abs(nitrogen_progress.value - nitrogen_target) <= tolerance:
 		nitrogen_progress.modulate = Color.GREEN
 	else:
 		nitrogen_progress.modulate = Color.RED
 
-	if oxygen_progress.value < 27 and oxygen_progress.value > 17:
+	# Oxygen
+	if abs(oxygen_progress.value - oxygen_target) <= tolerance:
 		oxygen_progress.modulate = Color.GREEN
 	else:
 		oxygen_progress.modulate = Color.RED
@@ -62,5 +63,8 @@ func _on_pressurize_pressed() -> void:
 	if nitrogen_ok and oxygen_ok:
 		print("Success")
 		complete = true
+		StationStatus.station_oxygen_on.emit()
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		queue_free()
 	else:
 		print("Failed")
