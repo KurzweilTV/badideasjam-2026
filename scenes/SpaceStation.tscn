@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b7twqfsdm4t1a"]
 
 [ext_resource type="Script" uid="uid://cjmfbwdoni0uj" path="res://scenes/space_station_debug.gd" id="1_4ussd"]
-[ext_resource type="Texture2D" uid="uid://dw0tafbret1du" path="res://art/textures/HDR_blue_local_star.jpg" id="1_go4jk"]
+[ext_resource type="Texture2D" uid="uid://dw0tafbret1du" path="res://art/textures/starfield.jpg" id="1_go4jk"]
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://characters/player/character.tscn" id="1_tq2h6"]
 [ext_resource type="PackedScene" uid="uid://b5rbdqpotg6em" path="res://props/buildings/floor/FloorTile.tscn" id="2_qisfu"]
 [ext_resource type="PackedScene" uid="uid://dst1ynlbt3at5" path="res://props/buildings/walls/Wall.tscn" id="3_880v8"]
