@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://bagm2vkdk8g04"]
+
+[ext_resource type="Script" uid="uid://bwjfoioxkq5j5" path="res://scenes/gas_puzzle/gas_mixing_prototype.gd" id="1_fbfhb"]
+[ext_resource type="LabelSettings" uid="uid://c6gd5kgbjds6j" path="res://ui/labels/heading.tres" id="1_ju03h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fbfhb"]
+content_margin_left = 50.0
+content_margin_top = 50.0
+content_margin_right = 50.0
+content_margin_bottom = 50.0
+bg_color = Color(0.16565639, 0.16565642, 0.16565639, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_251vw"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.101960786, 0.8039216, 0.101960786, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="GasMixing" type="Control" unique_id=1658539342]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fbfhb")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=936999806]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 100
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=1746185019]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fbfhb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer" unique_id=882755793]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=1693753040]
+layout_mode = 2
+text = "Gas Mixing Station"
+label_settings = ExtResource("1_ju03h")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=824449988]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_constants/separation = 50
+
+[node name="NitrogenButton" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=1183906404]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "PUMP 1"
+
+[node name="OxygenButton" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=354271522]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "PUMP 2"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=1706551410]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_constants/separation = 50
+
+[node name="NitrogenProgress" type="ProgressBar" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer3" unique_id=1840225468]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 400)
+layout_mode = 2
+size_flags_vertical = 8
+fill_mode = 3
+
+[node name="OxygenProgress" type="ProgressBar" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer3" unique_id=462892496]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 400)
+layout_mode = 2
+size_flags_vertical = 8
+fill_mode = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=1389193692]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2" unique_id=1039021761]
+layout_mode = 2
+text = "Nitrogen"
+
+[node name="Label2" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2" unique_id=155225465]
+layout_mode = 2
+text = "Oxygen"
+
+[node name="PressureizeButton" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=137159764]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_251vw")
+text = "PRESSURIZE ROOM"
