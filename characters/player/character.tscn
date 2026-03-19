@@ -597,6 +597,7 @@ grow_vertical = 2
 mouse_filter = 1
 
 [node name="DebugPanel" type="PanelContainer" parent="UserInterface" unique_id=716811236]
+visible = false
 layout_mode = 0
 offset_left = 10.0
 offset_top = 10.0

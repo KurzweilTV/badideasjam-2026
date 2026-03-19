@@ -48,6 +48,16 @@ volumetric_fog_density = 0.0039
 volumetric_fog_emission_energy = 0.0
 volumetric_fog_detail_spread = 6.0
 
+[sub_resource type="GDScript" id="GDScript_oqbv7"]
+resource_name = "AutoRoof"
+script/source = "extends Node3D
+
+@export var ceiling_visible: bool = true
+
+func _ready() -> void:
+	self.visible = ceiling_visible
+"
+
 [sub_resource type="GDScript" id="GDScript_4ussd"]
 resource_name = "OxygenMaskBlocker"
 script/source = "extends StaticBody3D
@@ -694,529 +704,531 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 6)
 [node name="FloorTile20" parent="Map/Floors" unique_id=1305472902 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 9)
 
-[node name="CielingTiles" type="Node3D" parent="Map" unique_id=194035606]
+[node name="Ceilings" type="Node3D" parent="Map" unique_id=194035606]
+visible = false
+script = SubResource("GDScript_oqbv7")
 metadata/_edit_lock_ = true
 
-[node name="FloorTile" parent="Map/CielingTiles" unique_id=1293906892 instance=ExtResource("2_qisfu")]
+[node name="FloorTile" parent="Map/Ceilings" unique_id=1293906892 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 
-[node name="FloorTile21" parent="Map/CielingTiles" unique_id=659420239 instance=ExtResource("2_qisfu")]
+[node name="FloorTile21" parent="Map/Ceilings" unique_id=659420239 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -3)
 
-[node name="FloorTile22" parent="Map/CielingTiles" unique_id=1953246173 instance=ExtResource("2_qisfu")]
+[node name="FloorTile22" parent="Map/Ceilings" unique_id=1953246173 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -6)
 
-[node name="FloorTile23" parent="Map/CielingTiles" unique_id=173560453 instance=ExtResource("2_qisfu")]
+[node name="FloorTile23" parent="Map/Ceilings" unique_id=173560453 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -9)
 
-[node name="FloorTile24" parent="Map/CielingTiles" unique_id=1573591137 instance=ExtResource("2_qisfu")]
+[node name="FloorTile24" parent="Map/Ceilings" unique_id=1573591137 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -12)
 
-[node name="FloorTile25" parent="Map/CielingTiles" unique_id=362237693 instance=ExtResource("2_qisfu")]
+[node name="FloorTile25" parent="Map/Ceilings" unique_id=362237693 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -15)
 
-[node name="FloorTile26" parent="Map/CielingTiles" unique_id=1939625888 instance=ExtResource("2_qisfu")]
+[node name="FloorTile26" parent="Map/Ceilings" unique_id=1939625888 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -18)
 
-[node name="FloorTile32" parent="Map/CielingTiles" unique_id=1496163833 instance=ExtResource("2_qisfu")]
+[node name="FloorTile32" parent="Map/Ceilings" unique_id=1496163833 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 3, -18)
 
-[node name="FloorTile34" parent="Map/CielingTiles" unique_id=1381511492 instance=ExtResource("2_qisfu")]
+[node name="FloorTile34" parent="Map/Ceilings" unique_id=1381511492 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 3, -18)
 
-[node name="FloorTile39" parent="Map/CielingTiles" unique_id=1585357816 instance=ExtResource("2_qisfu")]
+[node name="FloorTile39" parent="Map/Ceilings" unique_id=1585357816 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 3, -15)
 
-[node name="FloorTile44" parent="Map/CielingTiles" unique_id=873097011 instance=ExtResource("2_qisfu")]
+[node name="FloorTile44" parent="Map/Ceilings" unique_id=873097011 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 3, -21)
 
-[node name="FloorTile49" parent="Map/CielingTiles" unique_id=848132600 instance=ExtResource("2_qisfu")]
+[node name="FloorTile49" parent="Map/Ceilings" unique_id=848132600 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 3, -24)
 
-[node name="FloorTile50" parent="Map/CielingTiles" unique_id=2073657587 instance=ExtResource("2_qisfu")]
+[node name="FloorTile50" parent="Map/Ceilings" unique_id=2073657587 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 3, -24)
 
-[node name="FloorTile51" parent="Map/CielingTiles" unique_id=1837991098 instance=ExtResource("2_qisfu")]
+[node name="FloorTile51" parent="Map/Ceilings" unique_id=1837991098 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 3, -24)
 
-[node name="FloorTile52" parent="Map/CielingTiles" unique_id=793109926 instance=ExtResource("2_qisfu")]
+[node name="FloorTile52" parent="Map/Ceilings" unique_id=793109926 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 3, -24)
 
-[node name="FloorTile53" parent="Map/CielingTiles" unique_id=2001800576 instance=ExtResource("2_qisfu")]
+[node name="FloorTile53" parent="Map/Ceilings" unique_id=2001800576 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 3, -24)
 
-[node name="FloorTile54" parent="Map/CielingTiles" unique_id=902052172 instance=ExtResource("2_qisfu")]
+[node name="FloorTile54" parent="Map/Ceilings" unique_id=902052172 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 3, -27)
 
-[node name="FloorTile55" parent="Map/CielingTiles" unique_id=2121237194 instance=ExtResource("2_qisfu")]
+[node name="FloorTile55" parent="Map/Ceilings" unique_id=2121237194 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 3, -27)
 
-[node name="FloorTile56" parent="Map/CielingTiles" unique_id=771249884 instance=ExtResource("2_qisfu")]
+[node name="FloorTile56" parent="Map/Ceilings" unique_id=771249884 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 3, -27)
 
-[node name="FloorTile57" parent="Map/CielingTiles" unique_id=1866976001 instance=ExtResource("2_qisfu")]
+[node name="FloorTile57" parent="Map/Ceilings" unique_id=1866976001 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 3, -27)
 
-[node name="FloorTile58" parent="Map/CielingTiles" unique_id=1147512701 instance=ExtResource("2_qisfu")]
+[node name="FloorTile58" parent="Map/Ceilings" unique_id=1147512701 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 3, -27)
 
-[node name="FloorTile59" parent="Map/CielingTiles" unique_id=1615120340 instance=ExtResource("2_qisfu")]
+[node name="FloorTile59" parent="Map/Ceilings" unique_id=1615120340 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 3, -12)
 
-[node name="FloorTile60" parent="Map/CielingTiles" unique_id=979428390 instance=ExtResource("2_qisfu")]
+[node name="FloorTile60" parent="Map/Ceilings" unique_id=979428390 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 3, -12)
 
-[node name="FloorTile61" parent="Map/CielingTiles" unique_id=1764698835 instance=ExtResource("2_qisfu")]
+[node name="FloorTile61" parent="Map/Ceilings" unique_id=1764698835 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 3, -12)
 
-[node name="FloorTile62" parent="Map/CielingTiles" unique_id=2140334163 instance=ExtResource("2_qisfu")]
+[node name="FloorTile62" parent="Map/Ceilings" unique_id=2140334163 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 3, -12)
 
-[node name="FloorTile63" parent="Map/CielingTiles" unique_id=145386108 instance=ExtResource("2_qisfu")]
+[node name="FloorTile63" parent="Map/Ceilings" unique_id=145386108 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 3, -12)
 
-[node name="FloorTile64" parent="Map/CielingTiles" unique_id=459844992 instance=ExtResource("2_qisfu")]
+[node name="FloorTile64" parent="Map/Ceilings" unique_id=459844992 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 3, -9)
 
-[node name="FloorTile65" parent="Map/CielingTiles" unique_id=1470594788 instance=ExtResource("2_qisfu")]
+[node name="FloorTile65" parent="Map/Ceilings" unique_id=1470594788 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 3, -9)
 
-[node name="FloorTile66" parent="Map/CielingTiles" unique_id=204612534 instance=ExtResource("2_qisfu")]
+[node name="FloorTile66" parent="Map/Ceilings" unique_id=204612534 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 3, -9)
 
-[node name="FloorTile67" parent="Map/CielingTiles" unique_id=690916561 instance=ExtResource("2_qisfu")]
+[node name="FloorTile67" parent="Map/Ceilings" unique_id=690916561 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 3, -9)
 
-[node name="FloorTile68" parent="Map/CielingTiles" unique_id=1547597907 instance=ExtResource("2_qisfu")]
+[node name="FloorTile68" parent="Map/Ceilings" unique_id=1547597907 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 3, -9)
 
-[node name="FloorTile69" parent="Map/CielingTiles" unique_id=1386730233 instance=ExtResource("2_qisfu")]
+[node name="FloorTile69" parent="Map/Ceilings" unique_id=1386730233 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 3, -9)
 
-[node name="FloorTile70" parent="Map/CielingTiles" unique_id=1545961473 instance=ExtResource("2_qisfu")]
+[node name="FloorTile70" parent="Map/Ceilings" unique_id=1545961473 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 3, -9)
 
-[node name="FloorTile71" parent="Map/CielingTiles" unique_id=1430785681 instance=ExtResource("2_qisfu")]
+[node name="FloorTile71" parent="Map/Ceilings" unique_id=1430785681 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 3, -9)
 
-[node name="FloorTile72" parent="Map/CielingTiles" unique_id=1730164575 instance=ExtResource("2_qisfu")]
+[node name="FloorTile72" parent="Map/Ceilings" unique_id=1730164575 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 3, -9)
 
-[node name="FloorTile73" parent="Map/CielingTiles" unique_id=1899608245 instance=ExtResource("2_qisfu")]
+[node name="FloorTile73" parent="Map/Ceilings" unique_id=1899608245 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 3, -9)
 
-[node name="FloorTile90" parent="Map/CielingTiles" unique_id=490486535 instance=ExtResource("2_qisfu")]
+[node name="FloorTile90" parent="Map/Ceilings" unique_id=490486535 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 3, -18)
 
-[node name="FloorTile101" parent="Map/CielingTiles" unique_id=1860748149 instance=ExtResource("2_qisfu")]
+[node name="FloorTile101" parent="Map/Ceilings" unique_id=1860748149 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 3, -18)
 
-[node name="FloorTile102" parent="Map/CielingTiles" unique_id=109223650 instance=ExtResource("2_qisfu")]
+[node name="FloorTile102" parent="Map/Ceilings" unique_id=109223650 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 3, -18)
 
-[node name="FloorTile91" parent="Map/CielingTiles" unique_id=1654435162 instance=ExtResource("2_qisfu")]
+[node name="FloorTile91" parent="Map/Ceilings" unique_id=1654435162 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 3, -15)
 
-[node name="FloorTile92" parent="Map/CielingTiles" unique_id=411441131 instance=ExtResource("2_qisfu")]
+[node name="FloorTile92" parent="Map/Ceilings" unique_id=411441131 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 3, -21)
 
-[node name="FloorTile93" parent="Map/CielingTiles" unique_id=261261354 instance=ExtResource("2_qisfu")]
+[node name="FloorTile93" parent="Map/Ceilings" unique_id=261261354 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 3, -24)
 
-[node name="FloorTile98" parent="Map/CielingTiles" unique_id=98596287 instance=ExtResource("2_qisfu")]
+[node name="FloorTile98" parent="Map/Ceilings" unique_id=98596287 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 3, -27)
 
-[node name="FloorTile99" parent="Map/CielingTiles" unique_id=239305843 instance=ExtResource("2_qisfu")]
+[node name="FloorTile99" parent="Map/Ceilings" unique_id=239305843 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 3, -12)
 
-[node name="FloorTile100" parent="Map/CielingTiles" unique_id=1505482557 instance=ExtResource("2_qisfu")]
+[node name="FloorTile100" parent="Map/Ceilings" unique_id=1505482557 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 3, -9)
 
-[node name="FloorTile74" parent="Map/CielingTiles" unique_id=86090851 instance=ExtResource("2_qisfu")]
+[node name="FloorTile74" parent="Map/Ceilings" unique_id=86090851 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 3, -18)
 
-[node name="FloorTile75" parent="Map/CielingTiles" unique_id=1434762423 instance=ExtResource("2_qisfu")]
+[node name="FloorTile75" parent="Map/Ceilings" unique_id=1434762423 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 3, -18)
 
-[node name="FloorTile76" parent="Map/CielingTiles" unique_id=1562524878 instance=ExtResource("2_qisfu")]
+[node name="FloorTile76" parent="Map/Ceilings" unique_id=1562524878 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 3, -18)
 
-[node name="FloorTile77" parent="Map/CielingTiles" unique_id=25883430 instance=ExtResource("2_qisfu")]
+[node name="FloorTile77" parent="Map/Ceilings" unique_id=25883430 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3, -18)
 
-[node name="FloorTile78" parent="Map/CielingTiles" unique_id=2039088443 instance=ExtResource("2_qisfu")]
+[node name="FloorTile78" parent="Map/Ceilings" unique_id=2039088443 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 3, -15)
 
-[node name="FloorTile79" parent="Map/CielingTiles" unique_id=1205231995 instance=ExtResource("2_qisfu")]
+[node name="FloorTile79" parent="Map/Ceilings" unique_id=1205231995 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 3, -15)
 
-[node name="FloorTile80" parent="Map/CielingTiles" unique_id=1188333037 instance=ExtResource("2_qisfu")]
+[node name="FloorTile80" parent="Map/Ceilings" unique_id=1188333037 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 3, -15)
 
-[node name="FloorTile81" parent="Map/CielingTiles" unique_id=1623002088 instance=ExtResource("2_qisfu")]
+[node name="FloorTile81" parent="Map/Ceilings" unique_id=1623002088 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3, -15)
 
-[node name="FloorTile82" parent="Map/CielingTiles" unique_id=1393820713 instance=ExtResource("2_qisfu")]
+[node name="FloorTile82" parent="Map/Ceilings" unique_id=1393820713 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 3, -21)
 
-[node name="FloorTile83" parent="Map/CielingTiles" unique_id=1797125329 instance=ExtResource("2_qisfu")]
+[node name="FloorTile83" parent="Map/Ceilings" unique_id=1797125329 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 3, -21)
 
-[node name="FloorTile84" parent="Map/CielingTiles" unique_id=581543210 instance=ExtResource("2_qisfu")]
+[node name="FloorTile84" parent="Map/Ceilings" unique_id=581543210 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 3, -21)
 
-[node name="FloorTile85" parent="Map/CielingTiles" unique_id=780216685 instance=ExtResource("2_qisfu")]
+[node name="FloorTile85" parent="Map/Ceilings" unique_id=780216685 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3, -21)
 
-[node name="FloorTile86" parent="Map/CielingTiles" unique_id=575436727 instance=ExtResource("2_qisfu")]
+[node name="FloorTile86" parent="Map/Ceilings" unique_id=575436727 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 3, -24)
 
-[node name="FloorTile87" parent="Map/CielingTiles" unique_id=715135294 instance=ExtResource("2_qisfu")]
+[node name="FloorTile87" parent="Map/Ceilings" unique_id=715135294 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 3, -24)
 
-[node name="FloorTile88" parent="Map/CielingTiles" unique_id=438546859 instance=ExtResource("2_qisfu")]
+[node name="FloorTile88" parent="Map/Ceilings" unique_id=438546859 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 3, -24)
 
-[node name="FloorTile89" parent="Map/CielingTiles" unique_id=653181601 instance=ExtResource("2_qisfu")]
+[node name="FloorTile89" parent="Map/Ceilings" unique_id=653181601 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3, -24)
 
-[node name="FloorTile94" parent="Map/CielingTiles" unique_id=38313037 instance=ExtResource("2_qisfu")]
+[node name="FloorTile94" parent="Map/Ceilings" unique_id=38313037 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 3, -12)
 
-[node name="FloorTile95" parent="Map/CielingTiles" unique_id=1211466153 instance=ExtResource("2_qisfu")]
+[node name="FloorTile95" parent="Map/Ceilings" unique_id=1211466153 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 3, -12)
 
-[node name="FloorTile96" parent="Map/CielingTiles" unique_id=39016475 instance=ExtResource("2_qisfu")]
+[node name="FloorTile96" parent="Map/Ceilings" unique_id=39016475 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 3, -12)
 
-[node name="FloorTile97" parent="Map/CielingTiles" unique_id=1692855765 instance=ExtResource("2_qisfu")]
+[node name="FloorTile97" parent="Map/Ceilings" unique_id=1692855765 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3, -12)
 
-[node name="FloorTile138" parent="Map/CielingTiles" unique_id=966932501 instance=ExtResource("2_qisfu")]
+[node name="FloorTile138" parent="Map/Ceilings" unique_id=966932501 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 3, -18)
 
-[node name="FloorTile159" parent="Map/CielingTiles" unique_id=141828099 instance=ExtResource("2_qisfu")]
+[node name="FloorTile159" parent="Map/Ceilings" unique_id=141828099 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 3, -18)
 
-[node name="FloorTile166" parent="Map/CielingTiles" unique_id=1593120188 instance=ExtResource("2_qisfu")]
+[node name="FloorTile166" parent="Map/Ceilings" unique_id=1593120188 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 3, -18)
 
-[node name="FloorTile167" parent="Map/CielingTiles" unique_id=725209325 instance=ExtResource("2_qisfu")]
+[node name="FloorTile167" parent="Map/Ceilings" unique_id=725209325 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 3, -18)
 
-[node name="FloorTile168" parent="Map/CielingTiles" unique_id=197792916 instance=ExtResource("2_qisfu")]
+[node name="FloorTile168" parent="Map/Ceilings" unique_id=197792916 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 3, -18)
 
-[node name="FloorTile169" parent="Map/CielingTiles" unique_id=82830806 instance=ExtResource("2_qisfu")]
+[node name="FloorTile169" parent="Map/Ceilings" unique_id=82830806 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 3, -18)
 
-[node name="FloorTile170" parent="Map/CielingTiles" unique_id=1051413005 instance=ExtResource("2_qisfu")]
+[node name="FloorTile170" parent="Map/Ceilings" unique_id=1051413005 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 3, -18)
 
-[node name="FloorTile171" parent="Map/CielingTiles" unique_id=1487589621 instance=ExtResource("2_qisfu")]
+[node name="FloorTile171" parent="Map/Ceilings" unique_id=1487589621 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51, 3, -18)
 
-[node name="FloorTile172" parent="Map/CielingTiles" unique_id=729473379 instance=ExtResource("2_qisfu")]
+[node name="FloorTile172" parent="Map/Ceilings" unique_id=729473379 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 3, -18)
 
-[node name="FloorTile173" parent="Map/CielingTiles" unique_id=485558452 instance=ExtResource("2_qisfu")]
+[node name="FloorTile173" parent="Map/Ceilings" unique_id=485558452 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 3, -21)
 
-[node name="FloorTile174" parent="Map/CielingTiles" unique_id=1220664489 instance=ExtResource("2_qisfu")]
+[node name="FloorTile174" parent="Map/Ceilings" unique_id=1220664489 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 3, -24)
 
-[node name="FloorTile175" parent="Map/CielingTiles" unique_id=595760768 instance=ExtResource("2_qisfu")]
+[node name="FloorTile175" parent="Map/Ceilings" unique_id=595760768 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57, 3, -21)
 
-[node name="FloorTile176" parent="Map/CielingTiles" unique_id=918845804 instance=ExtResource("2_qisfu")]
+[node name="FloorTile176" parent="Map/Ceilings" unique_id=918845804 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57, 3, -24)
 
-[node name="FloorTile177" parent="Map/CielingTiles" unique_id=145119338 instance=ExtResource("2_qisfu")]
+[node name="FloorTile177" parent="Map/Ceilings" unique_id=145119338 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 3, -21)
 
-[node name="FloorTile178" parent="Map/CielingTiles" unique_id=1189764595 instance=ExtResource("2_qisfu")]
+[node name="FloorTile178" parent="Map/Ceilings" unique_id=1189764595 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 3, -24)
 
-[node name="FloorTile179" parent="Map/CielingTiles" unique_id=2583263 instance=ExtResource("2_qisfu")]
+[node name="FloorTile179" parent="Map/Ceilings" unique_id=2583263 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 3, -15)
 
-[node name="FloorTile180" parent="Map/CielingTiles" unique_id=810132593 instance=ExtResource("2_qisfu")]
+[node name="FloorTile180" parent="Map/Ceilings" unique_id=810132593 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 3, -18)
 
-[node name="FloorTile181" parent="Map/CielingTiles" unique_id=1382413583 instance=ExtResource("2_qisfu")]
+[node name="FloorTile181" parent="Map/Ceilings" unique_id=1382413583 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 3, -15)
 
-[node name="FloorTile183" parent="Map/CielingTiles" unique_id=535735407 instance=ExtResource("2_qisfu")]
+[node name="FloorTile183" parent="Map/Ceilings" unique_id=535735407 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 3, -12)
 
-[node name="FloorTile188" parent="Map/CielingTiles" unique_id=453042107 instance=ExtResource("2_qisfu")]
+[node name="FloorTile188" parent="Map/Ceilings" unique_id=453042107 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63, 3, -21)
 
-[node name="FloorTile189" parent="Map/CielingTiles" unique_id=112790499 instance=ExtResource("2_qisfu")]
+[node name="FloorTile189" parent="Map/Ceilings" unique_id=112790499 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63, 3, -24)
 
-[node name="FloorTile190" parent="Map/CielingTiles" unique_id=880037409 instance=ExtResource("2_qisfu")]
+[node name="FloorTile190" parent="Map/Ceilings" unique_id=880037409 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63, 3, -15)
 
-[node name="FloorTile191" parent="Map/CielingTiles" unique_id=190703178 instance=ExtResource("2_qisfu")]
+[node name="FloorTile191" parent="Map/Ceilings" unique_id=190703178 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63, 3, -18)
 
-[node name="FloorTile192" parent="Map/CielingTiles" unique_id=2074426836 instance=ExtResource("2_qisfu")]
+[node name="FloorTile192" parent="Map/Ceilings" unique_id=2074426836 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63, 3, -12)
 
-[node name="FloorTile193" parent="Map/CielingTiles" unique_id=756102691 instance=ExtResource("2_qisfu")]
+[node name="FloorTile193" parent="Map/Ceilings" unique_id=756102691 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 3, -21)
 
-[node name="FloorTile194" parent="Map/CielingTiles" unique_id=863128636 instance=ExtResource("2_qisfu")]
+[node name="FloorTile194" parent="Map/Ceilings" unique_id=863128636 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 3, -24)
 
-[node name="FloorTile195" parent="Map/CielingTiles" unique_id=147078572 instance=ExtResource("2_qisfu")]
+[node name="FloorTile195" parent="Map/Ceilings" unique_id=147078572 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 3, -15)
 
-[node name="FloorTile196" parent="Map/CielingTiles" unique_id=1862845955 instance=ExtResource("2_qisfu")]
+[node name="FloorTile196" parent="Map/Ceilings" unique_id=1862845955 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 3, -18)
 
-[node name="FloorTile197" parent="Map/CielingTiles" unique_id=1930467246 instance=ExtResource("2_qisfu")]
+[node name="FloorTile197" parent="Map/Ceilings" unique_id=1930467246 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 3, -12)
 
-[node name="FloorTile184" parent="Map/CielingTiles" unique_id=448191767 instance=ExtResource("2_qisfu")]
+[node name="FloorTile184" parent="Map/Ceilings" unique_id=448191767 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57, 3, -12)
 
-[node name="FloorTile185" parent="Map/CielingTiles" unique_id=1485904800 instance=ExtResource("2_qisfu")]
+[node name="FloorTile185" parent="Map/Ceilings" unique_id=1485904800 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 3, -12)
 
-[node name="FloorTile186" parent="Map/CielingTiles" unique_id=136714251 instance=ExtResource("2_qisfu")]
+[node name="FloorTile186" parent="Map/Ceilings" unique_id=136714251 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 3, -15)
 
-[node name="FloorTile187" parent="Map/CielingTiles" unique_id=1351294496 instance=ExtResource("2_qisfu")]
+[node name="FloorTile187" parent="Map/Ceilings" unique_id=1351294496 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57, 3, -15)
 
-[node name="FloorTile139" parent="Map/CielingTiles" unique_id=2105040433 instance=ExtResource("2_qisfu")]
+[node name="FloorTile139" parent="Map/Ceilings" unique_id=2105040433 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 3, -18)
 
-[node name="FloorTile140" parent="Map/CielingTiles" unique_id=916487495 instance=ExtResource("2_qisfu")]
+[node name="FloorTile140" parent="Map/Ceilings" unique_id=916487495 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 3, -18)
 
-[node name="FloorTile141" parent="Map/CielingTiles" unique_id=72638499 instance=ExtResource("2_qisfu")]
+[node name="FloorTile141" parent="Map/Ceilings" unique_id=72638499 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 3, -18)
 
-[node name="FloorTile150" parent="Map/CielingTiles" unique_id=16918406 instance=ExtResource("2_qisfu")]
+[node name="FloorTile150" parent="Map/Ceilings" unique_id=16918406 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 3, -18)
 
-[node name="FloorTile142" parent="Map/CielingTiles" unique_id=1265869744 instance=ExtResource("2_qisfu")]
+[node name="FloorTile142" parent="Map/Ceilings" unique_id=1265869744 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 3, -15)
 
-[node name="FloorTile143" parent="Map/CielingTiles" unique_id=122520865 instance=ExtResource("2_qisfu")]
+[node name="FloorTile143" parent="Map/Ceilings" unique_id=122520865 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 3, -15)
 
-[node name="FloorTile144" parent="Map/CielingTiles" unique_id=1664724346 instance=ExtResource("2_qisfu")]
+[node name="FloorTile144" parent="Map/Ceilings" unique_id=1664724346 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 3, -15)
 
-[node name="FloorTile145" parent="Map/CielingTiles" unique_id=1384431474 instance=ExtResource("2_qisfu")]
+[node name="FloorTile145" parent="Map/Ceilings" unique_id=1384431474 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 3, -15)
 
-[node name="FloorTile146" parent="Map/CielingTiles" unique_id=748666176 instance=ExtResource("2_qisfu")]
+[node name="FloorTile146" parent="Map/Ceilings" unique_id=748666176 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 3, -12)
 
-[node name="FloorTile147" parent="Map/CielingTiles" unique_id=1013289411 instance=ExtResource("2_qisfu")]
+[node name="FloorTile147" parent="Map/Ceilings" unique_id=1013289411 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 3, -12)
 
-[node name="FloorTile148" parent="Map/CielingTiles" unique_id=780164483 instance=ExtResource("2_qisfu")]
+[node name="FloorTile148" parent="Map/Ceilings" unique_id=780164483 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 3, -12)
 
-[node name="FloorTile149" parent="Map/CielingTiles" unique_id=1650441164 instance=ExtResource("2_qisfu")]
+[node name="FloorTile149" parent="Map/Ceilings" unique_id=1650441164 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 3, -12)
 
-[node name="FloorTile155" parent="Map/CielingTiles" unique_id=169463483 instance=ExtResource("2_qisfu")]
+[node name="FloorTile155" parent="Map/Ceilings" unique_id=169463483 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 3, -21)
 
-[node name="FloorTile156" parent="Map/CielingTiles" unique_id=1133439694 instance=ExtResource("2_qisfu")]
+[node name="FloorTile156" parent="Map/Ceilings" unique_id=1133439694 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 3, -21)
 
-[node name="FloorTile157" parent="Map/CielingTiles" unique_id=1419452432 instance=ExtResource("2_qisfu")]
+[node name="FloorTile157" parent="Map/Ceilings" unique_id=1419452432 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 3, -21)
 
-[node name="FloorTile158" parent="Map/CielingTiles" unique_id=1347563662 instance=ExtResource("2_qisfu")]
+[node name="FloorTile158" parent="Map/Ceilings" unique_id=1347563662 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 3, -21)
 
-[node name="FloorTile33" parent="Map/CielingTiles" unique_id=1308813132 instance=ExtResource("2_qisfu")]
+[node name="FloorTile33" parent="Map/Ceilings" unique_id=1308813132 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, -18)
 
-[node name="FloorTile27" parent="Map/CielingTiles" unique_id=1200101226 instance=ExtResource("2_qisfu")]
+[node name="FloorTile27" parent="Map/Ceilings" unique_id=1200101226 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -21)
 
-[node name="FloorTile28" parent="Map/CielingTiles" unique_id=1169702249 instance=ExtResource("2_qisfu")]
+[node name="FloorTile28" parent="Map/Ceilings" unique_id=1169702249 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -24)
 
-[node name="FloorTile29" parent="Map/CielingTiles" unique_id=1001890374 instance=ExtResource("2_qisfu")]
+[node name="FloorTile29" parent="Map/Ceilings" unique_id=1001890374 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -27)
 
-[node name="FloorTile30" parent="Map/CielingTiles" unique_id=247496643 instance=ExtResource("2_qisfu")]
+[node name="FloorTile30" parent="Map/Ceilings" unique_id=247496643 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -30)
 
-[node name="FloorTile31" parent="Map/CielingTiles" unique_id=125164650 instance=ExtResource("2_qisfu")]
+[node name="FloorTile31" parent="Map/Ceilings" unique_id=125164650 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -33)
 
-[node name="FloorTile103" parent="Map/CielingTiles" unique_id=1990507819 instance=ExtResource("2_qisfu")]
+[node name="FloorTile103" parent="Map/Ceilings" unique_id=1990507819 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -36)
 
-[node name="FloorTile104" parent="Map/CielingTiles" unique_id=436706930 instance=ExtResource("2_qisfu")]
+[node name="FloorTile104" parent="Map/Ceilings" unique_id=436706930 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, -36)
 
-[node name="FloorTile105" parent="Map/CielingTiles" unique_id=1679928437 instance=ExtResource("2_qisfu")]
+[node name="FloorTile105" parent="Map/Ceilings" unique_id=1679928437 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 3, -36)
 
-[node name="FloorTile106" parent="Map/CielingTiles" unique_id=1732955139 instance=ExtResource("2_qisfu")]
+[node name="FloorTile106" parent="Map/Ceilings" unique_id=1732955139 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 3, -36)
 
-[node name="FloorTile107" parent="Map/CielingTiles" unique_id=1487488091 instance=ExtResource("2_qisfu")]
+[node name="FloorTile107" parent="Map/Ceilings" unique_id=1487488091 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3, -36)
 
-[node name="FloorTile108" parent="Map/CielingTiles" unique_id=990430957 instance=ExtResource("2_qisfu")]
+[node name="FloorTile108" parent="Map/Ceilings" unique_id=990430957 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -39)
 
-[node name="FloorTile109" parent="Map/CielingTiles" unique_id=344270976 instance=ExtResource("2_qisfu")]
+[node name="FloorTile109" parent="Map/Ceilings" unique_id=344270976 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, -39)
 
-[node name="FloorTile110" parent="Map/CielingTiles" unique_id=1986894931 instance=ExtResource("2_qisfu")]
+[node name="FloorTile110" parent="Map/Ceilings" unique_id=1986894931 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 3, -39)
 
-[node name="FloorTile111" parent="Map/CielingTiles" unique_id=1131442620 instance=ExtResource("2_qisfu")]
+[node name="FloorTile111" parent="Map/Ceilings" unique_id=1131442620 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 3, -39)
 
-[node name="FloorTile112" parent="Map/CielingTiles" unique_id=1049332090 instance=ExtResource("2_qisfu")]
+[node name="FloorTile112" parent="Map/Ceilings" unique_id=1049332090 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3, -39)
 
-[node name="FloorTile113" parent="Map/CielingTiles" unique_id=987099237 instance=ExtResource("2_qisfu")]
+[node name="FloorTile113" parent="Map/Ceilings" unique_id=987099237 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -42)
 
-[node name="FloorTile114" parent="Map/CielingTiles" unique_id=1267756344 instance=ExtResource("2_qisfu")]
+[node name="FloorTile114" parent="Map/Ceilings" unique_id=1267756344 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, -42)
 
-[node name="FloorTile115" parent="Map/CielingTiles" unique_id=539036505 instance=ExtResource("2_qisfu")]
+[node name="FloorTile115" parent="Map/Ceilings" unique_id=539036505 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 3, -42)
 
-[node name="FloorTile116" parent="Map/CielingTiles" unique_id=1696544822 instance=ExtResource("2_qisfu")]
+[node name="FloorTile116" parent="Map/Ceilings" unique_id=1696544822 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 3, -42)
 
-[node name="FloorTile117" parent="Map/CielingTiles" unique_id=229877521 instance=ExtResource("2_qisfu")]
+[node name="FloorTile117" parent="Map/Ceilings" unique_id=229877521 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3, -42)
 
-[node name="FloorTile118" parent="Map/CielingTiles" unique_id=1652952948 instance=ExtResource("2_qisfu")]
+[node name="FloorTile118" parent="Map/Ceilings" unique_id=1652952948 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -45)
 
-[node name="FloorTile119" parent="Map/CielingTiles" unique_id=653027225 instance=ExtResource("2_qisfu")]
+[node name="FloorTile119" parent="Map/Ceilings" unique_id=653027225 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, -45)
 
-[node name="FloorTile120" parent="Map/CielingTiles" unique_id=405446497 instance=ExtResource("2_qisfu")]
+[node name="FloorTile120" parent="Map/Ceilings" unique_id=405446497 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 3, -45)
 
-[node name="FloorTile121" parent="Map/CielingTiles" unique_id=1371272113 instance=ExtResource("2_qisfu")]
+[node name="FloorTile121" parent="Map/Ceilings" unique_id=1371272113 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 3, -45)
 
-[node name="FloorTile122" parent="Map/CielingTiles" unique_id=1269741805 instance=ExtResource("2_qisfu")]
+[node name="FloorTile122" parent="Map/Ceilings" unique_id=1269741805 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3, -45)
 
-[node name="FloorTile123" parent="Map/CielingTiles" unique_id=1973305280 instance=ExtResource("2_qisfu")]
+[node name="FloorTile123" parent="Map/Ceilings" unique_id=1973305280 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -48)
 
-[node name="FloorTile124" parent="Map/CielingTiles" unique_id=1862294592 instance=ExtResource("2_qisfu")]
+[node name="FloorTile124" parent="Map/Ceilings" unique_id=1862294592 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, -48)
 
-[node name="FloorTile125" parent="Map/CielingTiles" unique_id=948365495 instance=ExtResource("2_qisfu")]
+[node name="FloorTile125" parent="Map/Ceilings" unique_id=948365495 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 3, -48)
 
-[node name="FloorTile126" parent="Map/CielingTiles" unique_id=35354933 instance=ExtResource("2_qisfu")]
+[node name="FloorTile126" parent="Map/Ceilings" unique_id=35354933 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 3, -48)
 
-[node name="FloorTile127" parent="Map/CielingTiles" unique_id=521961392 instance=ExtResource("2_qisfu")]
+[node name="FloorTile127" parent="Map/Ceilings" unique_id=521961392 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3, -48)
 
-[node name="FloorTile128" parent="Map/CielingTiles" unique_id=1611413225 instance=ExtResource("2_qisfu")]
+[node name="FloorTile128" parent="Map/Ceilings" unique_id=1611413225 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -51)
 
-[node name="FloorTile129" parent="Map/CielingTiles" unique_id=1014271485 instance=ExtResource("2_qisfu")]
+[node name="FloorTile129" parent="Map/Ceilings" unique_id=1014271485 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, -51)
 
-[node name="FloorTile130" parent="Map/CielingTiles" unique_id=275478146 instance=ExtResource("2_qisfu")]
+[node name="FloorTile130" parent="Map/Ceilings" unique_id=275478146 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 3, -51)
 
-[node name="FloorTile131" parent="Map/CielingTiles" unique_id=1425255900 instance=ExtResource("2_qisfu")]
+[node name="FloorTile131" parent="Map/Ceilings" unique_id=1425255900 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 3, -51)
 
-[node name="FloorTile132" parent="Map/CielingTiles" unique_id=58718217 instance=ExtResource("2_qisfu")]
+[node name="FloorTile132" parent="Map/Ceilings" unique_id=58718217 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3, -51)
 
-[node name="FloorTile133" parent="Map/CielingTiles" unique_id=802967793 instance=ExtResource("2_qisfu")]
+[node name="FloorTile133" parent="Map/Ceilings" unique_id=802967793 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -54)
 
-[node name="FloorTile134" parent="Map/CielingTiles" unique_id=674222725 instance=ExtResource("2_qisfu")]
+[node name="FloorTile134" parent="Map/Ceilings" unique_id=674222725 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, -54)
 
-[node name="FloorTile135" parent="Map/CielingTiles" unique_id=1809146340 instance=ExtResource("2_qisfu")]
+[node name="FloorTile135" parent="Map/Ceilings" unique_id=1809146340 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 3, -54)
 
-[node name="FloorTile136" parent="Map/CielingTiles" unique_id=840839360 instance=ExtResource("2_qisfu")]
+[node name="FloorTile136" parent="Map/Ceilings" unique_id=840839360 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 3, -54)
 
-[node name="FloorTile137" parent="Map/CielingTiles" unique_id=1757277550 instance=ExtResource("2_qisfu")]
+[node name="FloorTile137" parent="Map/Ceilings" unique_id=1757277550 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3, -54)
 
-[node name="FloorTile2" parent="Map/CielingTiles" unique_id=1552295486 instance=ExtResource("2_qisfu")]
+[node name="FloorTile2" parent="Map/Ceilings" unique_id=1552295486 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 3)
 
-[node name="FloorTile5" parent="Map/CielingTiles" unique_id=1452204428 instance=ExtResource("2_qisfu")]
+[node name="FloorTile5" parent="Map/Ceilings" unique_id=1452204428 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 3, 0)
 
-[node name="FloorTile6" parent="Map/CielingTiles" unique_id=621319692 instance=ExtResource("2_qisfu")]
+[node name="FloorTile6" parent="Map/Ceilings" unique_id=621319692 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 3, 3)
 
-[node name="FloorTile3" parent="Map/CielingTiles" unique_id=1707900551 instance=ExtResource("2_qisfu")]
+[node name="FloorTile3" parent="Map/Ceilings" unique_id=1707900551 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 0)
 
-[node name="FloorTile4" parent="Map/CielingTiles" unique_id=236946737 instance=ExtResource("2_qisfu")]
+[node name="FloorTile4" parent="Map/Ceilings" unique_id=236946737 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 3)
 
-[node name="FloorTile7" parent="Map/CielingTiles" unique_id=131123 instance=ExtResource("2_qisfu")]
+[node name="FloorTile7" parent="Map/Ceilings" unique_id=131123 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 6)
 
-[node name="FloorTile8" parent="Map/CielingTiles" unique_id=377389033 instance=ExtResource("2_qisfu")]
+[node name="FloorTile8" parent="Map/Ceilings" unique_id=377389033 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 9)
 
-[node name="FloorTile9" parent="Map/CielingTiles" unique_id=585952842 instance=ExtResource("2_qisfu")]
+[node name="FloorTile9" parent="Map/Ceilings" unique_id=585952842 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 3, 6)
 
-[node name="FloorTile10" parent="Map/CielingTiles" unique_id=104016614 instance=ExtResource("2_qisfu")]
+[node name="FloorTile10" parent="Map/Ceilings" unique_id=104016614 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 3, 9)
 
-[node name="FloorTile11" parent="Map/CielingTiles" unique_id=1187240853 instance=ExtResource("2_qisfu")]
+[node name="FloorTile11" parent="Map/Ceilings" unique_id=1187240853 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 6)
 
-[node name="FloorTile12" parent="Map/CielingTiles" unique_id=383000814 instance=ExtResource("2_qisfu")]
+[node name="FloorTile12" parent="Map/Ceilings" unique_id=383000814 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 9)
 
-[node name="FloorTile13" parent="Map/CielingTiles" unique_id=1746352647 instance=ExtResource("2_qisfu")]
+[node name="FloorTile13" parent="Map/Ceilings" unique_id=1746352647 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3, 0)
 
-[node name="FloorTile14" parent="Map/CielingTiles" unique_id=78358390 instance=ExtResource("2_qisfu")]
+[node name="FloorTile14" parent="Map/Ceilings" unique_id=78358390 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3, 3)
 
-[node name="FloorTile15" parent="Map/CielingTiles" unique_id=296379337 instance=ExtResource("2_qisfu")]
+[node name="FloorTile15" parent="Map/Ceilings" unique_id=296379337 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3, 6)
 
-[node name="FloorTile16" parent="Map/CielingTiles" unique_id=1762276580 instance=ExtResource("2_qisfu")]
+[node name="FloorTile16" parent="Map/Ceilings" unique_id=1762276580 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3, 9)
 
-[node name="FloorTile17" parent="Map/CielingTiles" unique_id=498689101 instance=ExtResource("2_qisfu")]
+[node name="FloorTile17" parent="Map/Ceilings" unique_id=498689101 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 3, 0)
 
-[node name="FloorTile18" parent="Map/CielingTiles" unique_id=851788606 instance=ExtResource("2_qisfu")]
+[node name="FloorTile18" parent="Map/Ceilings" unique_id=851788606 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 3, 3)
 
-[node name="FloorTile19" parent="Map/CielingTiles" unique_id=2062162659 instance=ExtResource("2_qisfu")]
+[node name="FloorTile19" parent="Map/Ceilings" unique_id=2062162659 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 3, 6)
 
-[node name="FloorTile20" parent="Map/CielingTiles" unique_id=1629614469 instance=ExtResource("2_qisfu")]
+[node name="FloorTile20" parent="Map/Ceilings" unique_id=1629614469 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 3, 9)
 
 [node name="Walls" type="Node3D" parent="Map" unique_id=348094776]
