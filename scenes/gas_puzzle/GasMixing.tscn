@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://bwjfoioxkq5j5" path="res://scenes/gas_puzzle/gas_mixing_prototype.gd" id="1_fbfhb"]
 [ext_resource type="Texture2D" uid="uid://wf6d4gxcrtcu" path="res://props/interactable/gas_mixing_station/gas_panel.png" id="2_251vw"]
 [ext_resource type="FontFile" uid="uid://jojpfgda2e6k" path="res://addons/fonts/Strogo.ttf" id="3_251vw"]
+[ext_resource type="StyleBox" uid="uid://ltmsjmvau5js" path="res://ui/buttons/chunky_normal.tres" id="4_2paew"]
+[ext_resource type="StyleBox" uid="uid://cs13ngtwfe35k" path="res://ui/buttons/chunky_pressed.tres" id="5_al4th"]
+[ext_resource type="AudioStream" uid="uid://d02q7soipxyd8" path="res://props/interactable/station_door/sounds/error_008.ogg" id="6_88no7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2paew"]
 font = ExtResource("3_251vw")
@@ -11,17 +14,36 @@ font_color = Color(0.16206557, 0.1620656, 0.16206557, 1)
 outline_color = Color(0, 0, 0, 1)
 shadow_size = 2
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_251vw"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.101960786, 0.8039216, 0.101960786, 0.6)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_al4th"]
+bg_color = Color(0.105882354, 0.67058825, 0, 1)
+border_width_left = 2
+border_width_right = 2
+border_width_bottom = 15
+border_color = Color(0.04447808, 0.3936538, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 corner_detail = 5
+shadow_color = Color(0, 0, 0, 0.34117648)
+shadow_size = 5
+shadow_offset = Vector2(5, 5)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_88no7"]
+bg_color = Color(0.060314387, 0.46507978, 0, 1)
+border_width_left = 2
+border_width_right = 2
+border_width_bottom = 15
+border_color = Color(0.04447808, 0.3936538, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+anti_aliasing = false
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_88no7"]
 
 [node name="GasMixing" type="Control" unique_id=1658539342]
 layout_mode = 3
@@ -48,18 +70,20 @@ theme_override_constants/margin_bottom = 100
 layout_mode = 2
 texture = ExtResource("2_251vw")
 
-[node name="Label" type="Label" parent="MarginContainer/TextureRect" unique_id=1693753040]
+[node name="StationTitle" type="Label" parent="MarginContainer/TextureRect" unique_id=1693753040]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 7
 anchor_left = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-offset_left = 174.0
-offset_top = 1011.0
-offset_right = 878.0
-offset_bottom = 1078.0
+anchor_bottom = 1.0
+offset_left = -352.0
+offset_top = -67.0
+offset_right = 352.0
 grow_horizontal = 2
+grow_vertical = 0
 size_flags_horizontal = 4
-text = "Gas Mixing Station"
+text = "ATMOSPHERE CONTROL"
 label_settings = SubResource("LabelSettings_2paew")
 horizontal_alignment = 1
 
@@ -74,7 +98,7 @@ theme_override_constants/separation = 50
 
 [node name="Nitrogen" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Gasses" unique_id=296694202]
 layout_mode = 2
-theme_override_constants/separation = 95
+theme_override_constants/separation = 30
 
 [node name="NitrogenProgress" type="ProgressBar" parent="MarginContainer/VBoxContainer/Gasses/Nitrogen" unique_id=1840225468]
 unique_name_in_owner = true
@@ -84,13 +108,16 @@ size_flags_vertical = 10
 
 [node name="NitrogenButton" type="Button" parent="MarginContainer/VBoxContainer/Gasses/Nitrogen" unique_id=1183906404]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(200, 100)
+custom_minimum_size = Vector2(250, 100)
 layout_mode = 2
+theme_override_styles/normal = ExtResource("4_2paew")
+theme_override_styles/pressed = ExtResource("5_al4th")
+theme_override_styles/hover = ExtResource("4_2paew")
 text = "NITROGEN"
 
 [node name="Oxygen" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Gasses" unique_id=2111891566]
 layout_mode = 2
-theme_override_constants/separation = 95
+theme_override_constants/separation = 30
 
 [node name="OxygenProgress" type="ProgressBar" parent="MarginContainer/VBoxContainer/Gasses/Oxygen" unique_id=462892496]
 unique_name_in_owner = true
@@ -100,14 +127,27 @@ size_flags_vertical = 10
 
 [node name="OxygenButton" type="Button" parent="MarginContainer/VBoxContainer/Gasses/Oxygen" unique_id=354271522]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(200, 100)
+custom_minimum_size = Vector2(250, 100)
 layout_mode = 2
+theme_override_styles/normal = ExtResource("4_2paew")
+theme_override_styles/pressed = ExtResource("5_al4th")
+theme_override_styles/hover = ExtResource("4_2paew")
 text = "OXYGEN"
 
-[node name="PressureizeButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=137159764]
+[node name="PressureizeButton" type="Button" parent="." unique_id=137159764]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(400, 100)
-layout_mode = 2
+layout_mode = 0
+offset_left = 552.0
+offset_top = 758.0
+offset_right = 1351.0
+offset_bottom = 889.0
 size_flags_horizontal = 4
-theme_override_styles/normal = SubResource("StyleBoxFlat_251vw")
+theme_override_styles/normal = SubResource("StyleBoxFlat_al4th")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_88no7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_al4th")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_88no7")
 text = "PRESSURIZE FACILITY"
+
+[node name="Error" type="AudioStreamPlayer" parent="." unique_id=1664491030]
+stream = ExtResource("6_88no7")

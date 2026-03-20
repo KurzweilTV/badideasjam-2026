@@ -1,0 +1,17 @@
+[gd_resource type="StyleBoxFlat" format=3 uid="uid://ltmsjmvau5js"]
+
+[resource]
+bg_color = Color(0.105882354, 0.23529412, 0.5411765, 1)
+border_width_left = 2
+border_width_right = 2
+border_width_bottom = 15
+border_color = Color(0.051521957, 0.14064115, 0.34702554, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+shadow_color = Color(0, 0, 0, 0.34117648)
+shadow_size = 5
+shadow_offset = Vector2(5, 5)
+anti_aliasing = false

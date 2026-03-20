@@ -5,6 +5,7 @@ extends Control
 @onready var nitrogen_progress: ProgressBar = %NitrogenProgress
 @onready var oxygen_progress: ProgressBar = %OxygenProgress
 @onready var pressurize_button: Button = %PressureizeButton
+@onready var error: AudioStreamPlayer = $Error
 
 @export var fill_rate: float = 35.0
 @export var drain_rate: float = 4.0
@@ -69,3 +70,6 @@ func _on_pressurize_pressed() -> void:
 		queue_free()
 	else:
 		print("Failed")
+		error.play()
+		nitrogen_progress.value -= 10
+		oxygen_progress.value -= 10
