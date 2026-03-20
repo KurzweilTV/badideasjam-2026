@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://bexobtvi7plny" path="res://scenes/systems/dialog_trigger.tscn" id="20_x6cfo"]
 [ext_resource type="PackedScene" uid="uid://djhnfoywusi7s" path="res://props/interactable/oxygen_mask/OxygenMask.tscn" id="22_clfuy"]
 [ext_resource type="PackedScene" uid="uid://jts7y3j4dkmu" path="res://props/buildings/elevator/elevator.tscn" id="23_lhny8"]
+[ext_resource type="PackedScene" uid="uid://doy1ps6nya7no" path="res://props/interactable/oxygen_bottle/OxygenBottle.tscn" id="23_oqbv7"]
 [ext_resource type="PackedScene" uid="uid://dyhqsrg6n6fel" path="res://props/interactable/gas_mixing_station/GasMixingConsole.tscn" id="25_oqbv7"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_2crfw"]
@@ -71,7 +72,7 @@ func _on_get_mask() -> void:
 "
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4ussd"]
-size = Vector3(3.5, 6, 1)
+size = Vector3(3.5, 3, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5woyl"]
 size = Vector3(10, 1, 1)
@@ -83,7 +84,7 @@ size = Vector3(1, 1, 15)
 script = ExtResource("1_4ussd")
 
 [node name="Character" parent="." unique_id=1159670658 instance=ExtResource("1_tq2h6")]
-transform = Transform3D(8.940697e-08, 0, 1, 0, 1, 0, -1, 0, 8.940697e-08, 4.932211, 0.50000095, 9.110121)
+transform = Transform3D(1, 0, -1.3311836e-07, 0, 1, 0, 1.3311836e-07, 0, 1, 2.582211, 0.10000095, 9.210121)
 oxygen_level = 20.0
 base_oxygen_loss_rate = 0.75
 sprint_oxygen_multiplier = 2.0
@@ -2195,6 +2196,7 @@ collision_mask = 3
 script = SubResource("GDScript_4ussd")
 
 [node name="Collision" type="CollisionShape3D" parent="Map/Effects/PlayerBlocker" unique_id=2097839700]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 shape = SubResource("BoxShape3D_4ussd")
 debug_color = Color(0.9977123, 0, 0.17001125, 0.41960785)
 
@@ -2235,19 +2237,46 @@ metadata/_edit_lock_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.85, 1.3480824, 4.35)
 
 [node name="Crowbar" parent="Map/Pickups" unique_id=1447367375 instance=ExtResource("15_vsm2l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 1, -18)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 1, -18.5)
 
 [node name="GreenKeycard" parent="Map/Pickups" unique_id=198432991 instance=ExtResource("14_6uwk2")]
 transform = Transform3D(-1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 0, 0, 1, 2.5393486, 1.2922591, -50.75336)
 
-[node name="GasMixingConsole" parent="." unique_id=65025017 instance=ExtResource("25_oqbv7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.4, 0.6, -21.199999)
+[node name="OxygenBottle" parent="Map/Pickups" unique_id=385678588 instance=ExtResource("23_oqbv7")]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, -27, 0.5, -17)
 
-[node name="OxygenMask" parent="." unique_id=1036681436 instance=ExtResource("22_clfuy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.4, 0.2, -13.8)
+[node name="OxygenBottle2" parent="Map/Pickups" unique_id=517925478 instance=ExtResource("23_oqbv7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0.44999993, -17.5)
+
+[node name="OxygenBottle3" parent="Map/Pickups" unique_id=276379120 instance=ExtResource("23_oqbv7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.4, 0.44999993, -17.5)
+
+[node name="OxygenBottle4" parent="Map/Pickups" unique_id=1769046385 instance=ExtResource("23_oqbv7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0, -8)
+
+[node name="OxygenBottle5" parent="Map/Pickups" unique_id=1988420243 instance=ExtResource("23_oqbv7")]
+transform = Transform3D(0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0, 1, 5.5, 1.8, -11.85)
+
+[node name="OxygenBottle6" parent="Map/Pickups" unique_id=1787606295 instance=ExtResource("23_oqbv7")]
+transform = Transform3D(0.49999997, 0.49999997, -0.70710677, -0.70710677, 0.70710677, 0, 0.49999997, 0.49999997, 0.70710677, 5.5, 1.8, -12.650001)
+
+[node name="GasMixingConsole" parent="." unique_id=65025017 instance=ExtResource("25_oqbv7")]
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 1, 25.4, 0.6, -21.199999)
 
 [node name="AmbientSound" type="AudioStreamPlayer" parent="." unique_id=1134652076]
 stream = ExtResource("4_oqbv7")
 volume_db = -5.0
 autoplay = true
 bus = &"Ambient"
+
+[node name="OxygenMask" parent="." unique_id=1303480627 instance=ExtResource("22_clfuy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.5, 0.5, -12.5)
+
+[node name="Cabinet" parent="." unique_id=974178784 instance=ExtResource("20_clfuy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.304522, 0.13124871, -17.284801)
+
+[node name="Cabinet2" parent="." unique_id=670341684 instance=ExtResource("20_clfuy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.60452, 0.13124871, -17.284801)
+
+[node name="Cabinet3" parent="." unique_id=419465492 instance=ExtResource("20_clfuy")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -27.10452, 0.13124871, -18.534801)

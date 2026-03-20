@@ -556,9 +556,12 @@ func use_oxygen(delta) -> void:
 	if not oxygen_system_enabled: return
 	oxygen_level -= oxygen_loss_rate * delta
 
-
 func give_oxygen(amount: float) -> void:
 	oxygen_level += amount
+
+## When we need to set the oxygen for the story
+func set_oxygen(amount: float) -> void:
+	oxygen_level = amount
 
 func _update_oxygen_ui() -> void:
 	if not oxygen_bar: return
