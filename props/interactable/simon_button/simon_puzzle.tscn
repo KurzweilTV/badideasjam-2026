@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dnirl1qifr421"]
+
+[ext_resource type="Script" uid="uid://uwy7kofi1syw" path="res://props/interactable/simon_button/simon_puzzle.gd" id="1_5wlci"]
+[ext_resource type="PackedScene" uid="uid://fj1ni3t61i21" path="res://props/interactable/simon_button/simon_button.tscn" id="1_jttdl"]
+
+[node name="SimonPuzzle" type="Node3D" unique_id=654237784]
+script = ExtResource("1_5wlci")
+
+[node name="SimonButton1" parent="." unique_id=367134228 instance=ExtResource("1_jttdl")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.5, 0.5, 0)
+button_color = Color(0.2, 0.8, 0.6, 1)
+pitch_modifier = 0.5
+
+[node name="SimonButton2" parent="." unique_id=1236742548 instance=ExtResource("1_jttdl")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.5, 0.5, 0)
+button_index = 1
+button_color = Color(0.7019608, 0.3019608, 1, 1)
+pitch_modifier = 0.75
+
+[node name="SimonButton3" parent="." unique_id=619799414 instance=ExtResource("1_jttdl")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.5, -0.5, 0)
+button_index = 2
+button_color = Color(1, 0.6, 0.2, 1)
+
+[node name="SimonButton4" parent="." unique_id=1910406072 instance=ExtResource("1_jttdl")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.5, -0.5, 0)
+button_index = 3
+button_color = Color(0.3019608, 0.6509804, 1, 1)
+pitch_modifier = 1.25
+
+[node name="HighScoreTitle" type="Label3D" parent="." unique_id=874489017]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.6720264, 0.5, -0.120262384)
+text = "HIGHSCORE"
+
+[node name="HighScoreDisplay" type="Label3D" parent="." unique_id=109897277]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.6720264, 0.25, -0.120262384)
+text = "0
+"

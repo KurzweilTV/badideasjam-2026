@@ -4,8 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://wf6d4gxcrtcu" path="res://props/interactable/gas_mixing_station/gas_panel.png" id="2_251vw"]
 [ext_resource type="FontFile" uid="uid://jojpfgda2e6k" path="res://addons/fonts/Strogo.ttf" id="3_251vw"]
 [ext_resource type="StyleBox" uid="uid://ltmsjmvau5js" path="res://ui/buttons/chunky_normal.tres" id="4_2paew"]
+[ext_resource type="StyleBox" uid="uid://b3dao6mxmeyov" path="res://ui/progress_bars/gasmix_bg.tres" id="4_64re0"]
 [ext_resource type="StyleBox" uid="uid://cs13ngtwfe35k" path="res://ui/buttons/chunky_pressed.tres" id="5_al4th"]
+[ext_resource type="StyleBox" uid="uid://bxidjdrlhafen" path="res://ui/progress_bars/gasmix_fill.tres" id="5_v6oqc"]
 [ext_resource type="AudioStream" uid="uid://d02q7soipxyd8" path="res://props/interactable/station_door/sounds/error_008.ogg" id="6_88no7"]
+[ext_resource type="LabelSettings" uid="uid://chg1id0jihetb" path="res://ui/labels/sub_heading.tres" id="8_w2dmb"]
+[ext_resource type="AudioStream" uid="uid://dt48xo2g00akd" path="res://scenes/gas_puzzle/sounds/filling_gas.mp3" id="9_v6oqc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2paew"]
 font = ExtResource("3_251vw")
@@ -15,11 +19,11 @@ outline_color = Color(0, 0, 0, 1)
 shadow_size = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_al4th"]
-bg_color = Color(0.105882354, 0.67058825, 0, 1)
+bg_color = Color(0.04447808, 0.3936538, 0, 1)
 border_width_left = 2
 border_width_right = 2
 border_width_bottom = 15
-border_color = Color(0.04447808, 0.3936538, 0, 1)
+border_color = Color(0.017141394, 0.24911103, 4.813075e-08, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -30,17 +34,20 @@ shadow_size = 5
 shadow_offset = Vector2(5, 5)
 anti_aliasing = false
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_88no7"]
-bg_color = Color(0.060314387, 0.46507978, 0, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xchbe"]
+bg_color = Color(0.015686275, 0.2509804, 0, 1)
 border_width_left = 2
 border_width_right = 2
 border_width_bottom = 15
-border_color = Color(0.04447808, 0.3936538, 0, 1)
+border_color = Color(0.010759952, 0.20649925, 1.4439226e-07, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 corner_detail = 5
+shadow_color = Color(0, 0, 0, 0.34117648)
+shadow_size = 5
+shadow_offset = Vector2(5, 5)
 anti_aliasing = false
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_88no7"]
@@ -72,16 +79,14 @@ texture = ExtResource("2_251vw")
 
 [node name="StationTitle" type="Label" parent="MarginContainer/TextureRect" unique_id=1693753040]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -352.0
-offset_top = -67.0
-offset_right = 352.0
+offset_left = -399.0
+offset_top = 117.0
+offset_right = 400.0
+offset_bottom = 184.0
 grow_horizontal = 2
-grow_vertical = 0
 size_flags_horizontal = 4
 text = "ATMOSPHERE CONTROL"
 label_settings = SubResource("LabelSettings_2paew")
@@ -105,15 +110,40 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(1000, 150)
 layout_mode = 2
 size_flags_vertical = 10
+theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("3_251vw")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/background = ExtResource("4_64re0")
+theme_override_styles/fill = ExtResource("5_v6oqc")
 
 [node name="NitrogenButton" type="Button" parent="MarginContainer/VBoxContainer/Gasses/Nitrogen" unique_id=1183906404]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(250, 100)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_251vw")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = ExtResource("4_2paew")
 theme_override_styles/pressed = ExtResource("5_al4th")
 theme_override_styles/hover = ExtResource("4_2paew")
 text = "NITROGEN"
+
+[node name="OptimalLight" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Gasses/Nitrogen" unique_id=1596320629]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Gasses/Nitrogen/OptimalLight" unique_id=1469347310]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "OPTIMAL"
+label_settings = ExtResource("8_w2dmb")
+horizontal_alignment = 1
+
+[node name="NitrogenLight" type="ColorRect" parent="MarginContainer/VBoxContainer/Gasses/Nitrogen/OptimalLight" unique_id=1201472252]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
 
 [node name="Oxygen" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Gasses" unique_id=2111891566]
 layout_mode = 2
@@ -124,30 +154,69 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(1000, 150)
 layout_mode = 2
 size_flags_vertical = 10
+theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("3_251vw")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/background = ExtResource("4_64re0")
+theme_override_styles/fill = ExtResource("5_v6oqc")
 
 [node name="OxygenButton" type="Button" parent="MarginContainer/VBoxContainer/Gasses/Oxygen" unique_id=354271522]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(250, 100)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_251vw")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = ExtResource("4_2paew")
 theme_override_styles/pressed = ExtResource("5_al4th")
 theme_override_styles/hover = ExtResource("4_2paew")
 text = "OXYGEN"
 
+[node name="OptimalLight" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Gasses/Oxygen" unique_id=1810188783]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Gasses/Oxygen/OptimalLight" unique_id=906048246]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "OPTIMAL"
+label_settings = ExtResource("8_w2dmb")
+horizontal_alignment = 1
+
+[node name="OxygenLight" type="ColorRect" parent="MarginContainer/VBoxContainer/Gasses/Oxygen/OptimalLight" unique_id=1509647223]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
 [node name="PressureizeButton" type="Button" parent="." unique_id=137159764]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(400, 100)
-layout_mode = 0
-offset_left = 552.0
-offset_top = 758.0
-offset_right = 1351.0
-offset_bottom = 889.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -399.5
+offset_top = -286.0
+offset_right = 399.5
+offset_bottom = -155.0
+grow_horizontal = 2
+grow_vertical = 0
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_251vw")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_al4th")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_88no7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xchbe")
 theme_override_styles/hover = SubResource("StyleBoxFlat_al4th")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_88no7")
 text = "PRESSURIZE FACILITY"
 
 [node name="Error" type="AudioStreamPlayer" parent="." unique_id=1664491030]
 stream = ExtResource("6_88no7")
+
+[node name="GasFill" type="AudioStreamPlayer" parent="." unique_id=1166111969]
+stream = ExtResource("9_v6oqc")
+volume_db = -25.0
+pitch_scale = 0.8

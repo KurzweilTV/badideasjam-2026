@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://hrwymfvsmm0o"]
+
+[ext_resource type="Texture2D" uid="uid://ddj5df1l5wuec" path="res://props/interactable/simon_button/base_texture.png" id="1_6x2f7"]
+
+[resource]
+resource_name = "material_0"
+transparency = 2
+alpha_scissor_threshold = 0.05
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_6x2f7")
+texture_filter = 0
+texture_repeat = false

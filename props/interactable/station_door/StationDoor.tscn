@@ -19,28 +19,28 @@ metadata/_custom_type_script = "uid://bl7efj28lf80j"
 
 [node name="blockbench_export" parent="." unique_id=1245780297 instance=ExtResource("2_a282m")]
 
-[node name="wall_left" parent="blockbench_export" index="0" unique_id=723611495]
+[node name="wall_left" parent="blockbench_export" index="0" unique_id=1812762948]
 visible = false
 
-[node name="CollisionShape3D" parent="blockbench_export/wall_left/StaticBody3D" parent_id_path=PackedInt32Array(1245780297, 607808619) index="0" unique_id=917248048]
+[node name="CollisionShape3D" parent="blockbench_export/wall_left/StaticBody3D" parent_id_path=PackedInt32Array(1245780297, 1890509996) index="0" unique_id=703527549]
 visible = false
 
-[node name="wall_right" parent="blockbench_export" index="1" unique_id=1355062188]
+[node name="wall_right" parent="blockbench_export" index="1" unique_id=893194255]
 visible = false
 
-[node name="CollisionShape3D" parent="blockbench_export/wall_right/StaticBody3D" parent_id_path=PackedInt32Array(1245780297, 621216723) index="0" unique_id=166714903]
+[node name="CollisionShape3D" parent="blockbench_export/wall_right/StaticBody3D" parent_id_path=PackedInt32Array(1245780297, 906621449) index="0" unique_id=1763445546]
 visible = false
 
-[node name="right" parent="blockbench_export/door" parent_id_path=PackedInt32Array(1245780297, 1086384039) index="0" unique_id=695795355]
+[node name="right" parent="blockbench_export/door" parent_id_path=PackedInt32Array(1245780297, 838679528) index="0" unique_id=1392429800]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0)
 
-[node name="CollisionShape3D" parent="blockbench_export/door/right/door_right/StaticBody3D" parent_id_path=PackedInt32Array(1245780297, 984904499) index="0" unique_id=1348156868]
+[node name="CollisionShape3D" parent="blockbench_export/door/right/door_right/StaticBody3D" parent_id_path=PackedInt32Array(1245780297, 1001352085) index="0" unique_id=1137991928]
 visible = false
 
-[node name="left" parent="blockbench_export/door" parent_id_path=PackedInt32Array(1245780297, 1086384039) index="1" unique_id=1276764076]
+[node name="left" parent="blockbench_export/door" parent_id_path=PackedInt32Array(1245780297, 838679528) index="1" unique_id=817354359]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5625, 0, 0)
 
-[node name="CollisionShape3D" parent="blockbench_export/door/left/door_left/StaticBody3D" parent_id_path=PackedInt32Array(1245780297, 1998528772) index="0" unique_id=335045807]
+[node name="CollisionShape3D" parent="blockbench_export/door/left/door_left/StaticBody3D" parent_id_path=PackedInt32Array(1245780297, 506280768) index="0" unique_id=733039273]
 visible = false
 
 [node name="DoorInteract" type="CollisionShape3D" parent="." unique_id=1103378253]

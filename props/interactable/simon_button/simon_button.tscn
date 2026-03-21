@@ -1,0 +1,147 @@
+[gd_scene format=4 uid="uid://fj1ni3t61i21"]
+
+[ext_resource type="Material" uid="uid://hrwymfvsmm0o" path="res://props/interactable/simon_button/material_0.tres" id="1_eiqgb"]
+[ext_resource type="Script" uid="uid://borpa7tv75hlb" path="res://props/interactable/simon_button/simon_button.gd" id="1_wx6i7"]
+[ext_resource type="Material" uid="uid://ccyrw34jqcngj" path="res://props/interactable/simon_button/material_1.tres" id="2_wx6i7"]
+[ext_resource type="AudioStream" uid="uid://cxebdmu5rbjt6" path="res://props/interactable/simon_button/sounds/440.mp3" id="5_mv4jb"]
+[ext_resource type="AudioStream" uid="uid://d02q7soipxyd8" path="res://props/interactable/station_door/sounds/error_008.ogg" id="5_yq5oi"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_j8ysq"]
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.5, 1, 0.125, 1),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAQADAAIAAwAAAAIAAAAEAAEAAQAFAAMABAAFAAEAAwAGAAAABgAEAAAABQAGAAMABgAHAAQABAAHAAUABQAHAAYA"),
+"name": "material_0",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("/////wAAAAD//wAA//8AAP///////wAAAAD/////AAD//wAAAAAAAAAAAAD//wAAAAD//wAAAAAAAAAAAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_2r7gj"]
+resource_name = "blockbench_export_mesh"
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.5, 1, 0.125, 1),
+"attribute_data": PackedByteArray("/4MAAP9D/wf/QwAA/4P/B/+D/xP/Q/8L/4P/C/9D/xMAAP8//z8AAP8//z8AAAAA/z//gwAA/0P/P/9DAAD/g/+D/x//Q/8X/4P/F/9D/x//g/8j/0P/K/9D/yP/g/8r"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": ExtResource("1_eiqgb"),
+"name": "material_0",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("/////wAA/7///wAA////v/////////+///8AAAAA/78AAAAA////vwAA//8AAP+/AAD//////78AAAAAAAD/vwAA//////+//////wAA/7//////////vwAA//8AAP+///8AAAAA/78AAAAA////v///AAD///+/AAAAAAAA/7///wAA//8AgAAA/////wCA////////AIAAAAAA//8AgAAA//8AAP////8AAAAA////////AAD//wAAAAAAAP///38AAP9/AAD/fwAA/38AAP9/////f////3////9///////9/////f////3////9/AAD/fwAA/38AAP9/AAD/f/9/////f////3////9/////f////3////9/////f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_j8ysq")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_82cgq"]
+resource_name = "blockbench_export_mesh"
+_surfaces = [{
+"aabb": AABB(-0.4375, -0.109375, -0.4375, 0.875, 0.34375, 0.875),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAQADAAIAAwAAAAIAAAAEAAEAAQAFAAMABAAFAAEAAwAGAAAABgAEAAAABQAGAAMABgAHAAQABAAHAAUABQAHAAYA"),
+"name": "material_1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("/////wAAAAD//wAA//8AAP///////wAAAAD/////AAD//wAAAAAAAAAAAAD//wAAAAD//wAAAAAAAAAAAAAAAA==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_2r7gj")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_v3egv"]
+resource_name = "blockbench_export_mesh2"
+_surfaces = [{
+"aabb": AABB(-0.4375, -0.109375, -0.4375, 0.875, 0.34375, 0.875),
+"attribute_data": PackedByteArray("/+cAAP93/y//dwAA/+f/L//n/2f/d/83/+f/N/93/2cAAP9v/28AAP9v/28AAAAA/2//5wAA/3f/b/93AAD/5//n/5//d/9v/+f/b/93/5//5/+n/3f/1/93/6f/5//X"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": ExtResource("2_wx6i7"),
+"name": "material_1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("/////wAA/7///wAA////v/////////+///8AAAAA/78AAAAA////vwAA//8AAP+/AAD//////78AAAAAAAD/vwAA//////+//////wAA/7//////////vwAA//8AAP+///8AAAAA/78AAAAA////v///AAD///+/AAAAAAAA/7///wAA//8AgAAA/////wCA////////AIAAAAAA//8AgAAA//8AAP////8AAAAA////////AAD//wAAAAAAAP///38AAP9/AAD/fwAA/38AAP9/////f////3////9///////9/////f////3////9/AAD/fwAA/38AAP9/AAD/f/9/////f////3////9/////f////3////9/////f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_82cgq")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eiqgb"]
+size = Vector3(1, 0.35, 1)
+
+[sub_resource type="Animation" id="Animation_ikcp6"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("buttonface")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.0625, 0)
+
+[sub_resource type="Animation" id="Animation_xm2l5"]
+resource_name = "press"
+length = 0.5
+tracks/0/type = "position_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("buttonface")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, -0.0625, 0, 0.5, 1, 0, 0.015625, 0)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qhtkm"]
+_data = {
+&"RESET": SubResource("Animation_ikcp6"),
+&"press": SubResource("Animation_xm2l5")
+}
+
+[node name="SimonButton" type="StaticBody3D" unique_id=367134228]
+collision_layer = 3
+script = ExtResource("1_wx6i7")
+cooldown_time = 0.1
+interact_hint = "Button"
+
+[node name="blockbench_export" type="Node3D" parent="." unique_id=1615517240]
+
+[node name="base" type="MeshInstance3D" parent="blockbench_export" unique_id=405489543]
+mesh = SubResource("ArrayMesh_2r7gj")
+
+[node name="buttonface" type="Node3D" parent="blockbench_export" unique_id=1022018464]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0625, 0)
+
+[node name="button" type="MeshInstance3D" parent="blockbench_export/buttonface" unique_id=714173201]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+mesh = SubResource("ArrayMesh_v3egv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1814215164]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.175, 0)
+shape = SubResource("BoxShape3D_eiqgb")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1753890792]
+process_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
+visible = false
+omni_range = 4.0
+omni_attenuation = 2.0
+
+[node name="simon_tone" type="AudioStreamPlayer3D" parent="." unique_id=2009354727]
+stream = ExtResource("5_mv4jb")
+volume_db = -2.0
+max_polyphony = 2
+
+[node name="error_tone" type="AudioStreamPlayer3D" parent="." unique_id=1103566940]
+stream = ExtResource("5_yq5oi")
+volume_db = -10.0
+max_polyphony = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=173356471]
+root_node = NodePath("../blockbench_export")
+libraries/ = SubResource("AnimationLibrary_qhtkm")

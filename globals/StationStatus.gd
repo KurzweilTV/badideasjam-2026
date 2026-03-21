@@ -6,6 +6,8 @@ signal station_power_change(powered: bool)
 signal station_oxygen_on
 signal station_color_change(new_color: Color)
 signal got_oxygen_mask
+signal open_elevator_door
+signal close_elevator_door
 signal dialog(message: String, delay: float, border_color: Color, tutorial: bool)
 signal dialog_complete
 

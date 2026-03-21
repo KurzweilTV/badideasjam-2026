@@ -9,6 +9,8 @@ enum KEYS {None, Green, Blue, Orange}
 @export var needs_crowbar: bool = false
 @export var needs_power: bool = true
 @export var needs_pressureized: bool = false
+## Only used for the final elevator door
+@export var special_elevator_door: bool = false
 
 var auto_close_time: float = 4.0
 var door_open: bool = false
@@ -25,8 +27,14 @@ func _ready() -> void:
 		%DoorInteract.disabled = true
 	else:
 		close_door()
+	if special_elevator_door:
+		StationStatus.open_elevator_door.connect(open_elevator)
+		StationStatus.close_elevator_door.connect(close_elevator)
 		
 func _on_interact(interactor: Player) -> bool:
+	if special_elevator_door: 
+		$DoorLocked.play()
+		return false
 	if needs_pressureized and not StationStatus.station_oxygenated:
 		StationStatus.dialog.emit("Pressureize the Station First",0,StationStatus.system_color,true)
 		return false
@@ -65,6 +73,19 @@ func auto_close() -> void:
 	await get_tree().create_timer(auto_close_time).timeout
 	if door_open:
 		close_door()
+	
+func open_elevator() -> void:
+	print("Opening Elevator")
+	anim.play("door_open")
+	%DoorInteract.disabled = true
+	$DoorOpen.play()
+	door_open = true
+	
+func close_elevator() -> void:
+	print("Closing Elevator")
+	anim.play("door_close")
+	$DoorClose.play()
+	door_open = false
 	
 func open_door(player: Player) -> void:
 	if player.access_level >= required_access:
