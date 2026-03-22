@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://7n4alw1uoahd"
 path.s3tc="res://.godot/imported/texture_emissive.png-10d1893a1ef76c8c5a1b47373c362971.s3tc.ctex"
+path.etc2="res://.godot/imported/texture_emissive.png-10d1893a1ef76c8c5a1b47373c362971.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://props/decorations/strip_lamp/texture_emissive.png"
-dest_files=["res://.godot/imported/texture_emissive.png-10d1893a1ef76c8c5a1b47373c362971.s3tc.ctex"]
+dest_files=["res://.godot/imported/texture_emissive.png-10d1893a1ef76c8c5a1b47373c362971.s3tc.ctex", "res://.godot/imported/texture_emissive.png-10d1893a1ef76c8c5a1b47373c362971.etc2.ctex"]
 
 [params]
 

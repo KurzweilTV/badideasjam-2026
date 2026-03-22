@@ -1,7 +1,141 @@
-[gd_scene format=3 uid="uid://dnirl1qifr421"]
+[gd_scene format=4 uid="uid://dnirl1qifr421"]
 
 [ext_resource type="Script" uid="uid://uwy7kofi1syw" path="res://props/interactable/simon_button/simon_puzzle.gd" id="1_5wlci"]
 [ext_resource type="PackedScene" uid="uid://fj1ni3t61i21" path="res://props/interactable/simon_button/simon_button.tscn" id="1_jttdl"]
+[ext_resource type="Script" uid="uid://ckku5ff15vqhe" path="res://props/interactable/simon_button/reset_button.gd" id="3_xwvbn"]
+[ext_resource type="Material" uid="uid://hrwymfvsmm0o" path="res://props/interactable/simon_button/material_0.tres" id="4_cjhnp"]
+[ext_resource type="Material" uid="uid://ccyrw34jqcngj" path="res://props/interactable/simon_button/material_1.tres" id="5_vxb14"]
+[ext_resource type="AudioStream" uid="uid://dobbc7wcqamkg" path="res://ui/sounds/switch33.ogg" id="6_cjhnp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5wlci"]
+size = Vector3(2.5, 1.5, 4)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_j8ysq"]
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.5, 1, 0.125, 1),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAQADAAIAAwAAAAIAAAAEAAEAAQAFAAMABAAFAAEAAwAGAAAABgAEAAAABQAGAAMABgAHAAQABAAHAAUABQAHAAYA"),
+"name": "material_0",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("/////wAAAAD//wAA//8AAP///////wAAAAD/////AAD//wAAAAAAAAAAAAD//wAAAAD//wAAAAAAAAAAAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_2r7gj"]
+resource_name = "blockbench_export_mesh"
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.5, 1, 0.125, 1),
+"attribute_data": PackedByteArray("/4MAAP9D/wf/QwAA/4P/B/+D/xP/Q/8L/4P/C/9D/xMAAP8//z8AAP8//z8AAAAA/z//gwAA/0P/P/9DAAD/g/+D/x//Q/8X/4P/F/9D/x//g/8j/0P/K/9D/yP/g/8r"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": ExtResource("4_cjhnp"),
+"name": "material_0",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("/////wAA/7///wAA////v/////////+///8AAAAA/78AAAAA////vwAA//8AAP+/AAD//////78AAAAAAAD/vwAA//////+//////wAA/7//////////vwAA//8AAP+///8AAAAA/78AAAAA////v///AAD///+/AAAAAAAA/7///wAA//8AgAAA/////wCA////////AIAAAAAA//8AgAAA//8AAP////8AAAAA////////AAD//wAAAAAAAP///38AAP9/AAD/fwAA/38AAP9/////f////3////9///////9/////f////3////9/AAD/fwAA/38AAP9/AAD/f/9/////f////3////9/////f////3////9/////f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_j8ysq")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_82cgq"]
+_surfaces = [{
+"aabb": AABB(-0.4375, -0.109375, -0.4375, 0.875, 0.34375, 0.875),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAQADAAIAAwAAAAIAAAAEAAEAAQAFAAMABAAFAAEAAwAGAAAABgAEAAAABQAGAAMABgAHAAQABAAHAAUABQAHAAYA"),
+"name": "material_1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("/////wAAAAD//wAA//8AAP///////wAAAAD/////AAD//wAAAAAAAAAAAAD//wAAAAD//wAAAAAAAAAAAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_v3egv"]
+resource_name = "blockbench_export_mesh2"
+_surfaces = [{
+"aabb": AABB(-0.4375, -0.109375, -0.4375, 0.875, 0.34375, 0.875),
+"attribute_data": PackedByteArray("/+cAAP93/y//dwAA/+f/L//n/2f/d/83/+f/N/93/2cAAP9v/28AAP9v/28AAAAA/2//5wAA/3f/b/93AAD/5//n/5//d/9v/+f/b/93/5//5/+n/3f/1/93/6f/5//X"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": ExtResource("5_vxb14"),
+"name": "material_1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("/////wAA/7///wAA////v/////////+///8AAAAA/78AAAAA////vwAA//8AAP+/AAD//////78AAAAAAAD/vwAA//////+//////wAA/7//////////vwAA//8AAP+///8AAAAA/78AAAAA////v///AAD///+/AAAAAAAA/7///wAA//8AgAAA/////wCA////////AIAAAAAA//8AgAAA//8AAP////8AAAAA////////AAD//wAAAAAAAP///38AAP9/AAD/fwAA/38AAP9/////f////3////9///////9/////f////3////9/AAD/fwAA/38AAP9/AAD/f/9/////f////3////9/////f////3////9/////f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_82cgq")
+
+[sub_resource type="Animation" id="Animation_ikcp6"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("buttonface")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.0625, 0)
+
+[sub_resource type="Animation" id="Animation_xm2l5"]
+resource_name = "press"
+length = 0.5
+tracks/0/type = "position_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("buttonface")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, -0.0625, 0, 0.5, 1, 0, 0.015625, 0)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qhtkm"]
+_data = {
+&"RESET": SubResource("Animation_ikcp6"),
+&"press": SubResource("Animation_xm2l5")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xwvbn"]
+size = Vector3(0.92004395, 0.5423584, 0.36920166)
+
+[sub_resource type="Gradient" id="Gradient_xwvbn"]
+colors = PackedColorArray(1, 1, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_cjhnp"]
+gradient = SubResource("Gradient_xwvbn")
+
+[sub_resource type="Curve" id="Curve_vxb14"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.26271188, 1), 0.0, 0.0, 0, 0, Vector2(0.7838983, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_mib8s"]
+curve = SubResource("Curve_vxb14")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xwvbn"]
+lifetime_randomness = 0.48
+direction = Vector3(1, 1, 0)
+spread = 180.0
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, -5.8, 0)
+scale_curve = SubResource("CurveTexture_mib8s")
+color_initial_ramp = SubResource("GradientTexture1D_cjhnp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ww0ql"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_cjhnp"]
+material = SubResource("StandardMaterial3D_ww0ql")
+radius = 0.01
+height = 0.02
 
 [node name="SimonPuzzle" type="Node3D" unique_id=654237784]
 script = ExtResource("1_5wlci")
@@ -28,11 +162,79 @@ button_index = 3
 button_color = Color(0.3019608, 0.6509804, 1, 1)
 pitch_modifier = 1.25
 
+[node name="ScoreTitle" type="Label3D" parent="." unique_id=355292989]
+unique_name_in_owner = true
+transform = Transform3D(-0.89717364, 0, 0.44167802, 0, 1, 0, -0.44167802, 0, -0.89717364, -1.6720264, 0.66237, -0.45287204)
+visible = false
+text = "Score"
+
+[node name="ScoreDisplay" type="Label3D" parent="." unique_id=1052901404]
+unique_name_in_owner = true
+transform = Transform3D(-0.89717364, 0, 0.44167802, 0, 1, 0, -0.44167802, 0, -0.89717364, -1.6720264, 0.41237003, -0.45287204)
+visible = false
+text = "0
+"
+
 [node name="HighScoreTitle" type="Label3D" parent="." unique_id=874489017]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.6720264, 0.5, -0.120262384)
+unique_name_in_owner = true
+transform = Transform3D(-0.89717364, 0, 0.44167802, 0, 1, 0, -0.44167802, 0, -0.89717364, -1.6720264, 0.16237003, -0.45287204)
+visible = false
 text = "HIGHSCORE"
 
 [node name="HighScoreDisplay" type="Label3D" parent="." unique_id=109897277]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.6720264, 0.25, -0.120262384)
+unique_name_in_owner = true
+transform = Transform3D(-0.89717364, 0, 0.44167802, 0, 1, 0, -0.44167802, 0, -0.89717364, -1.6720264, -0.087629974, -0.45287204)
+visible = false
 text = "0
 "
+
+[node name="ActivationArea" type="Area3D" parent="." unique_id=701071679]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ActivationArea" unique_id=1988222841]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, -1.5)
+shape = SubResource("BoxShape3D_5wlci")
+
+[node name="ResetButton" type="StaticBody3D" parent="." unique_id=2126700692]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.33762997, 0)
+visible = false
+collision_layer = 3
+script = ExtResource("3_xwvbn")
+button_color = Color(1, 0, 0.38431373, 1)
+interact_hint = "Reset Button"
+
+[node name="blockbench_export" type="Node3D" parent="ResetButton" unique_id=1615517240]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 0.5, 0, -1, -2.1855694e-08, -1.6666782, -0.2511802, 0)
+
+[node name="base" type="MeshInstance3D" parent="ResetButton/blockbench_export" unique_id=405489543]
+mesh = SubResource("ArrayMesh_2r7gj")
+
+[node name="buttonface" type="Node3D" parent="ResetButton/blockbench_export" unique_id=1022018464]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0625, 0)
+
+[node name="button" type="MeshInstance3D" parent="ResetButton/blockbench_export/buttonface" unique_id=714173201]
+mesh = SubResource("ArrayMesh_v3egv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ResetButton/blockbench_export" unique_id=173356471]
+libraries/ = SubResource("AnimationLibrary_qhtkm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ResetButton" unique_id=1947899438]
+transform = Transform3D(0.9999997, -0.0006208017, -0.00037363582, 0.0006207556, 0.99999976, -0.00011124419, 0.0003737123, 0.00011098688, 0.9999999, -1.6254523, -0.27967808, -0.12199028)
+shape = SubResource("BoxShape3D_xwvbn")
+
+[node name="click" type="AudioStreamPlayer3D" parent="ResetButton" unique_id=1580981298]
+unique_name_in_owner = true
+stream = ExtResource("6_cjhnp")
+bus = &"Sounds"
+
+[node name="HighScoreParticles" type="GPUParticles3D" parent="." unique_id=1843164562]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6788782, 0.21068752, -0.4274441)
+emitting = false
+amount = 40
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_xwvbn")
+draw_pass_1 = SubResource("SphereMesh_cjhnp")
+
+[connection signal="body_entered" from="ActivationArea" to="." method="_on_activation_area_body_entered"]

@@ -147,5 +147,6 @@ link_to_jam_page="https://itch.io/jam/bad-ideas-game-jam-2026"
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+textures/vram_compression/import_etc2_astc=true
 scaling_3d/scale=0.5
 textures/decals/filter=0

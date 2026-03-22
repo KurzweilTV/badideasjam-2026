@@ -62,5 +62,6 @@ shape = SubResource("BoxShape3D_a0spv")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1924843631]
 libraries/ = SubResource("AnimationLibrary_unktt")
+speed_scale = 0.5
 
 [connection signal="body_entered" from="Trigger" to="." method="_on_trigger_body_entered"]
