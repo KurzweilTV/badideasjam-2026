@@ -230,6 +230,7 @@ bus = &"Sounds"
 [node name="HighScoreParticles" type="GPUParticles3D" parent="." unique_id=1843164562]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6788782, 0.21068752, -0.4274441)
+visible = false
 emitting = false
 amount = 40
 one_shot = true

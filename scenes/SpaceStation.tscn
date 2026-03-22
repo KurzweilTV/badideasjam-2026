@@ -83,16 +83,13 @@ size = Vector3(1, 1, 15)
 
 [node name="SpaceStation" type="Node3D" unique_id=805722603]
 script = ExtResource("1_4ussd")
-station_starts_powered = true
 
 [node name="Character" parent="." unique_id=1159670658 instance=ExtResource("1_tq2h6")]
-transform = Transform3D(-1, 0, 2.2054114e-07, 0, 1, 0, -2.2054114e-07, 0, -1, 55.08221, 0.10000095, -15.289879)
-skip_tutorial = true
+transform = Transform3D(0.70710695, 0, 0.7071066, 0, 1, 0, -0.7071066, 0, 0.70710695, 5.5822105, 0.10000095, 9.210121)
 oxygen_level = 20.0
 sprint_oxygen_multiplier = 2.0
 base_speed = 1.5
 sprint_speed = 3.0
-sprint_enabled = false
 
 [node name="Environment" type="Node3D" parent="." unique_id=270956201]
 metadata/_edit_lock_ = true
@@ -1944,6 +1941,16 @@ text = "Power Room"
 font = ExtResource("10_ex14y")
 font_size = 36
 
+[node name="PowerRoom5" type="Label3D" parent="Map/Decorations/Decals" unique_id=1226370249]
+transform = Transform3D(1, -4.371139e-08, -4.3711392e-08, 4.371139e-08, -4.371139e-08, 1, -4.3711392e-08, -1, -4.3711385e-08, 0.011431634, 0.20000005, -34.1)
+pixel_size = 0.007
+shaded = true
+double_sided = false
+texture_filter = 0
+text = "Mess Hall"
+font = ExtResource("10_ex14y")
+font_size = 36
+
 [node name="PowerRoom2" type="Label3D" parent="Map/Decorations/Decals" unique_id=1277343521]
 transform = Transform3D(1.9106855e-15, 1, 4.371139e-08, 4.371139e-08, -4.371139e-08, 1, 1, 0, -4.371139e-08, 15.9, 0.20000005, -18.099998)
 pixel_size = 0.007
@@ -2041,6 +2048,15 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 7.42
 
 [node name="StripLamp7" parent="Map/Decorations/Lights" unique_id=1187114034 instance=ExtResource("20_l8q6r")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.07184601, 2.93366, -18.633352)
+
+[node name="StripLamp31" parent="Map/Decorations/Lights" unique_id=659320699 instance=ExtResource("20_l8q6r")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.07184601, 2.93366, -6.6333523)
+
+[node name="StripLamp32" parent="Map/Decorations/Lights" unique_id=1497776554 instance=ExtResource("20_l8q6r")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.07184601, 2.93366, -31.633352)
+
+[node name="StripLamp33" parent="Map/Decorations/Lights" unique_id=879306208 instance=ExtResource("20_l8q6r")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.07184601, 2.93366, -23.633352)
 
 [node name="StripLamp19" parent="Map/Decorations/Lights" unique_id=311872490 instance=ExtResource("20_l8q6r")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -3.071846, 2.93366, 3.8666477)
@@ -2150,8 +2166,7 @@ staring_status = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.4, 0.6, -21.199999)
 
 [node name="SimonPuzzle" parent="Map/Decorations/Interactables" unique_id=654237784 instance=ExtResource("19_h1mcf")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 64.37264, 1.740263, -17.900064)
-puzzle_length = 2
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 64.38425, 1.4611402, -18.03542)
 
 [node name="Doors" type="Node3D" parent="Map" unique_id=948699903]
 metadata/_edit_lock_ = true
@@ -2264,6 +2279,7 @@ freeze = true
 
 [node name="GreenKeycard" parent="Map/Pickups" unique_id=198432991 instance=ExtResource("14_6uwk2")]
 transform = Transform3D(-1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 0, 0, 1, 2.5393486, 1.2922591, -50.75336)
+interact_hint = "Employee ID"
 
 [node name="OxygenBottle" parent="Map/Pickups" unique_id=385678588 instance=ExtResource("23_oqbv7")]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, -27, 0.5, -17)
@@ -2280,11 +2296,29 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0, -8)
 [node name="OxygenBottle5" parent="Map/Pickups" unique_id=1988420243 instance=ExtResource("23_oqbv7")]
 transform = Transform3D(0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0, 1, 5.5, 1.8, -11.85)
 
+[node name="OxygenBottle7" parent="Map/Pickups" unique_id=2136414758 instance=ExtResource("23_oqbv7")]
+transform = Transform3D(0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0, 1, 14.5, 1.8, -11.85)
+
+[node name="OxygenBottle8" parent="Map/Pickups" unique_id=176520336 instance=ExtResource("23_oqbv7")]
+transform = Transform3D(0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0, 1, 22, 1.8, -11.85)
+
+[node name="OxygenBottle9" parent="Map/Pickups" unique_id=1120646392 instance=ExtResource("23_oqbv7")]
+transform = Transform3D(0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0, 1, 22, 1.8, -20.85)
+
+[node name="OxygenBottle10" parent="Map/Pickups" unique_id=466775088 instance=ExtResource("23_oqbv7")]
+transform = Transform3D(0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0, 1, 4.5, 1.8, -37.35)
+
+[node name="OxygenBottle13" parent="Map/Pickups" unique_id=1511713746 instance=ExtResource("23_oqbv7")]
+transform = Transform3D(0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0, 1, 0, 1.8, -53.85032)
+
+[node name="OxygenBottle11" parent="Map/Pickups" unique_id=582101856 instance=ExtResource("23_oqbv7")]
+transform = Transform3D(0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0, 1, 4.5, 1.8, -35.85)
+
 [node name="OxygenBottle6" parent="Map/Pickups" unique_id=1787606295 instance=ExtResource("23_oqbv7")]
 transform = Transform3D(0.49999997, 0.49999997, -0.70710677, -0.70710677, 0.70710677, 0, 0.49999997, 0.49999997, 0.70710677, 5.5, 1.8, -12.650001)
 
-[node name="OxygenMask2" parent="Map/Pickups" unique_id=1303480627 instance=ExtResource("22_clfuy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.5, 0.5, -12.5)
+[node name="OxygenBottle12" parent="Map/Pickups" unique_id=1241525747 instance=ExtResource("23_oqbv7")]
+transform = Transform3D(0.49999997, 0.49999997, -0.70710677, -0.70710677, 0.70710677, 0, 0.49999997, 0.49999997, 0.70710677, 17.578508, 1.8, -17.650002)
 
 [node name="AmbientSound" type="AudioStreamPlayer" parent="." unique_id=1134652076]
 stream = ExtResource("4_oqbv7")

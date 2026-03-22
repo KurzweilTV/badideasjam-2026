@@ -94,7 +94,7 @@ func open_door(player: Player) -> void:
 		door_open = true
 	else: 
 		$AccessError.play()
-		print("Needs %s Key" % required_access)
+		StationStatus.dialog.emit("No access... I need to find an [color=pale_violet_red]employee ID [/color]card.",0.5,StationStatus.player_color,false)
 		
 func close_door() -> void:
 	anim.play("door_close")
