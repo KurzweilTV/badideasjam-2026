@@ -2163,7 +2163,7 @@ switch_position = 1
 staring_status = true
 
 [node name="GasMixingConsole" parent="Map/Decorations/Interactables" unique_id=65025017 instance=ExtResource("25_oqbv7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.4, 0.6, -21.199999)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.4, 0.994122, -21.199999)
 
 [node name="SimonPuzzle" parent="Map/Decorations/Interactables" unique_id=654237784 instance=ExtResource("19_h1mcf")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 64.38425, 1.4611402, -18.03542)
@@ -2265,6 +2265,12 @@ tutorial_force = true
 message = "I need to grab the oxygen mask first"
 delay = 0.0
 look_target = NodePath("../../Pickups/OxygenMask")
+
+[node name="EndGame" parent="Map/DialogTriggers" unique_id=614341325 instance=ExtResource("20_x6cfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57, 19.215048, -18)
+message = "End of Game Sequence Goes Here :)
+
+Thanks for playing"
 
 [node name="Pickups" type="Node3D" parent="Map" unique_id=1066930469]
 metadata/_edit_lock_ = true

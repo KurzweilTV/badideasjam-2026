@@ -1,22 +1,25 @@
 [gd_scene format=3 uid="uid://dyhqsrg6n6fel"]
 
 [ext_resource type="Script" uid="uid://bhcofi64ikc5j" path="res://props/interactable/gas_mixing_station/gas_mixing_console.gd" id="1_ath77"]
+[ext_resource type="PackedScene" uid="uid://bv5al1h1ge6hj" path="res://props/interactable/gas_mixing_station/gas_mixer.glb" id="2_7yq5u"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_u1v4o"]
-size = Vector3(4, 1.3000001, 2.4)
+size = Vector3(4.561035, 1.5798097, 2.4280274)
 
 [node name="GasMixingConsole" type="StaticBody3D" unique_id=65025017]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_ath77")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=826286147]
-size = Vector3(4, 1.2, 2.3)
+interact_hint = "Atmosphere Control"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1421805181]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15000004, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.030517578, 0.28990483, 0.014013648)
 shape = SubResource("BoxShape3D_u1v4o")
 
 [node name="Label3D" type="Label3D" parent="." unique_id=57256723]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0999992, 0.35, 1.17)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4937127, -0.35405603, 1.2098252)
+visible = false
 text = "Gas Mixing Station"
+
+[node name="blockbench_export" parent="." unique_id=911320016 instance=ExtResource("2_7yq5u")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, -0.8200278, 0.27027154)
