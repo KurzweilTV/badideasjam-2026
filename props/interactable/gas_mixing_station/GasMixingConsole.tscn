@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bhcofi64ikc5j" path="res://props/interactable/gas_mixing_station/gas_mixing_console.gd" id="1_ath77"]
 [ext_resource type="PackedScene" uid="uid://bv5al1h1ge6hj" path="res://props/interactable/gas_mixing_station/gas_mixer.glb" id="2_7yq5u"]
+[ext_resource type="AudioStream" uid="uid://b3ndyasuauegu" path="res://props/interactable/lightsout_switch/PowerSwitch.mp3" id="3_ydv5q"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_u1v4o"]
 size = Vector3(4.561035, 1.5798097, 2.4280274)
@@ -23,3 +24,15 @@ text = "Gas Mixing Station"
 
 [node name="blockbench_export" parent="." unique_id=911320016 instance=ExtResource("2_7yq5u")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, -0.8200278, 0.27027154)
+
+[node name="IndicatorLight" type="OmniLight3D" parent="." unique_id=1994319342]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, -0.5)
+light_color = Color(1, 0, 0, 1)
+light_energy = 2.0
+omni_range = 5.968
+omni_attenuation = 2.0
+
+[node name="Complete" type="AudioStreamPlayer3D" parent="." unique_id=1786896813]
+unique_name_in_owner = true
+stream = ExtResource("3_ydv5q")
+bus = &"Sounds"

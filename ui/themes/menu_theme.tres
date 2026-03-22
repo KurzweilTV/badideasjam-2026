@@ -63,3 +63,4 @@ HSeparator/styles/separator = SubResource("StyleBoxLine_e7cto")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_e7cto")
 HSlider/styles/slider = SubResource("StyleBoxFlat_j3e0d")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_uidju")
+VBoxContainer/constants/separation = 30

@@ -60,7 +60,7 @@ func _on_interact(interactor: Player) -> bool:
 
 		if needs_crowbar:
 			interactor.set_crowbar(false) # This makes the crowbar consumable
-			#TODO Play breaking sound for losing the crowbar
+			#TODO Play metal sound for using the crowbar
 		else:
 			_start_auto_close_timer()
 

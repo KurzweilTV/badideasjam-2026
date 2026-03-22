@@ -1,5 +1,7 @@
 extends Control
 
+signal puzzle_complete
+
 @onready var nitrogen_button: Button = %NitrogenButton
 @onready var oxygen_button: Button = %OxygenButton
 @onready var nitrogen_progress: ProgressBar = %NitrogenProgress
@@ -83,6 +85,7 @@ func _on_pressurize_pressed() -> void:
 		StationStatus.station_oxygen_on.emit()
 		StationStatus.set_station_oxygenated()
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		puzzle_complete.emit()
 		queue_free()
 	else:
 		print("Failed")

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cphlm0ashes6h"]
+
+[ext_resource type="AudioStream" uid="uid://dskeqcmh0omy0" path="res://audio/loud/metal_drop.mp3" id="1_akbpd"]
+[ext_resource type="Script" uid="uid://cvle3k2v0l2vu" path="res://scenes/systems/sound_trigger.gd" id="1_emf00"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_emf00"]
+size = Vector3(16, 1, 1)
+
+[node name="SoundTrigger" type="Area3D" unique_id=462872461]
+script = ExtResource("1_emf00")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=373900557]
+shape = SubResource("BoxShape3D_emf00")
+
+[node name="Sound" type="AudioStreamPlayer3D" parent="." unique_id=164148013]
+stream = ExtResource("1_akbpd")
+max_db = 0.0
+max_distance = 8.0
+bus = &"Sounds"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

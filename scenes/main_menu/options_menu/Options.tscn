@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://b5kf3g4uikvka" path="res://ui/icons/video.png" id="4_befm5"]
 [ext_resource type="AudioStream" uid="uid://cji82wy8pws7c" path="res://ui/sounds/switch11.ogg" id="4_xyvf4"]
 [ext_resource type="Texture2D" uid="uid://xtbkadxedfao" path="res://ui/icons/speaker.png" id="5_r0po8"]
-[ext_resource type="Texture2D" uid="uid://ctcha1uvwu113" path="res://ui/icons/accessibility.png" id="6_f1mve"]
 [ext_resource type="Script" uid="uid://pwbl6y7jry87" path="res://scenes/main_menu/options_menu/graphics.gd" id="7_5hrqm"]
 [ext_resource type="LabelSettings" uid="uid://chg1id0jihetb" path="res://ui/labels/sub_heading.tres" id="7_r0po8"]
 [ext_resource type="Script" uid="uid://campms7tybmk3" path="res://scenes/main_menu/options_menu/audio_options.gd" id="8_5hrqm"]
@@ -94,10 +93,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 300
-theme_override_constants/margin_top = 200
-theme_override_constants/margin_right = 300
-theme_override_constants/margin_bottom = 200
+theme_override_constants/margin_left = 350
+theme_override_constants/margin_top = 300
+theme_override_constants/margin_right = 350
+theme_override_constants/margin_bottom = 300
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=1326111309]
 layout_mode = 2
@@ -122,6 +121,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_selected_color = Color(1.0776821, 1.0776821, 1.0776821, 1)
 theme_override_colors/font_unselected_color = Color(0.4390491, 0.43904912, 0.43904912, 1)
+theme_override_font_sizes/font_size = 26
 theme_override_styles/panel = SubResource("StyleBoxFlat_5hrqm")
 theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_befm5")
 theme_override_styles/tab_selected = SubResource("StyleBoxFlat_r0po8")
@@ -129,9 +129,6 @@ tab_alignment = 1
 current_tab = 0
 tab_0/icon = ExtResource("4_befm5")
 tab_1/icon = ExtResource("5_r0po8")
-tab_2/title = "Accessibility"
-tab_2/icon = ExtResource("6_f1mve")
-tab_2/disabled = true
 
 [node name="Graphics" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer" unique_id=151514350]
 layout_mode = 2
@@ -142,11 +139,14 @@ metadata/_tab_index = 0
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="Control" type="Control" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Graphics/VBoxContainer" unique_id=1116122176]
+layout_mode = 2
+
 [node name="Fullscreen" type="CheckButton" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Graphics/VBoxContainer" unique_id=709256489]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 31
 theme_override_styles/normal = SubResource("StyleBoxFlat_f1mve")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_8ktvb")
 theme_override_styles/hover = SubResource("StyleBoxFlat_g6mpj")
@@ -176,6 +176,10 @@ visible = false
 layout_mode = 2
 script = ExtResource("8_5hrqm")
 metadata/_tab_index = 1
+
+[node name="Spacer" type="Control" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio" unique_id=1968296415]
+layout_mode = 2
+size_flags_vertical = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio" unique_id=566201296]
 layout_mode = 2
@@ -269,11 +273,9 @@ step = 0.05
 value = 0.7
 tick_count = 6
 
-[node name="Accessability" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer" unique_id=1447047176]
-visible = false
+[node name="Spacer2" type="Control" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio" unique_id=703114367]
 layout_mode = 2
-metadata/_tab_index = 2
-metadata/_tab_name = "Accessibility"
+size_flags_vertical = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=635833033]
 layout_mode = 2
@@ -284,12 +286,15 @@ theme_override_constants/separation = 100
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
 text = "Save and Close"
 
 [node name="QuitGame" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=617724503]
+visible = false
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
 text = "Quit Game"
 
 [node name="Sounds" type="Node" parent="." unique_id=564242605]

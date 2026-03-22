@@ -6,6 +6,11 @@ signal options_saved
 @onready var hover: AudioStreamPlayer = %Hover
 @onready var click: AudioStreamPlayer = %Click
 @onready var fullscreen: CheckButton = %Fullscreen
+@onready var quit_game: Button = $MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/QuitGame
+
+func _ready() -> void:
+	if SceneManager.game_mode:
+		quit_game.show()
 
 func _on_save_close_mouse_entered() -> void:
 	hover.play()

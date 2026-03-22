@@ -60,17 +60,14 @@ func _set_border_color(new_color: Color) -> void:
 func _opening_dialog() -> void:
 	StationStatus.dialog.emit("What... Where am I?", 1, StationStatus.player_color, false, "dialog_01.mp3")
 	await StationStatus.dialog_complete
+	StationStatus.dialog.emit("Press [color=pink]F[/color] to turn on your flashlight", 1, StationStatus.system_color, true)
+	await StationStatus.dialog_complete
 	StationStatus.dialog.emit("Why is it so hard to breathe? The [color=green]air[/color] is so stale...", 1, StationStatus.player_color, false, "intro_1.mp3")
 	await StationStatus.dialog_complete
 	#StationStatus.dialog.emit("I'm in some sort of... pressure suit?", 1, StationStatus.player_color, false, "dialog_02.mp3")
 	#await StationStatus.dialog_complete
 	#StationStatus.dialog.emit("Looks like the [color=green]oxygen[/color] is low. I should find some air", 1, StationStatus.player_color, false, "dialog_03.mp3")
 	#await StationStatus.dialog_complete
-	_opening_tutorial()
-
-func _opening_tutorial() -> void:
-	StationStatus.dialog.emit("Press [color=pink]F[/color] to turn on your flashlight", 1, StationStatus.system_color, true)
-	await StationStatus.dialog_complete
 	StationStatus.dialog.emit("Use [color=pink]WASD[/color] to move", 1, StationStatus.system_color, true)
 	await StationStatus.dialog_complete
 	StationStatus.dialog.emit("Use the [color=pink]left mouse button[/color] to interact", 1, StationStatus.system_color, true)
