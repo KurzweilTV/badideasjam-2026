@@ -8,6 +8,7 @@ const MATERIAL_1 = preload("uid://ccyrw34jqcngj")
 @onready var mesh_instance: MeshInstance3D = $blockbench_export/buttonface/button
 @onready var omni_light_3d: OmniLight3D = $OmniLight3D
 @onready var simon_game: Node3D = get_parent()
+@onready var collidor: CollisionShape3D = $CollisionShape3D
 
 @export var button_index: int = 0
 @export var button_color: Color = Color.WHITE
@@ -92,6 +93,10 @@ func blink_red(duration: float = 0.4) -> void:
 	material.emission_enabled = false
 	omni_light_3d.light_color = original_light
 	omni_light_3d.visible = false
+
+func set_collision(status: bool) -> void:
+	collidor.disabled = !status
+	
 
 func _on_interact(_interactor: Player) -> bool:
 	activate_button()
