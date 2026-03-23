@@ -86,7 +86,7 @@ size = Vector3(1, 1, 15)
 script = ExtResource("1_4ussd")
 
 [node name="Character" parent="." unique_id=1159670658 instance=ExtResource("1_tq2h6")]
-transform = Transform3D(0.70710695, 0, 0.7071066, 0, 1, 0, -0.7071066, 0, 0.70710695, 0.58221054, 0.45000094, 8.210121)
+transform = Transform3D(0.70710695, 0, 0.7071066, 0, 1, 0, -0.7071066, 0, 0.70710695, 5.5822105, 0.45000094, 9.360121)
 oxygen_level = 20.0
 sprint_oxygen_multiplier = 2.0
 base_speed = 1.5
@@ -2154,15 +2154,15 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -7.4
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 12.5, 1.1, -18)
 switch_position = 2
 
-[node name="LightsOutSwitch2" parent="Map/Decorations/Interactables" unique_id=1264237199 instance=ExtResource("18_ex14y")]
+[node name="LightsOutSwitch2" parent="Map/Decorations/Interactables" unique_id=549653622 instance=ExtResource("18_ex14y")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 10.599999, 1.1, -16)
 switch_position = 3
 staring_status = true
 
-[node name="LightsOutSwitch3" parent="Map/Decorations/Interactables" unique_id=544619335 instance=ExtResource("18_ex14y")]
+[node name="LightsOutSwitch3" parent="Map/Decorations/Interactables" unique_id=983469663 instance=ExtResource("18_ex14y")]
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 8.5, 1.1, -18)
 
-[node name="LightsOutSwitch4" parent="Map/Decorations/Interactables" unique_id=1399573887 instance=ExtResource("18_ex14y")]
+[node name="LightsOutSwitch4" parent="Map/Decorations/Interactables" unique_id=733123552 instance=ExtResource("18_ex14y")]
 transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 10.3, 1.1, -20.099998)
 switch_position = 1
 staring_status = true
@@ -2304,7 +2304,6 @@ freeze = true
 
 [node name="GreenKeycard" parent="Map/Pickups" unique_id=198432991 instance=ExtResource("14_6uwk2")]
 transform = Transform3D(-1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 0, 0, 1, 2.5393486, 1.2922591, -50.75336)
-interact_hint = "Employee ID"
 
 [node name="OxygenBottle" parent="Map/Pickups" unique_id=385678588 instance=ExtResource("23_oqbv7")]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, -27, 0.5, -17)
