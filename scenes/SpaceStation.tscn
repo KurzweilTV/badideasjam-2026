@@ -2303,7 +2303,7 @@ collision_mask = 3
 freeze = true
 
 [node name="GreenKeycard" parent="Map/Pickups" unique_id=198432991 instance=ExtResource("14_6uwk2")]
-transform = Transform3D(-1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 0, 0, 1, 2.5393486, 1.2922591, -50.75336)
+transform = Transform3D(-1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 0, 0, 1, 2.5393486, 1.191187, -50.75336)
 
 [node name="OxygenBottle" parent="Map/Pickups" unique_id=385678588 instance=ExtResource("23_oqbv7")]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, -27, 0.5, -17)
