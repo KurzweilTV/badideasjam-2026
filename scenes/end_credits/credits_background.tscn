@@ -11,9 +11,7 @@
 [ext_resource type="QuadMesh" uid="uid://1itu6cresn5y" path="res://effects/standard_particle.tres" id="4_x7064"]
 [ext_resource type="Script" uid="uid://o283vjelhyfv" path="res://effects/flicker.gd" id="5_p0qrb"]
 [ext_resource type="AudioStream" uid="uid://dw82uc688ce0e" path="res://effects/sizzle.mp3" id="6_i2jfp"]
-[ext_resource type="Script" uid="uid://wggbuoggi5b6" path="res://props/decorations/airvent/airvent.gd" id="7_s00oy"]
 [ext_resource type="AudioStream" uid="uid://766urenblipe" path="res://audio/ambiance/spooky_loop.wav" id="8_pu6x5"]
-[ext_resource type="PackedScene" uid="uid://cux3q7jj8e4oc" path="res://props/decorations/airvent/airvent.glb" id="9_fivg7"]
 [ext_resource type="Script" uid="uid://4wfqfcwhkk7g" path="res://props/decorations/strip_lamp/strip_lamp.gd" id="10_83mys"]
 [ext_resource type="Material" uid="uid://b8f558m5icvyk" path="res://props/decorations/strip_lamp/material_0.tres" id="11_86v71"]
 [ext_resource type="AudioStream" uid="uid://wob4cgfxhqjk" path="res://props/interactable/master_switch/BigSwitch.mp3" id="12_6nylv"]
@@ -55,25 +53,6 @@ point_count = 3
 [sub_resource type="Gradient" id="Gradient_bpdf4"]
 offsets = PackedFloat32Array(0, 0.060386475, 0.123188406, 0.9251208, 1)
 colors = PackedColorArray(1, 1, 1, 1, 12.108991, 10.491642, 0, 1, 0.029506557, 0.029506557, 0.029506557, 1, 0.22310266, 0.22310296, 0.22310287, 1, 1, 1, 1, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_3pav4"]
-size = Vector3(0.8, 0.2, 0.5)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wtwq8"]
-vertex_color_use_as_albedo = true
-billboard_mode = 3
-billboard_keep_scale = true
-particles_anim_h_frames = 1
-particles_anim_v_frames = 1
-particles_anim_loop = false
-
-[sub_resource type="QuadMesh" id="QuadMesh_3pav4"]
-material = SubResource("StandardMaterial3D_wtwq8")
-size = Vector2(0.25, 0.25)
-
-[sub_resource type="Curve" id="Curve_55dh5"]
-_data = [Vector2(0, 0.022818804), 0.0, 0.0, 0, 0, Vector2(0.046357617, 1), 0.0, 0.0, 0, 0, Vector2(0.5860927, 0.97382545), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 4
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_rnpff"]
 _surfaces = [{
@@ -536,45 +515,8 @@ volume_db = -10.0
 autoplay = true
 bus = &"Sounds"
 
-[node name="Airvent" type="StaticBody3D" parent="Effects" unique_id=43525332]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2.8, -2.4)
-script = ExtResource("7_s00oy")
-
-[node name="Sound" type="AudioStreamPlayer3D" parent="Effects/Airvent" unique_id=184204588]
-stream = ExtResource("8_pu6x5")
-volume_db = -27.489
-autoplay = true
-max_distance = 20.0
-
-[node name="blockbench_export" parent="Effects/Airvent" unique_id=879991387 instance=ExtResource("9_fivg7")]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Effects/Airvent" unique_id=1072634095]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.099999994, 0)
-shape = SubResource("BoxShape3D_3pav4")
-
-[node name="CPUParticles3D" type="CPUParticles3D" parent="Effects/Airvent" unique_id=335786778]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.06)
-cast_shadow = 0
-amount = 25
-lifetime = 2.0
-randomness = 1.0
-lifetime_randomness = 1.0
-mesh = SubResource("QuadMesh_3pav4")
-emission_shape = 3
-emission_box_extents = Vector3(0.35, -0.01, 0.17)
-direction = Vector3(0, -1, 0)
-spread = 10.0
-gravity = Vector3(0, 0, 0)
-initial_velocity_min = 0.2
-initial_velocity_max = 0.5
-scale_amount_min = 0.05
-scale_amount_max = 0.1
-scale_amount_curve = SubResource("Curve_55dh5")
-color = Color(0, 1, 1, 1)
-
 [node name="AmbientSpooky" type="AudioStreamPlayer" parent="Effects" unique_id=348282344]
 stream = ExtResource("8_pu6x5")
-autoplay = true
 bus = &"Ambient"
 
 [node name="Decoration" type="Node3D" parent="." unique_id=1276576773]
@@ -760,6 +702,10 @@ theme_override_fonts/normal_font = ExtResource("2_x7064")
 theme_override_font_sizes/normal_font_size = 65
 bbcode_enabled = true
 text = "
+
+
+
+
 
 
 
