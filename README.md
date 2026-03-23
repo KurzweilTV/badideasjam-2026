@@ -41,8 +41,10 @@ https://www.youtube.com/watch?v=ZVy6LNBmlok
 | Programming | [KurzweilTV](https://github.com/KurzweilTV/) |
 | Models | [KurzweilTV](https://github.com/KurzweilTV/) |
 | Textures | Strand |
-| Audio |  [KurzweilTV](https://github.com/KurzweilTV/) |
-| Design |  [KurzweilTV](https://github.com/KurzweilTV/) |
+| Audio | [KurzweilTV](https://github.com/KurzweilTV/) |
+| Voice Acting | Zeer |
+| Design | [KurzweilTV](https://github.com/KurzweilTV/) |
+| Feedback and Testing | Erantalon, UselessJack, Zeer, Zeromark |
 
 
 ## 📦 Assets Used
