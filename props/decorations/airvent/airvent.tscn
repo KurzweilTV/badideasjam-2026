@@ -28,9 +28,9 @@ script = ExtResource("2_pjada")
 
 [node name="Sound" type="AudioStreamPlayer3D" parent="." unique_id=184204588]
 stream = ExtResource("2_3pav4")
-volume_db = -30.0
+volume_db = -20.0
 pitch_scale = 0.01
-max_distance = 20.0
+max_distance = 25.0
 bus = &"Sounds"
 
 [node name="blockbench_export" parent="." unique_id=879991387 instance=ExtResource("3_3pav4")]

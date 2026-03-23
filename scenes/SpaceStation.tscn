@@ -86,11 +86,12 @@ size = Vector3(1, 1, 15)
 script = ExtResource("1_4ussd")
 
 [node name="Character" parent="." unique_id=1159670658 instance=ExtResource("1_tq2h6")]
-transform = Transform3D(0.70710695, 0, 0.7071066, 0, 1, 0, -0.7071066, 0, 0.70710695, 5.5822105, 0.45000094, 9.360121)
+transform = Transform3D(0.70710695, 0, 0.7071066, 0, 1, 0, -0.7071066, 0, 0.70710695, 6.0822105, 0.45000094, 9.310121)
 oxygen_level = 20.0
 sprint_oxygen_multiplier = 2.0
 base_speed = 1.5
 sprint_speed = 3.0
+jumping_enabled = false
 
 [node name="Environment" type="Node3D" parent="." unique_id=270956201]
 metadata/_edit_lock_ = true
@@ -2132,13 +2133,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 2.85, -18)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 2.85, -18)
 
 [node name="Airvent9" parent="Map/Decorations/Vents" unique_id=1586552868 instance=ExtResource("19_vsm2l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.5, 2.85, -18)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 2.85, -19)
+
+[node name="Airvent13" parent="Map/Decorations/Vents" unique_id=1505672654 instance=ExtResource("19_vsm2l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.5, 2.85, -19)
 
 [node name="Airvent10" parent="Map/Decorations/Vents" unique_id=804142794 instance=ExtResource("19_vsm2l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.5, 2.85, -18)
 
 [node name="Airvent11" parent="Map/Decorations/Vents" unique_id=1091172110 instance=ExtResource("19_vsm2l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 2.85, -18)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58, 2.85, -22.5)
+
+[node name="Airvent14" parent="Map/Decorations/Vents" unique_id=1185645 instance=ExtResource("19_vsm2l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58, 2.85, -13.5)
 
 [node name="Interactables" type="Node3D" parent="Map/Decorations" unique_id=1744998111]
 metadata/_edit_lock_ = true
@@ -2265,9 +2272,9 @@ delay = 0.0
 voice_over_file = "dialog_04.mp3"
 
 [node name="OxygenMask" parent="Map/AudioTriggers" unique_id=31452156 instance=ExtResource("20_x6cfo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -0.68711495)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -0.18711495)
 tutorial_force = true
-message = "I need to grab the oxygen mask first"
+message = "I should find something to help me breathe before I go out."
 delay = 0.0
 
 [node name="EndGame" parent="Map/AudioTriggers" unique_id=614341325 instance=ExtResource("20_x6cfo")]
@@ -2318,7 +2325,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.4, 0.44999993, -17.5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0, -8)
 
 [node name="OxygenBottle5" parent="Map/Pickups" unique_id=1988420243 instance=ExtResource("23_oqbv7")]
-transform = Transform3D(0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0, 1, 7.65, 1.8, -16.85)
+transform = Transform3D(0.70710677, 0.70710677, 0, -0.49999997, 0.49999997, 0.70710677, 0.49999997, -0.49999997, 0.70710677, 14.15, 1.8, -12.85)
 
 [node name="OxygenBottle7" parent="Map/Pickups" unique_id=2136414758 instance=ExtResource("23_oqbv7")]
 transform = Transform3D(0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0, 1, 14.5, 1.8, -11.85)
@@ -2328,12 +2335,6 @@ transform = Transform3D(0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0
 
 [node name="OxygenBottle13" parent="Map/Pickups" unique_id=1511713746 instance=ExtResource("23_oqbv7")]
 transform = Transform3D(0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0, 1, 0, 1.8, -53.85032)
-
-[node name="OxygenBottle6" parent="Map/Pickups" unique_id=1787606295 instance=ExtResource("23_oqbv7")]
-transform = Transform3D(0.49999997, 0.49999997, -0.70710677, -0.70710677, 0.70710677, 0, 0.49999997, 0.49999997, 0.70710677, 5.5, 1.8, -12.650001)
-
-[node name="OxygenBottle12" parent="Map/Pickups" unique_id=1241525747 instance=ExtResource("23_oqbv7")]
-transform = Transform3D(0.49999997, 0.49999997, -0.70710677, -0.70710677, 0.70710677, 0, 0.49999997, 0.49999997, 0.70710677, 17.578508, 1.8, -17.650002)
 
 [node name="AmbientSound" type="AudioStreamPlayer" parent="." unique_id=1134652076]
 stream = ExtResource("4_oqbv7")

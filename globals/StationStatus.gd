@@ -10,6 +10,9 @@ signal open_elevator_door
 signal close_elevator_door
 signal dialog(message: String, delay: float, border_color: Color, tutorial: bool)
 signal dialog_complete
+signal elevator_arrived
+signal elevator_moving
+signal elevator_complete
 
 @export_category("Dialog Box Colors")
 @export var player_color: Color = Color.PALE_GREEN

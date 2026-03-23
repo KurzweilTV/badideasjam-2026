@@ -14,6 +14,7 @@ enum KEYS {None, Green, Blue, Orange}
 @onready var interact_label: Label = %InteractLabel
 @onready var dialog_system: Dialog = $UserInterface/DialogSystem
 @onready var hand: Marker3D = $Head/Hand
+@onready var hypoxic_filter: ColorRect = %HypoxicFilter
 
 #region Gameplay Export Group
 
@@ -38,6 +39,11 @@ enum KEYS {None, Green, Blue, Orange}
 @export var sprint_oxygen_multiplier: float = 3.0
 ## Player Needs Oxygen or Not (For after powerup)
 @export var oxygen_system_enabled: bool = true
+## Player is running out of Oxygen
+@export var is_hypoxic: bool = true:
+	set(value):
+		is_hypoxic = value
+		hypoxic_filter.visible = is_hypoxic
 
 var has_oxygen_mask: bool = false
 var oxygen_loss_rate: float = base_oxygen_loss_rate
@@ -177,6 +183,7 @@ var mouseInput : Vector2 = Vector2(0,0)
 
 func _ready():
 	StationStatus.station_oxygen_on.connect(_disable_oxygen)
+	StationStatus.elevator_arrived.connect(play_dispair)
 	
 	#It is safe to comment this line if your game doesn't start with the mouse captured
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -568,8 +575,10 @@ func _update_oxygen_ui() -> void:
 	create_tween().tween_property(oxygen_bar, "value", oxygen_level, 1.0)
 	if oxygen_level <= 20.0:
 		oxygen_bar.modulate = Color.RED
+		is_hypoxic = true
 	else: 
 		oxygen_bar.modulate = Color.WHITE
+		is_hypoxic = false
 
 
 func enable_oxygen() -> void:
@@ -601,3 +610,6 @@ func set_access(access) -> void:
 func set_crowbar(held: bool) -> void:
 	has_crowbar = held
 	hand._set_crowbar(held)
+
+func play_dispair() -> void:
+	%DispairCue.play()

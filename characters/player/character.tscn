@@ -16,6 +16,8 @@
 [ext_resource type="FontFile" uid="uid://jojpfgda2e6k" path="res://addons/fonts/Strogo.ttf" id="12_ont2n"]
 [ext_resource type="AudioStream" uid="uid://dmv6ltstx5e7f" path="res://characters/player/voiceover/temporary/dialog_01.mp3" id="13_2rsth"]
 [ext_resource type="PackedScene" uid="uid://cnrmcq1jjbyx1" path="res://props/interactable/crowbar/crowbar.glb" id="15_vyhkh"]
+[ext_resource type="Shader" uid="uid://v6ds74mtnrnd" path="res://shaders/simple_blur.gdshader" id="16_wbtgf"]
+[ext_resource type="AudioStream" uid="uid://b0o620o8fbvbk" path="res://audio/music_cues/dispair.mp3" id="18_rr4wr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kp17n"]
 albedo_color = Color(1, 0.5176471, 1, 1)
@@ -435,6 +437,11 @@ _data = {
 &"land_right": SubResource("Animation_vsknp")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rr4wr"]
+shader = ExtResource("16_wbtgf")
+shader_parameter/strength = 2.00000009174012
+shader_parameter/mix_percentage = 0.10000000475
+
 [sub_resource type="Theme" id="Theme_wdf0f"]
 MarginContainer/constants/margin_bottom = 10
 MarginContainer/constants/margin_left = 10
@@ -596,6 +603,18 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
+[node name="HypoxicFilter" type="ColorRect" parent="UserInterface" unique_id=1586297433]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_rr4wr")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0, 0, 1)
+
 [node name="DebugPanel" type="PanelContainer" parent="UserInterface" unique_id=716811236]
 visible = false
 layout_mode = 0
@@ -729,3 +748,10 @@ target_position = Vector3(0, 0.5, 0)
 
 [node name="EditorModule" type="Node" parent="." unique_id=975202139]
 script = ExtResource("3_v3ckk")
+
+[node name="DispairCue" type="AudioStreamPlayer" parent="." unique_id=1338389358]
+unique_name_in_owner = true
+stream = ExtResource("18_rr4wr")
+volume_db = -5.0
+max_polyphony = 2
+bus = &"Sounds"

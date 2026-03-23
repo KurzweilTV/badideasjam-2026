@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dvw2cwa1oc041"]
+
+[ext_resource type="AudioStream" uid="uid://dp12xo11r5cea" path="res://props/buildings/elevator/sounds/elevator-arrive.mp3" id="1_jb867"]
+[ext_resource type="Script" uid="uid://c4isubggxcxp" path="res://props/buildings/elevator/elevator_sounds.gd" id="2_wptmj"]
+
+[node name="ElevatorSounds" type="AudioStreamPlayer3D" unique_id=1967450824]
+stream = ExtResource("1_jb867")
+bus = &"Sounds"
+script = ExtResource("2_wptmj")

@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://boau46jbmwhs" path="res://scenes/intros/art/splashscreen.jpg" id="1_a4osj"]
 [ext_resource type="Script" uid="uid://tjd0211bnn00" path="res://scenes/intros/logos.gd" id="1_l25vy"]
+[ext_resource type="AudioStream" uid="uid://wob4cgfxhqjk" path="res://props/interactable/master_switch/BigSwitch.mp3" id="3_yg8pr"]
 
 [sub_resource type="Animation" id="Animation_a4osj"]
 length = 0.001
@@ -86,3 +87,6 @@ color = Color(0.14117648, 0.14117648, 0.14117648, 1)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=263329394]
 libraries/ = SubResource("AnimationLibrary_yg8pr")
 autoplay = &"fader"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=390995656]
+stream = ExtResource("3_yg8pr")
