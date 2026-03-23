@@ -4,6 +4,9 @@
 [ext_resource type="Material" uid="uid://8nbhq5nnicua" path="res://props/interactable/key_green/material_0.tres" id="2_8pyrt"]
 [ext_resource type="Texture2D" uid="uid://cxqc1twcprrqc" path="res://props/interactable/key_green/green_texture.png" id="3_tcgwj"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_oxyp5"]
+size = Vector3(0.3, 0.03, 0.14999999)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_juihk"]
 resource_name = "material_0"
 transparency = 2
@@ -65,21 +68,16 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_qs8j1")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_oxyp5"]
-size = Vector3(0.3, 0.03, 0.14999999)
-
 [node name="GreenKeycard" type="RigidBody3D" unique_id=198432991]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_oxyp5")
-interact_hint = "Green Keycard"
-
-[node name="blockbench_export" type="Node3D" parent="." unique_id=1333006626]
-
-[node name="mesh" type="MeshInstance3D" parent="blockbench_export" unique_id=750438550]
-material_override = ExtResource("2_8pyrt")
-mesh = SubResource("ArrayMesh_whauq")
+interact_hint = "Employee ID"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=51952011]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.065000005, 0.005000001)
 shape = SubResource("BoxShape3D_oxyp5")
+
+[node name="mesh" type="MeshInstance3D" parent="." unique_id=750438550]
+material_override = ExtResource("2_8pyrt")
+mesh = SubResource("ArrayMesh_whauq")
