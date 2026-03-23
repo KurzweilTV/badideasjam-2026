@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://canir4pgy8387"]
+
+[ext_resource type="Texture2D" uid="uid://bfo1wfu7x00cs" path="res://props/buildings/observation/roof/texture-roof.png" id="1_helm4"]
+
+[resource]
+resource_name = "material_0"
+transparency = 1
+cull_mode = 2
+albedo_texture = ExtResource("1_helm4")
+metallic_specular = 1.0
+roughness = 0.0
+texture_filter = 0
+texture_repeat = false

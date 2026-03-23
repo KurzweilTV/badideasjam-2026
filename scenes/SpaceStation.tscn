@@ -6,12 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://b5rbdqpotg6em" path="res://props/buildings/floor/FloorTile.tscn" id="2_qisfu"]
 [ext_resource type="PackedScene" uid="uid://dst1ynlbt3at5" path="res://props/buildings/walls/Wall.tscn" id="3_880v8"]
 [ext_resource type="PackedScene" uid="uid://b0qyedg63defo" path="res://props/interactable/station_door/StationDoor.tscn" id="3_wvlmu"]
+[ext_resource type="PackedScene" uid="uid://cwcsnpm3a8j7s" path="res://props/buildings/observation/roof/FullGlassPanel.tscn" id="4_373xn"]
 [ext_resource type="AudioStream" uid="uid://766urenblipe" path="res://audio/ambiance/spooky_loop.wav" id="4_oqbv7"]
 [ext_resource type="PackedScene" uid="uid://bd07yr3x7io7y" path="res://props/decorations/bed_crew/CrewBed.tscn" id="5_ena27"]
 [ext_resource type="PackedScene" uid="uid://c575vh7hkg7xh" path="res://props/decorations/mess_table/MessTable.tscn" id="6_qmkbd"]
 [ext_resource type="FontFile" uid="uid://sq1kya53m58g" path="res://addons/fonts/Kenney Rocket.ttf" id="10_ex14y"]
 [ext_resource type="PackedScene" uid="uid://8ymflc86kaqu" path="res://props/decorations/bed_medical/MedBed.tscn" id="10_vn57o"]
 [ext_resource type="PackedScene" uid="uid://wyt3otchy5nb" path="res://effects/damage_particles.tscn" id="11_54jyg"]
+[ext_resource type="PackedScene" uid="uid://bw2jlj0b2wr8b" path="res://props/buildings/observation/HalfWall.tscn" id="12_cgm64"]
 [ext_resource type="PackedScene" uid="uid://b4jvh0gxuoce7" path="res://props/interactable/key_green/GreenKeycard.tscn" id="14_6uwk2"]
 [ext_resource type="PackedScene" uid="uid://crevapxi2epdy" path="res://props/interactable/oxygen_machine/OxygenMachine.tscn" id="15_5woyl"]
 [ext_resource type="PackedScene" uid="uid://0s1gkuu8iuhj" path="res://props/interactable/crowbar/Crowbar.tscn" id="15_vsm2l"]
@@ -84,11 +86,14 @@ size = Vector3(1, 1, 15)
 
 [node name="SpaceStation" type="Node3D" unique_id=805722603]
 script = ExtResource("1_4ussd")
+station_starts_powered = true
+station_starts_oxygenated = true
 
 [node name="Character" parent="." unique_id=1159670658 instance=ExtResource("1_tq2h6")]
-transform = Transform3D(0.70710695, 0, 0.7071066, 0, 1, 0, -0.7071066, 0, 0.70710695, 6.0822105, 0.45000094, 9.310121)
+transform = Transform3D(0.70710695, 0, 0.7071066, 0, 1, 0, -0.7071066, 0, 0.70710695, 59.58221, 18.95, -13.689879)
+skip_tutorial = true
 oxygen_level = 20.0
-sprint_oxygen_multiplier = 2.0
+base_oxygen_loss_rate = 1.5
 base_speed = 1.5
 sprint_speed = 3.0
 jumping_enabled = false
@@ -100,8 +105,9 @@ metadata/_edit_lock_ = true
 environment = SubResource("Environment_7iggb")
 
 [node name="Sun" type="DirectionalLight3D" parent="Environment" unique_id=1950703982]
-transform = Transform3D(-0.66144246, -0.7090981, -0.2442822, -0.20567395, -0.1417263, 0.9683037, -0.72124344, 0.69071966, -0.052099217, -0.4, -1.3000001, 0.90000004)
+transform = Transform3D(0.32227695, 0.40119228, 0.8574276, 0.076437905, -0.9138248, 0.39885032, 0.9435543, -0.06300028, -0.32517096, 40.1, 14.2, 11.4)
 light_color = Color(0.5882353, 0.6901961, 0.8666667, 1)
+light_energy = 3.0
 shadow_enabled = true
 sky_mode = 1
 
@@ -690,7 +696,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 6)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 9)
 
 [node name="Ceilings" type="Node3D" parent="Map" unique_id=194035606]
-visible = false
 script = SubResource("GDScript_oqbv7")
 metadata/_edit_lock_ = true
 
@@ -1215,6 +1220,81 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 3, 6)
 
 [node name="FloorTile20" parent="Map/Ceilings" unique_id=1629614469 instance=ExtResource("2_qisfu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 3, 9)
+
+[node name="FullGlassPanel" parent="Map/Ceilings" unique_id=414055473 instance=ExtResource("4_373xn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63, 21, -21)
+
+[node name="FullGlassPanel2" parent="Map/Ceilings" unique_id=2140158513 instance=ExtResource("4_373xn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63, 21, -24)
+
+[node name="FullGlassPanel3" parent="Map/Ceilings" unique_id=1023624882 instance=ExtResource("4_373xn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63, 21, -15)
+
+[node name="FullGlassPanel5" parent="Map/Ceilings" unique_id=983657731 instance=ExtResource("4_373xn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63, 21, -12)
+
+[node name="FullGlassPanel4" parent="Map/Ceilings" unique_id=1172433367 instance=ExtResource("4_373xn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63, 21, -18)
+
+[node name="FullGlassPanel6" parent="Map/Ceilings" unique_id=1993877009 instance=ExtResource("4_373xn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 21, -21)
+
+[node name="FullGlassPanel7" parent="Map/Ceilings" unique_id=1518368677 instance=ExtResource("4_373xn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 21, -24)
+
+[node name="FullGlassPanel8" parent="Map/Ceilings" unique_id=336271046 instance=ExtResource("4_373xn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 21, -15)
+
+[node name="FullGlassPanel9" parent="Map/Ceilings" unique_id=54723862 instance=ExtResource("4_373xn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 21, -12)
+
+[node name="FullGlassPanel10" parent="Map/Ceilings" unique_id=425326860 instance=ExtResource("4_373xn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 21, -18)
+
+[node name="FullGlassPanel11" parent="Map/Ceilings" unique_id=2004767493 instance=ExtResource("4_373xn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57, 21, -21)
+
+[node name="FullGlassPanel12" parent="Map/Ceilings" unique_id=8049733 instance=ExtResource("4_373xn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57, 21, -24)
+
+[node name="FullGlassPanel13" parent="Map/Ceilings" unique_id=434026608 instance=ExtResource("4_373xn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57, 21, -15)
+
+[node name="FullGlassPanel14" parent="Map/Ceilings" unique_id=1900616484 instance=ExtResource("4_373xn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57, 21, -12)
+
+[node name="FullGlassPanel15" parent="Map/Ceilings" unique_id=959729623 instance=ExtResource("4_373xn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57, 21, -18)
+
+[node name="FullGlassPanel16" parent="Map/Ceilings" unique_id=190966682 instance=ExtResource("4_373xn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 21, -21)
+
+[node name="FullGlassPanel17" parent="Map/Ceilings" unique_id=1557521302 instance=ExtResource("4_373xn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 21, -24)
+
+[node name="FullGlassPanel18" parent="Map/Ceilings" unique_id=1954014365 instance=ExtResource("4_373xn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 21, -15)
+
+[node name="FullGlassPanel19" parent="Map/Ceilings" unique_id=1088320161 instance=ExtResource("4_373xn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 21, -12)
+
+[node name="FullGlassPanel20" parent="Map/Ceilings" unique_id=539039501 instance=ExtResource("4_373xn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 21, -18)
+
+[node name="FullGlassPanel21" parent="Map/Ceilings" unique_id=492938589 instance=ExtResource("4_373xn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51, 21, -21)
+
+[node name="FullGlassPanel22" parent="Map/Ceilings" unique_id=1929823839 instance=ExtResource("4_373xn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51, 21, -24)
+
+[node name="FullGlassPanel23" parent="Map/Ceilings" unique_id=1728652110 instance=ExtResource("4_373xn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51, 21, -15)
+
+[node name="FullGlassPanel24" parent="Map/Ceilings" unique_id=2027672627 instance=ExtResource("4_373xn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51, 21, -12)
+
+[node name="FullGlassPanel25" parent="Map/Ceilings" unique_id=645523098 instance=ExtResource("4_373xn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51, 21, -18)
 
 [node name="Walls" type="Node3D" parent="Map" unique_id=348094776]
 metadata/_edit_lock_ = true
@@ -1985,6 +2065,17 @@ text = "Elevator"
 font = ExtResource("10_ex14y")
 font_size = 36
 
+[node name="PowerRoom6" type="Label3D" parent="Map/Decorations/Decals" unique_id=1742195599]
+transform = Transform3D(-1.7484555e-07, 1, 4.3711395e-08, 4.371139e-08, -4.371139e-08, 1, 1, 1.7484555e-07, -4.371138e-08, 51.65, 0.20000005, -18.099998)
+pixel_size = 0.007
+shaded = true
+double_sided = false
+texture_filter = 0
+text = "To the 
+Surface"
+font = ExtResource("10_ex14y")
+font_size = 36
+
 [node name="CrewDorms" type="Label3D" parent="Map/Decorations/Decals" unique_id=1043291176]
 transform = Transform3D(1.9106855e-15, -1, -4.371139e-08, -4.371139e-08, -4.371139e-08, 1, -1, 0, -4.371139e-08, -0.95000005, 0.2500001, -18)
 pixel_size = 0.007
@@ -2005,6 +2096,69 @@ texture_filter = 0
 text = "Maintenance"
 font = ExtResource("10_ex14y")
 font_size = 36
+
+[node name="HalfWall" parent="Map/Decorations/Decals" unique_id=168502406 instance=ExtResource("12_cgm64")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.5, 18, -21)
+
+[node name="HalfWall2" parent="Map/Decorations/Decals" unique_id=1715477527 instance=ExtResource("12_cgm64")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.5, 18, -21)
+
+[node name="HalfWall3" parent="Map/Decorations/Decals" unique_id=1763204327 instance=ExtResource("12_cgm64")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.5, 18, -18)
+
+[node name="HalfWall4" parent="Map/Decorations/Decals" unique_id=753946919 instance=ExtResource("12_cgm64")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.5, 18, -15)
+
+[node name="HalfWall5" parent="Map/Decorations/Decals" unique_id=48501717 instance=ExtResource("12_cgm64")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.5, 18, -12)
+
+[node name="HalfWall6" parent="Map/Decorations/Decals" unique_id=1013704754 instance=ExtResource("12_cgm64")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.5, 18, -24)
+
+[node name="HalfWall12" parent="Map/Decorations/Decals" unique_id=226574176 instance=ExtResource("12_cgm64")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 60, 18, -10.5)
+
+[node name="HalfWall13" parent="Map/Decorations/Decals" unique_id=264130723 instance=ExtResource("12_cgm64")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 57, 18, -10.5)
+
+[node name="HalfWall14" parent="Map/Decorations/Decals" unique_id=118038585 instance=ExtResource("12_cgm64")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 54, 18, -10.5)
+
+[node name="HalfWall15" parent="Map/Decorations/Decals" unique_id=1084320757 instance=ExtResource("12_cgm64")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 51, 18, -10.5)
+
+[node name="HalfWall16" parent="Map/Decorations/Decals" unique_id=93939809 instance=ExtResource("12_cgm64")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 63, 18, -10.5)
+
+[node name="HalfWall17" parent="Map/Decorations/Decals" unique_id=734741594 instance=ExtResource("12_cgm64")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 54, 18, -25.488787)
+
+[node name="HalfWall18" parent="Map/Decorations/Decals" unique_id=1822333635 instance=ExtResource("12_cgm64")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 57, 18, -25.488787)
+
+[node name="HalfWall19" parent="Map/Decorations/Decals" unique_id=328988842 instance=ExtResource("12_cgm64")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 60, 18, -25.488787)
+
+[node name="HalfWall21" parent="Map/Decorations/Decals" unique_id=444357587 instance=ExtResource("12_cgm64")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 63, 18, -25.488787)
+
+[node name="HalfWall20" parent="Map/Decorations/Decals" unique_id=1442651396 instance=ExtResource("12_cgm64")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 51, 18, -25.488787)
+
+[node name="HalfWall7" parent="Map/Decorations/Decals" unique_id=865836712 instance=ExtResource("12_cgm64")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 49.5, 18, -15)
+
+[node name="HalfWall8" parent="Map/Decorations/Decals" unique_id=1687984601 instance=ExtResource("12_cgm64")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 49.5, 18, -18)
+
+[node name="HalfWall9" parent="Map/Decorations/Decals" unique_id=1761336911 instance=ExtResource("12_cgm64")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 49.5, 18, -21)
+
+[node name="HalfWall10" parent="Map/Decorations/Decals" unique_id=558196369 instance=ExtResource("12_cgm64")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 49.5, 18, -24)
+
+[node name="HalfWall11" parent="Map/Decorations/Decals" unique_id=221776793 instance=ExtResource("12_cgm64")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 49.5, 18, -12)
 
 [node name="Lights" type="Node3D" parent="Map/Decorations" unique_id=1561684210]
 metadata/_edit_lock_ = true
@@ -2302,7 +2456,7 @@ sound_type = 1
 metadata/_edit_lock_ = true
 
 [node name="OxygenMask" parent="Map/Pickups" unique_id=213202809 instance=ExtResource("22_clfuy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.85, 1.3480824, 4.35)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.35, 0.9394547, 1.8499999)
 
 [node name="Crowbar" parent="Map/Pickups" unique_id=1447367375 instance=ExtResource("15_vsm2l")]
 transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, -27.050001, 0.1999999, -18.5)
@@ -2341,3 +2495,9 @@ stream = ExtResource("4_oqbv7")
 volume_db = -3.0
 autoplay = true
 bus = &"Ambient"
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=2034471328]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 20, -21.5)
+light_color = Color(0.5882353, 0.6901961, 0.8666667, 1)
+light_energy = 8.649
+omni_range = 16.0

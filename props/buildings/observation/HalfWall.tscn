@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bw2jlj0b2wr8b"]
+
+[ext_resource type="PackedScene" uid="uid://coayqtexkfkcy" path="res://props/buildings/observation/halfwall.glb" id="1_cuisc"]
+
+[node name="HalfWall" type="StaticBody3D" unique_id=168502406]
+
+[node name="blockbench_export" parent="." unique_id=856058656 instance=ExtResource("1_cuisc")]

@@ -1,0 +1,27 @@
+[gd_scene format=4 uid="uid://cwcsnpm3a8j7s"]
+
+[ext_resource type="Material" uid="uid://canir4pgy8387" path="res://props/buildings/observation/roof/material_0.tres" id="1_krcxe"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_bf0tl"]
+resource_name = "blockbench_export_mesh"
+_surfaces = [{
+"aabb": AABB(-1.5, 0, -1.5, 3, 0.125, 3),
+"attribute_data": PackedByteArray("/8EAAP9h/wP/YQAA/8H/A//B/wn/Yf8F/8H/Bf9h/wkAAP9f/18AAP9f/18AAAAA/1//wQAA/2H/X/9hAAD/wf/B/w//Yf8L/8H/C/9h/w//wf8R/2H/Ff9h/xH/wf8V"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": ExtResource("1_krcxe"),
+"name": "material_0",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("/////wAA/7///wAA////v/////////+///8AAAAA/78AAAAA////vwAA//8AAP+/AAD//////78AAAAAAAD/vwAA//////+//////wAA/7//////////vwAA//8AAP+///8AAAAA/78AAAAA////v///AAD///+/AAAAAAAA/7///wAA//8AgAAA/////wCA////////AIAAAAAA//8AgAAA//8AAP////8AAAAA////////AAD//wAAAAAAAP///38AAP9/AAD/fwAA/38AAP9/////f////3////9///////9/////f////3////9/AAD/fwAA/38AAP9/AAD/f/9/////f////3////9/////f////3////9/////f///")
+}]
+blend_shape_mode = 0
+
+[node name="FullGlassPanel" type="StaticBody3D" unique_id=414055473]
+
+[node name="mesh" type="MeshInstance3D" parent="." unique_id=312989429]
+cast_shadow = 0
+mesh = SubResource("ArrayMesh_bf0tl")
+surface_material_override/0 = ExtResource("1_krcxe")

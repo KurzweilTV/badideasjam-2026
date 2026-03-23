@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bp5ri1ola8ixd"]
+
+[ext_resource type="Texture2D" uid="uid://dr6lckheafs65" path="res://props/buildings/observation/texture-glass.png" id="1_kiclo"]
+
+[resource]
+resource_name = "material_1"
+transparency = 1
+cull_mode = 2
+albedo_texture = ExtResource("1_kiclo")
+texture_filter = 0
+texture_repeat = false
