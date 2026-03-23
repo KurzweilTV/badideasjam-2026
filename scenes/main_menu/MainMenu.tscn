@@ -3,10 +3,10 @@
 [ext_resource type="Theme" uid="uid://b11dr1iiq0j81" path="res://ui/themes/menu_theme.tres" id="1_qmweu"]
 [ext_resource type="Script" uid="uid://dcjlrw1qirmky" path="res://scenes/main_menu/main_menu.gd" id="2_wckin"]
 [ext_resource type="PackedScene" uid="uid://bbje810ufjwfq" path="res://scenes/main_menu/MenuBackground.tscn" id="3_wckin"]
-[ext_resource type="Texture2D" uid="uid://brk285ka3ps33" path="res://art/icon.svg" id="3_xr86y"]
 [ext_resource type="Shader" uid="uid://v6ds74mtnrnd" path="res://shaders/simple_blur.gdshader" id="4_oitky"]
 [ext_resource type="AudioStream" uid="uid://cji82wy8pws7c" path="res://ui/sounds/switch11.ogg" id="6_oitky"]
 [ext_resource type="AudioStream" uid="uid://day8c4dj3au5u" path="res://ui/sounds/question_002.ogg" id="7_wckin"]
+[ext_resource type="Texture2D" uid="uid://chy44y1hlqbcf" path="res://art/logo/logo_v1.png" id="8_arvcj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_arvcj"]
 shader = ExtResource("4_oitky")
@@ -38,7 +38,6 @@ script = ExtResource("2_wckin")
 [node name="MenuBackground" parent="." unique_id=34892227 instance=ExtResource("3_wckin")]
 
 [node name="BlurEffect" type="ColorRect" parent="." unique_id=368242758]
-visible = false
 material = SubResource("ShaderMaterial_arvcj")
 layout_mode = 1
 anchors_preset = 15
@@ -46,6 +45,23 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Logo" type="TextureRect" parent="." unique_id=1587622458]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -662.0
+offset_top = -361.0
+offset_right = 662.0
+offset_bottom = -87.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("8_arvcj")
+expand_mode = 3
+stretch_mode = 5
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=47927557]
 custom_minimum_size = Vector2(350, 0)
@@ -62,12 +78,6 @@ offset_bottom = -55.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 32
-
-[node name="Logo" type="TextureRect" parent="HBoxContainer" unique_id=1908473399]
-visible = false
-layout_mode = 2
-texture = ExtResource("3_xr86y")
-stretch_mode = 3
 
 [node name="Start" type="Button" parent="HBoxContainer" unique_id=1360169974]
 layout_mode = 2
