@@ -1,6 +1,6 @@
 extends RichTextLabel
 
-@export var speed := 60.0
+@export var scroll_speed := 60.0
 
 func _process(delta):
-	position.y -= speed * delta
+	position.y -= scroll_speed * delta
