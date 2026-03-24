@@ -20,6 +20,7 @@ func _ready() -> void:
 		collision_area.shape = trigger_area
 
 func _on_body_entered(body: Node3D) -> void:
+	print_orphan_nodes()
 	if not single_trigger: return
 	if body is Player and not body.has_oxygen_mask:
 		if look_target:

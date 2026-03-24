@@ -16,6 +16,9 @@ enum KEYS {None, Green, Blue, Orange}
 @onready var hand: Marker3D = $Head/Hand
 @onready var hypoxic_filter: ColorRect = %HypoxicFilter
 
+var options_menu: Control
+var options_scene = OPTIONS.instantiate()
+
 #region Gameplay Export Group
 
 @export_category("Debug")
@@ -545,16 +548,21 @@ func update_camera_fov():
 		CAMERA.fov = lerp(CAMERA.fov, 75.0, 0.3)
 
 func handle_pausing():
-	var options_scene = OPTIONS.instantiate()
 	if Input.is_action_just_pressed(controls.PAUSE):
-		# You may want another node to handle pausing, because this player may get paused too.
 		match Input.mouse_mode:
 			Input.MOUSE_MODE_CAPTURED:
 				Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-				add_child(options_scene)
+				if options_menu == null:
+					options_menu = OPTIONS.instantiate()
+					add_child(options_menu)
+				else:
+					options_menu.visible = true
 				get_tree().paused = true
 			Input.MOUSE_MODE_VISIBLE:
 				Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+				if options_menu:
+					options_menu.visible = false
+				get_tree().paused = false
 #endregion
 
 #region Oxygen Handling
