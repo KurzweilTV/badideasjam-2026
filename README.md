@@ -1,5 +1,5 @@
 
-# 🎮 Bad Ideas Jam 2026 – Project Title
+# 🎮 Bad Ideas Jam 2026 – Hypoxia
 
 ## 🎭 Theme
 
@@ -44,7 +44,7 @@ https://www.youtube.com/watch?v=ZVy6LNBmlok
 | Audio | [KurzweilTV](https://github.com/KurzweilTV/) |
 | Voice Acting | Zeer |
 | Design | [KurzweilTV](https://github.com/KurzweilTV/) |
-| Feedback and Testing | Erantalon, UselessJack, Zeer, Zeromark |
+| Feedback and Testing | Erantalon, McDuck Deluxe, UselessJack, Zeer, Zeromark |
 
 
 ## 📦 Assets Used
