@@ -7,7 +7,5 @@ resource_name = "material_0"
 transparency = 1
 cull_mode = 2
 albedo_texture = ExtResource("1_helm4")
-metallic_specular = 1.0
-roughness = 0.0
 texture_filter = 0
 texture_repeat = false
