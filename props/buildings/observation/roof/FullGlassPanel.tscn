@@ -19,9 +19,16 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_krcxe"]
+size = Vector3(3, 0.24853516, 3)
+
 [node name="FullGlassPanel" type="StaticBody3D" unique_id=414055473]
 
 [node name="mesh" type="MeshInstance3D" parent="." unique_id=312989429]
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_bf0tl")
 surface_material_override/0 = ExtResource("1_krcxe")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=800255082]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09399414, 0)
+shape = SubResource("BoxShape3D_krcxe")

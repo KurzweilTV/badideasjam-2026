@@ -2,14 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://b8vqth56av8yn" path="res://props/decorations/mess_table/messTable.glb" id="1_w7pp2"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_w7pp2"]
-radius = 0.90000004
-height = 3.875
+[sub_resource type="BoxShape3D" id="BoxShape3D_w7pp2"]
+size = Vector3(2.029541, 3.5072021, 1.1194336)
 
 [node name="MessTable" type="StaticBody3D" unique_id=92245100]
 
 [node name="blockbench_export" parent="." unique_id=30533072 instance=ExtResource("1_w7pp2")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1626884525]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.84999996, -0.0625)
-shape = SubResource("CapsuleShape3D_w7pp2")
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.0025634766, 0.40747082, 0.038391124)
+shape = SubResource("BoxShape3D_w7pp2")

@@ -17,7 +17,7 @@ run/main_scene="uid://pn0awydd60ex"
 config/features=PackedStringArray("4.6", "Forward Plus")
 run/max_fps=60
 boot_splash/show_image=false
-config/icon="res://art/icon.svg"
+config/icon="uid://dbwct4dda2chf"
 
 [audio]
 
@@ -43,7 +43,7 @@ mouse_cursor/custom_image_hotspot=Vector2(16, 16)
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/jamcountdown/plugin.cfg", "res://addons/script-ide/plugin.cfg")
+enabled=PackedStringArray("res://addons/jamcountdown/plugin.cfg", "res://addons/script-ide/plugin.cfg", "res://addons/terrain_3d/plugin.cfg")
 
 [file_customization]
 
