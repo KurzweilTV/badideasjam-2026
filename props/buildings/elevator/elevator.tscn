@@ -33,8 +33,8 @@ tracks/0/path = NodePath(".:position:y")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 50.5, -1.3333334, -3, 0, 0),
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(0, -0.24999999, 0, 0.06666667, 0, 51, -1, -3, 0, 0),
 "times": PackedFloat32Array(0, 16)
 }
 tracks/1/type = "method"

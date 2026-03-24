@@ -752,7 +752,6 @@ script = ExtResource("3_v3ckk")
 [node name="DispairCue" type="AudioStreamPlayer" parent="." unique_id=1338389358]
 unique_name_in_owner = true
 stream = ExtResource("18_rr4wr")
-volume_db = -20.0
+volume_db = -8.0
 pitch_scale = 0.9
 max_polyphony = 2
-bus = &"Sounds"

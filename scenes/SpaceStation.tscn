@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://dyhqsrg6n6fel" path="res://props/interactable/gas_mixing_station/GasMixingConsole.tscn" id="25_oqbv7"]
 [ext_resource type="PackedScene" uid="uid://cphlm0ashes6h" path="res://scenes/systems/SoundTrigger.tscn" id="27_02h3y"]
 [ext_resource type="PackedScene" uid="uid://bt1pyoajofld3" path="res://props/interactable/employee_id/employee_id.tscn" id="29_373xn"]
+[ext_resource type="PackedScene" uid="uid://blgynx0ip0p0x" path="res://scenes/asteroid_terrain/terrain_3d.tscn" id="30_g1x85"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_2crfw"]
 panorama = ExtResource("1_go4jk")
@@ -83,90 +84,6 @@ size = Vector3(10, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qmkbd"]
 size = Vector3(1, 1, 15)
-
-[sub_resource type="Gradient" id="Gradient_373xn"]
-offsets = PackedFloat32Array(0.2, 1)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_g1x85"]
-noise_type = 2
-frequency = 0.03
-cellular_jitter = 3.0
-cellular_return_type = 0
-domain_warp_enabled = true
-domain_warp_type = 1
-domain_warp_amplitude = 50.0
-domain_warp_fractal_type = 2
-domain_warp_fractal_lacunarity = 1.5
-domain_warp_fractal_gain = 1.0
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_26711"]
-noise = SubResource("FastNoiseLite_g1x85")
-color_ramp = SubResource("Gradient_373xn")
-seamless = true
-
-[sub_resource type="Terrain3DMaterial" id="Terrain3DMaterial_81oyj"]
-_shader_parameters = {
-&"auto_base_texture": 0,
-&"auto_height_reduction": 0.1,
-&"auto_overlay_texture": 1,
-&"auto_slope": 1.0,
-&"bias_distance": 512.0,
-&"blend_sharpness": 0.5,
-&"depth_blur": 12.80000019073536,
-&"dual_scale_far": 170.0,
-&"dual_scale_near": 100.0,
-&"dual_scale_reduction": 0.3,
-&"dual_scale_texture": 0,
-&"enable_macro_variation": true,
-&"enable_projection": true,
-&"flat_terrain_normals": false,
-&"macro_variation1": Color(1, 1, 1, 1),
-&"macro_variation2": Color(1, 1, 1, 1),
-&"macro_variation_slope": 0.333,
-&"mipmap_bias": 1.0,
-&"noise1_angle": 0.0,
-&"noise1_offset": Vector2(0.5, 0.5),
-&"noise1_scale": 0.04,
-&"noise2_scale": 0.076,
-&"noise_texture": SubResource("NoiseTexture2D_26711"),
-&"projection_threshold": 0.8,
-&"tri_scale_reduction": 0.3,
-&"world_noise_fragment_normals": false,
-&"world_noise_height": 64.0000009536768,
-&"world_noise_lod_distance": 7500.0,
-&"world_noise_max_octaves": 8,
-&"world_noise_min_octaves": 2,
-&"world_noise_offset": Vector3(0, 0, 0),
-&"world_noise_region_blend": 0.33,
-&"world_noise_scale": 5.0
-}
-world_background = 2
-texture_filtering = 1
-auto_shader = true
-dual_scaling = true
-show_checkered = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_obarj"]
-transparency = 4
-cull_mode = 2
-vertex_color_use_as_albedo = true
-backlight_enabled = true
-backlight = Color(0.5, 0.5, 0.5, 1)
-distance_fade_mode = 1
-distance_fade_min_distance = 128.0
-distance_fade_max_distance = 96.0
-
-[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_dbu2b"]
-generated_type = 1
-height_offset = 0.5
-material_override = SubResource("StandardMaterial3D_obarj")
-last_lod = 0
-last_shadow_lod = 0
-lod0_range = 128.0
-
-[sub_resource type="Terrain3DAssets" id="Terrain3DAssets_qybvs"]
-mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_dbu2b")])
 
 [node name="SpaceStation" type="Node3D" unique_id=805722603]
 script = ExtResource("1_4ussd")
@@ -2718,17 +2635,8 @@ transform = Transform3D(0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0
 
 [node name="AmbientSound" type="AudioStreamPlayer" parent="." unique_id=1134652076]
 stream = ExtResource("4_oqbv7")
-volume_db = -4.0
+volume_db = -5.0
 autoplay = true
 bus = &"Ambient"
 
-[node name="Terrain3D" type="Terrain3D" parent="." unique_id=277329803]
-data_directory = "res://scenes/asteroid_terrain"
-material = SubResource("Terrain3DMaterial_81oyj")
-assets = SubResource("Terrain3DAssets_qybvs")
-collision_mode = 0
-cull_margin = 500.0
-show_checkered = true
-top_level = true
-visible = false
-metadata/_edit_lock_ = true
+[node name="Terrain3D" parent="." unique_id=699292965 instance=ExtResource("30_g1x85")]

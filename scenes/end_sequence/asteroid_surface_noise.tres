@@ -1,8 +1,0 @@
-[gd_resource type="NoiseTexture2D" format=3 uid="uid://ld4nlw708fl0"]
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_x1jpd"]
-
-[resource]
-noise = SubResource("FastNoiseLite_x1jpd")
-as_normal_map = true
-normalize = false

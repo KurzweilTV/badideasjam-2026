@@ -613,3 +613,5 @@ func set_crowbar(held: bool) -> void:
 
 func play_dispair() -> void:
 	%DispairCue.play()
+	await %DispairCue.finished
+	SceneManager.change_scene("res://scenes/end_credits/credits_background.tscn")
