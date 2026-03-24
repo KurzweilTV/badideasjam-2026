@@ -86,12 +86,9 @@ size = Vector3(1, 1, 15)
 
 [node name="SpaceStation" type="Node3D" unique_id=805722603]
 script = ExtResource("1_4ussd")
-station_starts_powered = true
-station_starts_oxygenated = true
 
 [node name="Character" parent="." unique_id=1159670658 instance=ExtResource("1_tq2h6")]
-transform = Transform3D(0.714656, 0, 0.6994761, 0, 1, 0, -0.6994761, 0, 0.714656, 54.193558, 0.23618317, -14.092487)
-skip_tutorial = true
+transform = Transform3D(0.714656, 0, 0.6994761, 0, 1, 0, -0.6994761, 0, 0.714656, 6.1935577, 0.23618317, 9.407513)
 oxygen_level = 20.0
 base_oxygen_loss_rate = 1.5
 base_speed = 1.5
