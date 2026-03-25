@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dcwnnnp78efm6"]
+
+[ext_resource type="Script" uid="uid://ca8rdwborn3nm" path="res://scenes/systems/signal_trigger.gd" id="1_ap4gi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mxxig"]
+size = Vector3(2, 1, 2)
+
+[node name="SignalTrigger" type="Area3D" unique_id=86516283]
+script = ExtResource("1_ap4gi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=277011161]
+shape = SubResource("BoxShape3D_mxxig")
+debug_color = Color(0.6627451, 0.5137255, 0, 1)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

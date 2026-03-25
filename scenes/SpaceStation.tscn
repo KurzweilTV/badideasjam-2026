@@ -28,8 +28,13 @@
 [ext_resource type="PackedScene" uid="uid://doy1ps6nya7no" path="res://props/interactable/oxygen_bottle/OxygenBottle.tscn" id="23_oqbv7"]
 [ext_resource type="PackedScene" uid="uid://dyhqsrg6n6fel" path="res://props/interactable/gas_mixing_station/GasMixingConsole.tscn" id="25_oqbv7"]
 [ext_resource type="PackedScene" uid="uid://cphlm0ashes6h" path="res://scenes/systems/SoundTrigger.tscn" id="27_02h3y"]
+[ext_resource type="PackedScene" uid="uid://dblt6uhkqr5d3" path="res://props/decorations/radio/Radio.tscn" id="27_qybvs"]
 [ext_resource type="PackedScene" uid="uid://bt1pyoajofld3" path="res://props/interactable/employee_id/employee_id.tscn" id="29_373xn"]
 [ext_resource type="PackedScene" uid="uid://blgynx0ip0p0x" path="res://scenes/asteroid_terrain/terrain_3d.tscn" id="30_g1x85"]
+[ext_resource type="Script" uid="uid://2copcexpr4ls" path="res://scenes/end_game_camera.gd" id="31_81oyj"]
+[ext_resource type="AudioStream" uid="uid://b0o620o8fbvbk" path="res://audio/music_cues/dispair.mp3" id="31_26711"]
+[ext_resource type="Script" uid="uid://8d1g3sgpxqbi" path="res://scenes/asteroid_terrain/terrain_3d.gd" id="31_obarj"]
+[ext_resource type="PackedScene" uid="uid://dcwnnnp78efm6" path="res://scenes/systems/SignalTrigger.tscn" id="34_dbu2b"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_2crfw"]
 panorama = ExtResource("1_go4jk")
@@ -83,13 +88,158 @@ size = Vector3(3.5, 3, 1)
 size = Vector3(10, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qmkbd"]
-size = Vector3(1, 1, 15)
+size = Vector3(1, 1, 7)
+
+[sub_resource type="Animation" id="Animation_g1x85"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(8.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(26, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(8.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:rotation:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.19373155, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:rotation:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1.282817, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:rotation:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_26711"]
+resource_name = "ending_camera"
+length = 25.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(8.5, -0.25, 0, 0.25, 0, 8.5, -4.1657085, 0, 0, 0),
+"times": PackedFloat32Array(0, 24.99425)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(26, -0.25, 0, 0.25, 0, 59.5, -4.1657085, -5.583334, 0, 0),
+"times": PackedFloat32Array(0, 24.99425)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(8.5, -0.25, 0, 0.25, 0, 8.5, -4.1657085, 0, 0, 0),
+"times": PackedFloat32Array(0, 24.99425)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:rotation:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(-0.19373155, -0.25, 0, 0.25, 0, 0.37440765, -4.1657085, -0.09468987, 0, 0),
+"times": PackedFloat32Array(0, 24.99425)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:rotation:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(-1.282817, -0.25, 0, 0.25, 0, -1.5105762, -4.1657085, 0.037959877, 0, 0),
+"times": PackedFloat32Array(0, 24.99425)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:rotation:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.17124668, -4.1657085, -0.028541114, 0, 0),
+"times": PackedFloat32Array(0, 24.99425)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_81oyj"]
+_data = {
+&"RESET": SubResource("Animation_g1x85"),
+&"ending_camera": SubResource("Animation_26711")
+}
 
 [node name="SpaceStation" type="Node3D" unique_id=805722603]
 script = ExtResource("1_4ussd")
 
 [node name="Character" parent="." unique_id=1159670658 instance=ExtResource("1_tq2h6")]
-transform = Transform3D(0.714656, 0, 0.6994761, 0, 1, 0, -0.6994761, 0, 0.714656, 5.5, -24, 9)
+transform = Transform3D(0.714656, 0, 0.6994761, 0, 1, 0, -0.6994761, 0, 0.714656, 5.5, -25, 9.5)
 oxygen_level = 20.0
 base_oxygen_loss_rate = 1.5
 base_speed = 1.5
@@ -2172,8 +2322,8 @@ pixel_size = 0.007
 shaded = true
 double_sided = false
 texture_filter = 0
-text = "Facility
-Command"
+text = "Atmosphere
+Control"
 font = ExtResource("10_ex14y")
 font_size = 36
 
@@ -2339,7 +2489,7 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 7.42
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.07184601, 2.93366, -18.633352)
 
 [node name="StripLamp31" parent="Map/Decorations/Lights" unique_id=659320699 instance=ExtResource("20_l8q6r")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.07184601, 2.93366, -6.6333523)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.07184601, 2.9336605, -6.6333523)
 
 [node name="StripLamp32" parent="Map/Decorations/Lights" unique_id=1497776554 instance=ExtResource("20_l8q6r")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.07184601, 2.93366, -31.633352)
@@ -2545,55 +2695,85 @@ light_color = Color(0.5882353, 0.6901961, 0.8666667, 1)
 light_energy = 8.649
 omni_range = 16.0
 
-[node name="AudioTriggers" type="Node3D" parent="Map" unique_id=1241580373]
+[node name="Triggers" type="Node3D" parent="Map" unique_id=1241580373]
 metadata/_edit_lock_ = true
 
-[node name="Apples" parent="Map/AudioTriggers" unique_id=1088784881 instance=ExtResource("20_x6cfo")]
+[node name="Apples" parent="Map/Triggers" unique_id=1088784881 instance=ExtResource("20_x6cfo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65000004, -54)
 message = "Oops... All Apples. Good thing I'm not hungry.. I hate Apples"
 delay = 0.0
 trigger_area = SubResource("BoxShape3D_5woyl")
-voice_over_file = "dialog_07.mp3"
+voice_over_file = "apples1.wav"
 
-[node name="Maintenence" parent="Map/AudioTriggers" unique_id=1157176842 instance=ExtResource("20_x6cfo")]
+[node name="MessHall" parent="Map/Triggers" unique_id=1157176842 instance=ExtResource("20_x6cfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6499996, -36.5)
+message = "A mess hall.. completely abandoned"
+delay = 0.0
+trigger_area = SubResource("BoxShape3D_5woyl")
+voice_over_file = "messhall2.wav"
+
+[node name="Maintenence" parent="Map/Triggers" unique_id=1019523931 instance=ExtResource("20_x6cfo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0, -18)
 message = "Maintenance.. this could be a good place to find a crowbar"
 delay = 0.0
 trigger_area = SubResource("BoxShape3D_qmkbd")
-voice_over_file = "crowbar_2.mp3"
+voice_over_file = "maintenance1.wav"
 
-[node name="DialogTrigger" parent="Map/AudioTriggers" unique_id=1746437513 instance=ExtResource("20_x6cfo")]
+[node name="PowerOut" parent="Map/Triggers" unique_id=1746437513 instance=ExtResource("20_x6cfo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
 message = "wherever I am... looks like the [color=yellow]power[/color] is out"
 delay = 0.0
-voice_over_file = "dialog_04.mp3"
+voice_over_file = "powerout.wav"
 
-[node name="OxygenMask" parent="Map/AudioTriggers" unique_id=31452156 instance=ExtResource("20_x6cfo")]
+[node name="WhereIsEveryone" parent="Map/Triggers" unique_id=1200199515 instance=ExtResource("20_x6cfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -12.5)
+message = "Where is everyone??"
+delay = 0.0
+voice_over_file = "whereiseveryone.wav"
+
+[node name="OxygenMask" parent="Map/Triggers" unique_id=31452156 instance=ExtResource("20_x6cfo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -0.18711495)
 tutorial_force = true
 message = "I should find something to help me breathe before I go out."
 delay = 0.0
 
-[node name="EndGame" parent="Map/AudioTriggers" unique_id=614341325 instance=ExtResource("20_x6cfo")]
+[node name="EndGame" parent="Map/Triggers" unique_id=614341325 instance=ExtResource("20_x6cfo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57, 52.21505, -18)
-message = "End of Game Sequence Goes Here :)
+endgame = true
+message = "No.... it can't be...."
+delay = 5.0
+voice_over_file = "temp_end1.mp3"
 
-Thanks for playing"
-
-[node name="JumpScare1" parent="Map/AudioTriggers" unique_id=462872461 instance=ExtResource("27_02h3y")]
+[node name="JumpScare1" parent="Map/Triggers" unique_id=462872461 instance=ExtResource("27_02h3y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2000003, 0.39999962, -16.5)
 
-[node name="JumpScare2" parent="Map/AudioTriggers" unique_id=1503873997 instance=ExtResource("27_02h3y")]
+[node name="JumpScare2" parent="Map/Triggers" unique_id=1503873997 instance=ExtResource("27_02h3y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, -33)
 sound_type = 1
 
-[node name="JumpScare3" parent="Map/AudioTriggers" unique_id=609303167 instance=ExtResource("27_02h3y")]
+[node name="JumpScare3" parent="Map/Triggers" unique_id=609303167 instance=ExtResource("27_02h3y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0.9, -21.5)
 sound_type = 1
 
-[node name="JumpScare4" parent="Map/AudioTriggers" unique_id=148839269 instance=ExtResource("27_02h3y")]
+[node name="JumpScare4" parent="Map/Triggers" unique_id=148839269 instance=ExtResource("27_02h3y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5, 0.9, -18.5)
 sound_type = 1
+
+[node name="MiningEquip" parent="Map/Triggers" unique_id=554171133 instance=ExtResource("20_x6cfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 1.2445412, -18.010023)
+collision_layer = 3
+collision_mask = 3
+message = "Mining equipment... I wonder how far underground I am?"
+voice_over_file = "mining2.wav"
+
+[node name="SignalTrigger" parent="Map/Triggers" unique_id=86516283 instance=ExtResource("34_dbu2b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.95, 50.25, -17.95)
+collision_layer = 3
+collision_mask = 3
+show_terrain = true
+
+[node name="Radio" parent="Map/Triggers" unique_id=71862398 instance=ExtResource("27_qybvs")]
+transform = Transform3D(-0.39048275, 0, -0.6982286, 0, 0.8, 0, 0.6982286, 0, -0.39048275, -2.4216309, 1.1180611, -50.660103)
 
 [node name="Pickups" type="Node3D" parent="Map" unique_id=1066930469]
 metadata/_edit_lock_ = true
@@ -2630,10 +2810,26 @@ transform = Transform3D(0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0
 [node name="OxygenBottle13" parent="Map/Pickups" unique_id=1511713746 instance=ExtResource("23_oqbv7")]
 transform = Transform3D(0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0, 1, 0, 1.8, -53.85032)
 
+[node name="EndGameCamera" type="Camera3D" parent="." unique_id=902730068]
+transform = Transform3D(0.28401533, 0.18459386, -0.9408828, 0, 0.98129267, 0.19252196, 0.95881975, -0.05467919, 0.27870217, 8.5, 26, 8.5)
+fov = 50.0
+script = ExtResource("31_81oyj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="EndGameCamera" unique_id=370776696]
+libraries/ = SubResource("AnimationLibrary_81oyj")
+
+[node name="DispairCue" type="AudioStreamPlayer" parent="EndGameCamera" unique_id=627911547]
+unique_name_in_owner = true
+stream = ExtResource("31_26711")
+volume_db = -8.0
+pitch_scale = 0.9
+max_polyphony = 2
+
 [node name="AmbientSound" type="AudioStreamPlayer" parent="." unique_id=1134652076]
 stream = ExtResource("4_oqbv7")
-volume_db = -5.0
+volume_db = -10.0
 autoplay = true
 bus = &"Ambient"
 
 [node name="Terrain3D" parent="." unique_id=699292965 instance=ExtResource("30_g1x85")]
+script = ExtResource("31_obarj")

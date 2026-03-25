@@ -4,6 +4,7 @@ extends Area3D
 @export_category("Message Parameters")
 @export var single_trigger: bool = true
 @export var tutorial_force: bool = false
+@export var endgame: bool = false
 @export_multiline("This is a [color=blue]test[/color] message.") var message: String
 @export var delay: float = 1.0
 @export var border_color: Color = Color.PALE_GREEN
@@ -20,7 +21,6 @@ func _ready() -> void:
 		collision_area.shape = trigger_area
 
 func _on_body_entered(body: Node3D) -> void:
-	print_orphan_nodes()
 	if not single_trigger: return
 	if body is Player and not body.has_oxygen_mask:
 		if look_target:
@@ -30,3 +30,8 @@ func _on_body_entered(body: Node3D) -> void:
 	if body is Player:
 		StationStatus.dialog.emit(message, delay, border_color, false, voice_over_file)
 		single_trigger = false
+	if endgame:
+		await get_tree().create_timer(10).timeout
+		SceneManager.fade_to_black()
+		await SceneManager.fade_complete
+		StationStatus.start_ending_cinematic.emit()

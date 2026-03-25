@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dblt6uhkqr5d3"]
+
+[ext_resource type="PackedScene" uid="uid://bjcuq8ie0lecc" path="res://props/decorations/radio/radio.glb" id="1_owgdj"]
+[ext_resource type="AudioStream" uid="uid://3so2kl6fais3" path="res://audio/music_cues/HypoxiaMoonlight.mp3" id="2_7difo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_owgdj"]
+size = Vector3(0.6862793, 0.44384766, 0.18798828)
+
+[node name="Radio" type="StaticBody3D" unique_id=71862398]
+
+[node name="blockbench_export" parent="." unique_id=50764402 instance=ExtResource("1_owgdj")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1524980626]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207031, 0.21653813, 0.00024414063)
+shape = SubResource("BoxShape3D_owgdj")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1288109426]
+stream = ExtResource("2_7difo")
+volume_db = -3.0
+autoplay = true
+max_distance = 10.0
+bus = &"Sounds"
+emission_angle_enabled = true
+emission_angle_degrees = 49.0
+attenuation_filter_cutoff_hz = 500.0
+parameters/looping = true
