@@ -2746,6 +2746,7 @@ voice_over_file = "temp_end1.mp3"
 
 [node name="JumpScare1" parent="Map/Triggers" unique_id=462872461 instance=ExtResource("27_02h3y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2000003, 0.39999962, -16.5)
+volume_adjust = -8.0
 
 [node name="JumpScare2" parent="Map/Triggers" unique_id=1503873997 instance=ExtResource("27_02h3y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, -33)

@@ -15,6 +15,7 @@ enum KEYS {None, Green, Blue, Orange}
 @onready var dialog_system: Dialog = $UserInterface/DialogSystem
 @onready var hand: Marker3D = $Head/Hand
 @onready var hypoxic_filter: ColorRect = %HypoxicFilter
+@onready var extreme_tint: ColorRect = %ExtremeTint
 
 var options_menu: Control
 var options_scene = OPTIONS.instantiate()
@@ -45,8 +46,19 @@ var options_scene = OPTIONS.instantiate()
 ## Player is running out of Oxygen
 @export var is_hypoxic: bool = true:
 	set(value):
+		if value == is_hypoxic:
+			return
+		print("Hypoxia: %s" % str(value))
 		is_hypoxic = value
 		hypoxic_filter.visible = is_hypoxic
+## Player is out of Oxygen
+@export var is_extreme_hypoxic: bool = false:
+	set(value):
+		if value == is_extreme_hypoxic:
+			return
+		print("Extreme Hypoxia: %s" % str(value))
+		is_extreme_hypoxic = value
+		extreme_tint.visible = is_extreme_hypoxic
 
 var has_oxygen_mask: bool = false
 var oxygen_loss_rate: float = base_oxygen_loss_rate
@@ -578,14 +590,23 @@ func set_oxygen(amount: float) -> void:
 	oxygen_level = amount
 
 func _update_oxygen_ui() -> void:
-	if not oxygen_bar: return
+	if not oxygen_bar:
+		return
+
 	create_tween().tween_property(oxygen_bar, "value", oxygen_level, 1.0)
-	if oxygen_level <= 20.0:
+
+	if oxygen_level <= 5.0:
 		oxygen_bar.modulate = Color.RED
 		is_hypoxic = true
-	else: 
+		is_extreme_hypoxic = true
+	elif oxygen_level <= 20.0:
+		oxygen_bar.modulate = Color.RED
+		is_hypoxic = true
+		is_extreme_hypoxic = false
+	else:
 		oxygen_bar.modulate = Color.WHITE
 		is_hypoxic = false
+		is_extreme_hypoxic = false
 
 
 func enable_oxygen() -> void:

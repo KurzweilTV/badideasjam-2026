@@ -15,8 +15,10 @@ enum SoundType {
 @export var one_shot: bool = true
 @export var trigger_zone: Shape3D
 @export var sound_type: SoundType = SoundType.METAL_DROP
+@export_range(-10, 0, 0.5, "prefer_slider") var volume_adjust = 0.0
 
 func _ready() -> void:
+	sound.volume_db = volume_adjust
 	if trigger_zone:
 		collision_shape_3d.shape = trigger_zone
 

@@ -506,7 +506,8 @@ shadow_offset = Vector2(5, 5)
 [node name="Character" type="CharacterBody3D" unique_id=1159670658 node_paths=PackedStringArray("HEAD", "CAMERA", "HEADBOB_ANIMATION", "JUMP_ANIMATION", "CROUCH_ANIMATION", "COLLISION_MESH")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 script = ExtResource("1_0t4e8")
-base_oxygen_loss_rate = 1.0
+base_oxygen_loss_rate = 0.8
+sprint_oxygen_multiplier = 2.0
 base_speed = 2.5
 sprint_speed = 4.0
 mouse_sensitivity = 0.05
@@ -624,6 +625,18 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(1, 0, 0, 0.08235294)
+
+[node name="ExtremeTint" type="ColorRect" parent="UserInterface/HypoxicFilter" unique_id=1193251052]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.5529412)
 
 [node name="DebugPanel" type="PanelContainer" parent="UserInterface" unique_id=716811236]
 visible = false
