@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://hvde0qktlm8x" path="res://props/interactable/station_door/sounds/DoorSlideClose.mp3" id="4_fwoyv"]
 [ext_resource type="AudioStream" uid="uid://dkp0thl8xkh2x" path="res://props/interactable/station_door/sounds/LockedDoor.mp3" id="5_j3fuo"]
 [ext_resource type="AudioStream" uid="uid://d02q7soipxyd8" path="res://props/interactable/station_door/sounds/error_008.ogg" id="6_2hho2"]
+[ext_resource type="AudioStream" uid="uid://bxjaul6jtj6oo" path="res://props/interactable/station_door/sounds/doorandcrowbar.mp3" id="7_2hho2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a282m"]
 size = Vector3(2.9941406, 3.1689453, 0.32592773)
@@ -72,6 +73,13 @@ bus = &"Sounds"
 [node name="AccessError" type="AudioStreamPlayer3D" parent="." unique_id=1112788742]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.757312, 0)
 stream = ExtResource("6_2hho2")
+max_polyphony = 4
+bus = &"Sounds"
+
+[node name="CrowbarOpen" type="AudioStreamPlayer3D" parent="." unique_id=503126319]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.757312, 0)
+stream = ExtResource("7_2hho2")
+volume_db = -10.0
 max_polyphony = 4
 bus = &"Sounds"
 

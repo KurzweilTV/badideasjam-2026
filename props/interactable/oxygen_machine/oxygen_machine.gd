@@ -11,6 +11,6 @@ func _on_interact(_interactor: Player) -> bool:
 	use_sound.play()
 	_interactor.give_oxygen(100)
 	if first_interaction and tutorial_machine: 
-		StationStatus.dialog.emit("Good... I can fill my [color=green]oxygen[/color] up here.", 1, StationStatus.player_color, false, "dialog_08.mp3")
+		StationStatus.dialog.emit("Good... I can fill my [color=green]oxygen[/color] up here.", 1, StationStatus.player_color, false, "oxygenfill.wav")
 		first_interaction = false
 	return true

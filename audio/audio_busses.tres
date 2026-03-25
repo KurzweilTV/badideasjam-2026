@@ -30,7 +30,6 @@ damping = 0.6
 wet = 0.08
 
 [resource]
-bus/0/volume_db = 0.26724052
 bus/1/name = &"Sounds"
 bus/1/solo = false
 bus/1/mute = false
@@ -43,13 +42,13 @@ bus/2/name = &"Ambient"
 bus/2/solo = false
 bus/2/mute = false
 bus/2/bypass_fx = false
-bus/2/volume_db = -4.504105
+bus/2/volume_db = -6.5788474
 bus/2/send = &"Master"
 bus/3/name = &"VoiceOver"
 bus/3/solo = false
 bus/3/mute = false
 bus/3/bypass_fx = false
-bus/3/volume_db = 3.2424984
+bus/3/volume_db = 3.640236
 bus/3/send = &"Master"
 bus/3/effect/0/effect = SubResource("AudioEffectHighPassFilter_qq1ct")
 bus/3/effect/0/enabled = true

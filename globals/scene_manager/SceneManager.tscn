@@ -62,6 +62,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2138798943]
 libraries/ = SubResource("AnimationLibrary_71hmd")
+speed_scale = 0.8
 
 [node name="LoadingLabel" type="Label" parent="." unique_id=970073305]
 unique_name_in_owner = true

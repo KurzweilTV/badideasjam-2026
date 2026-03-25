@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://wv1lqxlpw8qd"
+path="res://.godot/imported/yes that did it 2.wav-d7a8ada96fa26cdea1cb4616accfae49.sample"
+
+[deps]
+
+source_file="res://characters/player/voiceover/zeer/yes that did it 2.wav"
+dest_files=["res://.godot/imported/yes that did it 2.wav-d7a8ada96fa26cdea1cb4616accfae49.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

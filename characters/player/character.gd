@@ -186,7 +186,6 @@ var mouseInput : Vector2 = Vector2(0,0)
 
 func _ready():
 	StationStatus.station_oxygen_on.connect(_disable_oxygen)
-	StationStatus.elevator_arrived.connect(play_dispair)
 	
 	#It is safe to comment this line if your game doesn't start with the mouse captured
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -618,8 +617,3 @@ func set_access(access) -> void:
 func set_crowbar(held: bool) -> void:
 	has_crowbar = held
 	hand._set_crowbar(held)
-
-func play_dispair() -> void:
-	%DispairCue.play()
-	await %DispairCue.finished
-	SceneManager.change_scene("res://scenes/end_credits/credits_background.tscn")

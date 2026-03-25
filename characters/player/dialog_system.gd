@@ -42,7 +42,7 @@ func _new_message(message: String, delay: float, border: Color, tutorial: bool =
 		
 	await get_tree().create_timer(delay).timeout
 	if vo_file != "": # plays VO file, if it exists
-		voice_over.stream = load("res://characters/player/voiceover/temporary/" + vo_file)
+		voice_over.stream = load("res://characters/player/voiceover/zeer/" + vo_file)
 		voice_over.play()
 	_set_border_color(border)
 	show()
@@ -58,11 +58,11 @@ func _set_border_color(new_color: Color) -> void:
 	add_theme_stylebox_override("panel", style)
 
 func _opening_dialog() -> void:
-	StationStatus.dialog.emit("What... Where am I?", 1, StationStatus.player_color, false, "dialog_01.mp3")
+	StationStatus.dialog.emit("What... Where am I?", 1, StationStatus.player_color, false, "whereami.wav")
 	await StationStatus.dialog_complete
 	StationStatus.dialog.emit("Press [color=pink]F[/color] to turn on your flashlight", 1, StationStatus.system_color, true)
 	await StationStatus.dialog_complete
-	StationStatus.dialog.emit("Why is it so hard to breathe? The [color=green]air[/color] is so stale...", 1, StationStatus.player_color, false, "intro_1.mp3")
+	StationStatus.dialog.emit("Why is it so hard to breathe? The [color=green]air[/color] is so stale...", 1, StationStatus.player_color, false, "hardtobreathe1.wav")
 	await StationStatus.dialog_complete
 	#StationStatus.dialog.emit("I'm in some sort of... pressure suit?", 1, StationStatus.player_color, false, "dialog_02.mp3")
 	#await StationStatus.dialog_complete

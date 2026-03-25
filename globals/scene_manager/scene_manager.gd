@@ -1,5 +1,8 @@
 extends CanvasLayer
 
+signal fade_complete
+signal show_terrain
+
 @onready var anim: AnimationPlayer = $AnimationPlayer
 @onready var loading_label: Label = %LoadingLabel
 
@@ -19,3 +22,13 @@ func change_scene(scene: String) -> void:
 ## Make the mouse capture while we're playing the game
 func set_game_mode(mode: bool) -> void:
 	game_mode = mode
+
+func fade_to_black() -> void:
+	anim.play("dissolve")
+	await anim.animation_finished
+	fade_complete.emit()
+	
+func fade_from_black() -> void:
+	anim.play_backwards("dissolve")
+	await anim.animation_finished
+	fade_complete.emit()

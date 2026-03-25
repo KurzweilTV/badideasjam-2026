@@ -60,7 +60,7 @@ func _on_interact(interactor: Player) -> bool:
 
 		if needs_crowbar:
 			interactor.set_crowbar(false) # This makes the crowbar consumable
-			#TODO Play metal sound for using the crowbar
+			$CrowbarOpen.play()
 		else:
 			_start_auto_close_timer()
 
@@ -107,7 +107,7 @@ func play_crowbar_dialog() -> void:
 		0.5,
 		StationStatus.player_color,
 		false,
-		"dialog_05.mp3"
+		"crowbar1.wav"
 	)
 
 func _set_powerup_state(status) -> void:

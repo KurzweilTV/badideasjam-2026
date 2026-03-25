@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bve2bju65p5g3"
+path="res://.godot/imported/power and ox online 3.wav-dc634d3b8cb95c1d09d55afc4c039ebe.sample"
+
+[deps]
+
+source_file="res://characters/player/voiceover/zeer/power and ox online 3.wav"
+dest_files=["res://.godot/imported/power and ox online 3.wav-dc634d3b8cb95c1d09d55afc4c039ebe.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

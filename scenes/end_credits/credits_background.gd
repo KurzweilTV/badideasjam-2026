@@ -3,6 +3,7 @@ extends Node3D
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	SceneManager.set_game_mode(false)
 	credits_complete()
 	
 

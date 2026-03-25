@@ -13,6 +13,7 @@ signal dialog_complete
 signal elevator_arrived
 signal elevator_moving
 signal elevator_complete
+signal start_ending_cinematic
 
 @export_category("Dialog Box Colors")
 @export var player_color: Color = Color.PALE_GREEN

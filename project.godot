@@ -13,6 +13,7 @@ config_version=5
 config/name="Hypoxia"
 config/description="Made for the Bad Ideas Game Jam, March 2026"
 config/version="1.0"
+config/tags=PackedStringArray("game", "gamejam")
 run/main_scene="uid://pn0awydd60ex"
 config/features=PackedStringArray("4.6", "Forward Plus")
 run/max_fps=60
@@ -36,6 +37,7 @@ gdscript/warnings/unused_signal=0
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=3
 window/stretch/aspect="keep_width"
 window/vsync/vsync_mode=0
 mouse_cursor/custom_image="uid://61d8syot2o7l"

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bdfuaahadhvus"
+path="res://.godot/imported/Where is everyone 2.wav-cb451c94cddc81794b56488979d3e75f.sample"
+
+[deps]
+
+source_file="res://characters/player/voiceover/zeer/Where is everyone 2.wav"
+dest_files=["res://.godot/imported/Where is everyone 2.wav-cb451c94cddc81794b56488979d3e75f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

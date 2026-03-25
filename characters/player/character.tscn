@@ -17,7 +17,6 @@
 [ext_resource type="AudioStream" uid="uid://dmv6ltstx5e7f" path="res://characters/player/voiceover/temporary/dialog_01.mp3" id="13_2rsth"]
 [ext_resource type="PackedScene" uid="uid://cnrmcq1jjbyx1" path="res://props/interactable/crowbar/crowbar.glb" id="15_vyhkh"]
 [ext_resource type="Shader" uid="uid://v6ds74mtnrnd" path="res://shaders/simple_blur.gdshader" id="16_wbtgf"]
-[ext_resource type="AudioStream" uid="uid://b0o620o8fbvbk" path="res://audio/music_cues/dispair.mp3" id="18_rr4wr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kp17n"]
 albedo_color = Color(1, 0.5176471, 1, 1)
@@ -522,6 +521,7 @@ crouch_mode = 1
 
 [node name="Mesh" type="MeshInstance3D" parent="." unique_id=910213707]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
 cast_shadow = 0
 mesh = SubResource("CapsuleMesh_jw1de")
 
@@ -614,6 +614,16 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(1, 0, 0, 1)
+
+[node name="RedTint" type="ColorRect" parent="UserInterface/HypoxicFilter" unique_id=1924341777]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0, 0, 0.08235294)
 
 [node name="DebugPanel" type="PanelContainer" parent="UserInterface" unique_id=716811236]
 visible = false
@@ -737,7 +747,7 @@ volume_db = -6.0
 
 [node name="VoiceOver" type="AudioStreamPlayer3D" parent="UserInterface/DialogSystem" unique_id=271866070]
 stream = ExtResource("13_2rsth")
-volume_db = 4.0
+volume_db = 10.0
 panning_strength = 0.0
 bus = &"VoiceOver"
 
@@ -748,10 +758,3 @@ target_position = Vector3(0, 0.5, 0)
 
 [node name="EditorModule" type="Node" parent="." unique_id=975202139]
 script = ExtResource("3_v3ckk")
-
-[node name="DispairCue" type="AudioStreamPlayer" parent="." unique_id=1338389358]
-unique_name_in_owner = true
-stream = ExtResource("18_rr4wr")
-volume_db = -8.0
-pitch_scale = 0.9
-max_polyphony = 2

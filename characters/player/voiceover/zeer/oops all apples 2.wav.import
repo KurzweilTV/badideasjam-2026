@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cdu4nmi2k4itd"
+path="res://.godot/imported/oops all apples 2.wav-7c2ac7fb251290e9fd243ec6932971a0.sample"
+
+[deps]
+
+source_file="res://characters/player/voiceover/zeer/oops all apples 2.wav"
+dest_files=["res://.godot/imported/oops all apples 2.wav-7c2ac7fb251290e9fd243ec6932971a0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
