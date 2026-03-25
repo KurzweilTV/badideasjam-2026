@@ -161,7 +161,7 @@ tracks/5/keys = {
 
 [sub_resource type="Animation" id="Animation_26711"]
 resource_name = "ending_camera"
-length = 25.0
+length = 35.0
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -169,9 +169,9 @@ tracks/0/path = NodePath(".:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(8.5, -0.25, 0, 0.25, 0, 8.5, -4.1657085, 0, 0, 0),
-"times": PackedFloat32Array(0, 24.99425)
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(8.5, -0.25, 0, 0.25, 0, 8.5, -4.1657085, 0, 0, 0, 8.5, -1.6676252, 0, 0, 0),
+"times": PackedFloat32Array(0, 24.99425, 35)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -180,9 +180,9 @@ tracks/1/path = NodePath(".:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(26, -0.25, 0, 0.25, 0, 59.5, -4.1657085, -5.583334, 0, 0),
-"times": PackedFloat32Array(0, 24.99425)
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(26, -0.25, 0, 0.25, 0, 59.5, -4.1657085, -5.583334, 0, 0, 60.3, -1.6676252, -0.13333322, 0, 0),
+"times": PackedFloat32Array(0, 24.99425, 35)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
@@ -191,9 +191,9 @@ tracks/2/path = NodePath(".:position:z")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(8.5, -0.25, 0, 0.25, 0, 8.5, -4.1657085, 0, 0, 0),
-"times": PackedFloat32Array(0, 24.99425)
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(8.5, -0.25, 0, 0.25, 0, 8.5, -4.1657085, 0, 0, 0, 8.5, -1.6676252, 0, 0, 0),
+"times": PackedFloat32Array(0, 24.99425, 35)
 }
 tracks/3/type = "bezier"
 tracks/3/imported = false
@@ -241,7 +241,7 @@ script = ExtResource("1_4ussd")
 [node name="Character" parent="." unique_id=1159670658 instance=ExtResource("1_tq2h6")]
 transform = Transform3D(0.714656, 0, 0.6994761, 0, 1, 0, -0.6994761, 0, 0.714656, 5.5, -25, 9.5)
 oxygen_level = 20.0
-base_oxygen_loss_rate = 1.5
+base_oxygen_loss_rate = 1.2
 base_speed = 1.5
 sprint_speed = 3.0
 jumping_enabled = false
@@ -2746,7 +2746,7 @@ voice_over_file = "temp_end1.mp3"
 
 [node name="JumpScare1" parent="Map/Triggers" unique_id=462872461 instance=ExtResource("27_02h3y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2000003, 0.39999962, -16.5)
-volume_adjust = -8.0
+volume_adjust = -10.0
 
 [node name="JumpScare2" parent="Map/Triggers" unique_id=1503873997 instance=ExtResource("27_02h3y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, -33)
@@ -2833,4 +2833,5 @@ autoplay = true
 bus = &"Ambient"
 
 [node name="Terrain3D" parent="." unique_id=699292965 instance=ExtResource("30_g1x85")]
+visible = false
 script = ExtResource("31_obarj")

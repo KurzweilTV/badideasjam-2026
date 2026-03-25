@@ -771,3 +771,9 @@ target_position = Vector3(0, 0.5, 0)
 
 [node name="EditorModule" type="Node" parent="." unique_id=975202139]
 script = ExtResource("3_v3ckk")
+
+[node name="DeathTimer" type="Timer" parent="." unique_id=407329768]
+wait_time = 15.0
+one_shot = true
+
+[connection signal="timeout" from="DeathTimer" to="." method="_on_timer_timeout"]

@@ -16,6 +16,7 @@ enum KEYS {None, Green, Blue, Orange}
 @onready var hand: Marker3D = $Head/Hand
 @onready var hypoxic_filter: ColorRect = %HypoxicFilter
 @onready var extreme_tint: ColorRect = %ExtremeTint
+@onready var death_timer: Timer = $DeathTimer
 
 var options_menu: Control
 var options_scene = OPTIONS.instantiate()
@@ -56,8 +57,12 @@ var options_scene = OPTIONS.instantiate()
 	set(value):
 		if value == is_extreme_hypoxic:
 			return
-		print("Extreme Hypoxia: %s" % str(value))
 		is_extreme_hypoxic = value
+		if is_extreme_hypoxic:
+			death_timer.start()
+		else:
+			death_timer.stop()
+		print("Extreme Hypoxia: %s" % str(value))
 		extreme_tint.visible = is_extreme_hypoxic
 
 var has_oxygen_mask: bool = false
@@ -198,6 +203,7 @@ var mouseInput : Vector2 = Vector2(0,0)
 
 func _ready():
 	StationStatus.station_oxygen_on.connect(_disable_oxygen)
+	SceneManager.start_ending_cinematic.connect(_disable_player)
 	
 	#It is safe to comment this line if your game doesn't start with the mouse captured
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -579,6 +585,7 @@ func handle_pausing():
 #region Oxygen Handling
 
 func use_oxygen(delta) -> void:
+	if not has_oxygen_mask: return
 	if not oxygen_system_enabled: return
 	oxygen_level -= oxygen_loss_rate * delta
 
@@ -593,7 +600,7 @@ func _update_oxygen_ui() -> void:
 	if not oxygen_bar:
 		return
 
-	create_tween().tween_property(oxygen_bar, "value", oxygen_level, 1.0)
+	create_tween().tween_property(oxygen_bar, "value", oxygen_level, 0.5)
 
 	if oxygen_level <= 5.0:
 		oxygen_bar.modulate = Color.RED
@@ -638,3 +645,10 @@ func set_access(access) -> void:
 func set_crowbar(held: bool) -> void:
 	has_crowbar = held
 	hand._set_crowbar(held)
+
+func _disable_player() -> void:
+	self.queue_free()
+
+func _on_timer_timeout() -> void:
+	print("Player Died")
+	SceneManager.change_scene("res://scenes/SpaceStation.tscn")

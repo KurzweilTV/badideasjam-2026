@@ -24,9 +24,10 @@ func _ready() -> void:
 		anim.play("broken")
 		%DoorInteract.disabled = true
 	if start_open:
+		open_door_instant()
 		%DoorInteract.disabled = true
 	else:
-		close_door()
+		close_door_instant()
 	if special_elevator_door:
 		StationStatus.open_elevator_door.connect(open_elevator)
 		StationStatus.close_elevator_door.connect(close_elevator)
@@ -97,8 +98,20 @@ func open_door(player: Player) -> void:
 		StationStatus.dialog.emit("No access... I need to find an [color=pale_violet_red]employee ID [/color]card.",0.5,StationStatus.player_color,false)
 		
 func close_door() -> void:
+	if not door_open:
+		return
 	anim.play("door_close")
 	$DoorClose.play()
+	door_open = false
+
+func open_door_instant() -> void:
+	anim.play("door_open")
+	anim.seek(anim.current_animation_length, true)
+	door_open = true
+
+func close_door_instant() -> void:
+	anim.play("door_close")
+	anim.seek(anim.current_animation_length, true)
 	door_open = false
 
 func play_crowbar_dialog() -> void:
