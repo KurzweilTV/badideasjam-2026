@@ -778,7 +778,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.75, 0, 0)
 transform = Transform3D(0.9961947, -0.08715574, 0, 0.08715574, 0.9961947, 0, 0, 0, 1, -0.875, 0, 0)
 
 [node name="door_right" type="MeshInstance3D" parent="Decoration/broken_door/door/right" unique_id=1644464023]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+transform = Transform3D(0.99593014, -0.090128504, 0, 0.090128504, 0.99593014, 0, 0, 0, 1, 3.0000002, 0, 0)
 mesh = SubResource("ArrayMesh_ofv1o")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Decoration/broken_door/door/right/door_right" unique_id=1001352085]
@@ -790,7 +790,7 @@ shape = SubResource("ConcavePolygonShape3D_suv11")
 transform = Transform3D(0.99904823, 0.04361939, 0, -0.04361939, 0.99904823, 0, 0, 0, 1, 2.0625, 0, 0)
 
 [node name="door_left" type="MeshInstance3D" parent="Decoration/broken_door/door/left" unique_id=951426988]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+transform = Transform3D(0.9900187, 0.1409358, 0, -0.1409358, 0.9900187, 0, 0, 0, 1, 3.0000002, -2.9802322e-08, 0)
 mesh = SubResource("ArrayMesh_e7oj1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Decoration/broken_door/door/left/door_left" unique_id=506280768]

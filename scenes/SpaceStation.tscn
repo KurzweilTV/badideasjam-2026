@@ -23,12 +23,19 @@
 [ext_resource type="PackedScene" uid="uid://cgh556a8k241h" path="res://props/interactable/cabinet/Cabinet.tscn" id="20_clfuy"]
 [ext_resource type="PackedScene" uid="uid://n1421bub7u63" path="res://props/decorations/strip_lamp/StripLamp.tscn" id="20_l8q6r"]
 [ext_resource type="PackedScene" uid="uid://bexobtvi7plny" path="res://scenes/systems/dialog_trigger.tscn" id="20_x6cfo"]
+[ext_resource type="Script" uid="uid://5h6dq6hdy372" path="res://props/interactable/station_door/station_door.gd" id="21_aongr"]
+[ext_resource type="PackedScene" uid="uid://criho73rgsfve" path="res://props/interactable/station_door/station_door.glb" id="22_bl70s"]
 [ext_resource type="PackedScene" uid="uid://djhnfoywusi7s" path="res://props/interactable/oxygen_mask/OxygenMask.tscn" id="22_clfuy"]
 [ext_resource type="PackedScene" uid="uid://jts7y3j4dkmu" path="res://props/buildings/elevator/elevator.tscn" id="23_lhny8"]
 [ext_resource type="PackedScene" uid="uid://doy1ps6nya7no" path="res://props/interactable/oxygen_bottle/OxygenBottle.tscn" id="23_oqbv7"]
+[ext_resource type="AudioStream" uid="uid://cg7dorfwkgpxw" path="res://props/interactable/station_door/sounds/DoorSlide.mp3" id="23_veg0l"]
+[ext_resource type="AudioStream" uid="uid://hvde0qktlm8x" path="res://props/interactable/station_door/sounds/DoorSlideClose.mp3" id="24_wbqfa"]
+[ext_resource type="AudioStream" uid="uid://dkp0thl8xkh2x" path="res://props/interactable/station_door/sounds/LockedDoor.mp3" id="25_87pdf"]
 [ext_resource type="PackedScene" uid="uid://dyhqsrg6n6fel" path="res://props/interactable/gas_mixing_station/GasMixingConsole.tscn" id="25_oqbv7"]
+[ext_resource type="AudioStream" uid="uid://d02q7soipxyd8" path="res://props/interactable/station_door/sounds/error_008.ogg" id="26_1x1dj"]
 [ext_resource type="PackedScene" uid="uid://cphlm0ashes6h" path="res://scenes/systems/SoundTrigger.tscn" id="27_02h3y"]
 [ext_resource type="PackedScene" uid="uid://dblt6uhkqr5d3" path="res://props/decorations/radio/Radio.tscn" id="27_qybvs"]
+[ext_resource type="AudioStream" uid="uid://bxjaul6jtj6oo" path="res://props/interactable/station_door/sounds/doorandcrowbar.mp3" id="27_v2i75"]
 [ext_resource type="PackedScene" uid="uid://bt1pyoajofld3" path="res://props/interactable/employee_id/employee_id.tscn" id="29_373xn"]
 [ext_resource type="PackedScene" uid="uid://blgynx0ip0p0x" path="res://scenes/asteroid_terrain/terrain_3d.tscn" id="30_g1x85"]
 [ext_resource type="Script" uid="uid://2copcexpr4ls" path="res://scenes/end_game_camera.gd" id="31_81oyj"]
@@ -68,6 +75,9 @@ script/source = "extends Node3D
 func _ready() -> void:
 	self.visible = ceiling_visible
 "
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a282m"]
+size = Vector3(2.9941406, 3.1689453, 0.32592773)
 
 [sub_resource type="GDScript" id="GDScript_4ussd"]
 resource_name = "OxygenMaskBlocker"
@@ -2616,7 +2626,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.4, 0.994122, -21.199999)
 
 [node name="SimonPuzzle" parent="Map/Decorations/Interactables" unique_id=654237784 instance=ExtResource("19_h1mcf")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 64.38425, 1.4611402, -18.03542)
-puzzle_length = 1
 
 [node name="EmployeeId" parent="Map/Decorations/Interactables" unique_id=1876277207 instance=ExtResource("29_373xn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3909886, 1.1370026, -51)
@@ -2624,11 +2633,87 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3909886, 1.1370026, -51)
 [node name="Doors" type="Node3D" parent="Map" unique_id=948699903]
 metadata/_edit_lock_ = true
 
-[node name="Recovery" parent="Map/Doors" unique_id=511145225 instance=ExtResource("3_wvlmu")]
+[node name="Recovery" type="StaticBody3D" parent="Map/Doors" unique_id=511145225]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("21_aongr")
 start_open = true
 door_broken = true
 enabled = false
+interact_hint = "Door"
+metadata/_custom_type_script = "uid://bl7efj28lf80j"
+
+[node name="blockbench_export" parent="Map/Doors/Recovery" unique_id=1245780297 instance=ExtResource("22_bl70s")]
+
+[node name="wall_left" parent="Map/Doors/Recovery/blockbench_export" index="0" unique_id=723611495]
+visible = false
+
+[node name="CollisionShape3D" parent="Map/Doors/Recovery/blockbench_export/wall_left/StaticBody3D" parent_id_path=PackedInt32Array(1245780297, 607808619) index="0" unique_id=917248048]
+visible = false
+
+[node name="wall_right" parent="Map/Doors/Recovery/blockbench_export" index="1" unique_id=1355062188]
+visible = false
+
+[node name="CollisionShape3D" parent="Map/Doors/Recovery/blockbench_export/wall_right/StaticBody3D" parent_id_path=PackedInt32Array(1245780297, 621216723) index="0" unique_id=166714903]
+visible = false
+
+[node name="right" parent="Map/Doors/Recovery/blockbench_export/door" parent_id_path=PackedInt32Array(1245780297, 1086384039) index="0" unique_id=695795355]
+transform = Transform3D(0.9945842, 0.10275781, -0.015589451, -0.10274519, 0.9947064, 0.0016104631, 0.015672415, 0, 0.99987715, -1.5, 0, 0)
+
+[node name="door_right" parent="Map/Doors/Recovery/blockbench_export/door/right" index="0" unique_id=931027431]
+transform = Transform3D(0.9997055, 0.024272181, 4.6174973e-06, -0.024272151, 0.99970543, 0.00038045004, 4.61936e-06, -0.00038045022, 1, 2.9147625, -0.008808136, 0.0013360977)
+
+[node name="CollisionShape3D" parent="Map/Doors/Recovery/blockbench_export/door/right/door_right/StaticBody3D" parent_id_path=PackedInt32Array(1245780297, 984904499) index="0" unique_id=1348156868]
+visible = false
+
+[node name="left" parent="Map/Doors/Recovery/blockbench_export/door" parent_id_path=PackedInt32Array(1245780297, 1086384039) index="1" unique_id=1276764076]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5625, 0, 0)
+
+[node name="door_left" parent="Map/Doors/Recovery/blockbench_export/door/left" index="0" unique_id=523566515]
+transform = Transform3D(0.9741251, -0.21424097, -0.07197972, 0.21365848, 0.97678083, -0.01578758, 0.07369076, 0, 0.99728113, 3.071307, 0, 0)
+
+[node name="CollisionShape3D" parent="Map/Doors/Recovery/blockbench_export/door/left/door_left/StaticBody3D" parent_id_path=PackedInt32Array(1245780297, 1998528772) index="0" unique_id=335045807]
+visible = false
+
+[node name="DoorInteract" type="CollisionShape3D" parent="Map/Doors/Recovery" unique_id=1103378253]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5661483, 0)
+shape = SubResource("BoxShape3D_a282m")
+
+[node name="DoorOpen" type="AudioStreamPlayer3D" parent="Map/Doors/Recovery" unique_id=1004456138]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.757312, 0)
+stream = ExtResource("23_veg0l")
+volume_db = -30.0
+max_polyphony = 4
+bus = &"Sounds"
+
+[node name="DoorClose" type="AudioStreamPlayer3D" parent="Map/Doors/Recovery" unique_id=503916994]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.757312, 0)
+stream = ExtResource("24_wbqfa")
+volume_db = -30.0
+pitch_scale = 1.1
+max_polyphony = 4
+bus = &"Sounds"
+
+[node name="DoorLocked" type="AudioStreamPlayer3D" parent="Map/Doors/Recovery" unique_id=1954124039]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.757312, 0)
+stream = ExtResource("25_87pdf")
+max_polyphony = 4
+bus = &"Sounds"
+
+[node name="AccessError" type="AudioStreamPlayer3D" parent="Map/Doors/Recovery" unique_id=1112788742]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.757312, 0)
+stream = ExtResource("26_1x1dj")
+max_polyphony = 4
+bus = &"Sounds"
+
+[node name="CrowbarOpen" type="AudioStreamPlayer3D" parent="Map/Doors/Recovery" unique_id=503126319]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.757312, 0)
+stream = ExtResource("27_v2i75")
+volume_db = -10.0
+max_polyphony = 4
+bus = &"Sounds"
 
 [node name="MessHall" parent="Map/Doors" unique_id=602461315 instance=ExtResource("3_wvlmu")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -34.55)
@@ -2676,7 +2761,7 @@ interact_hint = "Elevator to Outside"
 metadata/_edit_lock_ = true
 
 [node name="ElectricEffect" parent="Map/Effects" unique_id=1672889911 instance=ExtResource("11_54jyg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, 2, -1.85)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, 2, -1.25)
 
 [node name="PlayerBlocker" type="StaticBody3D" parent="Map/Effects" unique_id=400171655]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.707477)
@@ -2835,3 +2920,5 @@ bus = &"Ambient"
 [node name="Terrain3D" parent="." unique_id=699292965 instance=ExtResource("30_g1x85")]
 visible = false
 script = ExtResource("31_obarj")
+
+[editable path="Map/Doors/Recovery/blockbench_export"]
