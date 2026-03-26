@@ -67,6 +67,8 @@ var options_scene = OPTIONS.instantiate()
 
 var has_oxygen_mask: bool = false
 var oxygen_loss_rate: float = base_oxygen_loss_rate
+## locks the player for things like the tutorial and ending
+@export var player_locked: bool = false
 #endregion
 
 #region Character Export Group
@@ -203,7 +205,7 @@ var mouseInput : Vector2 = Vector2(0,0)
 
 func _ready():
 	StationStatus.station_oxygen_on.connect(_disable_oxygen)
-	SceneManager.start_ending_cinematic.connect(_disable_player)
+	StationStatus.start_ending_cinematic.connect(_disable_player)
 	
 	#It is safe to comment this line if your game doesn't start with the mouse captured
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -306,6 +308,7 @@ func handle_jumping():
 
 
 func handle_movement(delta, input_dir):
+	if player_locked: return # early exit if we're locked
 	var direction = input_dir.rotated(-HEAD.rotation.y)
 	direction = Vector3(direction.x, 0, direction.y)
 	move_and_slide()
@@ -647,7 +650,7 @@ func set_crowbar(held: bool) -> void:
 	hand._set_crowbar(held)
 
 func _disable_player() -> void:
-	self.queue_free()
+	player_locked = true
 
 func _on_timer_timeout() -> void:
 	print("Player Died")
