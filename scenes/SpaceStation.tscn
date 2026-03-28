@@ -63,9 +63,10 @@ glow_enabled = true
 fog_light_color = Color(0, 0, 0, 1)
 fog_density = 0.1
 fog_sky_affect = 0.0
-volumetric_fog_density = 0.0039
-volumetric_fog_emission_energy = 0.0
-volumetric_fog_detail_spread = 6.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.002
+volumetric_fog_albedo = Color(5.198121e-06, 0.709159, 0.9776338, 1)
+volumetric_fog_length = 12.0
 
 [sub_resource type="GDScript" id="GDScript_oqbv7"]
 resource_name = "AutoRoof"
@@ -2098,7 +2099,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -12)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -15)
 
 [node name="Wall138" parent="Map/Walls" unique_id=24407315 instance=ExtResource("3_880v8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -21)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.512216, 0, -20.9932)
 
 [node name="Wall199" parent="Map/Walls" unique_id=13103296 instance=ExtResource("3_880v8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5, 0, -15)
@@ -2997,7 +2998,6 @@ autoplay = true
 bus = &"Ambient"
 
 [node name="Terrain3D" parent="." unique_id=699292965 instance=ExtResource("30_g1x85")]
-visible = false
 script = ExtResource("31_obarj")
 
 [editable path="Map/Doors/Recovery/blockbench_export"]
