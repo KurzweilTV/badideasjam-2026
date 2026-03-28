@@ -11,6 +11,8 @@ enum KEYS {None, Green, Blue, Orange}
 @export var needs_pressureized: bool = false
 ## Only used for the final elevator door
 @export var special_elevator_door: bool = false
+## Only used for the power room door
+@export var visual_crowbar: Node3D = null
 
 var auto_close_time: float = 4.0
 var door_open: bool = false
@@ -62,10 +64,16 @@ func _on_interact(interactor: Player) -> bool:
 		if needs_crowbar:
 			interactor.set_crowbar(false) # This makes the crowbar consumable
 			$CrowbarOpen.play()
+			if visual_crowbar:
+				delay_show_crowbar()
 		else:
 			_start_auto_close_timer()
-
 	return true
+
+func delay_show_crowbar() -> void:
+	await get_tree().create_timer(1.0).timeout
+	visual_crowbar.show()
+	
 
 func _start_auto_close_timer() -> void:
 	auto_close()
