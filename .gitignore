@@ -17,3 +17,4 @@ data_*/
 mono_crash.*.json
 *.DS_Store
 /exports
+addons/terrain_3d/bin/~libterrain.windows.debug.x86_64.dll
