@@ -20,6 +20,7 @@ enum KEYS {None, Green, Blue, Orange}
 
 var options_menu: Control
 var options_scene = OPTIONS.instantiate()
+var is_talking: bool = false
 
 #region Gameplay Export Group
 
@@ -439,6 +440,7 @@ func enter_normal_state():
 		CROUCH_ANIMATION.play_backwards("crouch")
 	state = "normal"
 	oxygen_loss_rate = base_oxygen_loss_rate
+	oxygen_bar.sprint_animation(false)
 	speed = base_speed
 
 func enter_crouch_state():
@@ -455,6 +457,7 @@ func enter_sprint_state():
 		CROUCH_ANIMATION.play_backwards("crouch")
 	state = "sprinting"
 	oxygen_loss_rate = base_oxygen_loss_rate * sprint_oxygen_multiplier
+	oxygen_bar.sprint_animation(true)
 	speed = sprint_speed
 
 #endregion
@@ -655,3 +658,6 @@ func _disable_player() -> void:
 func _on_timer_timeout() -> void:
 	print("Player Died")
 	SceneManager.change_scene("res://scenes/SpaceStation.tscn")
+	
+func _set_talking(status: bool) -> void:
+	is_talking = status

@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://hutuis63hgev" path="res://characters/player/character.gd" id="1_0t4e8"]
 [ext_resource type="Shader" uid="uid://dtdq85mbpv26v" path="res://shaders/pixel_camera.gdshader" id="2_bgcnw"]
 [ext_resource type="Script" uid="uid://cw2dxwfisutph" path="res://characters/player/flashlight.gd" id="2_k5tm5"]
-[ext_resource type="FontFile" uid="uid://cyq6ofxu3mgii" path="res://addons/fonts/CascadiaCode.ttf" id="3_hxnlu"]
 [ext_resource type="Script" uid="uid://dgfl3skp075ft" path="res://characters/player/EditorModule.gd" id="3_v3ckk"]
 [ext_resource type="Script" uid="uid://u5u7xxlvmcxx" path="res://characters/player/debug.gd" id="3_x1wcc"]
 [ext_resource type="AudioStream" uid="uid://cji82wy8pws7c" path="res://ui/sounds/switch11.ogg" id="3_ydn43"]
@@ -13,6 +12,7 @@
 [ext_resource type="LabelSettings" uid="uid://chg1id0jihetb" path="res://ui/labels/sub_heading.tres" id="9_d6s3g"]
 [ext_resource type="Theme" uid="uid://b11dr1iiq0j81" path="res://ui/themes/menu_theme.tres" id="10_x0k6q"]
 [ext_resource type="Script" uid="uid://b3vuaqyjc5mv6" path="res://characters/player/dialog_system.gd" id="11_plpq5"]
+[ext_resource type="AudioStream" uid="uid://dn7f2651ctpxa" path="res://characters/player/voiceover/zeer/breath_sound.mp3" id="11_wbtgf"]
 [ext_resource type="FontFile" uid="uid://jojpfgda2e6k" path="res://addons/fonts/Strogo.ttf" id="12_ont2n"]
 [ext_resource type="AudioStream" uid="uid://dmv6ltstx5e7f" path="res://characters/player/voiceover/temporary/dialog_01.mp3" id="13_2rsth"]
 [ext_resource type="PackedScene" uid="uid://cnrmcq1jjbyx1" path="res://props/interactable/crowbar/crowbar.glb" id="15_vyhkh"]
@@ -176,7 +176,7 @@ colors = PackedColorArray(0.91616625, 0.94451416, 1, 1, 0, 0, 0, 1, 0.32915866, 
 gradient = SubResource("Gradient_bgcnw")
 fill = 1
 fill_from = Vector2(0.50427353, 0.491453)
-fill_to = Vector2(0.52136755, 0.08974359)
+fill_to = Vector2(0.5, 0.017094018)
 
 [sub_resource type="Animation" id="Animation_gh776"]
 resource_name = "RESET"
@@ -448,7 +448,7 @@ MarginContainer/constants/margin_right = 10
 MarginContainer/constants/margin_top = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rfk2d"]
-bg_color = Color(0.5372549, 0, 0.21176471, 0.18039216)
+bg_color = Color(0.5372549, 0, 0.21176471, 0.3529412)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
@@ -463,9 +463,15 @@ expand_margin_left = 4.0
 expand_margin_top = 4.0
 expand_margin_right = 4.0
 expand_margin_bottom = 4.0
+shadow_color = Color(0, 0, 0, 0.21568628)
+shadow_size = 8
+shadow_offset = Vector2(5, 5)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hxnlu"]
 bg_color = Color(1, 1, 1, 1)
+border_width_bottom = 12
+border_color = Color(0.8, 0.14901961, 0.16470589, 1)
+border_blend = true
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -475,11 +481,149 @@ expand_margin_top = 2.0
 expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 
+[sub_resource type="GDScript" id="GDScript_wbtgf"]
+resource_name = "BreathSounds"
+script/source = "extends ProgressBar
+
+@export var character: Player
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var audio_stream_player: AudioStreamPlayer = $BreathSound
+
+func sprint_animation(status: bool) -> void:
+	if status:
+		animation_player.play(\"sprinting\")
+	else:
+		animation_player.stop(true)
+
+func breath() -> void:
+	if character.is_talking:
+		print(\"character.is_talking: %s\" % str(character.is_talking))
+		return
+	audio_stream_player.pitch_scale = (randf_range(0.95, 1.00))
+	audio_stream_player.play()
+	
+"
+
 [sub_resource type="LabelSettings" id="LabelSettings_hxnlu"]
 font = ExtResource("12_ont2n")
 font_size = 28
-outline_size = 4
+outline_size = 8
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_wbtgf"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.27058825, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.2784314, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_ta105"]
+resource_name = "sprinting"
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.083333336, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0.27058825, -0.25, 0, 0.25, 0, 1, -0.083333336, -0.12156862, 0, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0.2784314, -0.25, 0, 0.25, 0, 1, -0.083333336, -0.12026143, 0, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.083333336, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"breath"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wbtgf"]
+_data = {
+&"RESET": SubResource("Animation_wbtgf"),
+&"sprinting": SubResource("Animation_ta105")
+}
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_plpq5"]
 content_margin_left = 20.0
@@ -560,7 +704,6 @@ shadow_opacity = 0.54
 shadow_blur = 1.047
 spot_range = 10.0
 spot_angle = 55.0
-spot_angle_attenuation = 0.43527558
 script = ExtResource("2_k5tm5")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Head/Flashlight" unique_id=1084560728]
@@ -654,9 +797,10 @@ layout_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="UserInterface/DebugPanel/MarginContainer" unique_id=1799890380]
 layout_mode = 2
 
-[node name="OxygenBar" type="ProgressBar" parent="UserInterface" unique_id=680660912]
+[node name="OxygenBar" type="ProgressBar" parent="UserInterface" unique_id=680660912 node_paths=PackedStringArray("character")]
 unique_name_in_owner = true
 visible = false
+modulate = Color(1, 0.27058825, 0.2784314, 1)
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -671,25 +815,34 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 5
-theme_override_fonts/font = ExtResource("3_hxnlu")
-theme_override_font_sizes/font_size = 21
+theme_override_constants/outline_size = 18
+theme_override_fonts/font = ExtResource("12_ont2n")
+theme_override_font_sizes/font_size = 28
 theme_override_styles/background = SubResource("StyleBoxFlat_rfk2d")
 theme_override_styles/fill = SubResource("StyleBoxFlat_hxnlu")
 step = 0.1
-value = 57.0
+value = 42.9
 fill_mode = 3
+script = SubResource("GDScript_wbtgf")
+character = NodePath("../..")
 
 [node name="Label" type="Label" parent="UserInterface/OxygenBar" unique_id=1479658394]
 layout_mode = 0
-offset_left = -16.0
+offset_left = -9.0
 offset_top = -38.0
-offset_right = 68.0
+offset_right = 108.0
 offset_bottom = -9.0
 text = "Oxygen"
 label_settings = SubResource("LabelSettings_hxnlu")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UserInterface/OxygenBar" unique_id=1868456367]
+libraries/ = SubResource("AnimationLibrary_wbtgf")
+
+[node name="BreathSound" type="AudioStreamPlayer" parent="UserInterface/OxygenBar" unique_id=434495238]
+stream = ExtResource("11_wbtgf")
+volume_db = -20.0
 
 [node name="InteractCursor" type="TextureRect" parent="UserInterface" unique_id=1064979480]
 unique_name_in_owner = true
@@ -705,7 +858,8 @@ offset_right = 32.0
 offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.8, 0.8)
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(24, 24)
 texture = ExtResource("4_oetk0")
 
 [node name="InteractLabel" type="Label" parent="UserInterface" unique_id=1742606593]
@@ -726,7 +880,7 @@ label_settings = ExtResource("9_d6s3g")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="DialogSystem" type="PanelContainer" parent="UserInterface" unique_id=1597831625]
+[node name="DialogSystem" type="PanelContainer" parent="UserInterface" unique_id=1597831625 node_paths=PackedStringArray("character")]
 custom_minimum_size = Vector2(400, 100)
 layout_mode = 1
 anchors_preset = 7
@@ -743,6 +897,7 @@ grow_vertical = 0
 theme = ExtResource("10_x0k6q")
 theme_override_styles/panel = SubResource("StyleBoxFlat_plpq5")
 script = ExtResource("11_plpq5")
+character = NodePath("../..")
 
 [node name="DialogBox" type="RichTextLabel" parent="UserInterface/DialogSystem" unique_id=525112492]
 layout_mode = 2

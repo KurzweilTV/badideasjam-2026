@@ -1,6 +1,8 @@
 class_name Dialog
 extends PanelContainer
 
+@export var character: Player
+
 @onready var dialog_box: RichTextLabel = $DialogBox
 @onready var typing_click: AudioStreamPlayer = $TypingClick
 @onready var voice_over: AudioStreamPlayer3D = $VoiceOver
@@ -41,9 +43,13 @@ func _new_message(message: String, delay: float, border: Color, tutorial: bool =
 		typing_speed = base_typing_speed
 		
 	await get_tree().create_timer(delay).timeout
-	if vo_file != "": # plays VO file, if it exists
+	if vo_file != "":
 		voice_over.stream = load("res://characters/player/voiceover/zeer/" + vo_file)
 		voice_over.play()
+		character._set_talking(true)
+		await voice_over.finished
+		character._set_talking(false)
+
 	_set_border_color(border)
 	show()
 	dialog_box.text = message

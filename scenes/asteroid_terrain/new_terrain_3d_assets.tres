@@ -1,0 +1,31 @@
+[gd_resource type="Terrain3DAssets" format=3 uid="uid://bq1xjxhcbufij"]
+
+[ext_resource type="Texture2D" uid="uid://gp7qmdo6iblj" path="res://scenes/asteroid_terrain/packed_albedo_height.png" id="1_r5db4"]
+[ext_resource type="Texture2D" uid="uid://q0bvm1ufvy81" path="res://scenes/asteroid_terrain/packed_normal_roughness.png" id="2_r3787"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_obarj"]
+transparency = 4
+cull_mode = 2
+vertex_color_use_as_albedo = true
+backlight_enabled = true
+backlight = Color(0.5, 0.5, 0.5, 1)
+distance_fade_mode = 1
+distance_fade_min_distance = 128.0
+distance_fade_max_distance = 96.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_dbu2b"]
+generated_type = 1
+height_offset = 0.5
+material_override = SubResource("StandardMaterial3D_obarj")
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 128.0
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_r5db4"]
+name = "packed_albedo_height"
+albedo_texture = ExtResource("1_r5db4")
+normal_texture = ExtResource("2_r3787")
+
+[resource]
+mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_dbu2b")])
+texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_r5db4")])
