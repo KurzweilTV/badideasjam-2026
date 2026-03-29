@@ -4,7 +4,7 @@ extends Interactable
 @onready var sound: AudioStreamPlayer3D = get_node_or_null("Sound")
 
 func _on_interact(_interactor: Player) -> bool:
-	_interactor.give_oxygen(40)
+	_interactor.give_oxygen(35)
 	hide()
 
 	if sound:

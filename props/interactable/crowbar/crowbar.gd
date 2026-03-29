@@ -2,7 +2,7 @@ extends Pickup
 
 func _on_interact(_interactor: Player) -> bool:
 	_interactor.set_crowbar(true)
-	crowbar_pickup_dialog()
+	#crowbar_pickup_dialog()
 	self.queue_free()
 	return true
 

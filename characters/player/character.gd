@@ -654,7 +654,8 @@ func set_crowbar(held: bool) -> void:
 
 func _disable_player() -> void:
 	player_locked = true
-
+	
+	
 func _on_timer_timeout() -> void:
 	print("Player Died")
 	SceneManager.change_scene("res://scenes/SpaceStation.tscn")

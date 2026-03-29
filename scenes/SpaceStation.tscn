@@ -67,7 +67,8 @@ fog_density = 0.1
 fog_sky_affect = 0.0
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.003
-volumetric_fog_albedo = Color(5.198121e-06, 0.709159, 0.9776338, 1)
+volumetric_fog_albedo = Color(0.48865944, 0.85179347, 0.99999994, 1)
+volumetric_fog_emission_energy = 0.0
 volumetric_fog_length = 12.0
 
 [sub_resource type="GDScript" id="GDScript_oqbv7"]
@@ -2327,6 +2328,29 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.60452, 0.13124871, -17.28
 [node name="Cabinet5" parent="Map/Decorations/Furniture" unique_id=419465492 instance=ExtResource("20_clfuy")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -27.10452, 0.13124871, -18.534801)
 
+[node name="pickaxe1" parent="Map/Decorations/Furniture" unique_id=1664364921 instance=ExtResource("36_wbqfa")]
+transform = Transform3D(1, 0, 0, 0, 0.8381569, -0.5454292, 0, 0.5454292, 0.8381569, 35.193787, 0.24102783, -17.034481)
+
+[node name="pickaxe2" parent="Map/Decorations/Furniture" unique_id=1354051819 instance=ExtResource("36_wbqfa")]
+transform = Transform3D(1, 0, 0, 0, 0.8381569, -0.5454292, 0, 0.5454292, 0.8381569, 36.193787, 0.24102783, -17.034481)
+
+[node name="pickaxe3" parent="Map/Decorations/Furniture" unique_id=248148149 instance=ExtResource("36_wbqfa")]
+transform = Transform3D(1, 0, 0, 0, -0.09478599, -0.9954977, 0, 0.9954977, -0.09478599, 36.693787, 0.24102783, -17.534481)
+
+[node name="mininghelm" parent="Map/Decorations/Furniture" unique_id=292930112 instance=ExtResource("37_87pdf")]
+transform = Transform3D(-0.9660026, 0, 0.2585324, 0, 1, 0, -0.2585324, 0, -0.9660026, 34.886982, -1.1249981, -17.071716)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Map/Decorations/Furniture/mininghelm" unique_id=300861489]
+transform = Transform3D(-0.96491116, 0, 0.26257646, 0, 1, 0, -0.26257646, 0, -0.96491116, 0.016389847, 1.3304482, 0.06124115)
+light_color = Color(0.9999996, 0.98259383, 0.395238, 1)
+light_energy = 2.0
+spot_range = 10.0
+spot_attenuation = 2.0
+spot_angle = 30.0
+
+[node name="OxygenBottle" parent="Map/Decorations/Furniture" unique_id=385678588 instance=ExtResource("23_oqbv7")]
+transform = Transform3D(0.74993795, 0.6615082, 0, -0.6615082, 0.74993795, 0, 0, 0, 1, 0.79743487, 0.16251755, -3.969156)
+
 [node name="Decals" type="Node3D" parent="Map/Decorations" unique_id=2088893780]
 metadata/_edit_lock_ = true
 
@@ -2680,34 +2704,34 @@ metadata/_custom_type_script = "uid://bl7efj28lf80j"
 
 [node name="blockbench_export" parent="Map/Doors/Recovery" unique_id=1245780297 instance=ExtResource("22_bl70s")]
 
-[node name="wall_left" parent="Map/Doors/Recovery/blockbench_export" index="0" unique_id=723611495]
+[node name="wall_left" parent="Map/Doors/Recovery/blockbench_export" index="0" unique_id=1812762948]
 visible = false
 
-[node name="CollisionShape3D" parent="Map/Doors/Recovery/blockbench_export/wall_left/StaticBody3D" parent_id_path=PackedInt32Array(1245780297, 607808619) index="0" unique_id=917248048]
+[node name="CollisionShape3D" parent="Map/Doors/Recovery/blockbench_export/wall_left/StaticBody3D" parent_id_path=PackedInt32Array(1245780297, 1890509996) index="0" unique_id=703527549]
 visible = false
 
-[node name="wall_right" parent="Map/Doors/Recovery/blockbench_export" index="1" unique_id=1355062188]
+[node name="wall_right" parent="Map/Doors/Recovery/blockbench_export" index="1" unique_id=893194255]
 visible = false
 
-[node name="CollisionShape3D" parent="Map/Doors/Recovery/blockbench_export/wall_right/StaticBody3D" parent_id_path=PackedInt32Array(1245780297, 621216723) index="0" unique_id=166714903]
+[node name="CollisionShape3D" parent="Map/Doors/Recovery/blockbench_export/wall_right/StaticBody3D" parent_id_path=PackedInt32Array(1245780297, 906621449) index="0" unique_id=1763445546]
 visible = false
 
-[node name="right" parent="Map/Doors/Recovery/blockbench_export/door" parent_id_path=PackedInt32Array(1245780297, 1086384039) index="0" unique_id=695795355]
+[node name="right" parent="Map/Doors/Recovery/blockbench_export/door" parent_id_path=PackedInt32Array(1245780297, 838679528) index="0" unique_id=1392429800]
 transform = Transform3D(0.9945842, 0.10275781, -0.015589451, -0.10274519, 0.9947064, 0.0016104631, 0.015672415, 0, 0.99987715, -1.5, 0, 0)
 
-[node name="door_right" parent="Map/Doors/Recovery/blockbench_export/door/right" index="0" unique_id=931027431]
+[node name="door_right" parent="Map/Doors/Recovery/blockbench_export/door/right" index="0" unique_id=1644464023]
 transform = Transform3D(0.9997055, 0.024272181, 4.6174973e-06, -0.024272151, 0.99970543, 0.00038045004, 4.61936e-06, -0.00038045022, 1, 2.9147625, -0.008808136, 0.0013360977)
 
-[node name="CollisionShape3D" parent="Map/Doors/Recovery/blockbench_export/door/right/door_right/StaticBody3D" parent_id_path=PackedInt32Array(1245780297, 984904499) index="0" unique_id=1348156868]
+[node name="CollisionShape3D" parent="Map/Doors/Recovery/blockbench_export/door/right/door_right/StaticBody3D" parent_id_path=PackedInt32Array(1245780297, 1001352085) index="0" unique_id=1137991928]
 visible = false
 
-[node name="left" parent="Map/Doors/Recovery/blockbench_export/door" parent_id_path=PackedInt32Array(1245780297, 1086384039) index="1" unique_id=1276764076]
+[node name="left" parent="Map/Doors/Recovery/blockbench_export/door" parent_id_path=PackedInt32Array(1245780297, 838679528) index="1" unique_id=817354359]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5625, 0, 0)
 
-[node name="door_left" parent="Map/Doors/Recovery/blockbench_export/door/left" index="0" unique_id=523566515]
+[node name="door_left" parent="Map/Doors/Recovery/blockbench_export/door/left" index="0" unique_id=951426988]
 transform = Transform3D(0.9741251, -0.21424097, -0.07197972, 0.21365848, 0.97678083, -0.01578758, 0.07369076, 0, 0.99728113, 3.071307, 0, 0)
 
-[node name="CollisionShape3D" parent="Map/Doors/Recovery/blockbench_export/door/left/door_left/StaticBody3D" parent_id_path=PackedInt32Array(1245780297, 1998528772) index="0" unique_id=335045807]
+[node name="CollisionShape3D" parent="Map/Doors/Recovery/blockbench_export/door/left/door_left/StaticBody3D" parent_id_path=PackedInt32Array(1245780297, 506280768) index="0" unique_id=733039273]
 visible = false
 
 [node name="DoorInteract" type="CollisionShape3D" parent="Map/Doors/Recovery" unique_id=1103378253]
@@ -2773,28 +2797,28 @@ metadata/_custom_type_script = "uid://bl7efj28lf80j"
 
 [node name="blockbench_export" parent="Map/Doors/PowerControl" unique_id=1380642194 instance=ExtResource("22_bl70s")]
 
-[node name="wall_left" parent="Map/Doors/PowerControl/blockbench_export" index="0" unique_id=723611495]
+[node name="wall_left" parent="Map/Doors/PowerControl/blockbench_export" index="0" unique_id=1812762948]
 visible = false
 
-[node name="CollisionShape3D" parent="Map/Doors/PowerControl/blockbench_export/wall_left/StaticBody3D" parent_id_path=PackedInt32Array(1380642194, 607808619) index="0" unique_id=917248048]
+[node name="CollisionShape3D" parent="Map/Doors/PowerControl/blockbench_export/wall_left/StaticBody3D" parent_id_path=PackedInt32Array(1380642194, 1890509996) index="0" unique_id=703527549]
 visible = false
 
-[node name="wall_right" parent="Map/Doors/PowerControl/blockbench_export" index="1" unique_id=1355062188]
+[node name="wall_right" parent="Map/Doors/PowerControl/blockbench_export" index="1" unique_id=893194255]
 visible = false
 
-[node name="CollisionShape3D" parent="Map/Doors/PowerControl/blockbench_export/wall_right/StaticBody3D" parent_id_path=PackedInt32Array(1380642194, 621216723) index="0" unique_id=166714903]
+[node name="CollisionShape3D" parent="Map/Doors/PowerControl/blockbench_export/wall_right/StaticBody3D" parent_id_path=PackedInt32Array(1380642194, 906621449) index="0" unique_id=1763445546]
 visible = false
 
-[node name="right" parent="Map/Doors/PowerControl/blockbench_export/door" parent_id_path=PackedInt32Array(1380642194, 1086384039) index="0" unique_id=695795355]
+[node name="right" parent="Map/Doors/PowerControl/blockbench_export/door" parent_id_path=PackedInt32Array(1380642194, 838679528) index="0" unique_id=1392429800]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0)
 
-[node name="CollisionShape3D" parent="Map/Doors/PowerControl/blockbench_export/door/right/door_right/StaticBody3D" parent_id_path=PackedInt32Array(1380642194, 984904499) index="0" unique_id=1348156868]
+[node name="CollisionShape3D" parent="Map/Doors/PowerControl/blockbench_export/door/right/door_right/StaticBody3D" parent_id_path=PackedInt32Array(1380642194, 1001352085) index="0" unique_id=1137991928]
 visible = false
 
-[node name="left" parent="Map/Doors/PowerControl/blockbench_export/door" parent_id_path=PackedInt32Array(1380642194, 1086384039) index="1" unique_id=1276764076]
+[node name="left" parent="Map/Doors/PowerControl/blockbench_export/door" parent_id_path=PackedInt32Array(1380642194, 838679528) index="1" unique_id=817354359]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5625, 0, 0)
 
-[node name="CollisionShape3D" parent="Map/Doors/PowerControl/blockbench_export/door/left/door_left/StaticBody3D" parent_id_path=PackedInt32Array(1380642194, 1998528772) index="0" unique_id=335045807]
+[node name="CollisionShape3D" parent="Map/Doors/PowerControl/blockbench_export/door/left/door_left/StaticBody3D" parent_id_path=PackedInt32Array(1380642194, 506280768) index="0" unique_id=733039273]
 visible = false
 
 [node name="DoorInteract" type="CollisionShape3D" parent="Map/Doors/PowerControl" unique_id=988653951]
@@ -2976,26 +3000,6 @@ show_terrain = true
 [node name="Radio" parent="Map/Triggers" unique_id=71862398 instance=ExtResource("27_qybvs")]
 transform = Transform3D(-0.39048275, 0, -0.6982286, 0, 0.8, 0, 0.6982286, 0, -0.39048275, -2.4216309, 1.1180611, -50.660103)
 
-[node name="pickaxe1" parent="Map/Triggers" unique_id=1664364921 instance=ExtResource("36_wbqfa")]
-transform = Transform3D(1, 0, 0, 0, 0.8381569, -0.5454292, 0, 0.5454292, 0.8381569, 35.193787, 0.24102783, -17.034481)
-
-[node name="pickaxe2" parent="Map/Triggers" unique_id=1354051819 instance=ExtResource("36_wbqfa")]
-transform = Transform3D(1, 0, 0, 0, 0.8381569, -0.5454292, 0, 0.5454292, 0.8381569, 36.193787, 0.24102783, -17.034481)
-
-[node name="pickaxe3" parent="Map/Triggers" unique_id=248148149 instance=ExtResource("36_wbqfa")]
-transform = Transform3D(1, 0, 0, 0, -0.09478599, -0.9954977, 0, 0.9954977, -0.09478599, 36.693787, 0.24102783, -17.534481)
-
-[node name="mininghelm" parent="Map/Triggers" unique_id=292930112 instance=ExtResource("37_87pdf")]
-transform = Transform3D(-0.9660026, 0, 0.2585324, 0, 1, 0, -0.2585324, 0, -0.9660026, 34.886982, -1.1249981, -17.071716)
-
-[node name="SpotLight3D" type="SpotLight3D" parent="Map/Triggers/mininghelm" unique_id=300861489]
-transform = Transform3D(-0.96491116, 0, 0.26257646, 0, 1, 0, -0.26257646, 0, -0.96491116, 0.016389847, 1.3304482, 0.06124115)
-light_color = Color(0.9999996, 0.98259383, 0.395238, 1)
-light_energy = 2.0
-spot_range = 10.0
-spot_attenuation = 2.0
-spot_angle = 30.0
-
 [node name="Pickups" type="Node3D" parent="Map" unique_id=1066930469]
 metadata/_edit_lock_ = true
 
@@ -3007,7 +3011,7 @@ transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70
 collision_mask = 3
 freeze = true
 
-[node name="OxygenBottle" parent="Map/Pickups" unique_id=385678588 instance=ExtResource("23_oqbv7")]
+[node name="OxygenBottle" parent="Map/Pickups" unique_id=446693073 instance=ExtResource("23_oqbv7")]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, -27, 0.5, -17)
 
 [node name="OxygenBottle2" parent="Map/Pickups" unique_id=517925478 instance=ExtResource("23_oqbv7")]

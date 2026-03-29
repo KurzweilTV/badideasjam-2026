@@ -12,8 +12,8 @@ signal puzzle_complete
 @onready var oxygen_light: ColorRect = %OxygenLight
 @onready var gas_fill: AudioStreamPlayer = $GasFill
 
-@export var fill_rate: float = 30.0
-@export var drain_rate: float = 4.0
+@export var fill_rate: float = 35.0
+@export var drain_rate: float = 5.0
 @export var nitrogen_target: float = 78.0
 @export var oxygen_target: float = 22.0
 @export var tolerance: float = 6.0
