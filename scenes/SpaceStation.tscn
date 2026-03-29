@@ -38,10 +38,8 @@
 [ext_resource type="AudioStream" uid="uid://bxjaul6jtj6oo" path="res://props/interactable/station_door/sounds/doorandcrowbar.mp3" id="27_v2i75"]
 [ext_resource type="PackedScene" uid="uid://bt1pyoajofld3" path="res://props/interactable/employee_id/employee_id.tscn" id="29_373xn"]
 [ext_resource type="PackedScene" uid="uid://cnrmcq1jjbyx1" path="res://props/interactable/crowbar/crowbar.glb" id="29_bl70s"]
-[ext_resource type="PackedScene" uid="uid://blgynx0ip0p0x" path="res://scenes/asteroid_terrain/terrain_3d.tscn" id="30_g1x85"]
 [ext_resource type="Script" uid="uid://2copcexpr4ls" path="res://scenes/end_game_camera.gd" id="31_81oyj"]
 [ext_resource type="AudioStream" uid="uid://b0o620o8fbvbk" path="res://audio/music_cues/dispair.mp3" id="31_26711"]
-[ext_resource type="Script" uid="uid://8d1g3sgpxqbi" path="res://scenes/asteroid_terrain/terrain_3d.gd" id="31_obarj"]
 [ext_resource type="PackedScene" uid="uid://dcwnnnp78efm6" path="res://scenes/systems/SignalTrigger.tscn" id="34_dbu2b"]
 [ext_resource type="Terrain3DMaterial" uid="uid://cfwd6qfa376dc" path="res://scenes/asteroid_terrain/new_terrain_3d_material.tres" id="43_veg0l"]
 [ext_resource type="Terrain3DAssets" uid="uid://bq1xjxhcbufij" path="res://scenes/asteroid_terrain/new_terrain_3d_assets.tres" id="44_wbqfa"]
@@ -2999,12 +2997,14 @@ volume_db = -10.0
 autoplay = true
 bus = &"Ambient"
 
-[node name="Terrain3D" parent="." unique_id=699292965 instance=ExtResource("30_g1x85")]
+[node name="Terrain3D" type="Terrain3D" parent="." unique_id=1675777155]
+data_directory = "res://scenes/asteroid_terrain/data/"
 material = ExtResource("43_veg0l")
 assets = ExtResource("44_wbqfa")
 collision_mode = 0
 cull_margin = 400.0
-script = ExtResource("31_obarj")
+top_level = true
+metadata/_edit_lock_ = true
 
 [editable path="Map/Doors/Recovery/blockbench_export"]
 [editable path="Map/Doors/PowerControl/blockbench_export"]
