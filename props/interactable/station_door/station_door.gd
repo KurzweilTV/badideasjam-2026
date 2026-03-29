@@ -103,7 +103,7 @@ func open_door(player: Player) -> void:
 		door_open = true
 	else: 
 		$AccessError.play()
-		StationStatus.dialog.emit("No access... I need to find an [color=pale_violet_red]employee ID [/color]card.",0.5,StationStatus.player_color,false)
+		StationStatus.dialog.emit("Locked... Maybe I can open this with an [color=pale_violet_red]ID card[/color].",0.5,StationStatus.player_color,false)
 		
 func close_door() -> void:
 	if not door_open:
@@ -128,7 +128,7 @@ func play_crowbar_dialog() -> void:
 		0.5,
 		StationStatus.player_color,
 		false,
-		"crowbar1.wav"
+		"crowbar.wav"
 	)
 
 func _set_powerup_state(status) -> void:

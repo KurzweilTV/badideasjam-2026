@@ -254,7 +254,7 @@ _data = {
 script = ExtResource("1_4ussd")
 
 [node name="Character" parent="." unique_id=1159670658 instance=ExtResource("1_tq2h6")]
-transform = Transform3D(0.714656, 0, 0.6994761, 0, 1, 0, -0.6994761, 0, 0.714656, 5.5, -25, 9.5)
+transform = Transform3D(0.714656, 0, 0.6994761, 0, 1, 0, -0.6994761, 0, 0.714656, 4, -24, 9)
 oxygen_level = 20.0
 base_oxygen_loss_rate = 1.2
 base_speed = 1.5
@@ -2841,6 +2841,11 @@ transform = Transform3D(1.9106855e-15, -4.371139e-08, -1, -1, -4.371139e-08, 0, 
 special_elevator_door = true
 interact_hint = "Elevator to Outside"
 
+[node name="DialogTrigger" parent="Map/Doors" unique_id=1157176842 instance=ExtResource("20_x6cfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.24294, 1, -18.074423)
+message = "Once I unlock this elevator, I can get out of here.."
+voice_over_file = "elevator.wav"
+
 [node name="Effects" type="Node3D" parent="Map" unique_id=229703132]
 metadata/_edit_lock_ = true
 
@@ -2874,7 +2879,7 @@ delay = 0.0
 trigger_area = SubResource("BoxShape3D_5woyl")
 voice_over_file = "apples1.wav"
 
-[node name="MessHall" parent="Map/Triggers" unique_id=1157176842 instance=ExtResource("20_x6cfo")]
+[node name="MessHall" parent="Map/Triggers" unique_id=814150175 instance=ExtResource("20_x6cfo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6499996, -36.5)
 message = "A mess hall.. completely abandoned"
 delay = 0.0
@@ -2903,15 +2908,16 @@ voice_over_file = "whereiseveryone.wav"
 [node name="OxygenMask" parent="Map/Triggers" unique_id=31452156 instance=ExtResource("20_x6cfo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -0.18711495)
 tutorial_force = true
-message = "I should find something to help me breathe before I go out."
+message = "I need to grab an [color=green]oxygen mask [/color]first."
 delay = 0.0
+voice_over_file = "oxygenmask.wav"
 
 [node name="EndGame" parent="Map/Triggers" unique_id=614341325 instance=ExtResource("20_x6cfo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57, 52.21505, -18)
 endgame = true
-message = "No.... it can't be...."
-delay = 5.0
-voice_over_file = "temp_end1.mp3"
+message = "What... no.. it can't be. I'm not on Earth.."
+delay = 7.0
+voice_over_file = "endsequence.wav"
 
 [node name="JumpScare1" parent="Map/Triggers" unique_id=462872461 instance=ExtResource("27_02h3y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2000003, 0.39999962, -16.5)
@@ -2991,7 +2997,7 @@ libraries/ = SubResource("AnimationLibrary_81oyj")
 [node name="DispairCue" type="AudioStreamPlayer" parent="EndGameCamera" unique_id=627911547]
 unique_name_in_owner = true
 stream = ExtResource("31_26711")
-volume_db = -8.0
+volume_db = -12.0
 pitch_scale = 0.9
 max_polyphony = 2
 

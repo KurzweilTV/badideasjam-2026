@@ -7,7 +7,7 @@ extends PanelContainer
 @onready var typing_click: AudioStreamPlayer = $TypingClick
 @onready var voice_over: AudioStreamPlayer3D = $VoiceOver
 
-var base_typing_speed: float = 12.0
+var base_typing_speed: float = 16.0
 var typing_speed: float = 15.0 
 var char_progress: float = 0.0
 var typing: bool = false
