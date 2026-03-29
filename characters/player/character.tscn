@@ -842,7 +842,7 @@ libraries/ = SubResource("AnimationLibrary_wbtgf")
 
 [node name="BreathSound" type="AudioStreamPlayer" parent="UserInterface/OxygenBar" unique_id=434495238]
 stream = ExtResource("11_wbtgf")
-volume_db = -20.0
+volume_db = -25.0
 
 [node name="InteractCursor" type="TextureRect" parent="UserInterface" unique_id=1064979480]
 unique_name_in_owner = true

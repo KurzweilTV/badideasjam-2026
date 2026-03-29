@@ -40,13 +40,13 @@ _shader_parameters = {
 &"noise_texture": SubResource("NoiseTexture2D_1x1dj"),
 &"projection_threshold": 0.8,
 &"world_noise_fragment_normals": false,
-&"world_noise_height": 64.0,
+&"world_noise_height": 64.0000009536768,
 &"world_noise_lod_distance": 7500.0,
-&"world_noise_max_octaves": 4,
+&"world_noise_max_octaves": 6,
 &"world_noise_min_octaves": 2,
 &"world_noise_offset": Vector3(0, 0, 0),
 &"world_noise_region_blend": 0.94999998062826,
-&"world_noise_scale": 5.5999998804168
+&"world_noise_scale": 5.08999989181632
 }
 world_background = 2
 texture_filtering = 1

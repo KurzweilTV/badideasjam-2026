@@ -27,7 +27,7 @@ func _process(delta: float) -> void:
 	elif typing:
 		typing = false
 		waiting_to_hide = true
-		hide_timer = 3.0
+		hide_timer = 1.5
 
 	if waiting_to_hide:
 		hide_timer -= delta
@@ -47,8 +47,6 @@ func _new_message(message: String, delay: float, border: Color, tutorial: bool =
 		voice_over.stream = load("res://characters/player/voiceover/zeer/" + vo_file)
 		voice_over.play()
 		character._set_talking(true)
-		await voice_over.finished
-		character._set_talking(false)
 
 	_set_border_color(border)
 	show()
@@ -57,6 +55,8 @@ func _new_message(message: String, delay: float, border: Color, tutorial: bool =
 	char_progress = 0.0
 	typing = true
 	waiting_to_hide = false
+	await voice_over.finished
+	character._set_talking(false)
 	
 func _set_border_color(new_color: Color) -> void:
 	var style: StyleBoxFlat = get_theme_stylebox("panel").duplicate()
