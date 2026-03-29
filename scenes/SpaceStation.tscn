@@ -3002,8 +3002,8 @@ bus = &"Ambient"
 [node name="Terrain3D" parent="." unique_id=699292965 instance=ExtResource("30_g1x85")]
 material = ExtResource("43_veg0l")
 assets = ExtResource("44_wbqfa")
+collision_mode = 0
 cull_margin = 400.0
-free_editor_textures = false
 script = ExtResource("31_obarj")
 
 [editable path="Map/Doors/Recovery/blockbench_export"]
