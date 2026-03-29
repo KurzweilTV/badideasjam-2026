@@ -31,7 +31,7 @@ func _on_body_entered(body: Node3D) -> void:
 		StationStatus.dialog.emit(message, delay, border_color, false, voice_over_file)
 		single_trigger = false
 	if endgame:
-		await get_tree().create_timer(10).timeout
+		await get_tree().create_timer(14).timeout
 		SceneManager.fade_to_black()
 		await SceneManager.fade_complete
 		StationStatus.start_ending_cinematic.emit()

@@ -13,7 +13,7 @@ func _on_interact(_interactor: Player) -> bool:
 
 func id_pickup_dialog() -> void:
 	StationStatus.dialog.emit(
-		"Now I can get into the[color=green]atmosphere control [/color]room.",
+		"Now I can get into the[color=green] atmosphere control [/color]room.",
 		0.5,
 		StationStatus.player_color,
 		false,

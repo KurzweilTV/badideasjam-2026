@@ -12,7 +12,7 @@
 [ext_resource type="LabelSettings" uid="uid://chg1id0jihetb" path="res://ui/labels/sub_heading.tres" id="9_d6s3g"]
 [ext_resource type="Theme" uid="uid://b11dr1iiq0j81" path="res://ui/themes/menu_theme.tres" id="10_x0k6q"]
 [ext_resource type="Script" uid="uid://b3vuaqyjc5mv6" path="res://characters/player/dialog_system.gd" id="11_plpq5"]
-[ext_resource type="AudioStream" uid="uid://dn7f2651ctpxa" path="res://characters/player/voiceover/zeer/breath_sound.mp3" id="11_wbtgf"]
+[ext_resource type="AudioStream" uid="uid://dn7f2651ctpxa" path="res://characters/player/voiceover/zeer/breaths/breath_sound.mp3" id="11_wbtgf"]
 [ext_resource type="FontFile" uid="uid://jojpfgda2e6k" path="res://addons/fonts/Strogo.ttf" id="12_ont2n"]
 [ext_resource type="AudioStream" uid="uid://dmv6ltstx5e7f" path="res://characters/player/voiceover/temporary/dialog_01.mp3" id="13_2rsth"]
 [ext_resource type="PackedScene" uid="uid://cnrmcq1jjbyx1" path="res://props/interactable/crowbar/crowbar.glb" id="15_vyhkh"]
@@ -489,16 +489,27 @@ script/source = "extends ProgressBar
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var audio_stream_player: AudioStreamPlayer = $BreathSound
 
+var breath_sounds := [
+preload(\"res://characters/player/voiceover/zeer/breaths/breath1.wav\"),
+preload(\"res://characters/player/voiceover/zeer/breaths/breath2.wav\"),
+preload(\"res://characters/player/voiceover/zeer/breaths/breath3.wav\"),
+preload(\"res://characters/player/voiceover/zeer/breaths/breath4.wav\"),
+]
+
 func sprint_animation(status: bool) -> void:
 	if status:
 		animation_player.play(\"sprinting\")
 	else:
 		animation_player.stop(true)
 
+
 func breath() -> void:
 	if character.is_talking:
 		print(\"character.is_talking: %s\" % str(character.is_talking))
 		return
+			
+	audio_stream_player.stream = breath_sounds.pick_random()
+	
 	audio_stream_player.pitch_scale = (randf_range(0.95, 1.00))
 	audio_stream_player.play()
 	
@@ -842,7 +853,7 @@ libraries/ = SubResource("AnimationLibrary_wbtgf")
 
 [node name="BreathSound" type="AudioStreamPlayer" parent="UserInterface/OxygenBar" unique_id=434495238]
 stream = ExtResource("11_wbtgf")
-volume_db = -25.0
+volume_db = -15.0
 
 [node name="InteractCursor" type="TextureRect" parent="UserInterface" unique_id=1064979480]
 unique_name_in_owner = true

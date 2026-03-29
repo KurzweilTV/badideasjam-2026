@@ -41,6 +41,8 @@
 [ext_resource type="Script" uid="uid://2copcexpr4ls" path="res://scenes/end_game_camera.gd" id="31_81oyj"]
 [ext_resource type="AudioStream" uid="uid://b0o620o8fbvbk" path="res://audio/music_cues/dispair.mp3" id="31_26711"]
 [ext_resource type="PackedScene" uid="uid://dcwnnnp78efm6" path="res://scenes/systems/SignalTrigger.tscn" id="34_dbu2b"]
+[ext_resource type="PackedScene" uid="uid://yeibp2yscsq6" path="res://props/decorations/mining_equipment/pickaxe.glb" id="36_wbqfa"]
+[ext_resource type="PackedScene" uid="uid://rx78sfh7rsk2" path="res://props/decorations/mining_equipment/helmet.glb" id="37_87pdf"]
 [ext_resource type="Terrain3DMaterial" uid="uid://cfwd6qfa376dc" path="res://scenes/asteroid_terrain/new_terrain_3d_material.tres" id="43_veg0l"]
 [ext_resource type="Terrain3DAssets" uid="uid://bq1xjxhcbufij" path="res://scenes/asteroid_terrain/new_terrain_3d_assets.tres" id="44_wbqfa"]
 
@@ -2888,7 +2890,7 @@ voice_over_file = "messhall2.wav"
 
 [node name="Maintenence" parent="Map/Triggers" unique_id=1019523931 instance=ExtResource("20_x6cfo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0, -18)
-message = "Maintenance.. this could be a good place to find a crowbar"
+message = "Maintenance.. this could be a good place to find a [color=pale_violet_red]crowbar[/color]"
 delay = 0.0
 trigger_area = SubResource("BoxShape3D_qmkbd")
 voice_over_file = "maintenance1.wav"
@@ -2950,6 +2952,26 @@ show_terrain = true
 
 [node name="Radio" parent="Map/Triggers" unique_id=71862398 instance=ExtResource("27_qybvs")]
 transform = Transform3D(-0.39048275, 0, -0.6982286, 0, 0.8, 0, 0.6982286, 0, -0.39048275, -2.4216309, 1.1180611, -50.660103)
+
+[node name="pickaxe1" parent="Map/Triggers" unique_id=1664364921 instance=ExtResource("36_wbqfa")]
+transform = Transform3D(1, 0, 0, 0, 0.8381569, -0.5454292, 0, 0.5454292, 0.8381569, 35.193787, 0.24102783, -17.034481)
+
+[node name="pickaxe2" parent="Map/Triggers" unique_id=1354051819 instance=ExtResource("36_wbqfa")]
+transform = Transform3D(1, 0, 0, 0, 0.8381569, -0.5454292, 0, 0.5454292, 0.8381569, 36.193787, 0.24102783, -17.034481)
+
+[node name="pickaxe3" parent="Map/Triggers" unique_id=248148149 instance=ExtResource("36_wbqfa")]
+transform = Transform3D(1, 0, 0, 0, -0.09478599, -0.9954977, 0, 0.9954977, -0.09478599, 36.693787, 0.24102783, -17.534481)
+
+[node name="mininghelm" parent="Map/Triggers" unique_id=292930112 instance=ExtResource("37_87pdf")]
+transform = Transform3D(-0.9660026, 0, 0.2585324, 0, 1, 0, -0.2585324, 0, -0.9660026, 34.886982, -1.1249981, -17.071716)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Map/Triggers/mininghelm" unique_id=300861489]
+transform = Transform3D(-0.96491116, 0, 0.26257646, 0, 1, 0, -0.26257646, 0, -0.96491116, 0.016389847, 1.3304482, 0.06124115)
+light_color = Color(0.9999996, 0.98259383, 0.395238, 1)
+light_energy = 2.0
+spot_range = 10.0
+spot_attenuation = 2.0
+spot_angle = 30.0
 
 [node name="Pickups" type="Node3D" parent="Map" unique_id=1066930469]
 metadata/_edit_lock_ = true
