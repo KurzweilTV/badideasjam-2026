@@ -135,14 +135,21 @@ layout_mode = 2
 script = ExtResource("7_5hrqm")
 metadata/_tab_index = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Graphics" unique_id=574438702]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Graphics" unique_id=1564379408]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Graphics/MarginContainer" unique_id=574438702]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Control" type="Control" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Graphics/VBoxContainer" unique_id=1116122176]
+[node name="Control" type="Control" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Graphics/MarginContainer/VBoxContainer" unique_id=1116122176]
 layout_mode = 2
 
-[node name="Fullscreen" type="CheckButton" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Graphics/VBoxContainer" unique_id=709256489]
+[node name="Fullscreen" type="CheckButton" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Graphics/MarginContainer/VBoxContainer" unique_id=709256489]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
@@ -153,10 +160,10 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_g6mpj")
 button_pressed = true
 text = "Fullscreen Enabled"
 
-[node name="RenderScale" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Graphics/VBoxContainer" unique_id=1180269958]
+[node name="RenderScale" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Graphics/MarginContainer/VBoxContainer" unique_id=1180269958]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Graphics/VBoxContainer/RenderScale" unique_id=1684498673]
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Graphics/MarginContainer/VBoxContainer/RenderScale" unique_id=1684498673]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Render Scale"
@@ -164,7 +171,7 @@ label_settings = ExtResource("7_r0po8")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RenderScaleSlider" type="HSlider" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Graphics/VBoxContainer/RenderScale" unique_id=82650915]
+[node name="RenderScaleSlider" type="HSlider" parent="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Graphics/MarginContainer/VBoxContainer/RenderScale" unique_id=82650915]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -312,9 +319,9 @@ stream = ExtResource("4_xyvf4")
 bus = &"Sounds"
 
 [connection signal="tab_selected" from="MarginContainer/PanelContainer/VBoxContainer/TabContainer" to="." method="_on_tab_container_tab_selected"]
-[connection signal="mouse_entered" from="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Graphics/VBoxContainer/Fullscreen" to="." method="_on_save_close_mouse_entered"]
-[connection signal="toggled" from="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Graphics/VBoxContainer/Fullscreen" to="." method="_on_fullscreen_toggled"]
-[connection signal="value_changed" from="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Graphics/VBoxContainer/RenderScale/RenderScaleSlider" to="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Graphics" method="_on_render_scale_slider_value_changed"]
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Graphics/MarginContainer/VBoxContainer/Fullscreen" to="." method="_on_save_close_mouse_entered"]
+[connection signal="toggled" from="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Graphics/MarginContainer/VBoxContainer/Fullscreen" to="." method="_on_fullscreen_toggled"]
+[connection signal="value_changed" from="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Graphics/MarginContainer/VBoxContainer/RenderScale/RenderScaleSlider" to="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Graphics" method="_on_render_scale_slider_value_changed"]
 [connection signal="value_changed" from="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/Main/MainSlider" to="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio" method="_on_main_slider_value_changed"]
 [connection signal="value_changed" from="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/Sounds/SoundSlider" to="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio" method="_on_sound_slider_value_changed"]
 [connection signal="value_changed" from="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/Ambient/MusicSlider" to="MarginContainer/PanelContainer/VBoxContainer/TabContainer/Audio" method="_on_music_slider_value_changed"]
