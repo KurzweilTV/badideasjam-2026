@@ -2,18 +2,18 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-uid="uid://cma43esjpfyjs"
-path="res://.godot/imported/Credits.mp3-06a2e7c38a7b7023958d572ae06e635e.mp3str"
+uid="uid://cwowho8mpd5w4"
+path="res://.godot/imported/credits.mp3-8571323475fcdc4c2ebc743d5d981e21.mp3str"
 
 [deps]
 
-source_file="res://audio/music_cues/Credits.mp3"
-dest_files=["res://.godot/imported/Credits.mp3-06a2e7c38a7b7023958d572ae06e635e.mp3str"]
+source_file="res://audio/music_cues/credits.mp3"
+dest_files=["res://.godot/imported/credits.mp3-8571323475fcdc4c2ebc743d5d981e21.mp3str"]
 
 [params]
 
 loop=false
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4
