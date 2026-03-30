@@ -14,6 +14,8 @@ survive long enough to discover the story. The player will need to overcome some
 
 [Short #1](https://www.youtube.com/shorts/7vxqWwQW2ps)
 
+[Short #2](https://youtube.com/shorts/MOc1tEpewGY)
+
 
 ## 🕹️ Play the Game
 
