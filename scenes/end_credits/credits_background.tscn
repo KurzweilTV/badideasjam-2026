@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://djhnfoywusi7s" path="res://props/interactable/oxygen_mask/OxygenMask.tscn" id="18_y2oyu"]
 [ext_resource type="PackedScene" uid="uid://8ymflc86kaqu" path="res://props/decorations/bed_medical/MedBed.tscn" id="19_1sg16"]
 [ext_resource type="Texture2D" uid="uid://cuxfgkqnno2cm" path="res://props/interactable/station_door/texture_door.png" id="20_aax5j"]
+[ext_resource type="AudioStream" uid="uid://cma43esjpfyjs" path="res://audio/music_cues/Credits.mp3" id="20_p0qrb"]
 
 [sub_resource type="Environment" id="Environment_4q4b8"]
 background_mode = 1
@@ -682,6 +683,11 @@ transform = Transform3D(0.87655133, 0, 0.4813084, 0, 1, 0, -0.4813084, 0, 0.8765
 current = true
 fov = 50.0
 
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=438461415]
+stream = ExtResource("20_p0qrb")
+volume_db = -14.0
+autoplay = true
+
 [node name="BlurEffect" type="ColorRect" parent="." unique_id=1449783089]
 material = SubResource("ShaderMaterial_rv2o7")
 anchors_preset = 15
@@ -702,6 +708,7 @@ theme_override_fonts/normal_font = ExtResource("2_x7064")
 theme_override_font_sizes/normal_font_size = 65
 bbcode_enabled = true
 text = "
+
 
 
 

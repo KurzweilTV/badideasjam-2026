@@ -11,5 +11,5 @@ func _on_skip_pressed() -> void:
 	SceneManager.change_scene("uid://btpe1nrboepgg") # Main Menu Scene
 
 func credits_complete() -> void:
-	await get_tree().create_timer(45).timeout
+	await get_tree().create_timer(60).timeout
 	_on_skip_pressed()
