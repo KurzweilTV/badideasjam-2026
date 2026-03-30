@@ -513,7 +513,7 @@ func sprint_animation(status: bool) -> void:
 
 func breath() -> void:
 	if character.is_talking:
-		print(\"character.is_talking: %s\" % str(character.is_talking))
+		#print(\"character.is_talking: %s\" % str(character.is_talking))
 		return
 			
 	audio_stream_player.stream = breath_sounds.pick_random()

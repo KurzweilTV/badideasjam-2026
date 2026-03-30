@@ -50,7 +50,6 @@ enabled=PackedStringArray("res://addons/jamcountdown/plugin.cfg", "res://addons/
 [file_customization]
 
 folder_colors={
-"res://props/interactable/gas_mixing_station/": "red",
 "res://scenes/": "blue"
 }
 

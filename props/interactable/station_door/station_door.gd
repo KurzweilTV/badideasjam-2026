@@ -21,6 +21,7 @@ var first_interaction: bool = true
 @onready var anim: AnimationPlayer = $blockbench_export/AnimationPlayer
 
 func _ready() -> void:
+	StationStatus.id_card_used.connect(_on_idcard_used)
 	StationStatus.station_power_change.connect(_set_powerup_state)
 	if door_broken: 
 		anim.play("broken")
@@ -35,11 +36,13 @@ func _ready() -> void:
 		StationStatus.close_elevator_door.connect(close_elevator)
 		
 func _on_interact(interactor: Player) -> bool:
+	if door_broken: return false
+	
 	if special_elevator_door: 
 		$DoorLocked.play()
 		return false
 	if needs_pressureized and not StationStatus.station_oxygenated:
-		StationStatus.dialog.emit("Pressureize the Station First",0,StationStatus.system_color,true)
+		StationStatus.dialog.emit("Pressureize the Facility First",0,StationStatus.system_color,true)
 		return false
 	if needs_power and not StationStatus.station_powered:
 		$DoorLocked.play()
@@ -62,8 +65,11 @@ func _on_interact(interactor: Player) -> bool:
 		open_door(interactor)
 
 		if needs_crowbar:
-			interactor.set_crowbar(false) # This makes the crowbar consumable
+			door_broken = true
+			interactor.set_crowbar(false)
 			$CrowbarOpen.play()
+			%DoorInteract.disabled = true
+			anim.play("broken")
 			if visual_crowbar:
 				delay_show_crowbar()
 		else:
@@ -73,6 +79,7 @@ func _on_interact(interactor: Player) -> bool:
 func delay_show_crowbar() -> void:
 	await get_tree().create_timer(1.0).timeout
 	visual_crowbar.show()
+	
 	
 
 func _start_auto_close_timer() -> void:
@@ -96,8 +103,8 @@ func close_elevator() -> void:
 	$DoorClose.play()
 	door_open = false
 	
-func open_door(player: Player) -> void:
-	if player.access_level >= required_access:
+func open_door(_player: Player) -> void:
+	if required_access == 0:
 		anim.play("door_open")
 		$DoorOpen.play()
 		door_open = true
@@ -123,6 +130,7 @@ func close_door_instant() -> void:
 	door_open = false
 
 func play_crowbar_dialog() -> void:
+	StationStatus.try_power_door()
 	StationStatus.dialog.emit(
 		"I bet I could open this with a [color=pale_violet_red]crowbar[/color].",
 		0.5,
@@ -132,8 +140,14 @@ func play_crowbar_dialog() -> void:
 	)
 
 func _set_powerup_state(status) -> void:
-	if door_broken: return
+	if door_broken:
+		%DoorInteract.disabled = true
+		return
 	needs_crowbar = !status
 	needs_power = status
 	%DoorInteract.disabled = false
 	close_door()
+
+func _on_idcard_used() -> void:
+	if required_access > 0:
+		required_access = KEYS.None

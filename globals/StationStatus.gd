@@ -6,6 +6,7 @@ signal station_power_change(powered: bool)
 signal station_oxygen_on
 signal station_color_change(new_color: Color)
 signal got_oxygen_mask
+signal id_card_used
 signal open_elevator_door
 signal close_elevator_door
 signal dialog(message: String, delay: float, border_color: Color, tutorial: bool)
@@ -25,6 +26,7 @@ var switches := [false, true, false, true]
 var station_oxygenated: bool = false
 var station_powered: bool = false
 var station_color: Color = Color.RED
+var did_try_power_door: bool = false
 
 func handle_power_switches(index: int) -> void:
 	print("Toggled Switch: %s" % str(index))
@@ -75,3 +77,5 @@ func set_station_power(powered: bool) -> void:
 	set_station_color(Color.WHITE)
 	station_power_change.emit(powered)
 	
+func try_power_door() -> void:
+	did_try_power_door = true

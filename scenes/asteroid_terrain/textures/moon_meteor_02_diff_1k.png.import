@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://balcr83x0chqd"
-path.s3tc="res://.godot/imported/moon_meteor_02_diff_1k.png-6e5fc97e707ee3723b247681fb8874f1.s3tc.ctex"
-path.etc2="res://.godot/imported/moon_meteor_02_diff_1k.png-6e5fc97e707ee3723b247681fb8874f1.etc2.ctex"
+path.bptc="res://.godot/imported/moon_meteor_02_diff_1k.png-6e5fc97e707ee3723b247681fb8874f1.bptc.ctex"
+path.astc="res://.godot/imported/moon_meteor_02_diff_1k.png-6e5fc97e707ee3723b247681fb8874f1.astc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -13,12 +13,12 @@ metadata={
 [deps]
 
 source_file="res://scenes/asteroid_terrain/textures/moon_meteor_02_diff_1k.png"
-dest_files=["res://.godot/imported/moon_meteor_02_diff_1k.png-6e5fc97e707ee3723b247681fb8874f1.s3tc.ctex", "res://.godot/imported/moon_meteor_02_diff_1k.png-6e5fc97e707ee3723b247681fb8874f1.etc2.ctex"]
+dest_files=["res://.godot/imported/moon_meteor_02_diff_1k.png-6e5fc97e707ee3723b247681fb8874f1.bptc.ctex", "res://.godot/imported/moon_meteor_02_diff_1k.png-6e5fc97e707ee3723b247681fb8874f1.astc.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=false
+compress/high_quality=true
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
@@ -26,7 +26,7 @@ compress/hdr_compression=0
 compress/normal_map=2
 compress/channel_pack=1
 mipmaps/generate=true
-mipmaps/limit=1
+mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
 process/channel_remap/red=0

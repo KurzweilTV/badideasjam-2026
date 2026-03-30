@@ -1,0 +1,19 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://tbqtovba2i70"]
+
+[ext_resource type="Texture2D" uid="uid://b5p3w6ov2nahn" path="res://props/interactable/card_reader/texture.png" id="1_qn0wx"]
+[ext_resource type="Texture2D" uid="uid://dj63oriow3ljk" path="res://props/interactable/card_reader/texture_emissive.png" id="2_v2b0u"]
+
+[resource]
+resource_name = "material_0"
+transparency = 2
+alpha_scissor_threshold = 0.05
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_qn0wx")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 5.0
+emission_operator = 1
+emission_texture = ExtResource("2_v2b0u")
+texture_filter = 0
+texture_repeat = false

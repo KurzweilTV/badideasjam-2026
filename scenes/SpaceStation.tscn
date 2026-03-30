@@ -45,6 +45,7 @@
 [ext_resource type="PackedScene" uid="uid://rx78sfh7rsk2" path="res://props/decorations/mining_equipment/helmet.glb" id="37_87pdf"]
 [ext_resource type="Terrain3DMaterial" uid="uid://cfwd6qfa376dc" path="res://scenes/asteroid_terrain/new_terrain_3d_material.tres" id="43_veg0l"]
 [ext_resource type="Terrain3DAssets" uid="uid://bq1xjxhcbufij" path="res://scenes/asteroid_terrain/new_terrain_3d_assets.tres" id="44_wbqfa"]
+[ext_resource type="PackedScene" uid="uid://d2yq858xyedra" path="res://props/interactable/card_reader/card_reader.tscn" id="46_87pdf"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_2crfw"]
 panorama = ExtResource("1_go4jk")
@@ -85,7 +86,7 @@ func _ready() -> void:
 size = Vector3(2.9941406, 3.1689453, 0.32592773)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_veg0l"]
-size = Vector3(2.9941406, 3.1689453, 0.32592773)
+size = Vector3(2.9941406, 3, 0.32592773)
 
 [sub_resource type="GDScript" id="GDScript_4ussd"]
 resource_name = "OxygenMaskBlocker"
@@ -95,7 +96,6 @@ func _ready() -> void:
 	StationStatus.got_oxygen_mask.connect(_on_get_mask)
 	
 func _on_get_mask() -> void:
-	print(\"Player Blocker Removed\")
 	self.queue_free()
 "
 
@@ -259,7 +259,7 @@ script = ExtResource("1_4ussd")
 [node name="Character" parent="." unique_id=1159670658 instance=ExtResource("1_tq2h6")]
 transform = Transform3D(0.714656, 0, 0.6994761, 0, 1, 0, -0.6994761, 0, 0.714656, 4, -24, 9)
 oxygen_level = 20.0
-base_oxygen_loss_rate = 1.5
+base_oxygen_loss_rate = 1.2
 sprint_oxygen_multiplier = 3.0
 base_speed = 1.5
 sprint_speed = 3.0
@@ -2822,7 +2822,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5625, 0, 0)
 visible = false
 
 [node name="DoorInteract" type="CollisionShape3D" parent="Map/Doors/PowerControl" unique_id=988653951]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5661483, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4816761, 0)
 shape = SubResource("BoxShape3D_veg0l")
 
 [node name="DoorOpen" type="AudioStreamPlayer3D" parent="Map/Doors/PowerControl" unique_id=1773590572]
@@ -2866,7 +2866,7 @@ visible = false
 
 [node name="Engineering" parent="Map/Doors" unique_id=865555891 instance=ExtResource("3_wvlmu")]
 transform = Transform3D(-4.371138e-08, 0, -1, 0, 1, 0, 1, 0, -4.371138e-08, 16.45, 0, -18)
-required_access = 1
+required_access = 2
 
 [node name="Engineering2" parent="Map/Doors" unique_id=1192551875 instance=ExtResource("3_wvlmu")]
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 19.5, 0.05, -18)
@@ -3064,6 +3064,9 @@ collision_mode = 0
 cull_margin = 400.0
 top_level = true
 metadata/_edit_lock_ = true
+
+[node name="CardReader" parent="." unique_id=1543034272 instance=ExtResource("46_87pdf")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 16.341347, -23.580095, -15.196745)
 
 [editable path="Map/Doors/Recovery/blockbench_export"]
 [editable path="Map/Doors/PowerControl/blockbench_export"]
