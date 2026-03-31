@@ -20,6 +20,7 @@ enum KEYS {None, Green, Blue, Orange}
 
 var options_menu: Control
 var options_scene = OPTIONS.instantiate()
+var options_open: bool = false
 var is_talking: bool = false
 
 #region Gameplay Export Group
@@ -230,7 +231,8 @@ func _ready():
 		dialog_system._opening_dialog()
 func _process(delta):
 	if pausing_enabled:
-		handle_pausing()
+		pass
+		#handle_pausing()
 
 	update_debug_menu_per_frame()
 	use_oxygen(delta)
@@ -541,15 +543,32 @@ func update_debug_menu_per_tick():
 	$UserInterface/DebugPanel.add_property("Velocity", readable_velocity, 3)
 
 
-func _unhandled_input(event : InputEvent):
+func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		mouseInput = event.relative
-	# Toggle debug menu
-	elif event is InputEventKey:
-		if event.is_released():
-			# Where we're going, we don't need InputMap
-			if event.keycode == 4194338: # F7
-				$UserInterface/DebugPanel.visible = !$UserInterface/DebugPanel.visible
+		return
+
+	if event.is_action_pressed(controls.PAUSE) and not event.is_echo():
+		get_viewport().set_input_as_handled()
+
+		if get_tree().paused:
+			get_tree().paused = false
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+			if options_menu:
+				options_menu.hide()
+		else:
+			if options_menu == null:
+				options_menu = OPTIONS.instantiate()
+				add_child(options_menu)
+
+			options_menu.show()
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+			get_tree().paused = true
+		return
+
+	if event is InputEventKey and event.is_released():
+		if event.keycode == 4194338: # F7
+			$UserInterface/DebugPanel.visible = !$UserInterface/DebugPanel.visible
 
 #endregion
 
@@ -572,20 +591,21 @@ func update_camera_fov():
 
 func handle_pausing():
 	if Input.is_action_just_pressed(controls.PAUSE):
-		match Input.mouse_mode:
-			Input.MOUSE_MODE_CAPTURED:
-				Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-				if options_menu == null:
-					options_menu = OPTIONS.instantiate()
-					add_child(options_menu)
-				else:
-					options_menu.visible = true
-				get_tree().paused = true
-			Input.MOUSE_MODE_VISIBLE:
-				Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-				if options_menu:
-					options_menu.visible = false
-				get_tree().paused = false
+		if get_tree().paused:
+			get_tree().paused = false
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+			if options_menu:
+				options_menu.hide()
+		else:
+			if options_menu == null:
+				options_menu = OPTIONS.instantiate()
+				add_child(options_menu)
+
+			options_menu.show()
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+			print("Opening Options")
+			get_tree().paused = true
+
 #endregion
 
 #region Oxygen Handling

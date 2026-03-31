@@ -12,10 +12,16 @@ func _ready() -> void:
 	if SceneManager.game_mode:
 		quit_game.show()
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel") and not event.is_echo():
+		_on_save_close_pressed()
+		get_viewport().set_input_as_handled()
+
 func _on_save_close_mouse_entered() -> void:
 	hover.play()
 
 func _on_save_close_pressed() -> void:
+	print("Closing Options")
 	options_saved.emit()
 	if SceneManager.game_mode:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

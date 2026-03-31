@@ -23,7 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://djhnfoywusi7s" path="res://props/interactable/oxygen_mask/OxygenMask.tscn" id="18_y2oyu"]
 [ext_resource type="PackedScene" uid="uid://8ymflc86kaqu" path="res://props/decorations/bed_medical/MedBed.tscn" id="19_1sg16"]
 [ext_resource type="Texture2D" uid="uid://cuxfgkqnno2cm" path="res://props/interactable/station_door/texture_door.png" id="20_aax5j"]
-[ext_resource type="AudioStream" uid="uid://cwowho8mpd5w4" path="res://audio/music_cues/Credits.mp3" id="20_p0qrb"]
+[ext_resource type="AudioStream" uid="uid://cwowho8mpd5w4" path="res://audio/music_cues/credits.mp3" id="20_p0qrb"]
 
 [sub_resource type="Environment" id="Environment_4q4b8"]
 background_mode = 1
@@ -751,8 +751,15 @@ text = "
 
 
 
+
+
+
+
 [center]
-[font_size=80][b]HYPOXIA[/b][/font_size]
+[font_size=96][b]HYPOXIA[/b][/font_size]
+
+
+
 
 [p] [/p]
 [p] [/p]
@@ -770,7 +777,10 @@ text = "
 
 
 [color=cyan][font_size=32]SPECIAL THANKS FOR PLAY TESTING[/font_size][/color]
-[font_size=58]Erantalon
+[font_size=58]Darius Editing
+Erantalon
+Hughlander
+kittenblade
 McDuck Deluxe
 Suede
 UselessJack
