@@ -232,7 +232,7 @@ func on_player_won() -> void:
 		return
 
 	enable_infinite_mode()
-	StationStatus.dialog.emit("The elevator is open.. but maybe I have time to run this sequence some more.", 1, StationStatus.player_color, false)
+	#StationStatus.dialog.emit("The elevator is open.. but maybe I have time to run this sequence some more.", 1, StationStatus.system_color, false)
 
 func enable_infinite_mode() -> void:
 	infinite_mode = true

@@ -27,7 +27,7 @@ func _process(delta: float) -> void:
 	elif typing:
 		typing = false
 		waiting_to_hide = true
-		hide_timer = 1.5
+		hide_timer = 2
 
 	if waiting_to_hide:
 		hide_timer -= delta
@@ -70,10 +70,8 @@ func _opening_dialog() -> void:
 	await StationStatus.dialog_complete
 	StationStatus.dialog.emit("Why is it so hard to breathe? The [color=green]air[/color] is so stale...", 1, StationStatus.player_color, false, "hardtobreathe1.wav")
 	await StationStatus.dialog_complete
-	#StationStatus.dialog.emit("I'm in some sort of... pressure suit?", 1, StationStatus.player_color, false, "dialog_02.mp3")
-	#await StationStatus.dialog_complete
-	#StationStatus.dialog.emit("Looks like the [color=green]oxygen[/color] is low. I should find some air", 1, StationStatus.player_color, false, "dialog_03.mp3")
-	#await StationStatus.dialog_complete
 	StationStatus.dialog.emit("Use [color=pink]WASD[/color] to move", 1, StationStatus.system_color, true)
+	await StationStatus.dialog_complete
+	StationStatus.dialog.emit("Hold [color=pink]SHIFT[/color] to to run", 1, StationStatus.system_color, true)
 	await StationStatus.dialog_complete
 	StationStatus.dialog.emit("Use the [color=pink]left mouse button[/color] to interact", 1, StationStatus.system_color, true)

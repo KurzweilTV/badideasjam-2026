@@ -21,7 +21,8 @@ signal start_ending_cinematic
 @export var system_color: Color = Color.PINK
 
 ## Powerup switch status
-var switches := [false, true, false, true]
+var switches: Array = [false, true, false, true]
+var switch_attempts: int = 0
 
 var station_oxygenated: bool = false
 var station_powered: bool = false
@@ -30,6 +31,7 @@ var did_try_power_door: bool = false
 
 func handle_power_switches(index: int) -> void:
 	print("Toggled Switch: %s" % str(index))
+	switch_attempts += 1
 
 	match index:
 		0:
@@ -63,7 +65,11 @@ func check_switches_complete() -> void:
 		set_station_power(true)
 		set_station_color(Color.WHITE)
 		station_power_change.emit(true)
-
+	else: 
+		if switch_attempts == 2: # hints for the powerup puzzle
+			dialog.emit("Hm.. the sequence isn't quite right", 1, player_color, false) 
+		if switch_attempts == 5:
+			dialog.emit("Pulling a switch triggers the ones next to it", 1, system_color, false) 
 
 func set_station_oxygenated() -> void:
 	station_oxygenated = true

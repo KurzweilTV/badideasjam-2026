@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dpbly258u7blk"
-path="res://.godot/imported/wrong sequence 1.wav-e30f8968423f0b85caaed9adfb4232f5.sample"
+path="res://.godot/imported/wrongsequence.wav-332ae426368ed4e7331a107c491a992b.sample"
 
 [deps]
 
-source_file="res://characters/player/voiceover/zeer/wrong sequence 1.wav"
-dest_files=["res://.godot/imported/wrong sequence 1.wav-e30f8968423f0b85caaed9adfb4232f5.sample"]
+source_file="res://characters/player/voiceover/zeer/wrongsequence.wav"
+dest_files=["res://.godot/imported/wrongsequence.wav-332ae426368ed4e7331a107c491a992b.sample"]
 
 [params]
 

@@ -3096,7 +3096,6 @@ assets = ExtResource("44_wbqfa")
 collision_mode = 0
 cull_margin = 400.0
 top_level = true
-visible = false
 metadata/_edit_lock_ = true
 
 [editable path="Map/Doors/Recovery/blockbench_export"]
