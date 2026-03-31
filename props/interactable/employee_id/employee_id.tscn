@@ -1,19 +1,7 @@
 [gd_scene format=4 uid="uid://bt1pyoajofld3"]
 
-[ext_resource type="Texture2D" uid="uid://cqt8yl3et3hfk" path="res://props/interactable/employee_id/texture-emissive.png" id="1_6x3kp"]
 [ext_resource type="Script" uid="uid://b3gikpib3njbj" path="res://props/interactable/employee_id/employee_id.gd" id="1_fmr7e"]
-[ext_resource type="Texture2D" uid="uid://vnt2tm6avyuu" path="res://props/interactable/employee_id/texture.png" id="2_fmr7e"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_74i6p"]
-resource_name = "material_0"
-transparency = 2
-alpha_scissor_threshold = 0.05
-alpha_antialiasing_mode = 0
-cull_mode = 2
-albedo_texture = ExtResource("1_6x3kp")
-emission_enabled = true
-texture_filter = 0
-texture_repeat = false
+[ext_resource type="Material" uid="uid://6xg22xqy33ye" path="res://props/interactable/employee_id/material_0.tres" id="2_6x3kp"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_oynrf"]
 _surfaces = [{
@@ -37,7 +25,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 36,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
-"material": SubResource("StandardMaterial3D_74i6p"),
+"material": ExtResource("2_6x3kp"),
 "name": "material_0",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -47,15 +35,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_oynrf")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8bylg"]
-albedo_texture = ExtResource("2_fmr7e")
-emission_enabled = true
-emission = Color(1, 1, 1, 1)
-emission_operator = 1
-emission_texture = ExtResource("1_6x3kp")
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_6x3kp"]
-size = Vector3(0.18920898, 0.040228028, 0.2520752)
+size = Vector3(0.37841797, 0.040228028, 0.2520752)
 
 [node name="EmployeeId" type="RigidBody3D" unique_id=1876277207]
 collision_layer = 3
@@ -65,8 +46,7 @@ interact_hint = "Employee ID"
 
 [node name="mesh" type="MeshInstance3D" parent="." unique_id=1594500905]
 mesh = SubResource("ArrayMesh_i6y7a")
-surface_material_override/0 = SubResource("StandardMaterial3D_8bylg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1238452636]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09460449, 0.031069526, 0.00024032593)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.031069526, 0.00024032593)
 shape = SubResource("BoxShape3D_6x3kp")

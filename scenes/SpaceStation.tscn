@@ -2691,7 +2691,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.4, 0.994122, -21.199999)
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 64.38425, 1.4611402, -18.03542)
 
 [node name="EmployeeId" parent="Map/Decorations/Interactables" unique_id=1876277207 instance=ExtResource("29_373xn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3909886, 1.1370026, -51)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2633963, 1.137003, -51)
 
 [node name="CardReader" parent="Map/Decorations/Interactables" unique_id=1543034272 instance=ExtResource("46_87pdf")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 16.341347, 1.4199047, -15.196745)
@@ -3043,9 +3043,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.35, 0.9394547, 1.8499999)
 transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, -27.050001, 0.1999999, -18.5)
 collision_mask = 3
 freeze = true
-
-[node name="OxygenBottle" parent="Map/Pickups" unique_id=446693073 instance=ExtResource("23_oqbv7")]
-transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, -27, 0.5, -17)
 
 [node name="OxygenBottle2" parent="Map/Pickups" unique_id=517925478 instance=ExtResource("23_oqbv7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0.44999993, -17.5)

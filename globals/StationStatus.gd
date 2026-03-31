@@ -67,7 +67,7 @@ func check_switches_complete() -> void:
 		station_power_change.emit(true)
 	else: 
 		if switch_attempts == 2: # hints for the powerup puzzle
-			dialog.emit("Hm.. the sequence isn't quite right", 1, player_color, false) 
+			dialog.emit("Hm.. the sequence isn't quite right", 1, player_color, false, "wrongsequence.wav") 
 		if switch_attempts == 5:
 			dialog.emit("Pulling a switch triggers the ones next to it", 1, system_color, false) 
 

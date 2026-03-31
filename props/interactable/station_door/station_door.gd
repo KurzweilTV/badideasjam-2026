@@ -110,7 +110,7 @@ func open_door(_player: Player) -> void:
 		door_open = true
 	else: 
 		$AccessError.play()
-		StationStatus.dialog.emit("Locked... Maybe I can open this with an [color=pale_violet_red]ID card[/color].",0.5,StationStatus.player_color,false)
+		StationStatus.dialog.emit("Locked... Maybe I can open this with an [color=pale_violet_red]ID card[/color].",0.5,StationStatus.player_color,false,"idcard.wav")
 		
 func close_door() -> void:
 	if not door_open:
