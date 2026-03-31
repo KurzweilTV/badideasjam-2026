@@ -700,6 +700,7 @@ libraries/ = SubResource("AnimationLibrary_5e5t5")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="Camera" type="Camera3D" parent="Head" unique_id=775360523]
+fov = 37.849285
 
 [node name="PixelShader" type="MeshInstance3D" parent="Head/Camera" unique_id=1987337913]
 transform = Transform3D(3.3603044, 0, 0, 0, 2.1076112, 0, -1.4210855e-14, 0, 0.99999994, -3.412823e-08, 0, -0.78076273)
@@ -758,10 +759,10 @@ transform = Transform3D(0.11157335, 2.0917375, 1.1311135e-07, -1.9968858, 0.1168
 visible = false
 
 [node name="Dust" type="CPUParticles3D" parent="Head" unique_id=2011528735]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2688023e-07, 0.068903685, -5.1904135)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5666302e-07, 0.068903685, -3.584031)
 cast_shadow = 0
 amount = 25
-lifetime = 4.0
+lifetime = 3.0
 randomness = 0.77
 lifetime_randomness = 0.5
 mesh = SubResource("QuadMesh_wbtgf")
@@ -774,7 +775,7 @@ initial_velocity_max = 0.1
 scale_amount_min = 0.2
 scale_amount_max = 0.5
 scale_amount_curve = SubResource("Curve_wbtgf")
-color = Color(1, 1, 0.69803923, 1)
+color = Color(0.99999887, 0.9940966, 0.54034036, 1)
 
 [node name="UserInterface" type="Control" parent="." unique_id=683028152]
 unique_name_in_owner = true
