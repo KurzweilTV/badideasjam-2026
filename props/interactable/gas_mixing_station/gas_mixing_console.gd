@@ -10,8 +10,12 @@ func _on_interact(_interactor: Player) -> bool:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	collision_shape_3d.disabled = true
 	gas_game_scene.puzzle_complete.connect(play_complete_sound)
+	gas_game_scene.puzzle_aborted.connect(_on_puzzle_aborted)
 	return true
 
 func play_complete_sound() -> void:
 	%Complete.play()
 	indicator_light.light_color = Color.GREEN
+
+func _on_puzzle_aborted() -> void:
+	collision_shape_3d.disabled = false

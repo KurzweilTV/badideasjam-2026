@@ -45,7 +45,7 @@ mouse_cursor/custom_image_hotspot=Vector2(16, 16)
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/jamcountdown/plugin.cfg", "res://addons/script-ide/plugin.cfg", "res://addons/terrain_3d/plugin.cfg")
+enabled=PackedStringArray("res://addons/script-ide/plugin.cfg", "res://addons/terrain_3d/plugin.cfg")
 
 [file_customization]
 

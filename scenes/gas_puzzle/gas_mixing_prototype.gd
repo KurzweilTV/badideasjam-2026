@@ -1,12 +1,14 @@
 extends Control
 
 signal puzzle_complete
+signal puzzle_aborted
 
 @onready var nitrogen_button: Button = %NitrogenButton
 @onready var oxygen_button: Button = %OxygenButton
 @onready var nitrogen_progress: ProgressBar = %NitrogenProgress
 @onready var oxygen_progress: ProgressBar = %OxygenProgress
 @onready var pressurize_button: Button = %PressureizeButton
+@onready var quit_button: Button = %QuitButton
 @onready var error: AudioStreamPlayer = $Error
 @onready var nitrogen_light: ColorRect = %NitrogenLight
 @onready var oxygen_light: ColorRect = %OxygenLight
@@ -37,6 +39,11 @@ func _ready() -> void:
 	oxygen_button.button_up.connect(func() -> void: filling_oxygen = false)
 
 	pressurize_button.pressed.connect(_on_pressurize_pressed)
+
+func _input(_event: InputEvent) -> void:
+	if Input.is_action_just_pressed("ui_cancel"):
+		puzzle_aborted.emit()
+		queue_free()
 
 func _process(delta: float) -> void:
 
@@ -92,3 +99,8 @@ func _on_pressurize_pressed() -> void:
 		error.play()
 		nitrogen_progress.value -= 10
 		oxygen_progress.value -= 10
+
+func abort_puzzle() -> void:
+	puzzle_aborted.emit()
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	queue_free()

@@ -52,6 +52,38 @@ anti_aliasing = false
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_88no7"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w2dmb"]
+bg_color = Color(0.6086205, 0, 0.16946286, 1)
+border_width_left = 2
+border_width_right = 2
+border_width_bottom = 15
+border_color = Color(0.38859025, 0, 0.13061714, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+shadow_color = Color(0, 0, 0, 0.34117648)
+shadow_size = 5
+shadow_offset = Vector2(5, 5)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nmfek"]
+bg_color = Color(0.39648372, 0, 0.123363264, 1)
+border_width_left = 2
+border_width_right = 2
+border_width_bottom = 15
+border_color = Color(0.28449807, 0, 0.054701716, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+shadow_color = Color(0, 0, 0, 0.34117648)
+shadow_size = 5
+shadow_offset = Vector2(5, 5)
+anti_aliasing = false
+
 [node name="GasMixing" type="Control" unique_id=1658539342]
 layout_mode = 3
 anchors_preset = 15
@@ -199,9 +231,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -399.5
-offset_top = -286.0
+offset_top = -347.0
 offset_right = 399.5
-offset_bottom = -155.0
+offset_bottom = -216.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 4
@@ -213,6 +245,30 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_al4th")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_88no7")
 text = "PRESSURIZE FACILITY"
 
+[node name="QuitButton" type="Button" parent="." unique_id=388105205]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 77)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -203.0
+offset_right = 100.0
+offset_bottom = -126.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_251vw")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_w2dmb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nmfek")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w2dmb")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_88no7")
+text = "QUIT"
+
 [node name="Error" type="AudioStreamPlayer" parent="." unique_id=1664491030]
 stream = ExtResource("6_88no7")
 
@@ -220,3 +276,5 @@ stream = ExtResource("6_88no7")
 stream = ExtResource("9_v6oqc")
 volume_db = -25.0
 pitch_scale = 0.8
+
+[connection signal="pressed" from="QuitButton" to="." method="abort_puzzle"]
