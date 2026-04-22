@@ -26,27 +26,38 @@ var is_talking: bool = false
 #region Gameplay Export Group
 
 @export_category("Debug")
+
+## Skip the opening tutorial dialog on game start. Useful while iterating.
 @export var skip_tutorial: bool = false
-## Player gameplay variables
+
+
 @export_category("Gameplay")
-## Which access level the player has
+
+@export_group("Player Progression")
+## Which keycard access level the player currently holds. Determines which doors open.
 @export var access_level: KEYS = KEYS.None
-## Does the player have a crowbar?
+## Whether the player is currently carrying the crowbar.
 @export var has_crowbar: bool = false
-## The main game resource - kill player at 0.0
-@export var oxygen_level: float = 50.0:
+## Locks the player in place completely. Used for cutscenes like the tutorial and ending.
+@export var player_locked: bool = false
+
+@export_group("Oxygen")
+## Current oxygen level. The player dies when this reaches 0.
+@export_range(0.0, 100.0, 0.1, "suffix:%") var oxygen_level: float = 50.0:
 	set(value):
 		oxygen_level = clamp(value, 0.0, 100.0)
 		_update_oxygen_ui()
-## maximum oxygen the player can store
-@export var max_oxygen_level: float = 100.0
-## Unmodified oxygen loss rate
-@export var base_oxygen_loss_rate: float = 2.0
-## Sprinting Oxygen Use Multiplier
-@export var sprint_oxygen_multiplier: float = 3.0
-## Player Needs Oxygen or Not (For after powerup)
+## Maximum oxygen the player can store in their tank.
+@export_range(0.0, 200.0, 1.0, "suffix:%") var max_oxygen_level: float = 100.0
+## Base oxygen consumed per second while walking or idle.
+@export_range(0.0, 10.0, 0.1, "suffix:/s") var base_oxygen_loss_rate: float = 2.0
+## Multiplier applied to the oxygen loss rate while sprinting.
+@export_range(1.0, 10.0, 0.1, "suffix:x") var sprint_oxygen_multiplier: float = 3.0
+## Master toggle for the oxygen system. Turned off once the station's life support is restored.
 @export var oxygen_system_enabled: bool = true
-## Player is running out of Oxygen
+
+@export_subgroup("Runtime State")
+## Set automatically as oxygen drops below the warning threshold. (Edit only for testing.)
 @export var is_hypoxic: bool = true:
 	set(value):
 		if value == is_hypoxic:
@@ -54,7 +65,7 @@ var is_talking: bool = false
 		print("Hypoxia: %s" % str(value))
 		is_hypoxic = value
 		hypoxic_filter.visible = is_hypoxic
-## Player is out of Oxygen
+## Set automatically when the player runs critically low on oxygen — starts the death timer. (Edit only for testing.)
 @export var is_extreme_hypoxic: bool = false:
 	set(value):
 		if value == is_extreme_hypoxic:
@@ -67,36 +78,39 @@ var is_talking: bool = false
 		print("Extreme Hypoxia: %s" % str(value))
 		extreme_tint.visible = is_extreme_hypoxic
 
+# Internal runtime state (not exposed to the editor)
 var has_oxygen_mask: bool = false
 var oxygen_loss_rate: float = base_oxygen_loss_rate
-## locks the player for things like the tutorial and ending
-@export var player_locked: bool = false
 #endregion
 
 #region Character Export Group
 
-## The settings for the character's movement and feel.
 @export_category("Character")
-## The speed that the character moves at without crouching or sprinting.
-@export var base_speed : float = 3.0
-## The speed that the character moves at when sprinting.
-@export var sprint_speed : float = 6.0
-## The speed that the character moves at when crouching.
-@export var crouch_speed : float = 1.0
 
-## How fast the character speeds up and slows down when Motion Smoothing is on.
-@export var acceleration : float = 10.0
-## How high the player jumps.
-@export var jump_velocity : float = 4.5
-## How far the player turns when the mouse is moved.
-@export var mouse_sensitivity : float = 0.1
-## Invert the X axis input for the camera.
+@export_group("Movement Speed")
+## Default walking speed.
+@export_range(0.0, 20.0, 0.1, "suffix:m/s") var base_speed : float = 3.0
+## Movement speed while sprinting.
+@export_range(0.0, 20.0, 0.1, "suffix:m/s") var sprint_speed : float = 6.0
+## Movement speed while crouched.
+@export_range(0.0, 20.0, 0.1, "suffix:m/s") var crouch_speed : float = 1.0
+## How fast the player speeds up and slows down. Higher = snappier. Only used when Motion Smoothing is on.
+@export_range(1.0, 50.0, 0.5) var acceleration : float = 10.0
+## Upward velocity applied on jump. Higher = jumps higher.
+@export_range(0.0, 15.0, 0.1, "suffix:m/s") var jump_velocity : float = 4.5
+
+@export_group("Camera & Look")
+## Camera rotation per pixel of mouse movement.
+@export_range(0.01, 1.0, 0.01) var mouse_sensitivity : float = 0.1
+## Invert the horizontal mouse axis.
 @export var invert_camera_x_axis : bool = false
-## Invert the Y axis input for the camera.
+## Invert the vertical mouse axis.
 @export var invert_camera_y_axis : bool = false
-## Whether the player can use movement inputs. Does not stop outside forces or jumping. See Jumping Enabled.
+
+@export_group("Misc")
+## Disables movement input. Outside forces and jumping still apply — see Jumping Enabled for that.
 @export var immobile : bool = false
-## The reticle file to import at runtime. By default are in res://addons/fpc/reticles/. Set to an empty string to remove.
+## Reticle scene loaded at runtime. Stored in res://addons/fpc/reticles/ by default. Leave empty to hide the reticle.
 @export_file var default_reticle
 
 #endregion
@@ -104,26 +118,25 @@ var oxygen_loss_rate: float = base_oxygen_loss_rate
 #region Nodes Export Group
 
 @export_group("Nodes")
-## A reference to the camera for use in the character script. This is the parent node to the camera and is rotated instead of the camera for mouse input.
+## Parent of the camera. This node is rotated (instead of the camera itself) when handling mouse look.
 @export var HEAD : Node3D
-## A reference to the camera for use in the character script.
+## The player's Camera3D.
 @export var CAMERA : Camera3D
-## A reference to the headbob animation for use in the character script.
+## AnimationPlayer that drives the head-bob while walking / sprinting.
 @export var HEADBOB_ANIMATION : AnimationPlayer
-## A reference to the jump animation for use in the character script.
+## AnimationPlayer that plays the jump and landing animations.
 @export var JUMP_ANIMATION : AnimationPlayer
-## A reference to the crouch animation for use in the character script.
+## AnimationPlayer that raises / lowers the collision and camera for crouching.
 @export var CROUCH_ANIMATION : AnimationPlayer
-## A reference to the the player's collision shape for use in the character script.
+## The main CollisionShape3D on the player.
 @export var COLLISION_MESH : CollisionShape3D
 
 #endregion
 
 #region Controls Export Group
 
-# We are using UI controls because they are built into Godot Engine so they can be used right away
 @export_group("Controls")
-## Use the Input Map to map a mouse/keyboard input to an action and add a reference to it to this dictionary to be used in the script.
+## Maps action names (LEFT, RIGHT, JUMP, ...) to entries in the Input Map. Rebind here to change controls.
 @export var controls : Dictionary = {
 	LEFT = "move_left",
 	RIGHT = "move_right",
@@ -134,51 +147,64 @@ var oxygen_loss_rate: float = base_oxygen_loss_rate
 	SPRINT = "sprint",
 	PAUSE = "ui_cancel"
 	}
-@export_subgroup("Controller Specific")
-## This only affects how the camera is handled, the rest should be covered by adding controller inputs to the existing actions in the Input Map.
+
+@export_subgroup("Controller")
+## Enable gamepad camera support. Movement and actions still work via the Input Map above.
 @export var controller_support : bool = false
-## Use the Input Map to map a controller input to an action and add a reference to it to this dictionary to be used in the script.
+## Maps camera look actions to entries in the Input Map for gamepad support.
 @export var controller_controls : Dictionary = {
 	LOOK_LEFT = "look_left",
 	LOOK_RIGHT = "look_right",
 	LOOK_UP = "look_up",
 	LOOK_DOWN = "look_down"
 	}
-## The sensitivity of the analog stick that controls camera rotation. Lower is less sensitive and higher is more sensitive.
-@export_range(0.001, 1, 0.001) var look_sensitivity : float = 0.035
+## Sensitivity of the analog stick for camera rotation. Lower is slower, higher is faster.
+@export_range(0.001, 1.0, 0.001) var look_sensitivity : float = 0.035
 
 #endregion
 
 #region Feature Settings Export Group
 
 @export_group("Feature Settings")
-## Enable or disable jumping. Useful for restrictive storytelling environments.
+
+@export_subgroup("Jumping")
+## Allow the player to jump at all. Useful for restrictive environments or cutscenes.
 @export var jumping_enabled : bool = true
-## Whether the player can move in the air or not.
-@export var in_air_momentum : bool = true
-## Smooths the feel of walking.
-@export var motion_smoothing : bool = true
-## Enables or disables sprinting.
-@export var sprint_enabled : bool = true
-## Toggles the sprinting state when button is pressed or requires the player to hold the button down to remain sprinting.
-@export_enum("Hold to Sprint", "Toggle Sprint") var sprint_mode : int = 0
-## Enables or disables crouching.
-@export var crouch_enabled : bool = true
-## Toggles the crouch state when button is pressed or requires the player to hold the button down to remain crouched.
-@export_enum("Hold to Crouch", "Toggle Crouch") var crouch_mode : int = 0
-## Wether sprinting should effect FOV.
-@export var dynamic_fov : bool = true
-## If the player holds down the jump button, should the player keep hopping.
+## Hold the jump button to keep hopping automatically.
 @export var continuous_jumping : bool = true
-## Enables the view bobbing animation.
-@export var view_bobbing : bool = true
-## Enables an immersive animation when the player jumps and hits the ground.
+## Play the directional landing animation when hitting the ground after a jump.
 @export var jump_animation : bool = true
-## This determines wether the player can use the pause button, not wether the game will actually pause.
+
+@export_subgroup("Movement")
+## Retain horizontal momentum while airborne. Disable for tighter platforming.
+@export var in_air_momentum : bool = true
+## Smoothly interpolate between movement speeds for a less twitchy feel.
+@export var motion_smoothing : bool = true
+
+@export_subgroup("Sprinting")
+## Allow the player to sprint.
+@export var sprint_enabled : bool = true
+## How the sprint input behaves: hold the button, or toggle on press.
+@export_enum("Hold to Sprint", "Toggle Sprint") var sprint_mode : int = 0
+## Slightly widen the camera FOV while sprinting to sell the speed.
+@export var dynamic_fov : bool = true
+
+@export_subgroup("Crouching")
+## Allow the player to crouch.
+@export var crouch_enabled : bool = true
+## How the crouch input behaves: hold the button, or toggle on press.
+@export_enum("Hold to Crouch", "Toggle Crouch") var crouch_mode : int = 0
+
+@export_subgroup("Camera Effects")
+## Enable the walk / sprint view-bobbing animation.
+@export var view_bobbing : bool = true
+
+@export_subgroup("System")
+## Whether the pause button works. The game may still pause for other reasons (cutscenes, menus).
 @export var pausing_enabled : bool = true
-## Use with caution.
+## Apply gravity to the player. Use with caution — disabling can break level transitions.
 @export var gravity_enabled : bool = true
-## If your game changes the gravity value during gameplay, check this property to allow the player to experience the change in gravity.
+## Re-read project gravity every frame. Enable if your game changes gravity at runtime.
 @export var dynamic_gravity : bool = false
 
 #endregion
